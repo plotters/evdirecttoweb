@@ -1,0 +1,45 @@
+<webobject name=ListTable>
+	<webobject name=HasSections>
+		<tr>			
+			<webobject name="ShowLeftActionsConditional">
+			<td>
+				&nbsp;
+			</td>
+			</webobject>
+			<webobject name=SectionRepetition><webobject name=SectionCell><webobject name=SectionTitle></webobject></webobject></webobject>
+			<webobject name="ShowRightActionsConditional">
+			<td>
+				&nbsp;
+			</td>
+			</webobject>
+		</tr>
+	</webobject>
+	<webobject name=ListTableHeaderRow>
+		<webobject name="ShowLeftActionsConditional">
+		<th>
+			<webobject name="ActionsString"></webobject>
+		</th>
+		</webobject>
+		<webobject name=SectionRepetition>
+			<webobject name=ColumnLabelRepetition>
+				<th class="$d2wContext.cssClassForTableHeader">
+					<webobject name="SortingTableHeader"></webobject>
+				</th>
+			</webobject>
+		</webobject>
+		<webobject name="ShowRightActionsConditional">
+		<th>
+			<webobject name="ActionsString"></webobject>
+		</th>
+		</webobject>
+	</webobject>
+	<webobject name=EntityRepetition>
+		<webobject name=ListTableRow>
+			<webobject name="ShowLeftActionsConditional"><td align="center"><webobject name=LeftActions><webobject name=LeftAction></webobject>&nbsp;</webobject></td></webobject>
+			<webobject name=SectionRepetition><webobject name=AttributeRepetition>
+					<webobject name=AttributeCell><webobject name="InspectLinkOnAttribute"><webobject name=AttributeDisplay></webobject></webobject></webobject>
+				</webobject></webobject>
+			<webobject name="ShowRightActionsConditional"><td align="center"><webobject name=RightActions><webobject name=RightAction></webobject>&nbsp;</webobject></td></webobject>
+		</webobject>
+	</webobject>
+</webobject>

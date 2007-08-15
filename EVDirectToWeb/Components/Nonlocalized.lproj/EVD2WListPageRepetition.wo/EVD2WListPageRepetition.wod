@@ -1,0 +1,128 @@
+AttributeCell: WOGenericContainer {
+	_unroll = true;
+	align = d2wContext.justification;
+	elementName = "td";
+	valign = "middle";
+}
+
+AttributeDisplay: WOSwitchComponent { 
+	WOComponentName = d2wContext.componentName;
+	_componentUnroll = true;
+	_unroll = true;
+	localContext = d2wContext;
+	object = d2wContext.object;
+}
+
+AttributeRepetition: WORepetition {
+	_unroll = true;
+	item = propertyKey;
+	list = currentSectionKeys;
+}
+
+ColumnLabelRepetition: WORepetition {
+	_unroll = true;
+	item = propertyKey;
+	list = currentSectionKeys;
+}
+
+EntityRepetition: WORepetition {
+	item = d2wContext.object;
+	list = ^displayGroup.displayedObjects;
+	index = rowIndex;
+}
+
+HasSections: WOConditional {
+	condition = hasSections;
+}
+
+InspectLinkOnAttribute : WOHyperlink {
+	action = inspectObject;
+	disabled = disableInspectObjectLink;
+}
+
+LeftAction: WOSwitchComponent { 
+	WOComponentName = d2wContext.componentName;
+	localContext = d2wContext;
+	object = d2wContext.object;
+	displayGroup = displayGroup;
+}
+
+LeftActions: WORepetition {
+	item = propertyKey;
+	list = leftActions;
+}
+
+ListTable: WOGenericContainer {
+	_unroll = true;
+	bgcolor = d2wContext.backgroundColorForTable;
+	border = 0;
+	cellpadding = 1;
+	cellspacing = 1;
+	elementName = "table";
+	class = "d2w_listtable";
+	width = "100%";
+}
+
+ListTableHeaderRow: WOGenericContainer {
+	_unroll = true;
+	elementName = "tr";
+}
+
+ListTableRow: WOGenericContainer {
+	_unroll = true;
+	elementName = "tr";
+	class = rowClass;
+}
+
+RightAction: WOSwitchComponent { 
+	WOComponentName = d2wContext.componentName;
+	localContext = d2wContext;
+	object = d2wContext.object;
+	displayGroup = displayGroup;
+}
+
+RightActions: WORepetition {
+	item = propertyKey;
+	list = rightActions;
+}
+
+SectionCell: WOGenericContainer {
+	elementName = "th";
+	colspan = currentSectionKeysColspan;
+}
+
+SectionRepetition: WORepetition {
+	list = sectionsContents;
+	item = currentSection;
+}
+
+SectionTitle: WOString {
+	value = sectionTitle;
+}
+
+ActionsString : ERXLocalizedString {
+	value = "EVD2WListPage.Actions";
+}
+
+SortingTableHeader : EVD2WTableHeader {
+	displayGroup = ^displayGroup;
+	displayKey = d2wContext.displayNameForProperty;
+	key = d2wContext.sortKeyForList;
+    d2wContext = d2wContext;
+	caseInsensitive = d2wContext.sortCaseInsensitive;
+	isPropertySortable = propertyIsSortable;
+	updateContainerID = ^updateContainerID;
+}
+
+ShowLeftActionsConditional : WOConditional {
+	condition = leftActions.count;
+}
+
+ShowRightActionsConditional : WOConditional {
+	condition = rightActions.count;
+}
+
+TableHeadContainer : WOGenericContainer {
+	elementName = "th";
+	align = d2wContext.justification;
+}

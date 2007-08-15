@@ -1,0 +1,24 @@
+{
+	"Back" = "Back";
+	"BATCH_NAV_PAGE_STRING" = "Page @@currentBatchIndex@@ of @@batchCount@@ (Showing item @@indexOfFirstDisplayedObject@@ to @@indexOfLastDisplayedObject@@ of @@allObjects.count@@)";
+	"Cancel" = "Cancel";
+	"Create new item" = "Create new item";
+	"delete" = "delete";
+	"edit" = "edit";
+	"ERD2WQueryPage.restrictedMessage" = "Fetching max. @@fetchLimit** rows";
+	"ERDEditStringWithChoices.noSelectionString" = "-- nothing selected --";
+	"EVD2WListPage.Actions" = "Actions";
+	"EVD2WListPage.CREATE_NEW" = "Create New";
+	"Forward" = "Forward";
+	"inspect" = "inspect";
+	"LoginButtonLabel" = "Login";
+	"Next Step" = "Next Step";
+	"No" = "No";
+	"NO" = "No";
+	"PageWrapper.WeAreGoingDownForMaintenanceMessage" = "<strong>Important Notice!</strong><br><br>We are going to shut down this application instance for maintenance reasons in a couple of minutes.<br><br>You can safely finish your task at hand and log out of the application.<br><br>Thank you for your understanding.";
+	"Previous Page" = "Previous Page";
+	"Reset" = "Reset";
+	"Save" = "Save";
+	"Search" = "Search";
+	"YES" = "Yes";
+}

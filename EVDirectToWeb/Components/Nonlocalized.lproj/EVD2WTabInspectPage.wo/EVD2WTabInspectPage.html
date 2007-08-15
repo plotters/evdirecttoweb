@@ -1,0 +1,44 @@
+<webobject name="PageWrapper">
+	<webobject name="Help"></webobject>
+	<webobject name="PreviousPageNotNullConditional">
+	    <div class = "d2w_listfunc"><webobject name="ReturnLink"><wo:localized value="Previous Page" /></webobject></div>
+	</webobject>
+	<webobject name="EditForm">
+		<div class="d2w_edit_container">
+			<webobject name="Errors"></webobject>
+			<webobject name="TabComponent"></webobject>
+			<div class = "d2w_inspect_repetition">
+				<webobject name="Wrapper"><webobject name="InspectPageRepetition"></webobject></webobject>
+				<webobject name="IsTaskEdit"><div class="d2w_required_marker">* <wo:localized value="Required Field" /></div></webobject>
+				<ul class="d2w_editform_button_ul">
+					<webobject name="IsEditingConditional">
+						<webobject name="Conditional2"><li><webobject name="SubmitChanges"></webobject></li></webobject>
+						<webobject name="ShowCancelConditional">
+							<webobject name="ShowReturnButtonConditional"><li><webobject name="CancelButton2"></webobject></li></webobject>
+							<webobject name="ShowReturnButtonConditional2"><li><webobject name="CancelButton"></webobject></li></webobject>
+						</webobject>
+						<webobject name="ShowNextPreviousButtonsConditional">
+							<webobject name="CurrentTabIsFirstTabConditional"><li><webobject name="PreviousTabButton"></webobject></li></webobject>
+							<webobject name="CurrentTabIsLastTabConditional"><li><webobject name="NextTabButton"></webobject><li></webobject>
+						</webobject>
+					</webobject>
+					<webobject name="HasPrinterFriendlyVersionConditional">
+						<webobject name="PrinterFriendlyLink"><li><webobject name="PrintButton"></webobject></li></webobject>
+					</webobject>
+					<webobject name="IsEntityWritable2">
+						<webobject name="IsNotEditingConditional2">
+							<li><webobject name="EditLink"><webobject name="EditLinkString"></webobject></webobject></li>
+							<webobject name="PreviousPageNullConditional"><li><webobject name="EditLink2"><webobject name="EditLinkString"></webobject></webobject></li></webobject>
+						</webobject>
+					</webobject>
+				</ul>
+			</div>
+		</div>
+	</webobject>
+	<webobject name="Conditional5">
+		<webobject name="IsEditing">
+			<webobject name="Script">
+			</webobject>
+		</webobject>
+	</webobject>
+</webobject>

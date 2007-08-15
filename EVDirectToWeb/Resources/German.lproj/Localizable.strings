@@ -1,0 +1,24 @@
+{
+	"Back" = "Zur\U00fcck";
+	"BATCH_NAV_PAGE_STRING" = "Seite @@currentBatchIndex@@ von @@batchCount@@ (Zeige Eintr\U00e4ge @@indexOfFirstDisplayedObject@@ bis @@indexOfLastDisplayedObject@@ von @@allObjects.count@@)";
+	"Cancel" = "Abbrechen";
+	"Create new item" = "Neuer Eintrag";
+	"delete" = "l\U00f6schen";
+	"edit" = "bearbeiten";
+	"ERD2WQueryPage.restrictedMessage" = "Lade max. @@fetchLimit@@ Zeilen";
+	"ERDEditStringWithChoices.noSelectionString" = "-- nichts ausgew\U00e4hlt --";
+	"EVD2WListPage.Actions" = "Aktionen";
+	"EVD2WListPage.CREATE_NEW" = "Neuer Eintrag";
+	"Forward" = "Vorw\U00e4rts";
+	"inspect" = "ansehen";
+	"LoginButtonLabel" = "Anmelden";
+	"Next Step" = "N\U00e4chster Schritt";
+	"No" = "Nein";
+	"NO" = "Nein";
+	"PageWrapper.WeAreGoingDownForMaintenanceMessage" = "<strong>Wichtige Mitteilung</strong><br><br>Diese Applikationsinstanz wird in K\U00fcrze f\U00fcr Wartungsarbeiten heruntergefahren.<br><br>Sie k\U00f6nnen Ihre Arbeit noch beenden, bitte melden Sie sich danach ab.<br><br>Vielen Dank f\U00fcr Ihr Verst\U00e4ndnis.";
+	"Previous Page" = "Vorherige Seite";
+	"Reset" = "Zur\U00fccksetzen";
+	"Save" = "Speichern";
+	"Search" = "Suchen";
+	"YES" = "Ja";
+}

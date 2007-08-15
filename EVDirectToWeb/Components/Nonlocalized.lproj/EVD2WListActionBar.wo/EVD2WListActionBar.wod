@@ -1,0 +1,15 @@
+Repetition1: WORepetition {
+	item = branch;
+	list = branchChoices;
+	checkHashCodes = false;
+}
+
+SubmitButton3: WOHyperlink {
+	action = performAction;
+	string = branchButtonLabel;
+	class = branch.cssClass;
+}
+
+HasChoices: WOConditional {
+	condition = hasBranchChoices;
+}

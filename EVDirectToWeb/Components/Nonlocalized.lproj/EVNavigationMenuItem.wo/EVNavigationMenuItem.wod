@@ -1,0 +1,17 @@
+Hyperlink: WOGenericContainer { 
+	elementName = "a";
+	href = contextComponentActionURL;
+	invokeAction = menuItemSelected;
+    class = linkClass;
+//    omitTags = isSelected;
+}
+
+String1: ERXLocalizedString {
+	value = displayName;
+    escapeHTML=false;
+}
+
+Span : WOGenericContainer {
+	elementName = "span";
+	class = linkClass;
+}

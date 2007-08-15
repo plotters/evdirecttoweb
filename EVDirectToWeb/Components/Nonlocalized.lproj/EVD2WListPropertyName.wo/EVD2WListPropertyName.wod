@@ -1,0 +1,26 @@
+DebuggingEnabled: WOConditional {
+	condition = d2wDebuggingEnabled;
+}
+
+HasPropertyName: WOConditional {
+	condition = hasPropertyName;
+}
+
+PropertyName: WOString {
+    value=displayNameForProperty;
+	escapeHTML = d2wContext.escapeHTML;
+}
+
+Repetition1: WORepetition {
+	list = contextDictionaryForPropertyKey.allKeys.@sortAsc.toString;
+	item = currentKey;
+}
+
+String1: WOString {
+	value = currentKey;
+}
+
+String2: WOString {
+	value = currentValue;
+}
+

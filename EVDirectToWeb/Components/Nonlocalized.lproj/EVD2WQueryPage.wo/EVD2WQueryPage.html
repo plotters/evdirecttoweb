@@ -1,0 +1,24 @@
+<wo:WOSwitchComponent WOComponentName="$pageWrapperName" _componentUnroll="$true" _unroll="$true">
+	<wo:ERDDebuggingHelp d2wContext="$d2wContext" />
+	<div class="$d2wContext.cssClassForQueryPage">
+		<wo:if condition="$d2wContext.headingString.length"><h1><wo:localized value="$d2wContext.headingString" /></h1></wo:if>
+		<wo:if condition="$showFetchLimitString"><h3><wo:localized object="$self" otherObject="$d2wContext"	templateString="ERD2WQueryPage.restrictedMessage" /></h3></wo:if>
+		<wo:form action="$queryAction" name="QueryForm" class="$d2wContext.cssClassForQueryForm" multipleSubmit="$true">
+			<div class="d2w_query_container">
+				<div class="$d2wContext.cssClassForQueryRepetition">
+					<wo:EVD2WQueryPageRepetition d2wContext="$localContext" displayGroup="$displayGroup" />
+					<ul class="$d2wContext.cssClassForQueryButtonUL">
+						<li><wo:ERXSubmitButton action="$queryAction" value="$session.localizer.Search" alt = "Find objects matching the query" /></li>
+						<wo:if condition="$showCancel"><li><wo:link action="$returnAction"><wo:localized value="Return" /></wo></li></wo:if>
+					</ul>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</wo:form>
+	</div>
+	<wo:if condition="$d2wContext.showListInSamePage">
+		<wo:if condition="$showResults">
+			<wo:D2WList dataSource = "$queryDataSource" entityName = "$entity" pageConfiguration = "$d2wContext.listConfigurationName" d2wContext="$d2wContext" />
+		</wo:if>
+	</wo:if>
+</wo:WOSwitchComponent>

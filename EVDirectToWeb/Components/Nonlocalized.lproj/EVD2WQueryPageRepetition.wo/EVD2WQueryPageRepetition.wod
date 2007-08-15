@@ -1,0 +1,38 @@
+
+
+AttributeValue1: WOSwitchComponent { 
+	WOComponentName = d2wContext.componentName;
+	localContext = d2wContext;
+	displayGroup = displayGroup;
+}
+
+AttributeValue2: WOSwitchComponent { 
+	WOComponentName = d2wContext.componentName;
+	_componentUnroll = true;
+	_unroll = true;
+	localContext = d2wContext;
+	displayGroup = displayGroup;
+}
+
+LayoutTable: ERXTable {
+	goingVertically = d2wContext.matrixLayoutVertical;
+	item = propertyKey;
+	list = currentSectionKeys;
+	maxColumns = d2wContext.maxColumns;
+	tableClass = d2wContext.cssClassForQueryLayoutTable;
+}
+
+AttributeLabel1: WOSwitchComponent {
+	WOComponentName = d2wContext.propertyNameComponentName;
+	localContext = d2wContext;
+}
+
+SwitchComponent2: WOSwitchComponent {
+	WOComponentName = d2wContext.propertyNameComponentName;
+	localContext = d2wContext;
+}
+
+SwitchComponent3: WOSwitchComponent {
+	WOComponentName = d2wContext.sectionComponentName;
+	d2wContext = d2wContext;
+}

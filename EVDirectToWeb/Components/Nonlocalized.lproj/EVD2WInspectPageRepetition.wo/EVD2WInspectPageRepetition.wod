@@ -1,0 +1,179 @@
+AttributeRepetition: WORepetition {
+	_unroll = true;
+	item = propertyKey;
+	list = currentSectionKeys;
+}
+
+AttributeValue: WOSwitchComponent { 
+	WOComponentName = d2wContext.componentName;
+	localContext = d2wContext;
+	object = object;
+}
+
+ERXLayoutTable: ERXLayoutTable {
+	item = propertyKey;
+	list = currentSectionKeys;
+	tableWidth = "100%";
+	cellColSpan = d2wContext.colSpan;
+	cellRowSpan = d2wContext.rowSpan;
+	maxColumns = d2wContext.maxColumns;
+	tableClass = "d2w_layout_table";
+	cellWidth = cellWidth;
+	cellVAlign = "top";
+}
+
+ERXTable: ERXTable {
+	goingVertically = d2wContext.matrixLayoutVertical;
+	item = propertyKey;
+	list = currentSectionKeys;
+	maxColumns = d2wContext.maxColumns;
+	tableClass = d2wContext.cssClassForMatrixLayoutTable;
+	tableWidth = "100%";
+	cellWidth = cellWidth;
+	cellVAlign = "top";
+}
+
+HasPropertyName: WOConditional {
+	condition = d2wContext.hidePropertyName;
+	negate = true;
+}
+
+HasSectionName: ERXNonZeroConditional {
+	condition = currentSection.name.length;
+}
+
+HasntPropertyName: WOConditional {
+	condition = d2wContext.hidePropertyName;
+	negate = false;
+}
+
+NotUsingMatrixLayout: WOConditional {
+	condition = d2wContext.useMatrixLayout;
+	negate = true;
+}
+
+NotUsingTableLayout: WOConditional {
+	condition = d2wContext.useTableLayout;
+	negate = true;
+}
+
+PropertyName: WOSwitchComponent {
+	WOComponentName = d2wContext.propertyNameComponentName;
+	localContext = d2wContext;
+}
+
+SafeWrapper : ERXTolerantWrapper {
+	
+}
+
+Section: WOSwitchComponent {
+ 	WOComponentName = d2wContext.sectionComponentName;
+ 	d2wContext = d2wContext;
+	displayNameForSectionKey = currentSection.name;
+}
+
+Sections: WORepetition {
+    list = sectionsContents;
+    item = currentSection;
+}
+
+UseHorizontalLayoutTables: WOConditional {
+	condition = d2wContext.useHorizontalLayoutTables;
+}
+
+UseVerticalLayoutTables: WOConditional {
+	condition = d2wContext.useHorizontalLayoutTables;
+	negate = true;
+}
+
+UseMatrixLayout: WOConditional {
+	condition = d2wContext.useMatrixLayout;
+}
+UseTableLayout: WOConditional {
+	condition = d2wContext.useTableLayout;
+}
+
+PropertyNameSpan : WOGenericContainer {
+	elementName = "span";
+	class = d2wContext.classNameForPropertyLabel;
+}
+
+PropertyValueSpan : WOGenericContainer {
+	elementName = "span";
+	class = d2wContext.classNameForPropertyValue;
+}
+
+HMatrixLabelCell : WOGenericContainer {
+	elementName = "td";
+	align = "left";
+	valign = "top";
+	class = d2wContext.cssClassForHMatrixLabel;
+}
+
+HMatrixValueCell : WOGenericContainer {
+	elementName = "td";
+	align = "left";
+	valign = "top";
+	class = d2wContext.cssClassForHMatrixValue;
+}
+
+VMatrixLabelCell : WOGenericContainer {
+	elementName = "td";
+	align = "left";
+	valign = "top";
+	class = d2wContext.cssClassForVMatrixLabel;
+}
+
+VMatrixValueCell : WOGenericContainer {
+	elementName = "td";
+	align = "left";
+	valign = "top";
+	class = d2wContext.cssClassForVMatrixValue;
+}
+
+MatrixTableH : WOGenericContainer {
+	elementName = "table";
+	cellspacing = "0";
+	cellpadding = "0";
+	border = "0";
+	class = d2wContext.cssClassForInnerMatrixTable;
+}
+
+MatrixTableV : WOGenericContainer {
+	elementName = "table";
+	cellspacing = "0";
+	cellpadding = "0";
+	border = "0";
+	class = d2wContext.cssClassForInnerMatrixTable;
+}
+
+HLayoutLabelCell : WOGenericContainer {
+	elementName = "td";
+	align = "left";
+	valign = "top";
+	class = d2wContext.cssClassForHLayoutLabel;
+}
+
+HLayoutValueCell : WOGenericContainer {
+	elementName = "td";
+	align = "left";
+	valign = "top";
+	class = d2wContext.cssClassForHLayoutValue;
+}
+
+HInnerLayoutTable : WOGenericContainer {
+	elementName = "table";
+	cellspacing = "0";
+	border = "0";
+	cellpadding = "0";
+	class = d2wContext.cssClassForInnerLayoutTable;
+}
+
+VInnerLayoutTable : WOGenericContainer {
+	elementName = "table";
+	cellspacing = "0";
+	border = "0";
+	cellpadding = "0";
+	class = d2wContext.cssClassForInnerLayoutTable;
+}
+

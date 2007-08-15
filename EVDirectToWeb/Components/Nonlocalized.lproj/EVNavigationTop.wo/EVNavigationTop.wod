@@ -1,0 +1,38 @@
+LevelOneRepetition: WORepetition {
+	item = aNavigationItem;
+	list = level1Items;
+}
+
+l1NavObject: EVNavigationMenuItem {
+	navigationItem = aNavigationItem;
+    level=1;
+}
+
+LevelThreeConditional: WOConditional {
+ 	condition = showLevel3; 
+}
+
+LevelTwoConditional: WOConditional {
+	condition = showLevel2;
+}
+
+LevelTwoRepetition: WORepetition {
+	item = aNavigationItem;
+	list = level2Items;
+}
+
+LevelThreeRepetition: WORepetition {
+	item = aNavigationItem;
+	list = level3Items;
+}
+
+l2NavObject: EVNavigationMenuItem {
+	navigationItem = aNavigationItem;
+	level=2;
+}
+
+l3navObject: EVNavigationMenuItem {
+	navigationItem = aNavigationItem;
+    level=3;
+}
+

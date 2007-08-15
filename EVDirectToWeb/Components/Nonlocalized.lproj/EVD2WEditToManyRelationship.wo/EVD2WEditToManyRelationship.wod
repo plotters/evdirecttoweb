@@ -1,0 +1,46 @@
+AddButton: AjaxSubmitButton {
+	action = addObjectsAction;
+	value = ^addButtonLabel;
+	updateContainerID = updateContainerId;
+	class = "d2w_createobject";
+}
+
+DeleteButton : AjaxUpdateLink {
+	action = deleteCurrent;
+	string = "Delete";
+	value = "Delete item";
+	updateContainerID = updateContainerId;
+	beforeEffect = "blindUp";
+	beforeEffectID = innerContainerId;
+	beforeEffectDuration = "0.2";
+}
+
+Edit: ERXD2WInspect {
+	pageConfiguration = pageConfiguration;
+	object = currentObject;
+}
+
+ItemsToAdd: WOTextField {
+	size = 2;
+	value = objectsToAdd;
+	numberformat = "0";
+}
+
+List: ERXWORepetition {
+	item = currentObject;
+	list = objects;
+	index = index;
+	checkHashCodes = true;
+}
+
+TaskIsEdit: WOConditional {
+	condition = isEditing;
+}
+
+AjaxUpdateContainer : AjaxUpdateContainer {
+	id = updateContainerId;
+}
+
+ItemsString : ERXLocalizedString {
+	value = "Items";
+}

@@ -1,0 +1,7 @@
+OperatorPopUp: WOPopUpButton {
+	list = allQualifierOperators;
+	selection = selectedElement;
+	item = currentElement;
+	displayString = currentElement.value;
+}
+

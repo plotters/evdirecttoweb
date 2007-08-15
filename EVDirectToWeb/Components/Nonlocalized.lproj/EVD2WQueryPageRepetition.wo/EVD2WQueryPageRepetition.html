@@ -1,0 +1,42 @@
+<table class="$d2wContext.cssClassForQueryTable" cellspacing="0" border="0" cellpadding="0">
+	<wo:loop list="$sectionsContents" item="$currentSection">
+		<wo:if condition="$currentSection.name.length"><tr>
+			<td class="d2w_query_section" valign="middle" colspan="2" height="26"><wo name="SwitchComponent3"></wo></td>
+		</tr></wo>
+		<wo:if negate="$true" condition="$d2wContext.useMatrixLayout">
+			<wo:loop item="$propertyKey" list="$currentSectionKeys" _unroll="$true">
+				<wo:if negate="$true" condition="$d2wContext.hidePropertyName">
+					<tr>
+						<td align="left" valign="top" class="$d2wContext.cssClassForLabelCell">
+							<span class="$d2wContext.cssClassNameForPropertyLabel"><wo name="AttributeLabel1" /></span>
+						</td>
+						<td align="left" width="100%" valign="top" class="$d2wContext.cssClassForValueCell">
+							<wo name="AttributeValue2" />
+						</td>
+					</tr>
+				</wo>
+				<wo:if condition="$d2wContext.hidePropertyName">
+					<tr>
+						<td align="left" width="100%" valign="top" colspan="2" class="$d2wContext.cssClassForValueCell"><wo name="AttributeValue2"></wo></td>
+					</tr>
+				</wo>
+			</wo>
+		</wo>
+		<wo:if condition="$d2wContext.useMatrixLayout">
+			<tr>
+				<td align="left" colspan="2">
+					<wo name="LayoutTable">
+						<table cellspacing="0" border="0" cellpadding="0">
+							<tr>
+								<td align="left" valign="middle" class="$d2wContext.cssClassForLabelCell">
+									<span class="$d2wContext.cssClassNameForPropertyLabel"><wo name="SwitchComponent2"></wo></span>
+								</td>
+								<td valign="middle" class="$d2wContext.cssClassForValueCell"><wo name="AttributeValue1"></wo></td>
+							</tr>
+						</table>
+					</wo>
+				</td>
+			</tr>
+		</wo>
+	</wo>
+</table>
