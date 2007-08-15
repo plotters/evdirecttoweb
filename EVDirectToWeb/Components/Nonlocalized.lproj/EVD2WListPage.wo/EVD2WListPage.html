@@ -1,0 +1,47 @@
+<webobject name = "PageWrapper">
+  <webobject name = "Help" />
+  <div id = "d2w_listpage_content">
+    <webobject name = "D2wContextHeadingString">
+      <h1><webobject name = "ERXLocalizedString"/></h1>
+    </webobject>
+    <webobject name = "BannerComponent" />
+    <webobject name = "Header" />
+    <webobject name = "ListNotEmptyConditional">
+      <webobject name = "ShowCreateNewObjectLinkConditional">
+        <div class = "d2w_listfunc">
+          <wo:if condition = "$d2wContext.newObjectString"><wo:link action="$createNewObject" class="$d2wContext.cssClassForCreateObjectLink"><wo:localized value="$d2wContext.newObjectString" /></wo:link></wo:if>
+          <wo:else><wo:link action="$createNewObject" class="$d2wContext.cssClassForCreateObjectLink"><wo:localized value="EVD2WListPage.CREATE_NEW" /></wo:link></wo:else>
+        </div>
+      </webobject>
+      <wo:if condition="$d2wContext.showActionBar">
+      	<div class = "d2w_listfunc">
+      		<wo:EVD2WListActionBar d2wContext = "$d2wContext" />
+      	</div>
+      </wo:if>
+      <webobject name = "HasPrinterFriendlyVersionConditional">
+        <div id = "d2w_printbutton">
+          <webobject name = "ERPrinterButton"></webobject>
+        </div>
+      </webobject>
+      <webobject name = "AjaxUpdateContainer">
+      <div id = "$d2wContext.cssIdForListUpdateContainer">
+        <webobject name = "ListPageRepetition2"></webobject>
+        <webobject name = "NavBar1"></webobject>
+       </div>
+      </webobject>
+    </webobject>
+    <webobject name = "ListEmptyConditional">
+      <div id = "d2w_empptylist">
+        <webobject name = "EmptyMessageComponent"></webobject>
+        <br></br>
+      </div>
+    </webobject>
+    <webobject name = "HideReturnOnSelect1">
+      <webobject name = "ShowCancel">
+        <webobject name = "BackLink">
+          <webobject name = "BackLinkString"></webobject>
+        </webobject>
+      </webobject>
+    </webobject>
+  </div>
+</webobject>

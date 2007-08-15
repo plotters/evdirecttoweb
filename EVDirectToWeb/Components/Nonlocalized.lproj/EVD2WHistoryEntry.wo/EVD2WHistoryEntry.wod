@@ -1,0 +1,24 @@
+ModAttributeNameLabel : ERXLocalizedString {
+	value = "Attribute name";
+}
+
+ModAttributeNameString : ERXLocalizedString {
+	value = dict.attributeName;
+}
+
+ModificationRepetition : WORepetition {
+	list = object.modificationsArray;
+	item = dict;
+}
+
+NewValue : WOSwitchComponent {
+	WOComponentName = componentNameNew;
+	value = dict.currentValue;
+	addLineBreaks = true;
+}
+
+OldValue : WOSwitchComponent {
+	WOComponentName = componentNameOld;
+	value = dict.lastValue;
+	addLineBreaks = true;
+}

@@ -1,0 +1,108 @@
+BackLink : AjaxUpdateLink {
+	action = displayGroup.displayPreviousBatch;
+	updateContainerID = ^updateContainerID;
+	onClick = "Element.show('busy2')";
+	onComplete = "function(x){Element.hide('busy2')}";
+}
+
+BackString : ERXLocalizedString {
+	value = "Back";
+}
+
+ForwardLink : AjaxUpdateLink {
+	action = displayGroup.displayNextBatch;
+	updateContainerID = ^updateContainerID;
+	onClick = "Element.show('busy2')";
+	onComplete = "function(x){Element.hide('busy2')}";
+}
+
+ForwardString : ERXLocalizedString {
+	value = "Forward";
+}
+
+ShowBackLinkConditional : WOConditional {
+	condition = isFirstBatch;
+	negate = true;
+}
+
+ShowForwardLinkConditional : WOConditional {
+	condition = isLastBatch;
+	negate = true;
+}
+
+BatchString : ERXLocalizedString {
+ 	object = displayGroup;
+	keyPath = "object";
+	templateString = "BATCH_NAV_PAGE_STRING";
+}
+
+DisplayGroupEmptyConditional : WOConditional {
+	condition = displayGroup.displayedObjects.count;
+	negate = true;
+}
+
+DisplayGroupNotEmptyConditional : WOConditional {
+	condition = displayGroup.displayedObjects.count;
+}
+
+EmptyListString : ERXLocalizedString {
+	value = "No items in this list";
+}
+
+ShowPageNavConditional : WOConditional {
+	condition = showPageNavigation;
+}
+
+ShowBackForPageBatchesConditional : WOConditional {
+	condition = showBackForPageBatches;
+}
+
+ShowForwardForPageBatchesConditional : WOConditional {
+		condition = showForwardForPageBatches;
+}
+
+PagebatchBackLink : AjaxUpdateLink {
+	action = gotoPreviousPagebatch;
+	updateContainerID = ^updateContainerID;
+	onClick = "Element.show('busy2')";
+	onComplete = "function(x){Element.hide('busy2')}";
+}
+
+PagebatchForwardLink: AjaxUpdateLink {
+	action = gotoNextPagebatch;
+	updateContainerID = ^updateContainerID;
+	onClick = "Element.show('busy2')";
+	onComplete = "function(x){Element.hide('busy2')}";
+}
+
+PagebatchRepetition : WORepetition {
+	item = selectedPage;
+	list = pageNumbers;
+	checkHashCodes = false;
+}
+
+ShowLinkForPageNumberConditional : WOConditional {
+	condition = showLinkForPageNumber;
+	negate = true;
+}
+
+ShowLinkForPageNumberConditional2 : WOConditional {
+	condition = showLinkForPageNumber;
+}
+
+GotoSelectedPageLink : AjaxUpdateLink {
+	action = gotoSelectedPage;
+	updateContainerID = ^updateContainerID;
+	onClick = "Element.show('busy2')";
+	onComplete = "function(x){Element.hide('busy2')}";
+}
+
+PageNumberString : WOString {
+	numberformat = "0";
+	value = selectedPage;
+}
+
+PageNumberString2 : WOString {
+	numberformat = "0";
+	value = selectedPage;
+}

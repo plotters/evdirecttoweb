@@ -1,0 +1,7 @@
+#########################################################################
+## WOOgnl -- we need the parser
+#########################################################################
+ognl.inlineBindings=true
+ognl.active = true
+ognl.helperFunctions=true
+ognl.parseStandardTags=true

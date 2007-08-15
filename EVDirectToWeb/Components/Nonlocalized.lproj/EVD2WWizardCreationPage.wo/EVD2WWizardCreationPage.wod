@@ -1,0 +1,115 @@
+CancelButton: ERXSubmitButton {
+	value = "Cancel";
+	action = cancelAction;
+	alt = "Reverts your changes";
+	name = "Reverts your changes";
+}
+
+CancelString : ERXLocalizedString {
+	value = "Cancel";
+}
+
+CancelLink: WOHyperlink {
+	action = cancelAction;
+}
+
+ShowBannerConditional: WOConditional {
+	condition = showBanner;
+}
+
+EditForm: WOForm {
+	name = "EditForm";
+	enctype=d2wContext.formEncoding;
+	multipleSubmit = true;
+}
+
+Errors: EVD2WErrorDictionaryPanel {
+	errorMessages = errorMessages;
+	extraErrorMessage = errorMessage;
+	shouldShowNewLineAbove = true;
+	shouldShowNewLineBelow = true;
+}
+
+Help: ERDDebuggingHelp {
+	d2wContext = d2wContext;
+}
+
+InspectPageRepetition: WOSwitchComponent {
+	WOComponentName = d2wContext.repetitionComponentName;
+	d2wContext = d2wContext;
+	object = object;
+	displayPropertyKeys = currentTab.keys;
+}
+
+LeftArrow: WOImageButton {
+    filename = "PreviousMetalBtn.gif";
+    border = "0";
+    framework = "ERExtensions";
+    action = previousStep;
+    alt = "previous step";
+}
+
+PageWrapper: WOSwitchComponent {
+	_componentUnroll = true;
+	_unroll = true;
+	WOComponentName = d2wContext.pageWrapperName;
+}
+
+RightArrow: WOSubmitButton {
+    action = nextStep;
+    value = "Next Step";
+}
+
+ShowCancel: WOConditional {
+    condition=showCancel;
+}
+
+ShowNext: WOConditional {
+    condition=showNext;
+}
+
+ShowPrevious: WOConditional {
+    condition=showPrevious;
+}
+
+ShowSave: WOConditional {
+    condition=showNext;
+    negate=true;
+}
+
+StepName: ERXLocalizedString {
+    value=currentTab.name;
+}
+
+Steps: ERXLocalizedString {
+	object = self;
+	templateString = "ERD2WWizardCreationPage.stepsMessage";
+}
+
+SubmitChanges: ERXSubmitButton {
+	value = "Save";
+	action = submitAction;
+	alt = "Saves your changes";
+	name = "Saves your changes";
+}
+
+IsEditingConditional : WOConditional {
+	condition = isEditing;
+	negate = false;
+}
+
+IsInspectingConditional : WOConditional {
+	condition = isEditing;
+	negate = true;
+}
+
+PreviousPageNotNullConditional: ERXNonNullConditional {
+	condition = previousPage;
+	negate = true;
+}
+
+ReturnLink: WOHyperlink {
+	action = nextPage;
+	value = "Previous Page";
+	class = "d2w_previouspage";
+}

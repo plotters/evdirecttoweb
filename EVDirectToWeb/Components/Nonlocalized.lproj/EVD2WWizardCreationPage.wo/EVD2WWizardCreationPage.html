@@ -1,0 +1,34 @@
+<webobject name="PageWrapper">
+	<webobject name="Help"></webobject>
+	<webobject name="PreviousPageNotNullConditional">
+	    <div class = "d2w_listfunc"><webobject name="ReturnLink"><wo:localized value="Previous Page" /></webobject></div>
+	</webobject>
+	<webobject name="EditForm">
+		<div class="d2w_edit_container">
+				<webobject name="Errors"></webobject><webobject name="ShowBannerConditional">
+					<ul class="d2w_wizard_banner_ul">
+						<li class="d2w_wizard_stepname"><webobject name="StepName"></webobject></li>
+						<li class="d2w_wizard_stepsmessage"><webobject name="Steps"></webobject></li>
+					</ul></webobject>
+			<div class="d2w_inspect_repetition">
+				<webobject name="InspectPageRepetition"></webobject>
+				<div class="d2w_required_marker">* <wo:localized value="Required Field" /></div>
+				<ul class="d2w_editform_button_ul">
+					<webobject name="ShowPrevious">
+						<li><webobject name="LeftArrow"></webobject></li>
+					</webobject>
+					<webobject name="ShowNext">
+						<li><webobject name="RightArrow"></webobject></li>
+					</webobject>
+					<webobject name="ShowSave">
+						<li><webobject name="SubmitChanges"></webobject></li>
+					</webobject>
+					<webobject name="ShowCancel">
+						<webobject name="IsEditingConditional"><li><webobject name="CancelButton"></webobject></li></webobject>
+						<webobject name="IsInspectingConditional"><li><webobject name="CancelLink"><webobject name="CancelString"></webobject></webobject></li></webobject>
+					</webobject>
+				</ul>
+			</div>
+		</div>
+	</webobject>
+</webobject>

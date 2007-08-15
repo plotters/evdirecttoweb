@@ -1,0 +1,26 @@
+ExtraMessageConditional: WOConditional {
+	condition = extraErrorMessage.length;
+}
+
+DictionaryRepetition: WORepetition { 	
+	list = errorKeys;
+	item = errorKey;
+}
+
+HasErrorsConditional: WOConditional {
+	condition = hasErrors;
+}
+
+ErrorMessageString: WOString {
+	value = errorMessageItem;
+	escapeHTML=false;
+}
+
+ExtraErrorMessageString: WOString {
+	value = extraErrorMessage;
+	escapeHTML=false;
+}
+
+ErrorHeaderString : ERXLocalizedString {
+	value = errorTitleMessage;
+}

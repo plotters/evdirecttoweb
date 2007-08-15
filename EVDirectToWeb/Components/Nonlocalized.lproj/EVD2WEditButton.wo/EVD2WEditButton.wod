@@ -1,0 +1,33 @@
+Conditional1: WOConditional {
+	condition = isEditable;
+}
+
+Conditional2: WOConditional {
+	condition = isEditable;
+	negate = true;
+}
+
+EditEO: WOHyperlink {
+	action = editObjectAction;
+	title = ^displayNameForEditConfiguration;
+}
+
+EditImage: WOImage {
+	alt = ^displayNameForEditConfiguration;
+	border = "0";
+	filename = imageFileName;
+	framework = "JavaDirectToWeb";
+}
+
+EditLinkString : ERXLocalizedString {
+	value = "edit";
+}
+
+ImageLinkConditional : WOConditional {
+	condition = useTextLink;
+	negate = true;
+}
+
+TextLinkConditional : WOConditional {
+	condition = useTextLink;
+}

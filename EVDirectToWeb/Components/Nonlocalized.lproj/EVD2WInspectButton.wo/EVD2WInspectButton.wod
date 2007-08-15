@@ -1,0 +1,24 @@
+InspectEO: WOHyperlink {
+	action = inspectObjectAction;
+	title = ^displayNameForInspectConfiguration;
+}
+
+InspectImage: WOImage {
+	alt = ^displayNameForInspectConfiguration;
+	border = "0";
+	filename = "magglass-btn.gif";
+	framework = "JavaDirectToWeb";
+}
+
+InspectLinkString : ERXLocalizedString {
+	value = "inspect";
+}
+
+ImageLinkConditional : WOConditional {
+	condition = useTextLink;
+	negate = true;
+}
+
+TestLinkConditional : WOConditional {
+	condition = useTextLink;
+}

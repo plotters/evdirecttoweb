@@ -1,0 +1,79 @@
+DoNotUseLinkForTabSwitch: WOConditional {
+  condition=useLinkForTabSwitch;
+  negate=true;
+}
+
+HasNoSubmitAction: WOConditional {
+	condition = ^useFormSubmit;
+	negate = true;
+}
+
+HasSubmitAction: WOConditional {
+	condition = ^useFormSubmit;
+}
+
+Hyperlink1: AjaxUpdateLink {
+	class = cellTabClass;
+	 // "javascript:document.EditForm.submit();";
+//	elementName = "a";
+	onClick = submitString;
+    action = switchSubmitTab;
+}
+
+NotSelectedTabConditional: WOConditional {
+	condition = isCellShaded;
+}
+
+SelectedTabConditional: WOConditional {
+	condition = isCellShaded;
+	negate = true;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = switchSubmitTab;
+	name = currentTabNameWithoutSpaces;
+	style = "position:absolute; left:-1000px;";
+	value = "-";
+}
+
+TabImage: WOActiveImage {
+	action = switchSubmitTab;
+	align = "absmiddle";
+	alt = "switch to this tab";
+	border = "0";
+	filename = "scrollDown.gif";
+	framework = "JavaWOExtensions";
+	height = "15";
+	width = "13";
+	name = currentTabNameWithoutSpaces;
+}
+
+TabLink: WOHyperlink {
+	action = switchTab;
+	updateContainerID = updateContainerId;
+}
+
+TabName: ERXLocalizedString {
+	value = currentTabNameWithoutSpaces;
+}
+
+TabName3: ERXLocalizedString {
+	value = currentTabNameWithoutSpaces;
+}
+
+TabName4: ERXLocalizedString {
+	value = currentTabNameWithoutSpaces;
+}
+
+TabRepetition: WORepetition {
+	item = currentTab;
+	list = tabs;
+}
+
+UseLinkForTabSwitch: WOConditional {
+    condition=useLinkForTabSwitch;
+}
+
+ComponentContent : WOComponentContent {
+	
+}

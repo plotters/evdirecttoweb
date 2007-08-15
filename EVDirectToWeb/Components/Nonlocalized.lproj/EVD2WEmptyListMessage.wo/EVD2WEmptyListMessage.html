@@ -1,0 +1,21 @@
+<div class = "$d2wContext.cssClassForEmptyListMessage">
+  <webobject name = "HasNoMessage">
+    <webobject name = "EmptyListTemplate"></webobject>
+  </webobject>
+  <webobject name = "HasMessage">
+    <webobject name = "EmptyListMessage"></webobject>
+  </webobject>
+  <wo:if condition = "$showCreateObjectLink">
+    <br />
+    <br />
+    <wo:link action = "$createObject">
+      <wo:localized value = "EmptyListComponent.CREATE_NEW_ENTRY" />
+    </wo:link>
+  </wo:if>
+  <wo:if condition = "$d2wContext.showActionBar">
+    <div style = "text-align: center;">
+      <br />
+      <wo:EVD2WListActionBar d2wContext = "$d2wContext" />
+    </div>
+  </wo:if>
+</div>

@@ -1,0 +1,30 @@
+<div class="d2w_navbar">
+<webobject name="DisplayGroupNotEmptyConditional">
+	<div class="d2w_pagelinks">
+	<webobject name="ShowBackLinkConditional"><webobject name="BackLink">&laquo;&nbsp;<webobject name="BackString"></webobject></webobject></webobject><webobject name="ShowForwardLinkConditional">&nbsp;&nbsp;&nbsp;<webobject name="ForwardLink"><webobject name="ForwardString"></webobject>&nbsp;&raquo;</webobject></webobject>
+	<webobject name="ShowPageNavConditional"><br />[
+		<webobject name="ShowBackForPageBatchesConditional">
+			<webobject name="PagebatchBackLink">&laquo;</webobject>&nbsp;&nbsp;...
+		</webobject>
+		<webobject name="PagebatchRepetition">
+			<webobject name="ShowLinkForPageNumberConditional">
+				<webobject name="GotoSelectedPageLink"><webobject name="PageNumberString"></webobject></webobject>
+			</webobject>
+			<webobject name="ShowLinkForPageNumberConditional2">
+				&raquo;<webobject name="PageNumberString2"></webobject>&laquo;
+			</webobject>
+		</webobject>
+		<webobject name="ShowForwardForPageBatchesConditional">
+			...&nbsp;&nbsp;<webobject name="PagebatchForwardLink">&raquo;</webobject>
+		</webobject>]&nbsp;
+	</webobject>
+	</div>
+	<div style="float: right; margin: 0px 16px 0 0;"><img src="http://www.napyfab.com/ajax-indicators/images/indicator.gif" id="busy2" style="display:none;"/></div>
+	<div class="d2w_pagebatchstr">
+		<webobject name="BatchString"></webobject>
+	</div>
+</webobject>
+<webobject name="DisplayGroupEmptyConditional">
+	<webobject name="EmptyListString"></webobject>
+</webobject>
+</div>

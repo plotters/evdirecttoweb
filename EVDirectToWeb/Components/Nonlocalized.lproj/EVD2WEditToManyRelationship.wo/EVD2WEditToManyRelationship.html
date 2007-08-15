@@ -1,0 +1,12 @@
+<webobject name = "AjaxUpdateContainer">
+  <webobject name = "TaskIsEdit">
+    <webobject name = "AddButton"></webobject>&nbsp;<webobject name = "ItemsToAdd"></webobject>&nbsp;<webobject name = "ItemsString" /><br>
+  </webobject>
+  <webobject name = "List">
+	<wo:AjaxUpdateContainer id = "$innerContainerId">
+	<br>
+    <wo:if condition = "$isEditing"><div style="text-align: right; margin-botton: 2px;"><webobject name ="DeleteButton"></webobject></div></wo:if>
+    <webobject name = "Edit"></webobject>
+    </wo:AjaxUpdateContainer>
+  </webobject>
+</webobject>

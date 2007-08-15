@@ -1,0 +1,187 @@
+CancelButton: ERXSubmitButton {
+	action = cancelAction;
+	value = session.localizer.Cancel;
+}
+
+CancelButton2: ERXSubmitButton {
+	action = nextPage;
+	value = "Cancel";
+}
+
+CurrentTabIsLastTabConditional: WOConditional {
+	condition = currentTabIsLastTab;
+	negate = true;
+}
+
+CurrentTabIsFirstTabConditional: WOConditional {
+	condition = currentTabIsFirstTab;
+	negate = true;
+}
+
+ShowNextPreviousButtonsConditional: WOConditional {
+	condition = shouldShowNextPreviousButtons;
+}
+
+ShowReturnButtonConditional: WOConditional {
+	condition = d2wContext.shouldShowReturnButton;
+}
+
+ShowReturnButtonConditional2: WOConditional {
+	condition = d2wContext.shouldShowReturnButton;
+	negate = true;
+}
+
+Conditional2: WOConditional {
+	condition = d2wContext.shouldShowSubmitButton;
+}
+
+HasPrinterFriendlyVersionConditional: WOConditional {
+	condition = d2wContext.hasPrinterFriendlyVersion;
+}
+
+Conditional5: WOConditional {
+	condition = d2wContext.useFocus;
+}
+
+ShowCancelConditional: WOConditional {
+	condition = showCancel;
+}
+
+EditForm: ERXOptionalForm {
+	enctype = d2wContext.formEncoding;
+	showForm = d2wContext.hasForm;
+	name = "EditForm";
+	multipleSubmit = true;
+}
+
+
+EditLink: WOHyperlink {
+	action = editAction;
+	class=d2wContext.editButtonClass;
+}
+
+EditLink2: WOHyperlink {
+	action = submitAction;
+}
+
+Errors: EVD2WErrorDictionaryPanel {
+	errorMessages = errorMessages;
+	extraErrorMessage = errorMessage;
+	shouldShowNewLineAbove = true;
+	shouldShowNewLineBelow = true;
+}
+
+Help: ERDDebuggingHelp {
+	d2wContext = d2wContext;
+}
+
+
+InspectPageRepetition: WOSwitchComponent {
+	WOComponentName = d2wContext.repetitionComponentName;
+	d2wContext = d2wContext;
+	object = object;
+	displayPropertyKeys = currentTab.keys;
+}
+
+IsEditing: WOKeyValueConditional {
+	key = "task";
+	value = "edit";
+}
+
+IsEditingConditional: WOConditional {
+	_unroll = true;
+	condition = isEditing;
+}
+
+IsEntityWritable2: WOConditional {
+	_unroll = true;
+	condition = isObjectEditable;
+	negate = false;
+}
+
+IsNotEditingConditional2: WOConditional {
+	_unroll = true;
+	condition = isEditing;
+	negate = true;
+}
+
+IsTaskEdit: ERXEqualConditional {
+	value1 = d2wContext.task;
+	value2 = "edit";
+}
+
+PreviousPageNullConditional: ERXNonNullConditional {
+	condition = previousPage;
+	negate = false;
+}
+
+PreviousPageNotNullConditional: ERXNonNullConditional {
+	condition = previousPage;
+	negate = true;
+}
+
+PageWrapper: WOSwitchComponent {
+	WOComponentName = d2wContext.pageWrapperName;
+	_componentUnroll = true;
+	_unroll = true;
+}
+
+PrintButton: WOImage {
+	alt = "Gives you ";
+	border = 0;
+	name = "Reverts your changes";
+	src = "/nsi/buttonPrint.gif";
+}
+
+PrinterFriendlyLink: ERXJSOpenWindowHyperlink {
+	action = printerFriendlyVersion;
+	scrollbars = true;
+	target = "PrinterFriendly";
+}
+
+ReturnLink: WOHyperlink {
+	action = nextPage;
+	value = "Previous Page";
+	class = d2wContext.previousPageLinkClass;
+}
+
+Script: WOJavaScript {
+	scriptString = tabScriptString;
+	hideInComment = true;
+}
+
+SubmitChanges: ERXSubmitButton {
+	action = submitAction;
+	value = session.localizer.Save;
+}
+
+NextTabButton: ERXSubmitButton {
+	action = nextTabAction;
+	value = "Next Tab";
+}
+
+PreviousTabButton: ERXSubmitButton {
+	action = previousTabAction;
+	value = "Previous Tab";
+}
+
+TabComponent: WOSwitchComponent {
+	WOComponentName = tabComponentName;
+	bgColor = "#CC00CC";
+	nonSelectedBgColor = d2wContext.nonSelectedTabBgColor;
+	selectedTab = currentTab;
+	submitActionName = switchTabActionName;
+	tabNameKey = "displayName";
+	tabs = tabSectionsContents;
+	useFormSubmit = isEditing;
+	updateContainerId = "InspectPageRepetitionUpdateContainer";
+}
+
+EditLinkString: ERXLocalizedString {
+	value = "Edit";
+}
+
+
+Wrapper : ERXUniquingWrapper {
+	id = selectedTabIdentifier;
+}
