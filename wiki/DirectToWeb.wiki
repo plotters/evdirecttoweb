@@ -1,1 +1,0 @@
-DirectToWeb is a technology inside Apple's WebObjects web application development framework that takes rule based development to new levels. 
