@@ -1,6 +1,6 @@
 package net.events.d2w.extensions;
 
-import com.webobjects.appserver.WOComponent;
+import com.webobjects.appserver.*;
 import com.webobjects.directtoweb.D2W;
 import com.webobjects.directtoweb.EditPageInterface;
 import com.webobjects.directtoweb.ListPageInterface;
@@ -203,4 +203,16 @@ public class EVD2WSession extends ERXSession {
     		return super.valueForKeyPath(keyPath);
     	}
 	}
+    
+    /**
+     * Logs the user out and terminates the session
+     * 
+     * @return
+     */
+    public WOComponent logout() {
+        WOComponent redirectPage = pageWithName(WORedirect.class.getName());
+        ((WORedirect) redirectPage).setUrl(D2W.factory().homeHrefInContext(context()));
+        session().terminate();
+        return redirectPage;
+    }
 }
