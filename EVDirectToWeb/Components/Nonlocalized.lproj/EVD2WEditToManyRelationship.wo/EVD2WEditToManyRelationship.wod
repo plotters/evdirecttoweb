@@ -5,14 +5,14 @@ AddButton: AjaxSubmitButton {
 	class = "d2w_createobject";
 }
 
-DeleteButton : AjaxUpdateLink {
+DeleteButton : AjaxSubmitButton {
 	action = deleteCurrent;
 	string = "Delete";
-	value = "Delete item";
+	value = "Delete";
 	updateContainerID = updateContainerId;
-	beforeEffect = "blindUp";
 	beforeEffectID = innerContainerId;
-	beforeEffectDuration = "0.2";
+	insertion = "Effect.blindUp";
+	insertionDuration = "0.2";
 }
 
 Edit: ERXD2WInspect {
