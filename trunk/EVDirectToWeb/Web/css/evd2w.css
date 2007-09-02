@@ -34,6 +34,32 @@ abbr,acronym {
 
 /* @end */
 
+/* @group Backgrounds */
+
+.error_bg {
+	background-color: #ffffcc;
+}
+
+/* @end */
+
+.b_400 {
+	margin: 3em auto 3em auto;
+	width: 400px;
+	padding: 32px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.border_double {
+	border-style: double;
+}
+
+.border_red {
+	border: 1px solid #B52C07;
+}
+
 /* @group General */
 
 body {
@@ -709,3 +735,37 @@ td, th {
 }
 
 /* @end */
+
+#ev_ds {
+	margin: 1em 1em;
+	text-align: left;
+}
+
+#ev_ds h1 {
+	margin: 0em 0em 0.5em 0em;
+}
+
+.ev_ds_desc {
+	font-style: italic;
+	margin-bottom: 2em;
+}
+
+.ev_ds_q {
+	font-weight: bold;
+}
+
+.ev_ds_textfield {
+	width: 20em;
+	margin-top: 0.5em;
+}
+
+.ERXMatrixTableCell {
+	padding: 0.5em 1em 0.5em 0.2em;
+}
+
+.ev_ds_item {
+	border: 1px solid #ddd;
+	padding: 0.5em;
+	margin-bottom: 1em;
+}
+
