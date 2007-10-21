@@ -1,0 +1,8 @@
+alter table data_set_templates add column bottom_text varchar (4000000);
+alter table data_set_templates add column top_text varchar (4000000);
+
+alter table data_set_item add column active bool;
+update data_set_item set active = true;
+
+alter table blog_entries add column active bool;
+update blog_entries set active = true;

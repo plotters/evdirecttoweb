@@ -1,0 +1,14 @@
+DROP SEQUENCE modifications_seq CASCADE;
+DROP TABLE modifications CASCADE;
+CREATE TABLE modifications (creation_time timestamp NOT NULL, modification_id int8 NOT NULL, modifications_array bytea , primary_key_name varchar(256) NOT NULL, primary_key_value varchar(256) NOT NULL, type varchar(256) NOT NULL);
+CREATE SEQUENCE modifications_seq;
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('modifications_seq', (SELECT MAX(modification_id) FROM modifications));
+DROP TABLE EOF_TMP_TABLE;
+ALTER TABLE modifications ALTER COLUMN modification_id SET DEFAULT nextval( 'modifications_seq' );
+ALTER TABLE modifications ADD CONSTRAINT modifications_pk PRIMARY KEY (modification_id);
+
+alter table contacts add ethnic_group varchar (256);
+alter table contacts add other_ethnic_group varchar (256);
+alter table contacts ALTER COLUMN weight type numeric(20,3);
+
+alter table modifications add column created_by_id int8 not null references contacts (contact_id) on delete nullify;

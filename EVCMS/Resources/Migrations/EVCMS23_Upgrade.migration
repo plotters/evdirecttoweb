@@ -1,0 +1,7 @@
+alter table contacts add column company_name varchar(256);
+alter table contacts add column company_name2 varchar(256);
+
+create index contacts__company_name__index on contacts (company_name varchar_pattern_ops);
+create index contacts__email__index on contacts (email varchar_pattern_ops);
+create index contacts__firstname__index on contacts (firstname varchar_pattern_ops);
+create index contacts__lastname__index on contacts (lastname varchar_pattern_ops);

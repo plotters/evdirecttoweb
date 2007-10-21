@@ -1,0 +1,38 @@
+PageWrapper : EVPageWrapper {
+	html = session.requestedObject.pageForDisplay.pageWrapper.componentTemplate;
+}
+
+Form1: WOForm {
+	name = "form";
+}
+
+LoginString: ERXLocalizedString {
+	value = "Login";
+}
+
+MessageAvailableConditional: WOConditional {
+	condition = messageAvailable;
+}
+
+MessageString: ERXLocalizedString {
+	value = message;
+}
+
+PasswordString: ERXLocalizedString {
+	value = "Password";
+}
+
+SubmitButton: WOSubmitButton {
+	value = session.localizer.LoginButtonLabel;
+	action = submit;
+}
+
+LoginTextField: WOTextField {
+	value = login;
+	name = "login";
+	WODebug = true;
+}
+
+PasswordTextfield: WOPasswordField {
+	value = password;
+}

@@ -1,0 +1,45 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           columnName = login_from_ip;
+           name = loginFromIp;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = login_id;
+           name = loginId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = login_time;
+           name = loginTime;
+           prototypeName = datetime;
+       }
+    );
+    className = net.events.cms.eo.Login;
+    classProperties = 
+    (
+       loginFromIp, 
+       loginTime
+    );
+    externalName = logins;
+    internalInfo = 
+    {
+        _clientClassPropertyNames = 
+        (
+           loginFromIp, 
+           loginTime
+        );
+    };
+    name = Login;
+    primaryKeyAttributes = 
+    (
+       loginId
+    );
+}

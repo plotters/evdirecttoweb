@@ -1,0 +1,33 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = number_unit_id;
+           name = numberUnitId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = unit;
+           name = unit;
+           prototypeName = string32;
+       }
+    );
+    className = net.events.cms.eo.NumberUnit;
+    classProperties = 
+    (
+       unit
+    );
+    externalName = number_units;
+    internalInfo = 
+    {};
+    name = NumberUnit;
+    primaryKeyAttributes = 
+    (
+       numberUnitId
+    );
+}

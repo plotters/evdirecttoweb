@@ -1,0 +1,107 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = client_id;
+           name = clientId;
+           prototypeName = key;
+       }, 
+       
+       {
+           columnName = contact_id;
+           name = contactId;
+           prototypeName = key;
+       }, 
+       
+       {
+           columnName = created_by_id;
+           name = createdById;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = inheritance_type;
+           name = inheritanceType;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = note;
+           name = note;
+           prototypeName = string4m;
+       }, 
+       
+       {
+           columnName = note_id;
+           name = noteId;
+           prototypeName = key;
+       }
+    );
+    attributesUsedForLocking = 
+    (
+       inheritanceType
+    );
+    className = net.events.cms.eo.ContactNote;
+    classProperties = 
+    (
+       client, 
+       contact, 
+       inheritanceType, 
+       note
+    );
+    externalName = notes;
+    internalInfo = 
+    {
+        _clientClassPropertyNames = 
+        (
+           contact, 
+           note
+        );
+    };
+    name = ContactNote;
+    parent = Note;
+    primaryKeyAttributes = 
+    (
+       noteId
+    );
+    relationships = 
+    (
+       
+       {
+           destination = Client;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = client;
+       }, 
+       
+       {
+           destination = Contact;
+           isMandatory = Y;
+           isToMany = N;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = contactId;
+                  sourceAttribute = contactId;
+              }
+           );
+           name = contact;
+       }
+    );
+    restrictingQualifier = "(inheritanceType = 'ContactNote')";
+}

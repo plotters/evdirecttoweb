@@ -1,0 +1,31 @@
+CREATE TABLE data_set_selection_options (
+	active bool NOT NULL, 
+	client_id int8 NOT NULL, 
+	created_by_id int8 NOT NULL, 
+	creationTime timestamp NOT NULL, 
+	data_set_item_id int8 NOT NULL, 
+	data_set_selection_option_id int8 NOT NULL, 
+	option_name varchar(256) NOT NULL, 
+	order_number int4 NOT NULL
+);
+
+CREATE SEQUENCE data_set_selection_options_seq;
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('data_set_selection_options_seq', (SELECT MAX(data_set_selection_option_id) FROM data_set_selection_options));
+DROP TABLE EOF_TMP_TABLE;
+
+ALTER TABLE data_set_selection_options ALTER COLUMN data_set_selection_option_id SET DEFAULT nextval( 'data_set_selection_options_seq' );
+ALTER TABLE data_set_selection_options ADD CONSTRAINT data_set_selection_options_pk PRIMARY KEY (data_set_selection_option_id);
+
+ALTER TABLE data_set_selection_options ADD CONSTRAINT data_set_selection_options_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX data_set_selection_options_client_id_idx ON data_set_selection_options( client_id );
+
+ALTER TABLE data_set_selection_options ADD CONSTRAINT data_set_selection_options_createdBy_FK FOREIGN KEY (created_by_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX data_set_selection_options_created_by_id_idx ON data_set_selection_options( created_by_id );
+
+ALTER TABLE data_set_selection_options ADD CONSTRAINT data_set_selection_options_dataSetItem_FK FOREIGN KEY (data_set_item_id) REFERENCES data_set_item (data_set_item_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX data_set_selection_options_data_set_item_id_idx ON data_set_selection_options( data_set_item_id );
+
+alter table data_set_item_value add column selected_option_id int8;
+ALTER TABLE data_set_item_value ADD CONSTRAINT data_set_item_value_selectedOption_FK FOREIGN KEY (selected_option_id) REFERENCES data_set_selection_options (data_set_selection_option_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX data_set_item_value_selected_option_id_idx ON data_set_item_value( selected_option_id );
+

@@ -1,0 +1,71 @@
+Link : WOHyperlink {
+  directActionName = "blogEntry";
+  actionClass = "Web";
+  disabled = disableLink;
+  ?entryId = blogEntry.primaryKey;
+  ?pageId = context.page.page.primaryKey;
+  ?batch = currentBatch;
+}
+
+ShowReadMoreLink : WOConditional {
+  condition = showReadMoreLink;
+}
+
+ShowTeaser : WOConditional {
+  condition = showTeaser;
+}
+
+BlogEntryTeaser : WOString {
+  value = blogEntry.teaser;
+  escapeHTML = false;
+}
+
+ERXElse : ERXElse {
+}
+
+BlogEntryContent : WOString {
+  value = blogEntry.content;
+  escapeHTML = false;
+}
+
+ERXLocalizedString : WOString {
+  value = localizer.EVCMS.READ_MORE;
+}
+
+ERXLocalizedString1 : WOString {
+  value = localizer.EVCMS.CREATED_BY;
+}
+
+BlogEntryCreatedByFirstname : WOString {
+  value = blogEntry.createdBy.firstname;
+}
+
+ERXLocalizedString2 : WOString {
+  value = localizer.EVCMS.COMMENTS;
+}
+
+BlogEntryCommentsCount : WOString {
+  value = blogEntry.comments.count;
+  valueWhenEmpty = "0";
+}
+
+BlogPageCategory : WOString {
+  value = localizer.BlogPage.Category;
+}
+
+BlogEntryCategoryCategoryName : WOString {
+  value = blogEntry.category.categoryName;
+}
+
+BlogEntryCreationTime : WOString {
+  value = blogEntry.creationTime;
+  dateformat = "%d.%m.%Y";
+}
+
+BlogEntryTitle : WOString {
+  value = blogEntry.title;
+}
+
+BlogEntrySubtitle : WOString {
+  value = blogEntry.subtitle;
+}

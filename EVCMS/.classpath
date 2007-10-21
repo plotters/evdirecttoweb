@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="src" path="GeneratedEOs"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/PostgresqlPlugIn"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ERExtensions"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ERJars"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/EVExtensions"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/EVPrototypes"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/JavaWOExtensions"/>
+	<classpathentry kind="con" path="org.objectstyle.wolips.WO_CLASSPATH/ERExtensions/FrontBasePlugIn/PostgresqlPlugIn/JavaEOAccess/JavaEOControl/JavaFoundation/JavaJDBCAdaptor/JavaWebObjects/JavaXML"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/EVDirectToWeb"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ERJavaMail"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Ajax"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

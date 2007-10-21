@@ -1,0 +1,151 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = client_id;
+           name = clientId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = created_by_id;
+           name = createdById;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = creation_time;
+           name = creationTime;
+           prototypeName = datetime;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = data_set_template_id;
+           name = dataSetTemplateId;
+           prototypeName = key;
+       }, 
+       
+       {
+           columnName = page_bottom_text;
+           name = pageBottomText;
+           prototypeName = string4k;
+       }, 
+       
+       {
+           columnName = page_header;
+           name = pageHeader;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = page_id;
+           name = pageId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = page_number;
+           name = pageNumber;
+           prototypeName = integer;
+       }, 
+       
+       {
+           columnName = page_top_text;
+           name = pageTopText;
+           prototypeName = string4k;
+       }
+    );
+    className = net.events.cms.eo.DataSetPage;
+    classProperties = 
+    (
+       client, 
+       createdBy, 
+       creationTime, 
+       dataSetTemplate, 
+       pageBottomText, 
+       pageHeader, 
+       pageNumber, 
+       pageTopText, 
+       sections
+    );
+    externalName = data_set_pages;
+    internalInfo = 
+    {};
+    name = DataSetPage;
+    primaryKeyAttributes = 
+    (
+       pageId
+    );
+    relationships = 
+    (
+       
+       {
+           destination = Client;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = client;
+       }, 
+       
+       {
+           destination = EventsUser;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = contactId;
+                  sourceAttribute = createdById;
+              }
+           );
+           name = createdBy;
+       }, 
+       
+       {
+           destination = DataSetTemplate;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetId;
+                  sourceAttribute = dataSetTemplateId;
+              }
+           );
+           name = dataSetTemplate;
+       }, 
+       
+       {
+           deleteRule = EODeleteRuleDeny;
+           destination = DataSetSection;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = pageId;
+                  sourceAttribute = pageId;
+              }
+           );
+           name = sections;
+       }
+    );
+}

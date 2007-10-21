@@ -1,0 +1,153 @@
+CREATE TABLE severity_grades (
+	client_id int8 NOT NULL, 
+	ceated_by_id int8 NOT NULL, 
+	creation_time timestamp NOT NULL, 
+	id int8 NOT NULL, 
+	name varchar(256) NOT NULL
+);
+
+CREATE TABLE seriousnesses (
+	client_id int8 NOT NULL, 
+	created_by_id int8 NOT NULL, 
+	creation_time timestamp NOT NULL, 
+	id int8 NOT NULL, 
+	name varchar(256) NOT NULL
+);
+
+CREATE TABLE causality_assessments (
+	causality varchar(256) NOT NULL, 
+	client_id int8 NOT NULL, 
+	created_by_id int8 NOT NULL, 
+	creation_time timestamp NOT NULL, 
+	id int8 NOT NULL
+);
+
+CREATE TABLE adverse_event_outcomes (
+	client_id int8 NOT NULL, 
+	created_by_id int8 NOT NULL, 
+	creation_time timestamp NOT NULL, 
+	id int8 NOT NULL, 
+	outcome varchar(256) NOT NULL
+);
+
+CREATE TABLE adverse_events (
+	adverse_event_id int8 NOT NULL, 
+	causality_assessment_id int8 NOT NULL, 
+	client_id int8 NOT NULL, 
+	clinical_trial_id int8 NOT NULL, 
+	created_by_id int8 NOT NULL, 
+	creation_time timestamp NOT NULL, 
+	date_of_resolution date , 
+	event_date date NOT NULL, 
+	outcome_id int8 NOT NULL, 
+	participant_id int8 NOT NULL, 
+	seriousness_id int8 NOT NULL, 
+	severity_grade_id int8 NOT NULL, 
+	text_description varchar(4000000) NOT NULL
+);
+
+CREATE SEQUENCE severity_grades_seq;
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('severity_grades_seq', (SELECT MAX(id) FROM severity_grades));
+DROP TABLE EOF_TMP_TABLE;
+ALTER TABLE severity_grades ALTER COLUMN id SET DEFAULT nextval( 'severity_grades_seq' );
+
+CREATE SEQUENCE seriousnesses_seq;
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('seriousnesses_seq', (SELECT MAX(id) FROM seriousnesses));
+DROP TABLE EOF_TMP_TABLE;
+ALTER TABLE seriousnesses ALTER COLUMN id SET DEFAULT nextval( 'seriousnesses_seq' );
+
+CREATE SEQUENCE causality_assessments_seq;
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('causality_assessments_seq', (SELECT MAX(id) FROM causality_assessments));
+DROP TABLE EOF_TMP_TABLE;
+ALTER TABLE causality_assessments ALTER COLUMN id SET DEFAULT nextval( 'causality_assessments_seq' );
+
+CREATE SEQUENCE adverse_event_outcomes_seq;
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('adverse_event_outcomes_seq', (SELECT MAX(id) FROM adverse_event_outcomes));
+DROP TABLE EOF_TMP_TABLE;
+ALTER TABLE adverse_event_outcomes ALTER COLUMN id SET DEFAULT nextval( 'adverse_event_outcomes_seq' );
+
+CREATE SEQUENCE adverse_events_seq;
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('adverse_events_seq', (SELECT MAX(adverse_event_id) FROM adverse_events));
+DROP TABLE EOF_TMP_TABLE;
+ALTER TABLE adverse_events ALTER COLUMN adverse_event_id SET DEFAULT nextval( 'adverse_events_seq' );
+
+ALTER TABLE severity_grades ADD CONSTRAINT severity_grades_pk PRIMARY KEY (id);
+ALTER TABLE seriousnesses ADD CONSTRAINT seriousnesses_pk PRIMARY KEY (id);
+ALTER TABLE causality_assessments ADD CONSTRAINT causality_assessments_pk PRIMARY KEY (id);
+ALTER TABLE adverse_event_outcomes ADD CONSTRAINT adverse_event_outcomes_pk PRIMARY KEY (id);
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_pk PRIMARY KEY (adverse_event_id);
+
+ALTER TABLE severity_grades ADD CONSTRAINT severity_grades_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX severity_grades_client_id_idx ON severity_grades( client_id );
+
+ALTER TABLE severity_grades ADD CONSTRAINT severity_grades_createdBy_FK FOREIGN KEY (ceated_by_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX severity_grades_ceated_by_id_idx ON severity_grades( ceated_by_id );
+
+ALTER TABLE seriousnesses ADD CONSTRAINT seriousnesses_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX seriousnesses_client_id_idx ON seriousnesses( client_id );
+
+ALTER TABLE seriousnesses ADD CONSTRAINT seriousnesses_createdBy_FK FOREIGN KEY (created_by_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX seriousnesses_created_by_id_idx ON seriousnesses( created_by_id );
+
+ALTER TABLE causality_assessments ADD CONSTRAINT causality_assessments_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX causality_assessments_client_id_idx ON causality_assessments( client_id );
+
+ALTER TABLE causality_assessments ADD CONSTRAINT causality_assessments_createdBy_FK FOREIGN KEY (created_by_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX causality_assessments_created_by_id_idx ON causality_assessments( created_by_id );
+
+ALTER TABLE adverse_event_outcomes ADD CONSTRAINT adverse_event_outcomes_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_event_outcomes_client_id_idx ON adverse_event_outcomes( client_id );
+
+ALTER TABLE adverse_event_outcomes ADD CONSTRAINT adverse_event_outcomes_createdBy_FK FOREIGN KEY (created_by_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_event_outcomes_created_by_id_idx ON adverse_event_outcomes( created_by_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_causalityAssessment_FK FOREIGN KEY (causality_assessment_id) REFERENCES causality_assessments (id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_causality_assessment_id_idx ON adverse_events( causality_assessment_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_client_id_idx ON adverse_events( client_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_clinicalTrial_FK FOREIGN KEY (clinical_trial_id) REFERENCES clinical_trials (clinical_trial_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_clinical_trial_id_idx ON adverse_events( clinical_trial_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_createdBy_FK FOREIGN KEY (created_by_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_created_by_id_idx ON adverse_events( created_by_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_outcome_FK FOREIGN KEY (outcome_id) REFERENCES adverse_event_outcomes (id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_outcome_id_idx ON adverse_events( outcome_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_seriousness_FK FOREIGN KEY (seriousness_id) REFERENCES seriousnesses (id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_seriousness_id_idx ON adverse_events( seriousness_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_severityGrade_FK FOREIGN KEY (severity_grade_id) REFERENCES severity_grades (id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_severity_grade_id_idx ON adverse_events( severity_grade_id );
+
+ALTER TABLE adverse_events ADD CONSTRAINT adverse_events_studyParticipant_FK FOREIGN KEY (participant_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_events_participant_id_idx ON adverse_events( participant_id );
+
+
+ALTER TABLE severity_grades ADD COLUMN clinical_trial_id int8 not null;
+ALTER TABLE severity_grades ADD CONSTRAINT severity_grades_clinicalTrial_FK FOREIGN KEY (clinical_trial_id) REFERENCES clinical_trials (clinical_trial_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX severity_grades_clinical_trial_id_idx ON severity_grades( clinical_trial_id );
+
+ALTER TABLE adverse_event_outcomes ADD COLUMN clinical_trial_id int8 not null;
+ALTER TABLE adverse_event_outcomes ADD CONSTRAINT adverse_event_outcomes_clinicalTrial_FK FOREIGN KEY (clinical_trial_id) REFERENCES clinical_trials (clinical_trial_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX adverse_event_outcomes_clinical_trial_id_idx ON adverse_event_outcomes( clinical_trial_id );
+
+ALTER TABLE causality_assessments ADD COLUMN clinical_trial_id int8 not null;
+ALTER TABLE causality_assessments ADD CONSTRAINT causality_assessments_clinicalTrial_FK FOREIGN KEY (clinical_trial_id) REFERENCES clinical_trials (clinical_trial_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX causality_assessments_clinical_trial_id_idx ON causality_assessments( clinical_trial_id );
+
+ALTER TABLE seriousnesses ADD COLUMN clinical_trial_id int8 not null;
+ALTER TABLE seriousnesses ADD CONSTRAINT seriousnesses_clinicalTrial_FK FOREIGN KEY (clinical_trial_id) REFERENCES clinical_trials (clinical_trial_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX seriousnesses_clinical_trial_id_idx ON seriousnesses( clinical_trial_id );
+
+
+alter table causality_assessments add column order_number int4 not null;
+alter table severity_grades add column order_number int4 not null;
+alter table adverse_event_outcomes add column order_number int4 not null;
+alter table seriousnesses add column order_number int4 not null;
+
+alter table data_set rename to data_set_templates;
+update data_set_templates set inheritance_type = 'MedicalDataSetTemplate';
+delete from contacts where inheritance_type = 'StudyParticipant';
