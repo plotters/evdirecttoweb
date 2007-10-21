@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="SortColumnHeader" wocomponentcontent="false">
+
+		<binding name="value"/>
+		<binding name="sortOrderings"/>
+		<binding name="key"/>
+
+		<validation message="&apos;value&apos; is a required binding">
+			<unbound name="value"/>
+		</validation>
+
+		<validation message="&apos;sortOrderings&apos; is a required binding">
+			<unbound name="sortOrderings"/>
+		</validation>
+
+		<validation message="&apos;key&apos; is a required binding">
+			<unbound name="key"/>
+		</validation>
+	</wo>
+</wodefinitions>

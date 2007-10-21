@@ -1,0 +1,30 @@
+AttributesPopup : WOPopUpButton {
+	list = attributes;
+	displayString = localizedAttribute;
+	item = attribute;
+	selection = selectedAttribute;
+}
+
+MethodsPopup : WOPopUpButton {
+	list = qualifierMethods;
+	item = method;
+	displayString = localizedMethod;
+	selection = selectedMethod;
+}
+
+SearchButton : WOSubmitButton {
+	action = search;
+	value = "Search";
+}
+
+SearchField : WOTextField {
+	value = value;
+}
+
+SearchForm : ERXOptionalForm {
+	
+}
+
+QuicksearchLabel : ERXLocalizedString {
+	value = "Quicksearch";
+}
