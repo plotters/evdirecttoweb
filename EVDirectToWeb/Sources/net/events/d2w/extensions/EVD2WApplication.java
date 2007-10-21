@@ -3,7 +3,6 @@ package net.events.d2w.extensions;
 import java.util.Random;
 
 import net.events.d2w.pages.EVGenericErrorPage;
-import ognl.helperfunction.WOHelperFunctionHTMLTemplateParser;
 
 import org.apache.log4j.Logger;
 
@@ -35,7 +34,7 @@ public class EVD2WApplication extends ERXApplication {
 	public EVD2WApplication () {
 		super();
 		
-		WOHelperFunctionHTMLTemplateParser.registerTagShortcut("WOSwitchComponent", "switch");
+		// WOHelperFunctionHTMLTemplateParser.registerTagShortcut("WOSwitchComponent", "switch");
 		
 		// set sharedEditingContext to null, to avoid use of it
 		if (!ERXProperties.booleanForKeyWithDefault("net.events.Application.useSharedEditingContext", true)) {
@@ -186,4 +185,6 @@ public class EVD2WApplication extends ERXApplication {
 		WOComponent errorPage = this.pageWithName(EVGenericErrorPage.class.getName(), aContext);
 		return errorPage.generateResponse();
 	}
+	
+
 }
