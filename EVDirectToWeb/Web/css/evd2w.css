@@ -42,6 +42,12 @@ abbr,acronym {
 
 /* @end */
 
+/* @group Generic elements */
+
+.box {
+	padding: 0.5em;
+}
+
 .b_400 {
 	margin: 3em auto 3em auto;
 	width: 400px;
@@ -59,6 +65,26 @@ abbr,acronym {
 .border_red {
 	border: 1px solid #B52C07;
 }
+
+.border_grey_1px {
+	border: 1px solid #ccc;
+}
+
+.margin-b {
+	margin-bottom: 1em;
+}
+
+.halfmargin_b {
+	margin-bottom: 0.5em;
+}
+
+.p {
+	font-size: 1em;
+	margin-bottom: 0.5em;
+}
+
+/* @end */
+
 
 /* @group General */
 
@@ -130,7 +156,6 @@ a:hover img {
 
 h1, h2, h3 {
 	text-align: left;
-	margin-left: 16px;
 	color: #444;
 }
 
@@ -164,7 +189,7 @@ h3 {
 	text-decoration: underline;
 }
 
-#d2w_rns_message {
+#d2w_rns_message, .d2w_rns_message {
 	margin: 1em auto;
 	width: 450px;
 	padding: 1em;
@@ -368,6 +393,7 @@ td, th {
 .ERXSubmitButton-submitAction, 
 .ERXSubmitButton-cancelAction,
 .ERXSubmitButton-nextPage,
+.ERXSubmitButton-nextStep,
 .ERXSubmitButton-nextTabAction,
 .ERXSubmitButton-previousTabAction,
 .ERXSubmitButton-queryAction,
@@ -387,6 +413,7 @@ td, th {
 
 .ERXSubmitButton-submitAction:hover, 
 .ERXSubmitButton-nextTabAction:hover,
+.ERXSubmitButton-nextStep:hover,
 .ERXSubmitButton-previousTabAction:hover,
 .ERXSubmitButton-createNewObject:hover,
 .ERXSubmitButton-queryAction:hover,
@@ -398,6 +425,7 @@ td, th {
 
 .d2w_listActionButton {
 	margin: 4px;
+	white-space: nowrap;
 }
 
 .ERXSubmitButton-cancelAction:hover,
@@ -763,9 +791,27 @@ td, th {
 	padding: 0.5em 1em 0.5em 0.2em;
 }
 
-.ev_ds_item {
-	border: 1px solid #ddd;
-	padding: 0.5em;
-	margin-bottom: 1em;
+#login_panel {
+	margin: 10em auto 10em auto;
+	width: 300px;
+	border: 1px solid #aaa;
 }
 
+.logintable {
+	background-color: #fff;
+	margin: auto;
+}
+			
+.logintable td {
+	background-color: #ddd;
+	padding: 6px;
+}
+	
+.loginfailed {
+	color: #B52C07;
+	font-weight: bold;
+}
+			
+.loginfailed img {
+	float: right;
+}
