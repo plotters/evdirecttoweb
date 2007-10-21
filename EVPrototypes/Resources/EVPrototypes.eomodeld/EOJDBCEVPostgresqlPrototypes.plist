@@ -1,0 +1,333 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           adaptorValueConversionMethodName = toString;
+           allowsNull = Y;
+           columnName = "";
+           externalType = varchar;
+           factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString;
+           name = bool;
+           valueClassName = java.lang.Boolean;
+           valueFactoryMethodName = valueOf;
+           valueType = S;
+           width = 5;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = int2;
+           name = boolean;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = bytea;
+           name = data;
+           valueClassName = NSData;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = date;
+           name = date;
+           valueClassName = NSCalendarDate;
+           valueType = D;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = timestamp;
+           name = datetime;
+           valueClassName = NSCalendarDate;
+           valueType = T;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = numeric;
+           name = decimal2;
+           precision = 20;
+           scale = 2;
+           valueClassName = NSDecimalNumber;
+           valueType = B;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = numeric;
+           name = decimal3;
+           precision = 20;
+           scale = 3;
+           valueClassName = NSDecimalNumber;
+           valueType = B;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = numeric;
+           name = decimal4;
+           precision = 20;
+           scale = 4;
+           valueClassName = NSDecimalNumber;
+           valueType = B;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = float8;
+           name = double;
+           valueClassName = NSNumber;
+           valueType = d;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = bool;
+           name = flag;
+           valueClassName = NSNumber;
+           valueType = c;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = float8;
+           name = geoCoordinate;
+           valueClassName = NSNumber;
+           valueType = d;
+       }, 
+       
+       {
+           columnName = "";
+           externalType = bytea;
+           name = globalID;
+           valueClassName = NSData;
+           width = 24;
+       }, 
+       
+       {
+           columnName = "";
+           externalType = int4;
+           name = intKey;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = int4;
+           name = integer;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           columnName = id;
+           externalType = int8;
+           name = key;
+           valueClassName = NSNumber;
+           valueType = l;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = int8;
+           name = long;
+           valueClassName = NSNumber;
+           valueType = i;
+       }, 
+       
+       {
+           columnName = "";
+           externalType = int8;
+           name = longKey;
+           valueClassName = NSNumber;
+           valueType = l;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = money;
+           name = money;
+           precision = 20;
+           scale = 2;
+           valueClassName = NSDecimalNumber;
+           valueType = B;
+       }, 
+       
+       {
+           adaptorValueConversionMethodName = toBlob;
+           allowsNull = Y;
+           columnName = "";
+           externalType = bytea;
+           name = mutableArray;
+           valueClassName = er.extensions.ERXMutableArray;
+           valueFactoryMethodName = fromBlob;
+       }, 
+       
+       {
+           adaptorValueConversionMethodName = toBlob;
+           allowsNull = Y;
+           columnName = "";
+           externalType = bytea;
+           name = mutableDictionary;
+           valueClassName = er.extensions.ERXMutableDictionary;
+           valueFactoryMethodName = fromBlob;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = varchar;
+           name = string256;
+           valueClassName = NSString;
+           valueType = S;
+           width = 256;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = varchar;
+           name = string32;
+           valueClassName = NSString;
+           valueType = S;
+           width = 32;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = varchar;
+           name = string4k;
+           valueClassName = NSString;
+           valueType = S;
+           width = 4000;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = varchar;
+           name = string4m;
+           valueClassName = NSString;
+           valueType = S;
+           width = 4000000;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = varchar;
+           name = string64k;
+           valueClassName = NSString;
+           valueType = S;
+           width = 64000;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = text;
+           name = text;
+           valueClassName = NSString;
+           valueType = c;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = "";
+           externalType = timestamp;
+           name = time;
+           valueClassName = NSCalendarDate;
+           valueType = T;
+       }
+    );
+    attributesUsedForLocking = 
+    (
+       globalID, 
+       intKey, 
+       key, 
+       longKey
+    );
+    classProperties = 
+    (
+       bool, 
+       boolean, 
+       data, 
+       date, 
+       datetime, 
+       decimal2, 
+       decimal3, 
+       decimal4, 
+       double, 
+       flag, 
+       geoCoordinate, 
+       integer, 
+       long, 
+       money, 
+       mutableArray, 
+       mutableDictionary, 
+       string256, 
+       string32, 
+       string4k, 
+       string4m, 
+       string64k, 
+       text, 
+       time
+    );
+    internalInfo = 
+    {
+        _clientClassPropertyNames = 
+        (
+           boolean, 
+           data, 
+           date, 
+           datetime, 
+           decimal2, 
+           decimal3, 
+           decimal4, 
+           geoCoordinate, 
+           globalID, 
+           intKey, 
+           integer, 
+           key, 
+           long, 
+           longKey, 
+           money, 
+           mutableArray, 
+           mutableDictionary, 
+           string256, 
+           string4k, 
+           string4m, 
+           string64k, 
+           text, 
+           time
+        );
+    };
+    name = EOJDBCEVPostgresqlPrototypes;
+    primaryKeyAttributes = 
+    (
+       globalID, 
+       intKey, 
+       key, 
+       longKey
+    );
+}
