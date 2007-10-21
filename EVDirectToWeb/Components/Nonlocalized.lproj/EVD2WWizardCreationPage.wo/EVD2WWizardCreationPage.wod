@@ -55,7 +55,7 @@ PageWrapper: WOSwitchComponent {
 	WOComponentName = d2wContext.pageWrapperName;
 }
 
-RightArrow: WOSubmitButton {
+RightArrow: ERXSubmitButton {
     action = nextStep;
     value = "Next Step";
 }
