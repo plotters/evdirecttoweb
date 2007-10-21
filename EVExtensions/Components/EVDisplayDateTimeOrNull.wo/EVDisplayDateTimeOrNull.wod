@@ -1,0 +1,4 @@
+DateString : WOString {
+	value = ^value;
+	dateformat = dateformat;
+}

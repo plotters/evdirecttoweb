@@ -1,0 +1,55 @@
+<$comment
+EO Template for use by "eogenerator" based upon MiscMerge engine.
+You may customize this file to modify the templates generated
+by this tool.  See the MiscMerge documentation for a description
+of the parsing language.  The engine gets passed this file and an
+EOEntity to process, so the methods used must be ones that an
+EOEntity can respond to.
+
+BE SURE NOT TO INCLUDE DATES IN THIS FILE.  Since the "eogenerator"
+tool tries to compare the newly generated file with the old file,
+adding dates to this file will guarantee the old file gets
+overridden by the new file, forcing a recompilation of your EO.$>// <$classNameWithoutPackage$>.java
+
+<$foreach package classPackage do$>package <$package$>;
+<$endforeach do$>
+import com.webobjects.eoaccess.*;
+import com.webobjects.eocontrol.*;
+import com.webobjects.foundation.*;
+import java.math.BigDecimal;
+import java.util.*;
+import org.apache.log4j.Logger;
+
+public class <$classNameWithoutPackage$> extends <$GEN_PREFIX$><$classNameWithoutPackage$> {
+	
+	private static Logger log = Logger.getLogger( <$classNameWithoutPackage$>.class );
+
+	/** 
+	 * Initialization of the instance while inserting it into an editing context
+	 */
+	public void awakeFromInsertion (EOEditingContext editingContext) {
+		super.awakeFromInsertion (editingContext);
+
+		// initialize your object here
+	}
+<$if !isAbstractEntity$>
+	/**
+	 * Standard constructor
+	 */
+    public <$classNameWithoutPackage$>() {
+        super();
+    	if (log.isDebugEnabled()) log.debug ("Created an object of class <$classNameWithoutPackage$>");
+    }
+    
+    /**
+     * Creates a new instance of "<$classNameWithoutPackage$>" and inserts it into the given editingContext.
+     * This is a convenient shortcut for "EOUtilities.createAndInsertInstance"
+     */
+    public <$classNameWithoutPackage$>( EOEditingContext ec ) {
+        super();
+    	if (log.isDebugEnabled()) log.debug ("Created an object of class <$classNameWithoutPackage$> and inserted it into an editingContext");
+        ec.insertObject( this );
+    }
+ <$endif$>
+
+}

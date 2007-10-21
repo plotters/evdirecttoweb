@@ -1,0 +1,17 @@
+ErrorHeader : WOString {
+	value = ^headerMessage;
+}
+
+ErrorRepetition : WORepetition {
+	list = ^errors;
+	item = error;
+}
+
+ErrorString : ERXLocalizedString {
+	value = error;
+	escapeHTML = false;
+}
+
+ErrorsConditional : WOConditional {
+	condition = ^errors.count;
+}
