@@ -1,15 +1,5 @@
-ApplicationName : WOString {
-  value = application.name;
-}
-
 GenericErrorLocalizedString : ERXLocalizedString {
   value = "EVGenericErrorPage.GenericError";
+  escapeHTML = false;
 }
 
-Link : WOHyperlink {
-  directActionName = "default";
-}
-
-BackToApplicationLocalizedString : ERXLocalizedString {
-  value = "EVGenericErrorPage.BackToApplication";
-}
