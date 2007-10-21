@@ -1,0 +1,38 @@
+Form1: WOForm {
+	name = "form";
+}
+
+LoginString: ERXLocalizedString {
+	value = "Login";
+}
+
+MessageAvailableConditional: WOConditional {
+	condition = messageAvailable;
+}
+
+MessageString: ERXLocalizedString {
+	value = message;
+}
+
+PasswordString: ERXLocalizedString {
+	value = "Password";
+}
+
+SubmitButton: WOSubmitButton {
+	value = session.localizer.LoginButtonLabel;
+	action = submit;
+}
+
+TextField1: WOTextField {
+	value = login;
+	name = "login";
+	WODebug = true;
+}
+
+TextField2: WOPasswordField {
+	value = password;
+}
+
+VersionString: WOString {
+	value = "0.01";
+}

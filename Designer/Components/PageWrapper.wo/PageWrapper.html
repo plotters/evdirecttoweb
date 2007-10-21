@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="de">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="/events/d2w/css/evd2w.css">
+		<webobject name = "ClientAdminStylesheetLength"><wo:ERXStyleSheet href = "$session.currentClient.adminStylesheet"></wo:ERXStyleSheet></webobject>
+		<title>event-s Designer</title>
+	</head>
+	<body>
+		<div id="pagecontent">
+			<div id="header">
+				<wo:if condition="$session.currentUser.isSuperAdmin">
+				<webobject name = "AjaxUpdateContainer">
+				<div style="float: right; padding: 4px;">
+					<webobject name = "ShowLink1">[ <webobject name = "AjaxUpdateLink"><webobject name = "SessionCurrentClientName"/></webobject> ]</webobject>
+					<webobject name = "ShowLink"><webobject name = "WOForm"><wo name="CurrentClient" /></webobject>&nbsp;<webobject name = "AjaxUpdateLink1"><webobject name = "ERXLocalizedString"/></webobject></webobject>
+				</div>
+				</webobject>
+				</wo:if>
+			</div>
+			<div id="navigation"><webobject name = "EVNavigationTop"/></div>
+			<wo:if condition = "$application.isRefusingNewSessions">
+				<div id = "d2w_rns_message">
+					<wo:localized value="PageWrapper.WeAreGoingDownForMaintenanceMessage" escapeHTML = "$false"/>
+				</div>
+			</wo:if>
+			<div id="content">
+				<webobject name="Body"></webobject>
+			</div>
+			<webobject name="IsDeveloperModeConditional"><div id="d2w_debugflags"><webobject name="DebugFlags"></webobject></div></webobject>
+			<br>
+			<webobject name="Footer"></webobject>
+		</div>
+	</body>
+</html>

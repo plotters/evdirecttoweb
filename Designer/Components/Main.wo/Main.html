@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    <head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="generator" content="WebObjects 5.3.1">
+        <title>event-s</title>
+		<style type="text/css">
+		/* <![CDATA[ */
+		
+			body {
+				margin: auto;
+				padding: 5em;
+				font: 85% arial, helvetica, sans-serif;
+				color: #333;
+				background-color: #ddd;
+				text-align: center;
+			}
+
+			#container {
+				margin: auto;
+				text-align: left;
+				background-color: #fff;
+				border: 1px solid #676767;
+				width: 640px;
+			}
+			
+			#header {
+				height: 80px;
+				background-image: url(/events/d2w/img/ggb.jpg);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				border-bottom: 1px solid #aaa;
+				position: relative;
+			}
+			
+			#contents {
+				margin: auto;
+				margin-top: 2em;
+				height: 100%;
+			}
+			
+			.logintable {
+				background-color: #fff;
+				margin: auto;
+				margin-bottom: 2em;
+				border: 1px solid #aaa;
+			}
+			
+			.logintable td {
+				background-color: #ddd;
+			}
+			
+			.loginfailed {
+				color: #B52C07;
+				font-weight: bold;
+			}
+			
+			.loginfailed img {
+				float: right;
+			}
+			
+		/* ]]> */
+		</style>
+		
+    </head>
+
+    <body onload="document.form.login.focus()">
+	<div id="container">
+		<div id="header">&nbsp;</div>
+		<div id="contents">
+            <webobject name="Form1">
+				<table class="logintable" cellspacing="1" cellpadding="6" border="0">
+					<webobject name="MessageAvailableConditional">
+					<tr>
+						<td colspan="2" align="left" valign="middle"><span class="loginfailed"><img src="/events/d2w/img/stop-sign.gif" alt="Stop Sign" /><webobject name="MessageString"></webobject></span></td>
+					</tr>
+					</webobject>
+                    <tr>
+                        <td align="right">
+                            <webobject name="LoginString"></webobject></td>
+                        <td>
+                            <webobject name="TextField1"></webobject></td>
+                    </tr>
+					<tr>
+						<td align="right"><webobject name="PasswordString"></webobject></td>
+						<td><webobject name="TextField2"></webobject></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><webobject name="SubmitButton"></webobject></td>
+					</tr>
+                </table>
+			</webobject>
+			<div style="font-size: 0.8em; padding: 8px; text-align: right;">Version <webobject name="VersionString"></webobject></div>
+        </div>
+	</div>
+    </body>
+</html>

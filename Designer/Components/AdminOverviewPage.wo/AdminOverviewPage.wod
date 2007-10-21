@@ -1,0 +1,11 @@
+PageWrapper : PageWrapper {
+	
+}
+AjaxUpdateContainer : AjaxUpdateContainer {
+	id = "userTable";
+	elementName = "div";
+	class = "exampleArea";
+	frequency = 10;
+	decay = 2;
+	evalScripts = true;
+}
