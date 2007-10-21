@@ -1,0 +1,10 @@
+SelectionElement : EVToOneRelationship {
+	uiStyle = toOneUIStyle;
+	sourceObject = value;
+	relationshipKey = "selectedOption";
+	destinationDisplayKey = "optionName";
+	possibleChoices = value.dataSetItem.options;
+	isMandatory = value.dataSetItem.isRequired;
+	destinationSortKey = "orderNumber";
+	maxColumns = value.dataSetItem.options.count;
+}

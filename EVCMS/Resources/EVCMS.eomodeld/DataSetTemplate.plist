@@ -1,0 +1,236 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = active;
+           name = active;
+           prototypeName = flag;
+       }, 
+       
+       {
+           columnName = bottom_text;
+           name = bottomText;
+           prototypeName = string4m;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = client_id;
+           name = clientId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = created_by_id;
+           name = createdById;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = creation_time;
+           name = creationTime;
+           prototypeName = datetime;
+       }, 
+       
+       {
+           columnName = css_class_for_thank_you_message;
+           name = cssClassForThankYouMessage;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = data_set_id;
+           name = dataSetId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = Y;
+           columnName = data_set_page_template_id;
+           name = dataSetPageTemplateId;
+           prototypeName = key;
+       }, 
+       
+       {
+           columnName = inheritance_type;
+           name = inheritanceType;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = login_required;
+           name = loginRequired;
+           prototypeName = flag;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = name;
+           name = name;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = text_description;
+           name = textDescription;
+           prototypeName = string4m;
+       }, 
+       
+       {
+           columnName = text_for_thank_you_page;
+           name = textForThankYouPage;
+           prototypeName = string4k;
+       }, 
+       
+       {
+           columnName = top_text;
+           name = topText;
+           prototypeName = string4m;
+       }
+    );
+    className = net.events.cms.eo.DataSetTemplate;
+    classProperties = 
+    (
+       active, 
+       bottomText, 
+       client, 
+       createdBy, 
+       creationTime, 
+       cssClassForThankYouMessage, 
+       dataSetEntries, 
+       dataSetItems, 
+       dataSetPageTemplate, 
+       inheritanceType, 
+       loginRequired, 
+       name, 
+       pages, 
+       sections, 
+       textDescription, 
+       textForThankYouPage, 
+       topText
+    );
+    externalName = data_set_templates;
+    internalInfo = 
+    {};
+    isAbstractEntity = Y;
+    name = DataSetTemplate;
+    primaryKeyAttributes = 
+    (
+       dataSetId
+    );
+    relationships = 
+    (
+       
+       {
+           destination = Client;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = client;
+       }, 
+       
+       {
+           destination = Person;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = contactId;
+                  sourceAttribute = createdById;
+              }
+           );
+           name = createdBy;
+       }, 
+       
+       {
+           destination = DataSetEntry;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetId;
+                  sourceAttribute = dataSetId;
+              }
+           );
+           name = dataSetEntries;
+       }, 
+       
+       {
+           deleteRule = EODeleteRuleCascade;
+           destination = DataSetItem;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetId;
+                  sourceAttribute = dataSetId;
+              }
+           );
+           name = dataSetItems;
+       }, 
+       
+       {
+           destination = DataSetPageTemplate;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = pageId;
+                  sourceAttribute = dataSetPageTemplateId;
+              }
+           );
+           name = dataSetPageTemplate;
+       }, 
+       
+       {
+           deleteRule = EODeleteRuleCascade;
+           destination = DataSetPage;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetTemplateId;
+                  sourceAttribute = dataSetId;
+              }
+           );
+           name = pages;
+       }, 
+       
+       {
+           destination = DataSetSection;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetTemplateId;
+                  sourceAttribute = dataSetId;
+              }
+           );
+           name = sections;
+       }
+    );
+}

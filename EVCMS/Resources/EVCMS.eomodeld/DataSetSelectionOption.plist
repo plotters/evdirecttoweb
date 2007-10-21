@@ -1,0 +1,136 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = active;
+           name = active;
+           prototypeName = flag;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = client_id;
+           name = clientId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = created_by_id;
+           name = createdById;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = creationTime;
+           name = creationTime;
+           prototypeName = datetime;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = data_set_item_id;
+           name = dataSetItemId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = data_set_selection_option_id;
+           name = dataSetSelectionOptionId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = option_name;
+           name = optionName;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = order_number;
+           name = orderNumber;
+           prototypeName = integer;
+       }, 
+       
+       {
+           columnName = score;
+           name = score;
+           prototypeName = integer;
+       }
+    );
+    className = net.events.cms.eo.DataSetSelectionOption;
+    classProperties = 
+    (
+       active, 
+       client, 
+       createdBy, 
+       creationTime, 
+       dataSetItem, 
+       optionName, 
+       orderNumber, 
+       score
+    );
+    externalName = data_set_selection_options;
+    internalInfo = 
+    {};
+    name = DataSetSelectionOption;
+    primaryKeyAttributes = 
+    (
+       dataSetSelectionOptionId
+    );
+    relationships = 
+    (
+       
+       {
+           destination = Client;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = client;
+       }, 
+       
+       {
+           destination = EventsUser;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = contactId;
+                  sourceAttribute = createdById;
+              }
+           );
+           name = createdBy;
+       }, 
+       
+       {
+           destination = DataSetSelectionItem;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetItemId;
+                  sourceAttribute = dataSetItemId;
+              }
+           );
+           name = dataSetItem;
+       }
+    );
+}

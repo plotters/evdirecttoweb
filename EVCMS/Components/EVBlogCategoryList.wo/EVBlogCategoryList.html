@@ -1,0 +1,8 @@
+<div class="blog_right_box">
+	<h1><wo:string value="$localizer.BlogPage.Categories" /></h1>
+	<wo:loop list="$page.blog.categories" item="$currentCategory">
+	  <wo:if condition = "$currentCategory.rawArticleCount">
+		<div class="blog_right_box_entry"><webobject name="Link"><wo:string value="$currentCategory.categoryName" />&nbsp;(<wo:string value="$currentCategory.rawArticleCount" />)</webobject></div>
+	  </wo:if>
+	</wo:loop>
+</div>

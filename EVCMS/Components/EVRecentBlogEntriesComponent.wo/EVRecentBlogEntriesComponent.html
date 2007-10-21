@@ -1,0 +1,6 @@
+<div class="blog_right_box">
+	<h1><wo:string value="$localizer.RecentArticles.RECENT_ARTICLES" /></h1>
+	<wo:loop list="$page.blog.recentEntries" item="$dynamicBindings.blogEntry">
+		<div class="blog_right_box_entry"><webobject name="Link"><wo:string value="$dynamicBindings.blogEntry.title" /></webobject></div>
+	</wo:loop>
+</div>

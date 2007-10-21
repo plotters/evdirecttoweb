@@ -1,0 +1,59 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = code;
+           name = code;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = country_id;
+           name = countryId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = name;
+           name = name;
+           prototypeName = string256;
+       }
+    );
+    className = net.events.cms.eo.Country;
+    classProperties = 
+    (
+       code, 
+       name, 
+       provinces
+    );
+    externalName = countries;
+    internalInfo = 
+    {};
+    name = Country;
+    primaryKeyAttributes = 
+    (
+       countryId
+    );
+    relationships = 
+    (
+       
+       {
+           destination = Province;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = countryId;
+                  sourceAttribute = countryId;
+              }
+           );
+           name = provinces;
+       }
+    );
+}

@@ -1,0 +1,1 @@
+alter table blog_entries add column allow_digging bool;

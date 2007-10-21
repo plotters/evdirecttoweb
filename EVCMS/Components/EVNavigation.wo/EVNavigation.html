@@ -1,0 +1,3 @@
+<ul><wo:loop list="$page.site.pages.@sortAsc.orderNumber" item="$dynamicBindings.currentNavEntry">
+	<li><wo:link directActionName = "page" actionClass = "Web" ?pageId="$dynamicBindings.currentNavEntry.primaryKey"><wo:string value="$dynamicBindings.currentNavEntry.pageName" /></wo:link></li>
+</wo:loop></ul>

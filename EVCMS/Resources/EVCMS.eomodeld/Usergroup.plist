@@ -1,0 +1,68 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = area;
+           name = area;
+           prototypeName = string32;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = name;
+           name = name;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = privilege;
+           name = privilege;
+           prototypeName = integer;
+       }, 
+       
+       {
+           columnName = usergroup_id;
+           name = usergroupId;
+           prototypeName = key;
+       }
+    );
+    className = net.events.cms.eo.Usergroup;
+    classProperties = 
+    (
+       area, 
+       name, 
+       privilege, 
+       users
+    );
+    externalName = usergroups;
+    internalInfo = 
+    {};
+    name = Usergroup;
+    primaryKeyAttributes = 
+    (
+       usergroupId
+    );
+    relationships = 
+    (
+       
+       {
+           deleteRule = EODeleteRuleDeny;
+           destination = Person;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = usergroupId;
+                  sourceAttribute = usergroupId;
+              }
+           );
+           name = users;
+       }
+    );
+}

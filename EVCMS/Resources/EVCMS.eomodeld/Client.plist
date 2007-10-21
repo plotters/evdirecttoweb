@@ -1,0 +1,244 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = active;
+           name = active;
+           prototypeName = flag;
+       }, 
+       
+       {
+           columnName = admin_stylesheet;
+           name = adminStylesheet;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = city;
+           name = city;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = client_id;
+           name = clientId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = contact_email;
+           name = contactEmail;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = contact_firstname;
+           name = contactFirstname;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = contact_lastname;
+           name = contactLastname;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = contact_phone;
+           name = contactPhone;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = country_id;
+           name = countryId;
+           prototypeName = key;
+       }, 
+       
+       {
+           columnName = customer_number;
+           name = customerNumber;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = deleted;
+           name = deleted;
+           prototypeName = flag;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = name;
+           name = name;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = postal_code;
+           name = postalCode;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = province;
+           name = province;
+           prototypeName = string256;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = street1;
+           name = street1;
+           prototypeName = string256;
+       }, 
+       
+       {
+           columnName = street2;
+           name = street2;
+           prototypeName = string256;
+       }
+    );
+    className = net.events.cms.eo.Client;
+    classProperties = 
+    (
+       active, 
+       adminStylesheet, 
+       blogs, 
+       city, 
+       clinicalTrials, 
+       contactEmail, 
+       contactFirstname, 
+       contactLastname, 
+       contactPhone, 
+       contacts, 
+       country, 
+       customerNumber, 
+       deleted, 
+       name, 
+       pageWrappers, 
+       postalCode, 
+       province, 
+       sites, 
+       street1, 
+       street2
+    );
+    externalName = clients;
+    internalInfo = 
+    {};
+    maxNumberOfInstancesToBatchFetch = 50;
+    name = Client;
+    primaryKeyAttributes = 
+    (
+       clientId
+    );
+    relationships = 
+    (
+       
+       {
+           deleteRule = EODeleteRuleCascade;
+           destination = Blog;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = blogs;
+       }, 
+       
+       {
+           deleteRule = EODeleteRuleDeny;
+           destination = ClinicalTrial;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = clinicalTrials;
+           numberOfToManyFaultsToBatchFetch = 10;
+       }, 
+       
+       {
+           deleteRule = EODeleteRuleCascade;
+           destination = Contact;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = contacts;
+           numberOfToManyFaultsToBatchFetch = 50;
+       }, 
+       
+       {
+           destination = Country;
+           isMandatory = Y;
+           isToMany = N;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = countryId;
+                  sourceAttribute = countryId;
+              }
+           );
+           name = country;
+       }, 
+       
+       {
+           deleteRule = EODeleteRuleCascade;
+           destination = PageWrapper;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = pageWrappers;
+       }, 
+       
+       {
+           destination = Site;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = sites;
+       }
+    );
+}

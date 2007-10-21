@@ -1,0 +1,10 @@
+alter table pages add column order_number int4;
+update pages set order_number = 10;
+alter table pages alter column order_number set not null;
+
+alter table data_set_item add column format varchar(32);
+alter table data_set_item_value add column decimal_value numeric (20,4);
+
+update pages set active = true;
+insert into interface_element_types values ('EVDataSetNumberField', nextval ('interface_element_types_seq'), 'Numberfield');
+insert into interface_element_types values ('EVDataSetDecimalField', nextval ('interface_element_types_seq'), 'Decimalfield');
