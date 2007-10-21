@@ -1,0 +1,41 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = language_id;
+           name = languageId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = locale_code;
+           name = localeCode;
+           prototypeName = string32;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = name;
+           name = name;
+           prototypeName = string256;
+       }
+    );
+    className = net.events.cms.eo.Language;
+    classProperties = 
+    (
+       localeCode, 
+       name
+    );
+    externalName = languages;
+    internalInfo = 
+    {};
+    name = Language;
+    primaryKeyAttributes = 
+    (
+       languageId
+    );
+}

@@ -1,0 +1,36 @@
+<wo:EVPageWrapper html="$page.pageWrapper.componentTemplate">
+	<div id="ev_ds">
+		<wo:if condition="$dataSetTemplate.topText.length"><div class="ev_ds_desc"><wo:string value="$dataSetTemplate.topText" /></div></wo:if>
+		<h1><wo:string value="$dataSetTemplate.name" /></h1>
+		<div class="ev_ds_desc"><wo:string value="$dataSetTemplate.textDescription" escapeHTML = "$false"/></div>
+		<wo:if condition = "$validationValues.count">
+			<div class="d2w_errors" style="padding: 8px;">Please answer the highlighted question(s)!</div>
+		</wo:if>
+		<wo:form>
+		<wo:loop list="$valuesNotInSections.@sortAsc.dataSetItem.orderNumber" item="$value" index = "$index">
+			<div class="$itemClass">
+				<div class="ev_ds_q"><wo:string value="~index+1" />. <wo:string value="$value.dataSetItem.name" escapeHTML = "$false" /></div>
+				<wo:if condition="$value.dataSetItem.textDescription.length"><div class="ev_ds_qdesc"><wo:string value="$value.dataSetItem.textDescription" escapeHTML = "$false" /></div></wo:if>
+				<div class="ev_ds_a"><wo:WOSwitchComponent WOComponentName = "$value.dataSetItem.interfaceElementType.componentName" value="$value"></wo:WOSwitchComponent></div>
+			</div>
+		</wo:loop>
+		<wo:loop list = "$sections.@sortAsc.orderNumber" item = "$currentSection">
+			<div class = "box margin-b border_grey_1px">
+				<h2><wo:string value = "$currentSection.sectionName" /></h2>
+				<div class="p"><wo:string value = "$currentSection.sectionTopText" escapeHTML = "$false" /></div>
+				<wo:loop list="$valuesForSection.@sortAsc.dataSetItem.orderNumber" item="$value" index = "$index">
+					<div class="$itemClass">
+						<div class="ev_ds_q"><wo:if condition = "$currentSection.enumerateQuestions"><wo:string value="~index+1" />. </wo><wo:string value="$value.dataSetItem.name" escapeHTML = "$false" /></div>
+						<wo:if condition="$value.dataSetItem.textDescription.length"><div class="ev_ds_qdesc"><wo:string value="$value.dataSetItem.textDescription" escapeHTML = "$false" /></div></wo:if>
+						<div class="ev_ds_a"><wo:WOSwitchComponent WOComponentName = "$value.dataSetItem.interfaceElementType.componentName" value="$value"></wo:WOSwitchComponent></div>
+					</div>
+				</wo:loop>
+				<div class = "p"><wo:string value = "$currentSection.sectionBottomText" escapeHTML = "$false"/></div>
+			</div>
+		</wo:loop>
+		<wo:submit action="$saveChanges" value="$session.localizer.SurveyPage.SUBMIT"></wo:submit><br /><br />
+		</wo:form>
+		<br><br>
+		<wo:if condition="$dataSetTemplate.bottomText.length"><div class="ev_ds_desc"><wo:string value="$dataSetTemplate.bottomText" /></div></wo:if>
+	</div>
+</wo:EVPageWrapper>

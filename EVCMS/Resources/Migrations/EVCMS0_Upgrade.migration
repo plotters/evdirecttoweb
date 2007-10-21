@@ -1,0 +1,3 @@
+ALTER TABLE blogs ADD COLUMN site_id int8;
+ALTER TABLE blogs ADD CONSTRAINT blogs_site_FK FOREIGN KEY (site_id) REFERENCES sites (site_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX blogs_site_id_idx ON blogs( site_id );

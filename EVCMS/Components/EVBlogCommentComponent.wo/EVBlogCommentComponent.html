@@ -1,0 +1,23 @@
+<wo:if condition = "$^blogEntry.comments.count">
+<div style="margin: 0 0 2em 20px;"><h1><wo:string value="$localizer.BlogComment.COMMENTS"></wo:string></h1></div>
+<wo:loop list = "$^blogEntry.comments.@sortAsc.creationTime" item = "$currentComment">
+	<div class="comment">
+		<div class="datetime"><wo:string value = "$currentComment.creationTime" dateformat = "%d.%m.%Y %H:%M" /></div>
+		<span class="commenter"><wo:string value = "$currentComment.name" /> <wo:localized value = "BlogComment.SAID" />:</span><br><br>
+		<div class="comment_content"><wo:ERXStringWithLineBreaks value = "$currentComment.comment" /></div>
+	</div>
+</wo:loop></wo:if>
+
+<wo:form actionClass = "Web" directActionName = "blogEntry" class = "blog_comment_form" ?entryId="$^blogEntry.primaryKey" ?pageId="$^page.primaryKey" >
+	<h1><wo:string value="$localizer.BlogComment.LEAVE_A_COMMENT"></wo:string></h1>
+	<div class="blog_entry_content"><wo:string value="$localizer.BlogComment.COMMENT_NOTE" escapeHTML = "false"></wo:string></div>
+	<br>
+	<span class= "d2w_inspect_proplabel_span"><wo:string value = "$localizer.BlogComment.NAME" /></span><br>
+	<wo:textfield name = "name" value = "$^blogComment.name"></wo:textfield><br>
+	<span class = "d2w_inspect_proplabel_span"><wo:string value = "$localizer.BogComment.EMAIL" /></span><br>
+	<wo:textfield name = "email" value = "$^blogComment.email" ></wo:textfield><br>
+	<div class = "hidden"><input type="text" class = "hidden" name = "email2" /></div>
+	<span class = "d2w_inspect_proplabel_span"><wo:string value = "$localizer.BlogComment.COMMENT" /></span><br>
+	<wo:text name = "comment" value = "$^blogComment.comment" rows="10" cols="70"></wo:text><br>
+	<wo:WOGenericContainer elementName = "input" type = "submit" value = "$localizer.BlogComment.SUBMIT_COMMENT" /><br>
+</wo:form>

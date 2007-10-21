@@ -1,0 +1,7 @@
+Link : WOHyperlink {
+  directActionName = "blogEntry";
+  actionClass = "Web";
+  disabled = "~!dynamicBindings.blogEntry.content";
+  ?entryId = dynamicBindings.blogEntry.primaryKey;
+  ?pageId = context.page.page.primaryKey;
+}

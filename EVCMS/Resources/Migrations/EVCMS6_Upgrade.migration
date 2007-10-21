@@ -1,0 +1,8 @@
+alter table blogs DROP COLUMN articles_per_page ;
+alter table pages add column entries_per_page int4;
+alter table pages add column blog_id int8;
+
+ALTER TABLE pages ADD CONSTRAINT pages_blog_FK FOREIGN KEY (blog_id) REFERENCES blogs (blog_id) deferrable initially deferred; 
+create index pages__blog_id__fk_index on pages (blog_id);
+
+alter table blogs drop column page_wrapper_id;

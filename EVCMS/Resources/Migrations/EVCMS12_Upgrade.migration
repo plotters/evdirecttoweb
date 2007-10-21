@@ -1,0 +1,32 @@
+begin transaction;
+
+DROP SEQUENCE blog_entry_categories_seq CASCADE;
+
+DROP TABLE blog_entry_categories CASCADE;
+
+CREATE TABLE blog_entry_categories (blog_id int8 NOT NULL, category_name varchar(256) NOT NULL, client_id int8 NOT NULL, entry_category_id int8 NOT NULL);
+
+CREATE SEQUENCE blog_entry_categories_seq;
+
+CREATE TEMP TABLE EOF_TMP_TABLE AS SELECT SETVAL('blog_entry_categories_seq', (SELECT MAX(entry_category_id) FROM blog_entry_categories));
+
+DROP TABLE EOF_TMP_TABLE;
+
+ALTER TABLE blog_entry_categories ALTER COLUMN entry_category_id SET DEFAULT nextval( 'blog_entry_categories_seq' );
+
+ALTER TABLE blog_entry_categories ADD CONSTRAINT blog_entry_categories_pk PRIMARY KEY (entry_category_id);
+
+ALTER TABLE blog_entry_categories ADD CONSTRAINT blog_entry_categories_blog_FK FOREIGN KEY (blog_id) REFERENCES blogs (blog_id) DEFERRABLE INITIALLY DEFERRED;
+
+CREATE INDEX blog_entry_categories_blog_id_idx ON blog_entry_categories( blog_id );
+
+ALTER TABLE blog_entry_categories ADD CONSTRAINT blog_entry_categories_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
+
+CREATE INDEX blog_entry_categories_client_id_idx ON blog_entry_categories( client_id );
+
+commit;
+
+
+alter table blog_entries add column category_id int8;
+ALTER TABLE blog_entries ADD CONSTRAINT blog_entries_category_FK FOREIGN KEY (category_id) REFERENCES blog_entry_categories (entry_category_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX blog_entries_category_id_idx ON blog_entries( category_id );

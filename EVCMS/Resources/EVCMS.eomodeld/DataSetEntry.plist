@@ -1,0 +1,132 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           allowsNull = N;
+           columnName = client_id;
+           name = clientId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = creation_time;
+           name = creationTime;
+           prototypeName = datetime;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = data_set_entry_id;
+           name = dataSetEntryId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = data_set_id;
+           name = dataSetId;
+           prototypeName = key;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = inheritance_type;
+           name = inheritanceType;
+           prototypeName = string32;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = person_id;
+           name = personId;
+           prototypeName = key;
+       }
+    );
+    className = net.events.cms.eo.DataSetEntry;
+    classProperties = 
+    (
+       client, 
+       creationTime, 
+       dataSetTemplate, 
+       inheritanceType, 
+       person, 
+       values
+    );
+    externalName = data_set_entries;
+    internalInfo = 
+    {};
+    isAbstractEntity = Y;
+    name = DataSetEntry;
+    primaryKeyAttributes = 
+    (
+       dataSetEntryId
+    );
+    relationships = 
+    (
+       
+       {
+           destination = Client;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = clientId;
+                  sourceAttribute = clientId;
+              }
+           );
+           name = client;
+       }, 
+       
+       {
+           destination = DataSetTemplate;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetId;
+                  sourceAttribute = dataSetId;
+              }
+           );
+           name = dataSetTemplate;
+       }, 
+       
+       {
+           destination = Person;
+           isMandatory = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = contactId;
+                  sourceAttribute = personId;
+              }
+           );
+           name = person;
+       }, 
+       
+       {
+           deleteRule = EODeleteRuleCascade;
+           destination = DataSetItemValue;
+           isMandatory = N;
+           isToMany = Y;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = dataSetEntryId;
+                  sourceAttribute = dataSetEntryId;
+              }
+           );
+           name = values;
+       }
+    );
+}
