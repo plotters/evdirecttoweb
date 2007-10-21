@@ -1,3 +1,0 @@
-alter table pages add column html_content varchar (4000000);
-alter table page_wrappers add column "name" varchar(256) default 'Look & Feel';
-alter table pages add column active bool;

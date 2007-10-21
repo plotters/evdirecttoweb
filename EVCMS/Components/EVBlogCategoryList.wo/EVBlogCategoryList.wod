@@ -1,6 +1,0 @@
-Link : WOHyperlink {
-  directActionName = "blogCat";
-  actionClass = "Web";
-  disabled = true;
-  ?catId = currentCategory.primaryKey;
-}

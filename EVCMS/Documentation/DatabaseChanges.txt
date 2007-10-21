@@ -1,8 +1,0 @@
-alter table clients alter column customer_number drop not null;
-alter table clients alter column deleted drop not null;
-alter table blogs alter column page_wrapper_id drop not null;
-
-alter table blogs add column client_id int8 not null;
-ALTER TABLE blogs ADD CONSTRAINT blogs_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
-CREATE INDEX blogs_client_id_idx ON blogs( client_id );
-
