@@ -1,0 +1,253 @@
+
+log4j.category.er.extensions.ERXLocalizer = Debug
+er.extensions.ERXSQLExpressionTracker.collectLastStatements = false
+
+er.extensions.migration.ERXMigration.useDatabaseSpecificMigrations=false
+
+#########################################################################
+# WebObjects Application Configuration
+#########################################################################
+
+WOAutoOpenInBrowser = true
+#WOAutoOpenClientApplication = true
+#WOPort = 55555
+#WODebuggingEnabled = true
+#WODirectConnectEnabled = false
+#WOAllowRapidTurnaround = true
+#WOSessionTimeOut = 3600
+#WOAllowsConcurrentRequestHandling = true
+D2WWebAssistantEnabled=false
+
+
+#########################################################################
+# Log4j Configuration
+#########################################################################
+
+log4j.loggerFactory=er.extensions.ERXLogger$Factory
+log4j.rootCategory=Info, console
+
+#Bridge logging set to INFO
+log4j.logger.er.extensions.ERXNSLogLog4jBridge = Info
+
+# A1 is set to be a ConsoleAppender which outputs to System.out.
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+
+# A1 uses PatternLayout.
+log4j.appender.console.layout = er.extensions.ERXPatternLayout
+
+# A couple of fun patterns
+log4j.appender.console.layout.ConversionPattern=%d{HH:mm:ss} -- %C{1} -- :%L %p %x- %m%n
+# log4j.appender.console.layout.ConversionPattern=%W{n[i:p s]} %d{yyyy/MM/dd HH:mm:ss} %V{u/f} %p %c %x- %m%n
+# log4j.appender.console.layout.ConversionPattern=%W {n[i:p s]} %d{yyyy/MM/dd HH:mm:ss} %p %c %x- %m%n
+# log4j.appender.console.layout.ConversionPattern=%W{n[i:p s]} %d{HH:mm:ss} %p %c{1} %x- %m%n
+
+
+#########################################################################
+# ERXAdaptorChannelDelegate 
+#########################################################################
+
+er.extensions.ERXAdaptorChannelDelegate.enabled=true
+er.extensions.ERXAdaptorChannelDelegate.maxMilliSeconds=100
+
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.debug=0
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.info=100
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.warn=1000
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.error=5000
+
+log4j.category.er.extensions.ERXAdaptorChannelDelegate.sqlLogging=Debug
+
+com.webobjects.jdbcadaptor.PostgresqlExpression.disableBindVariables = true
+com.webobjects.jdbcadaptor.PostgresqlExpression.disableTypeCasting = true
+
+#########################################################################
+# ERExtensions Framework Configuration
+#########################################################################
+
+# use this setting to get xhtml compliant tags with WODynamicElements
+er.extensions.ERXPatcher.cleanupXHTML = false
+
+er.extensions.ERXApplication.DefaultMessageEncoding=UTF8
+er.extensions.ERXMessageEncoding.Enabled=true
+er.extensions.ERXRequest.BrowserFormValueEncodingOverrideEnabled=true
+
+er.extensions.ERXApplication.useSessionStoreDeadlockDetection=true
+
+## decides if locked editing contexts should be unlocked after the RR-loop.
+## If you use D2W, it is *strongly* recommended to enable this feature!
+
+er.extensions.ERXApplication.useEditingContextUnlocker=true
+er.extensions.ERXRaiseOnMissingEditingContextDelegate=false
+
+er.extensions.ERXBatchingDisplayGroup.useBatchFaulting = true
+
+# default submit button
+er.extensions.ERXWOForm.addDefaultSubmitButtonDefault
+
+er.extensions.ERXEnterpriseObject.updateInverseRelationships=true
+
+
+er.extensions.ERXLongPrimaryKeyFactory.increaseBy = 10
+
+
+#########################################################################
+# ERXWORepetition 
+#########################################################################
+## Add hash codes to element IDs so backtracking can be controlled.
+# er.extensions.ERXWORepetition.checkHashCodes = true
+## If an object wasn't found, raise an exception (if unset, the wrong object is used)
+# er.extensions.ERXWORepetition.raiseOnUnmatchedObject = true
+
+
+#########################################################################
+# ERXEC 
+#########################################################################
+## decides if new ECs use the shared editing context
+er.extensions.ERXEC.useSharedEditingContext=false
+
+## Specifies if new ECs should lock/unlock automatically. Use with care...
+er.extensions.ERXEC.defaultAutomaticLockUnlock = true
+
+
+#########################################################################
+# Localizer
+#########################################################################
+
+## Is localization enabled (as a lot of the components are already localized, it's
+## kind of mandatory now to turn it on)
+er.extensions.ERXLocalizer.isLocalizationEnabled = true
+
+## The order in which localized files are searched (first entry wins)
+er.extensions.ERXLocalizer.frameworkSearchPath = (app,EVDirectToWeb,ABDA,EVCMS,ERExtensions,ERDirectToWeb)
+
+## Which files to search
+er.extensions.ERXLocalizer.fileNamesToWatch = ("Localizable.strings","ValidationTemplate.strings")
+
+## The default language for localization. This gets chosen if the request 
+## languages array results in no match.
+er.extensions.ERXLocalizer.defaultLanguage = English
+
+## Currently supported languages
+er.extensions.ERXLocalizer.availableLanguages = (English, German)
+
+## We actually support a lot of other languages, but they are probably not maintained
+# er.extensions.ERXLocalizer.availableLanguages = (English,German,French,Norwegian,Japanese,Italian)
+
+## These should go away. It's special handling for Japanese, but wuold be
+## better refactored into a general pluralizing strategy
+# er.extensions.ERXLocalizer.pluralFormClassName = er.extensions.ERXLocalizer
+# er.extensions.ERXLocalizer.nonPluralFormClassName = er.extensions.ERXNonPluralFormLocalizer
+
+## Components that use ERXToOne/ManyRelationship can have locazilized display keys
+## This can be specified on a per-component basis in the bindings, 
+## but here's the default value
+# er.extensions.ERXArrayChooser.localizeDisplayKeysDefault = true
+# er.extensions.ERXArrayChooser.localizeDisplayKeysDefault = true
+
+## This tells ERXWOString/ERXWOText to use localized 
+## formatters. 
+er.extensions.ERXLocalizer.useLocalizedFormatters = true
+
+## Allows you to override the locale for a language
+# er.extensions.ERXLocalizer.German.locale = de
+
+
+#########################################################################
+# Logging
+#########################################################################
+
+## Base directory for statistics logging
+# er.extensions.ERXApplication.StatisticsBaseLogPath = /Library/Output
+## When the logs get rotated [24 hours in ms]
+# er.extensions.ERXApplication.StatisticsLogRotationFrequency = 86400000 
+
+
+log4j.category.er.directtoweb.ERD2WModel = Info
+
+log4j.category.RequestHandling = Info
+
+#########################################################################
+# Database logging
+#########################################################################
+
+## set this to true, if you want db logging
+net.events.logging.LogToDB = false
+
+net.events.logging.username = username
+net.events.logging.password = password
+net.events.logging.jdbcurl = jdbc:postgresql://localhost/Logging
+net.events.logging.dbdriver = org.postgresql.Driver
+
+#########################################################################
+## Mail sending
+#########################################################################
+
+# ERJavaMail settings
+er.javamail.centralize = false
+er.javamail.debugEnabled = true
+er.javamail.adminEmail = guido@event-s.net
+er.javamail.smtpHost = mail.event-s.net
+er.javamail.milliSecondsWaitIfSenderOverflowed = 6000
+
+er.javamail.smtpAuth = true
+er.javamail.smtpUser = designer@event-s.net
+er.javamail.smtpPassword = egal88
+er.javamail.smtpPort = 587
+
+er.javamail.defaultEncoding = utf-8
+
+#########################################################################
+## Prototypes
+#########################################################################
+er.extensions.ERXModelGroup.prototypeModelName=EVPrototypes
+
+EVCMS.removeJdbc2Info=false
+
+#########################################################################
+## WOOgnl
+#########################################################################
+ognl.inlineBindings=true
+ognl.active = true
+ognl.helperFunctions=true
+ognl.parseStandardTags=true
+
+#########################################################################
+## Migrations
+#########################################################################
+
+er.migration.migrateAtStartup = true
+EVCMS.MigrationClassPrefix = net.events.migrations.EVCMS
+ABDA.MigrationClassPrefix = de.pharmaline.abda.migrations.ABDA
+
+#########################################################################
+## Modification Tracking
+#########################################################################
+
+de.pharmaline.abda.eo.ABDAAdresse.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAAuswahltabelle.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDADarreichungsform.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAFestbetragstabelle.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAIndikationsbereich.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAInstitutionskennzeichen.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAKlinikbaustein.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDALand.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAPackungsgroesse.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAProdukt.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAServiceLine.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAStoff.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAWarengruppe.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAXIndikationsbereichProdukt.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAXInstitutionkennzeichenGruppen.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAXKlinikbausteinProdukt.AttributesNotToTrack = ("dirtyFromImport")
+de.pharmaline.abda.eo.ABDAXProduktGruppen.AttributesNotToTrack = ("dirtyFromImport")
+
+net.events.eo.EntitiesNotToTrack = (SessionTrack)
+
+
+#########################################################################
+## Connection Broker
+#########################################################################
+
+er.extensions.ERXJDBCAdaptor.useConnectionBroker = true
+EVCMS.maxConnections=3
+
+er.extensions.ERXNavigationManager.NavigationMenuFileName = NavigationMenu.plist

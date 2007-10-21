@@ -1,0 +1,68 @@
+Body: WOComponentContent {
+	_unroll = true;
+}
+
+DebugFlags : ERD2WDebugFlags {
+	
+}
+
+Footer : PageFooter {
+}
+
+IsDeveloperModeConditional : WOConditional {
+	condition = session.booleanPropertyForKey.isInDeveloperMode;
+}
+
+CurrentClient : WOPopUpButton {
+	list = clients; 
+	item = client;
+	displayString = client.name;
+	selection = session.currentClient;
+	noSelectionString = "-- Select Client --";
+	onChange = "form.submit();";
+}
+ShowLink : WOConditional {
+  condition = showLink;
+  negate = true;
+}
+
+WOForm : WOForm {
+  style = "margin:0; padding:0; display: inline;";
+  action = selectClient;
+}
+
+ShowLink1 : WOConditional {
+  condition = showLink;
+}
+
+AjaxUpdateLink : AjaxUpdateLink {
+  action = showPopup;
+  updateContainerID = "UpdateArea";
+  evalScripts = "true";
+}
+
+SessionCurrentClientName : WOString {
+  value = session.currentClient.name;
+}
+
+AjaxUpdateContainer : AjaxUpdateContainer {
+  id = "UpdateArea";
+  evalScripts = "true";
+}
+
+EVNavigationTop : EVNavigationTop {
+  navigationContext = navigationContext;
+}
+
+ERXLocalizedString : ERXLocalizedString {
+  value = "Cancel";
+}
+
+AjaxUpdateLink1 : AjaxUpdateLink {
+  action = cancel;
+  updateContainerID = "UpdateArea";
+}
+
+ClientAdminStylesheetLength : WOConditional {
+  condition = session.currentClient.adminStylesheet.length;
+}

@@ -1,0 +1,144 @@
+(
+	{
+		name = Root;
+		children = "session.currentUser.usergroup.name";
+		childrenChoices = {
+			"Super Admin" = ("Site Admin", "Contacts", "Trial Management",  "Admin");
+			"Study Administrator" = ("Trial Management", "Admin");
+			"Site Admin" = ("Site Admin");
+		};
+	},
+	{
+		name = "Site Admin";
+		children = "session.currentUser.usergroup.name";		
+		action = "session.listPage.BlogEntry";
+		childrenChoices = {
+			"Super Admin" = ("Websites", "Blog", "Pages", "Domains");
+			"Study Administrator" = ();
+			"Site Admin" = ("Blog", "Pages");
+		};
+	},
+	{
+		name = "Websites";
+		action = "session.listPage.Site";
+		children = ("Show Websites");
+	},
+	{
+		name = "Show Websites";
+		action = "session.listPage.Site";
+	},
+	{
+		name = "Blog";
+		action = "session.listPage.BlogEntry";
+		children = ("Show Blog Entries", "Search Blog Entries", "Show Blogs");
+	},
+	{
+		name = "Show Blog Entries";
+		action = "session.listPage.BlogEntry";
+	},
+	{
+		name = "Search Blog Entries";
+		action = "session.queryPage.BlogEntry";
+	},
+	{
+		name = "Show Blogs";
+		action = "session.listPage.Blog";
+	},
+	{
+		name = "Pages";
+		children = ("Show Pages", "Show Look&Feel Components");
+		action = "session.listPage.AbstractPage";
+	},
+	{
+		name = "Show Pages";
+		action = "session.listPage.AbstractPage";
+	},
+	{
+		name = "Show Look&Feel Components";
+		action = "session.listPage.PageWrapper";
+	},
+	{
+		name = "Domains";
+		action = "session.listPage.Domain";
+	},
+	{
+		name = "Contacts";
+		action = "session.queryPage.Contact";
+		children = ("Contacts_AllContacts", "Contacts_Persons", "Contacts_Companies", "Contacts_AdvancedSearch");
+	},
+	{
+		name = "Contacts_AllContacts";
+		action = "session.queryPage.Contact";
+	},
+	{
+		name = "Contacts_Persons";
+		action = "session.listPage.Person";
+	},
+	{
+		name = "Contacts_Companies";
+		action = "session.listPage.Company";
+	},
+	{
+		name = "Contacts_AdvancedSearch";
+		action = "session.queryPage.Contact";
+	},
+	{
+		name = "Trial Management";
+		action = "session.listPage.ClinicalTrial";
+		children = ("Clinical Trials", "Participants", "Medical Data Sets", "Medical Data Set Entries", "Adverse Events");
+	},
+	{
+		name = "Clinical Trials";
+		action = "session.listPage.ClinicalTrial";
+	},
+	{
+		name = "Medical Data Sets";
+		action = "session.listPage.MedicalDataSetTemplate";
+	},
+	{
+		name = "Medical Data Set Entries";
+		action = "session.listPage.MedicalDataSetEntry";
+	},
+	{
+		name = "Participants";
+		action = "session.queryPage.StudyParticipant";
+	},
+	{
+		name = "Adverse Events";
+		action = "session.queryPage.AdverseEvent";
+	},
+	{
+		name = "Admin";
+		action = "session.listPage.EventsUser";
+		children = "session.currentUser.usergroup.name";
+		childrenChoices = {
+			"Super Admin" = ("Users", "Usergroups", "Clients", "Countries");
+			"Study Administrator" = ("Users");
+		};
+	},
+	{
+		name = "Users";
+		action = "session.listPage.EventsUser";
+		children = ("Show Users", "Search Users");
+	},
+	{
+		name = "Show Users";
+		action = "session.listPage.EventsUser";
+	},
+	{
+		name = "Search Users";
+		action = "session.queryPage.EventsUser";
+	},
+	{
+		name = "Usergroups";
+		action = "session.listPage.Usergroup";
+	},
+	{
+		name = "Clients";
+		action = "session.listPage.Client";
+	},
+	{
+		name = "Countries"; 
+		action = "session.listPage.Country";
+	}
+)

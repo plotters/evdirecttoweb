@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Designer</name>
+	<comment></comment>
+	<projects>
+		<project>ERDirectToWeb</project>
+		<project>ERExtensions</project>
+		<project>ERJars</project>
+		<project>ERJavaMail</project>
+		<project>EVCMS</project>
+		<project>EventsLook</project>
+		<project>EVExtensions</project>
+		<project>JavaWOExtensions</project>
+		<project>PostgresqlPlugIn</project>
+		<project>WOOgnl</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.objectstyle.wolips.incrementalbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.objectstyle.wolips.incrementalapplicationnature</nature>
+	</natures>
+</projectDescription>
