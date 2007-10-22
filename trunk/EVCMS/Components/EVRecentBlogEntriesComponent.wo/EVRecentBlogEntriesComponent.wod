@@ -5,3 +5,7 @@ Link : WOHyperlink {
   ?entryId = dynamicBindings.blogEntry.primaryKey;
   ?pageId = context.page.page.primaryKey;
 }
+PageBlogRecentEntries : WORepetition {
+  list = page.blog.recentEntries; // valid
+  item = dynamicBindings.blogEntry;
+}

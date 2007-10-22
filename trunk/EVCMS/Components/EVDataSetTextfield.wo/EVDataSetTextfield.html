@@ -1,2 +1,2 @@
-<wo:if condition = "$currentValues.count"><wo:AjaxAutoComplete list = "$currentValues" item = "$dynamicBindings.item" class="ev_ds_textfield" value = "$value.textValue" />
-</wo:if><wo:else><wo:WOTextField class="ev_ds_textfield" value = "$value.textValue" /></wo:else>
+<wo:if condition = "$currentValues.count"><webobject name = "AjaxAutoComplete"/>
+</wo:if><wo:else><webobject name = "WOTextField"/></wo:else>

@@ -62,6 +62,15 @@ public class EVAnswerSelectionComponent extends DataSetAnswerComponent {
 	}
 	
 	/**
+	 * Does the class cast to get rid of the errors in the component
+	 * 
+	 * @return a DataSetSelectionItem 
+	 */
+	public DataSetSelectionItem dataSetItem () {
+		return (DataSetSelectionItem) this.value().dataSetItem();
+	}
+	
+	/**
 	 * Return either "radio" or "popup" as the style
 	 * @return
 	 */

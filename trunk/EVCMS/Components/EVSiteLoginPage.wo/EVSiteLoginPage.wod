@@ -1,5 +1,5 @@
 PageWrapper : EVPageWrapper {
-	html = session.requestedObject.pageForDisplay.pageWrapper.componentTemplate;
+	html = session.requestedObject.pageForDisplay.pageWrapper.componentTemplate; // valid
 }
 
 Form1: WOForm {

@@ -1,0 +1,11 @@
+AjaxAutoComplete : AjaxAutoComplete {
+  list = currentValues;
+  item = dynamicBindings.item;
+  class = "ev_ds_textfield";
+  value = value.textValue; // valid
+}
+
+WOTextField : WOTextField {
+  class = "ev_ds_textfield";
+  value = value.textValue; // valid
+}
