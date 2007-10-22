@@ -7,7 +7,7 @@ ModAttributeNameString : ERXLocalizedString {
 }
 
 ModificationRepetition : WORepetition {
-	list = object.modificationsArray;
+	list = object.modificationsArray; // valid
 	item = dict;
 }
 
