@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="Sources"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EVPrototypes"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/EVCMS"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EVExtensions"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/JavaWOExtensions"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/PostgresqlPlugIn"/>
@@ -16,5 +15,6 @@
 	<classpathentry kind="con" path="org.objectstyle.wolips.WO_CLASSPATH/JavaDirectToWeb/JavaDTWGeneration/JavaEOAccess/JavaEOControl/JavaEOProject/JavaFoundation/JavaJDBCAdaptor/JavaWebObjects/JavaXML"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/WOOgnl"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/EVCMS"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

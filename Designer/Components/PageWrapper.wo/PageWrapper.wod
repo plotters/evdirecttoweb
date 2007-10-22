@@ -10,7 +10,7 @@ Footer : PageFooter {
 }
 
 IsDeveloperModeConditional : WOConditional {
-	condition = session.booleanPropertyForKey.isInDeveloperMode;
+	condition = session.booleanPropertyForKey.isInDeveloperMode; // valid
 }
 
 CurrentClient : WOPopUpButton {
