@@ -97,7 +97,7 @@
 	},
 	{
 		name = "Medical Data Set Entries";
-		action = "session.listPage.MedicalDataSetEntry";
+		action = "session.queryPage.MedicalDataSetEntry";
 	},
 	{
 		name = "Participants";
