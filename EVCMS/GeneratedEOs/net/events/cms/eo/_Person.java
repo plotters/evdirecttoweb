@@ -36,6 +36,8 @@ public abstract class _Person extends net.events.cms.eo.Contact {
     public static final String DATEOFBIRTH = "dateOfBirth";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
+    public static final String COMPANYNAME2 = "companyName2";
+    public static final String COMPANYNAME = "companyName";
     public static final String COMPANY = "company";
     public static final String CLIENT = "client";
     public static final String ADDRESSES = "addresses";
@@ -70,13 +72,9 @@ public abstract class _Person extends net.events.cms.eo.Contact {
 	/**
 	 * Create a "Person" object with all required values
 	 */
-	public static Person createPerson(EOEditingContext editingContext, String firstname, String lastname, String login, String password, Number passwordAttempts, NSTimestamp creationTime, Boolean deleted, net.events.cms.eo.Gender gender) {
+	public static Person createPerson(EOEditingContext editingContext, Number passwordAttempts, NSTimestamp creationTime, Boolean deleted, net.events.cms.eo.Gender gender) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: Person");
 		Person eoObject = (Person)EOUtilities.createAndInsertInstance(editingContext, _Person.ENTITY_NAME);
-		eoObject.setFirstname(firstname);
-		eoObject.setLastname(lastname);
-		eoObject.setLogin(login);
-		eoObject.setPassword(password);
 		eoObject.setPasswordAttempts(passwordAttempts);
 		eoObject.setGender(gender);
 		eoObject.setCreationTime(creationTime);
@@ -218,51 +216,6 @@ public abstract class _Person extends net.events.cms.eo.Contact {
     }
 
 	/**
-	 * The value for "email"
-	 */
-    public String email() {
-        return (String) storedValueForKey("email");
-    }
-
-	/**
-	 * Set the value for "email"
-	 */
-    public void setEmail(String aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating email from "+email()+" to "+aValue );
-        takeStoredValueForKey(aValue, "email");
-    }
-
-	/**
-	 * The value for "firstname"
-	 */
-    public String firstname() {
-        return (String) storedValueForKey("firstname");
-    }
-
-	/**
-	 * Set the value for "firstname"
-	 */
-    public void setFirstname(String aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating firstname from "+firstname()+" to "+aValue );
-        takeStoredValueForKey(aValue, "firstname");
-    }
-
-	/**
-	 * The value for "lastname"
-	 */
-    public String lastname() {
-        return (String) storedValueForKey("lastname");
-    }
-
-	/**
-	 * Set the value for "lastname"
-	 */
-    public void setLastname(String aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating lastname from "+lastname()+" to "+aValue );
-        takeStoredValueForKey(aValue, "lastname");
-    }
-
-	/**
 	 * The value for "login"
 	 */
     public String login() {
@@ -275,21 +228,6 @@ public abstract class _Person extends net.events.cms.eo.Contact {
     public void setLogin(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating login from "+login()+" to "+aValue );
         takeStoredValueForKey(aValue, "login");
-    }
-
-	/**
-	 * The value for "middlename"
-	 */
-    public String middlename() {
-        return (String) storedValueForKey("middlename");
-    }
-
-	/**
-	 * Set the value for "middlename"
-	 */
-    public void setMiddlename(String aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating middlename from "+middlename()+" to "+aValue );
-        takeStoredValueForKey(aValue, "middlename");
     }
 
 	/**

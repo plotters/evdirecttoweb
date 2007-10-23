@@ -1,41 +1,34 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           allowsNull = N;
-           columnName = gender_id;
-           name = genderId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = isoCode;
-           name = isoCode;
-           prototypeName = integer;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = name;
-           name = name;
-           prototypeName = string32;
-       }
-    );
-    className = net.events.cms.eo.Gender;
-    classProperties = 
-    (
-       isoCode, 
-       name
-    );
-    externalName = genders;
-    internalInfo = 
-    {};
-    name = Gender;
-    primaryKeyAttributes = 
-    (
-       genderId
-    );
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = gender_id;
+			name = genderId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = isoCode;
+			name = isoCode;
+			prototypeName = integer;
+		},
+		{
+			allowsNull = N;
+			columnName = name;
+			name = name;
+			prototypeName = string32;
+		}
+	);
+	className = net.events.cms.eo.Gender;
+	classProperties = (
+		isoCode,
+		name
+	);
+	externalName = genders;
+	internalInfo = {};
+	name = Gender;
+	primaryKeyAttributes = (
+		genderId
+	);
 }

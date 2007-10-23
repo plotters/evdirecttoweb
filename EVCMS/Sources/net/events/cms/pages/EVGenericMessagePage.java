@@ -30,7 +30,7 @@ public class EVGenericMessagePage extends EVCMSPage {
     	else {
     		// Make sure, this is available!
        		EOEditingContext ec = (EOEditingContext) ERXThreadStorage.valueForKey("EDITING_CONTEXT_FOR_RRLOOP");
-       		PageWrapper wrapper = (PageWrapper) EOUtilities.objectWithQualifierFormat(ec, PageWrapper.ENTITY_NAME, "name = %@ and site.name = %@", new NSArray (new String[] {"EmptyLookAndFeel", "event-s"})); 
+       		PageWrapperEO wrapper = (PageWrapperEO) EOUtilities.objectWithQualifierFormat(ec, PageWrapperEO.ENTITY_NAME, "name = %@ and site.name = %@", new NSArray (new String[] {"EmptyLookAndFeel", "event-s"})); 
        		return wrapper.componentTemplate();
     	}
     }

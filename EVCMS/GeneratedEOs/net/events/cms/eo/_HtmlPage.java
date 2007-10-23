@@ -67,7 +67,7 @@ public abstract class _HtmlPage extends net.events.cms.eo.AbstractPage {
 	/**
 	 * Create a "HtmlPage" object with all required values
 	 */
-	public static HtmlPage createHtmlPage(EOEditingContext editingContext, String htmlContent, String componentName, NSTimestamp creationTime, Number orderNumber, String pageName, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapper pageWrapper, net.events.cms.eo.Site site) {
+	public static HtmlPage createHtmlPage(EOEditingContext editingContext, String htmlContent, String componentName, NSTimestamp creationTime, Number orderNumber, String pageName, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapperEO pageWrapper, net.events.cms.eo.Site site) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: HtmlPage");
 		HtmlPage eoObject = (HtmlPage)EOUtilities.createAndInsertInstance(editingContext, _HtmlPage.ENTITY_NAME);
 		eoObject.setHtmlContent(htmlContent);

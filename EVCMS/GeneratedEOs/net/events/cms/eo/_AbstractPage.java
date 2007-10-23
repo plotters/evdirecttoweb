@@ -76,7 +76,7 @@ public abstract class _AbstractPage extends net.events.cms.eo.EVCMSGenericRecord
 	/**
 	 * Create a "AbstractPage" object with all required values
 	 */
-	public static AbstractPage createAbstractPage(EOEditingContext editingContext, String componentName, NSTimestamp creationTime, String inheritanceType, Number orderNumber, String pageName, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapper pageWrapper, net.events.cms.eo.Site site) {
+	public static AbstractPage createAbstractPage(EOEditingContext editingContext, String componentName, NSTimestamp creationTime, String inheritanceType, Number orderNumber, String pageName, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapperEO pageWrapper, net.events.cms.eo.Site site) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: AbstractPage");
 		AbstractPage eoObject = (AbstractPage)EOUtilities.createAndInsertInstance(editingContext, _AbstractPage.ENTITY_NAME);
 		eoObject.setComponentName(componentName);
@@ -345,11 +345,11 @@ public abstract class _AbstractPage extends net.events.cms.eo.EVCMSGenericRecord
         takeStoredValueForKey(aValue, "createdBy");
     }
 
-    public net.events.cms.eo.PageWrapper pageWrapper() {
-        return (net.events.cms.eo.PageWrapper)storedValueForKey("pageWrapper");
+    public net.events.cms.eo.PageWrapperEO pageWrapper() {
+        return (net.events.cms.eo.PageWrapperEO)storedValueForKey("pageWrapper");
     }
 
-    public void setPageWrapper(net.events.cms.eo.PageWrapper aValue) {
+    public void setPageWrapper(net.events.cms.eo.PageWrapperEO aValue) {
         takeStoredValueForKey(aValue, "pageWrapper");
     }
 

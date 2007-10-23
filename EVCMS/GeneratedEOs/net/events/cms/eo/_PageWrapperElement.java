@@ -63,7 +63,7 @@ public abstract class _PageWrapperElement extends net.events.cms.eo.EVCMSGeneric
 	/**
 	 * Create a "PageWrapperElement" object with all required values
 	 */
-	public static PageWrapperElement createPageWrapperElement(EOEditingContext editingContext, Number orderNumber, String pageArea, net.events.cms.eo.PageElement pageElement, net.events.cms.eo.PageWrapper pageWrapper) {
+	public static PageWrapperElement createPageWrapperElement(EOEditingContext editingContext, Number orderNumber, String pageArea, net.events.cms.eo.PageElement pageElement, net.events.cms.eo.PageWrapperEO pageWrapper) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: PageWrapperElement");
 		PageWrapperElement eoObject = (PageWrapperElement)EOUtilities.createAndInsertInstance(editingContext, _PageWrapperElement.ENTITY_NAME);
 		eoObject.setOrderNumber(orderNumber);
@@ -214,11 +214,11 @@ public abstract class _PageWrapperElement extends net.events.cms.eo.EVCMSGeneric
         takeStoredValueForKey(aValue, "pageElement");
     }
 
-    public net.events.cms.eo.PageWrapper pageWrapper() {
-        return (net.events.cms.eo.PageWrapper)storedValueForKey("pageWrapper");
+    public net.events.cms.eo.PageWrapperEO pageWrapper() {
+        return (net.events.cms.eo.PageWrapperEO)storedValueForKey("pageWrapper");
     }
 
-    public void setPageWrapper(net.events.cms.eo.PageWrapper aValue) {
+    public void setPageWrapper(net.events.cms.eo.PageWrapperEO aValue) {
         takeStoredValueForKey(aValue, "pageWrapper");
     }
 }

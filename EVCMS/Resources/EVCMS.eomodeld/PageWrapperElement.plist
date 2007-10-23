@@ -1,104 +1,86 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = element_id;
-           name = elementId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = order_number;
-           name = orderNumber;
-           prototypeName = integer;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = page_area;
-           name = pageArea;
-           prototypeName = string256;
-       }, 
-       
-       {
-           columnName = pagewrapper_element_id;
-           name = pagewrapperElementId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = wrapper_id;
-           name = wrapperId;
-           prototypeName = key;
-       }
-    );
-    className = net.events.cms.eo.PageWrapperElement;
-    classProperties = 
-    (
-       orderNumber, 
-       pageArea, 
-       pageElement, 
-       pageWrapper
-    );
-    externalName = pagewrapperelement;
-    internalInfo = 
-    {
-        _clientClassPropertyNames = 
-        (
-           orderNumber, 
-           pageArea, 
-           pageElement, 
-           pageWrapper
-        );
-    };
-    name = PageWrapperElement;
-    primaryKeyAttributes = 
-    (
-       pagewrapperElementId
-    );
-    relationships = 
-    (
-       
-       {
-           destination = PageElement;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = pageElementId;
-                  sourceAttribute = elementId;
-              }
-           );
-           name = pageElement;
-       }, 
-       
-       {
-           destination = PageWrapper;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = pagewrapperId;
-                  sourceAttribute = wrapperId;
-              }
-           );
-           name = pageWrapper;
-       }
-    );
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			columnName = element_id;
+			name = elementId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = order_number;
+			name = orderNumber;
+			prototypeName = integer;
+		},
+		{
+			allowsNull = N;
+			columnName = page_area;
+			name = pageArea;
+			prototypeName = string256;
+		},
+		{
+			columnName = pagewrapper_element_id;
+			name = pagewrapperElementId;
+			prototypeName = key;
+		},
+		{
+			columnName = wrapper_id;
+			name = wrapperId;
+			prototypeName = key;
+		}
+	);
+	className = net.events.cms.eo.PageWrapperElement;
+	classProperties = (
+		orderNumber,
+		pageArea,
+		pageElement,
+		pageWrapper
+	);
+	externalName = pagewrapperelement;
+	internalInfo = {
+		_clientClassPropertyNames = (
+			orderNumber,
+			pageArea,
+			pageElement,
+			pageWrapper
+		);
+	};
+	name = PageWrapperElement;
+	primaryKeyAttributes = (
+		pagewrapperElementId
+	);
+	relationships = (
+		{
+			destination = PageElement;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = pageElementId;
+					sourceAttribute = elementId;
+				}
+			);
+			name = pageElement;
+		},
+		{
+			destination = PageWrapperEO;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = pagewrapperId;
+					sourceAttribute = wrapperId;
+				}
+			);
+			name = pageWrapper;
+		}
+	);
 }

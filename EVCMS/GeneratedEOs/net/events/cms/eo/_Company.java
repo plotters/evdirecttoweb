@@ -20,11 +20,17 @@ public abstract class _Company extends net.events.cms.eo.Contact {
 	// KeyValueCoding support
 	
     public static final String NOTES = "notes";
+    public static final String MIDDLENAME = "middlename";
+    public static final String LASTNAME = "lastname";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String FIRSTNAME = "firstname";
+    public static final String EMAIL = "email";
     public static final String DEPARTMENTS = "departments";
     public static final String DELETED = "deleted";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
+    public static final String COMPANYNAME2 = "companyName2";
+    public static final String COMPANYNAME = "companyName";
     public static final String CLIENT = "client";
     public static final String ADDRESSES = "addresses";
     

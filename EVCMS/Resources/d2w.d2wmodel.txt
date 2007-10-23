@@ -1,4 +1,5 @@
 (
+    0 : (pageConfiguration = 'ListEmbeddedDataSetItemValue' and propertyKey = 'dataSetItem.name') => width = 70% [com.webobjects.directtoweb.Assignment], 
     40 : *true* => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment], 
     50 : (task = 'edit' and smartRelationship.isToMany = 0) => componentName = ERD2WEditToOneRelationship [com.webobjects.directtoweb.Assignment], 
     50 : (task = 'query' and smartRelationship.isToMany = 0) => componentName = ERD2WQueryToOneRelationship [com.webobjects.directtoweb.Assignment], 
@@ -19,9 +20,9 @@
     80 : pageConfiguration = 'ListBlog' => defaultSortOrdering = (name, compareAscending) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => propertyIsSortable = false [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'EditEmbeddedDataSetSelectionOption' => hideSaveButton = true [com.webobjects.directtoweb.Assignment], 
-    80 : pageConfiguration = 'EditEmbeddedPageWrapper' => pageName = EVD2WCompactInspectPage [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => keyWhenGrouping = sectionName [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListUsergroup' => defaultSortOrdering = (name, compareAscending) [com.webobjects.directtoweb.Assignment], 
+    80 : pageConfiguration = 'EditEmbeddedPageWrapperEO' => pageName = EVD2WCompactInspectPage [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryMedicalDataSetEntry' => qualifierOperators = ("starts with") [com.webobjects.directtoweb.Assignment], 
     80 : (entity.name = 'ClinicalTrial' and propertyKey = 'name') => displayNameForProperty = Title [com.webobjects.directtoweb.Assignment], 
     80 : ((task = 'edit' or task = 'inspect') and propertyKey = 'options') => sortKey = orderNumber [com.webobjects.directtoweb.Assignment], 
@@ -37,6 +38,7 @@
     80 : pageConfiguration = 'ListMedicalDataSetEntry' => defaultSortOrdering = (creationTime, compareDescending) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'InspectMedicalDataSetEntry' and propertyKey = 'values') => hidePropertyName = true [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetSection' => defaultSortOrdering = (orderNumber, compareAscending) [com.webobjects.directtoweb.Assignment], 
+    80 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => batchNavigationBarComponentName = ERXEmptyComponent [com.webobjects.directtoweb.Assignment], 
     80 : (task = 'edit' and (propertyKey = 'active' or propertyKey = 'isRequired')) => componentName = D2WEditBoolean [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListMedicalDataSetEntry' and propertyKey = 'creationTime') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListEmbeddedDataSetEntry' and propertyKey = 'creationTime') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
@@ -48,6 +50,7 @@
     80 : (pageConfiguration = 'EditBlogEntry' and propertyKey = 'category') => restrictedChoiceKey = object.blog.categories [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListClinicalTrial' or pageConfiguration = 'ListEmbeddedDataSetItem') => showActionBar = true [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListContact' => displayPropertyKeys = (companyName, firstname, lastname, email, inheritanceType) [com.webobjects.directtoweb.Assignment], 
+    80 : (pageConfiguration = 'ListEmbeddedDataSetItemValue' and propertyKey = 'dataSetItem.name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListEmbeddedDataSetItemValue' and propertyKey = 'dataSetItem.name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListContact' => defaultSortOrdering = (companyName, compareAscending, lastname, compareAscending) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryStudyParticipant' => displayPropertyKeys = (participantId, firstname, lastname, clinicalTrial) [com.webobjects.directtoweb.Assignment], 
@@ -156,10 +159,10 @@
     90 : (pageConfiguration = 'ListClient' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListEmbeddedDataSetSelectionOption' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment], 
     90 : (entity.name = 'EventsUser' and propertyKey = 'usergroup') => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment], 
-    90 : pageConfiguration = 'ListPageWrapper' => displayPropertyKeys = (name, defaultTitle, site) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListSite' => displayPropertyKeys = (name, resourcePath, defaultTitle) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListDomain' => actions = {"right" = ("editAction", "deleteAction"); 
 } [com.webobjects.directtoweb.Assignment], 
+    90 : pageConfiguration = 'ListPageWrapperEO' => displayPropertyKeys = (name, defaultTitle, site) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListEmbeddedAdverseEvent' => reverseRelationshipKey = studyParticipant [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => groupingItemKey = dataSetItem.section [com.webobjects.directtoweb.Assignment], 
     90 : (entity.name = 'BlogEntry' and (task = 'edit' or task = 'inspect')) => useTableLayout = false [com.webobjects.directtoweb.Assignment], 
@@ -224,10 +227,10 @@
     90 : ((task = 'list' and (entity.name = 'AdverseEvent' or entity.name = 'ClinicalTrial')) and not (session.currentUser.isSuperAdmin = 1)) => actions = {
 } [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'ListEmbeddedAdverseEvent' or pageConfiguration = 'ListAdverseEvent') and propertyKey = 'eventDate') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
-    90 : ((pageConfiguration = 'CreatePageWrapper' or pageConfiguration = 'EditPageWrapper') and propertyKey = 'site') => componentName = ERD2WEditToOneRelationship [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'ListSite' and propertyKey = 'name') or (pageConfiguration = 'ListClinicalTrial' and propertyKey = 'name')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'CreateSite' => displayPropertyKeys = ((    SiteMainTabName,     (SiteInformationSectionName, client, name, resourcePath, defaultTitle))
 ) [com.webobjects.directtoweb.Assignment], 
+    90 : ((pageConfiguration = 'CreatePageWrapperEO' or pageConfiguration = 'EditPageWrapperEO') and propertyKey = 'site') => componentName = ERD2WEditToOneRelationship [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'EditUsergroup' or pageConfiguration = 'CreateUsergroup') => displayPropertyKeys = ((Usergroup, ("Usergroup Information", name, privilege))) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'InspectUsergroup' => displayPropertyKeys = ((Usergroup, ("Usergroup Information", name, privilege)), ("Users in this Group", (Users, users))
 ) [com.webobjects.directtoweb.Assignment], 
@@ -255,9 +258,9 @@
     90 : ((pageConfiguration = 'CreateStudyParticipant' or pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'InspectStudyParticipant') and (sectionKey = 'PersonalDataSectionName' or sectionKey = 'DemographicDataSectionName')) => maxColumns = 4 [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') and session.currentUser.isSuperAdmin = 'true') => displayPropertyKeys = ((    Blog,     (BlogInformationSectionName, client, site, name, password),     (BlogPagesSectionName, blogPages))
 ) [com.webobjects.directtoweb.Assignment], 
-    90 : (pageConfiguration = 'EditPageWrapper' or pageConfiguration = 'InspectPageWrapper' or pageConfiguration = 'CreatePageWrapper') => displayPropertyKeys = ((    PageWrapper,     (WrapperInformation, name, defaultTitle, site),     (Template, componentTemplate))
-) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'InspectBlog' and session.currentUser.isSuperAdmin = 'true') => displayPropertyKeys = ((    Blog,     (BlogInformationSectionName, client, site, name, password),     (CategoriesSectionName, categories),     (BlogPagesSectionName, blogPages))
+) [com.webobjects.directtoweb.Assignment], 
+    90 : (pageConfiguration = 'EditPageWrapperEO' or pageConfiguration = 'InspectPageWrapperEO' or pageConfiguration = 'CreatePageWrapperEO') => displayPropertyKeys = ((    PageWrapper,     (WrapperInformation, name, defaultTitle, site),     (Template, componentTemplate))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'ListEmbeddedStudyParticipant' or pageConfiguration = 'ListStudyParticipant' or pageConfiguration = 'ListEmbeddedDataSetItemValue' or pageConfiguration = 'ListEmbeddedEventsUser') and not (session.currentUser.isSuperAdmin = 1)) => actions = {
 } [com.webobjects.directtoweb.Assignment], 
@@ -265,10 +268,10 @@
     90 : (pageConfiguration = 'CreatePerson' or pageConfiguration = 'InspectPerson' or pageConfiguration = 'EditPerson') => displayPropertyKeys = ((Person, (Name, title, academicTitle, firstname, lastname, middlename)), (WebsiteLoginTabName, ("Login Information", login, password))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'CreateStudyParticipant' or pageConfiguration = 'EditStudyParticipant') and (propertyKey = 'firstname' or propertyKey = 'lastname' or propertyKey = 'middlename' or propertyKey = 'title' or propertyKey = 'login' or propertyKey = 'password')) => length = 20 [com.webobjects.directtoweb.Assignment], 
-    90 : ((((task = 'edit' or task = 'inspect') and entity.name = 'HtmlPage') and (tabKey = 'HTML Page' and sectionKey = 'Content')) or (((task = 'edit' or task = 'inspect') and entity.name = 'PageWrapper') and (tabKey = 'Template' and sectionKey = 'componentTemplate'))) => maxColumns = 1 [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'EditSite' or pageConfiguration = 'InspectSite') => displayPropertyKeys = ((    SiteMainTabName,     (SiteInformationSectionName, client, name, resourcePath, defaultTitle),     (Domains, domains)), (PagesTabName, (PageWrappers, pageWrappers), (Pages, pages))
 ) [com.webobjects.directtoweb.Assignment], 
-    90 : ((pageConfiguration = 'ListBlogEntry' and propertyKey = 'title') or (pageConfiguration = 'ListBlog' and propertyKey = 'name') or (pageConfiguration = 'ListPageWrapper' and propertyKey = 'name') or (pageConfiguration = 'ListAbstractPage' and propertyKey = 'pageName')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
+    90 : ((((task = 'edit' or task = 'inspect') and entity.name = 'HtmlPage') and (tabKey = 'HTML Page' and sectionKey = 'Content')) or (((task = 'edit' or task = 'inspect') and entity.name = 'PageWrapperEO') and (tabKey = 'Template' and sectionKey = 'componentTemplate'))) => maxColumns = 1 [com.webobjects.directtoweb.Assignment], 
+    90 : ((pageConfiguration = 'ListBlogEntry' and propertyKey = 'title') or (pageConfiguration = 'ListBlog' and propertyKey = 'name') or (pageConfiguration = 'ListPageWrapperEO' and propertyKey = 'name') or (pageConfiguration = 'ListAbstractPage' and propertyKey = 'pageName')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'CreateSeriousness' or pageConfiguration = 'EditSeriousness' or pageConfiguration = 'InspectSeriousness') => displayPropertyKeys = ((    SeriousnessTabName,     (GeneralInformationTabName, name, orderNumber, clinicalTrial),     (AdministrativeInformationTabName, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'CreateSeverityGrade' or pageConfiguration = 'EditSeverityGrade' or pageConfiguration = 'InspectSeverityGrade') => displayPropertyKeys = ((    SeverityGradeTabName,     (GeneralInformationTabName, name, orderNumber, clinicalTrial),     (AdministrativeInformationTabName, createdBy, creationTime))
@@ -335,8 +338,8 @@
     100 : (pageConfiguration = 'InspectBlogEntry' and propertyKey = 'comments') => componentName = ERDList [com.webobjects.directtoweb.Assignment], 
     100 : (task = 'edit' and smartAttribute.userInfo.prototypeName = 'flag') => componentName = D2WEditBoolean [com.webobjects.directtoweb.Assignment], 
     100 : (pageConfiguration = 'InspectMedicalDataSetEntry' and propertyKey = 'values') => componentName = ERDList [com.webobjects.directtoweb.Assignment], 
-    100 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => repetitionComponentName = ERDGroupingListPageRepetition [com.webobjects.directtoweb.Assignment], 
     100 : (task = 'edit' and propertyKey = 'clinicalTrial') => restrictedChoiceKey = session.currentClient.clinicalTrials [com.webobjects.directtoweb.Assignment], 
+    100 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => repetitionComponentName = EVD2WGroupingListPageRepetition [com.webobjects.directtoweb.Assignment], 
     100 : (pageConfiguration = 'InspectStudyParticipant' and propertyKey = 'password') => componentName = D2WDisplayString [com.webobjects.directtoweb.Assignment], 
     100 : ((task = 'inspect' or task = 'list') and smartAttribute.userInfo.prototypeName = 'flag') => componentName = D2WDisplayBoolean [com.webobjects.directtoweb.Assignment], 
     100 : pageConfiguration = 'ListAbstractPage' => defaultSortOrdering = ("site.name", compareAscending, orderNumber, compareAscending) [com.webobjects.directtoweb.Assignment], 

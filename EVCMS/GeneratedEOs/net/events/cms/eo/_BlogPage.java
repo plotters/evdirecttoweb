@@ -68,7 +68,7 @@ public abstract class _BlogPage extends net.events.cms.eo.AbstractPage {
 	/**
 	 * Create a "BlogPage" object with all required values
 	 */
-	public static BlogPage createBlogPage(EOEditingContext editingContext, Number entriesPerPage, String componentName, NSTimestamp creationTime, Number orderNumber, String pageName, net.events.cms.eo.Blog blog, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapper pageWrapper, net.events.cms.eo.Site site) {
+	public static BlogPage createBlogPage(EOEditingContext editingContext, Number entriesPerPage, String componentName, NSTimestamp creationTime, Number orderNumber, String pageName, net.events.cms.eo.Blog blog, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapperEO pageWrapper, net.events.cms.eo.Site site) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: BlogPage");
 		BlogPage eoObject = (BlogPage)EOUtilities.createAndInsertInstance(editingContext, _BlogPage.ENTITY_NAME);
 		eoObject.setEntriesPerPage(entriesPerPage);

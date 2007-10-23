@@ -20,10 +20,16 @@ public abstract class _Contact extends net.events.cms.eo.EVCMSGenericRecord {
 	// KeyValueCoding support
 	
     public static final String NOTES = "notes";
+    public static final String MIDDLENAME = "middlename";
+    public static final String LASTNAME = "lastname";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String FIRSTNAME = "firstname";
+    public static final String EMAIL = "email";
     public static final String DELETED = "deleted";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
+    public static final String COMPANYNAME2 = "companyName2";
+    public static final String COMPANYNAME = "companyName";
     public static final String CLIENT = "client";
     public static final String ADDRESSES = "addresses";
     
@@ -179,6 +185,36 @@ public abstract class _Contact extends net.events.cms.eo.EVCMSGenericRecord {
   
 
 	/**
+	 * The value for "companyName"
+	 */
+    public String companyName() {
+        return (String) storedValueForKey("companyName");
+    }
+
+	/**
+	 * Set the value for "companyName"
+	 */
+    public void setCompanyName(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating companyName from "+companyName()+" to "+aValue );
+        takeStoredValueForKey(aValue, "companyName");
+    }
+
+	/**
+	 * The value for "companyName2"
+	 */
+    public String companyName2() {
+        return (String) storedValueForKey("companyName2");
+    }
+
+	/**
+	 * Set the value for "companyName2"
+	 */
+    public void setCompanyName2(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating companyName2 from "+companyName2()+" to "+aValue );
+        takeStoredValueForKey(aValue, "companyName2");
+    }
+
+	/**
 	 * The value for "creationTime"
 	 */
     public NSTimestamp creationTime() {
@@ -209,6 +245,36 @@ public abstract class _Contact extends net.events.cms.eo.EVCMSGenericRecord {
     }
 
 	/**
+	 * The value for "email"
+	 */
+    public String email() {
+        return (String) storedValueForKey("email");
+    }
+
+	/**
+	 * Set the value for "email"
+	 */
+    public void setEmail(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating email from "+email()+" to "+aValue );
+        takeStoredValueForKey(aValue, "email");
+    }
+
+	/**
+	 * The value for "firstname"
+	 */
+    public String firstname() {
+        return (String) storedValueForKey("firstname");
+    }
+
+	/**
+	 * Set the value for "firstname"
+	 */
+    public void setFirstname(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating firstname from "+firstname()+" to "+aValue );
+        takeStoredValueForKey(aValue, "firstname");
+    }
+
+	/**
 	 * The value for "inheritanceType"
 	 */
     public String inheritanceType() {
@@ -221,6 +287,36 @@ public abstract class _Contact extends net.events.cms.eo.EVCMSGenericRecord {
     public void setInheritanceType(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating inheritanceType from "+inheritanceType()+" to "+aValue );
         takeStoredValueForKey(aValue, "inheritanceType");
+    }
+
+	/**
+	 * The value for "lastname"
+	 */
+    public String lastname() {
+        return (String) storedValueForKey("lastname");
+    }
+
+	/**
+	 * Set the value for "lastname"
+	 */
+    public void setLastname(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating lastname from "+lastname()+" to "+aValue );
+        takeStoredValueForKey(aValue, "lastname");
+    }
+
+	/**
+	 * The value for "middlename"
+	 */
+    public String middlename() {
+        return (String) storedValueForKey("middlename");
+    }
+
+	/**
+	 * Set the value for "middlename"
+	 */
+    public void setMiddlename(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating middlename from "+middlename()+" to "+aValue );
+        takeStoredValueForKey(aValue, "middlename");
     }
 
     public net.events.cms.eo.Client client() {

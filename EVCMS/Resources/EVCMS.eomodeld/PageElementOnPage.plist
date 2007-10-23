@@ -1,111 +1,91 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           columnName = page_id;
-           name = abstractPageId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = element_on_page_id;
-           name = elementOnPageId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = order_number;
-           name = orderNumber;
-           prototypeName = integer;
-       }, 
-       
-       {
-           columnName = element_id;
-           name = pageElementId;
-           prototypeName = key;
-       }
-    );
-    className = net.events.cms.eo.PageElementOnPage;
-    classProperties = 
-    (
-       abstractPage, 
-       client, 
-       orderNumber, 
-       pageElement
-    );
-    externalName = page_element_on_page;
-    internalInfo = 
-    {
-        _clientClassPropertyNames = 
-        (
-           abstractPage, 
-           orderNumber, 
-           pageElement
-        );
-    };
-    name = PageElementOnPage;
-    primaryKeyAttributes = 
-    (
-       elementOnPageId
-    );
-    relationships = 
-    (
-       
-       {
-           destination = AbstractPage;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = pageId;
-                  sourceAttribute = abstractPageId;
-              }
-           );
-           name = abstractPage;
-       }, 
-       
-       {
-           destination = Client;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = clientId;
-                  sourceAttribute = clientId;
-              }
-           );
-           name = client;
-       }, 
-       
-       {
-           destination = PageElement;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = pageElementId;
-                  sourceAttribute = pageElementId;
-              }
-           );
-           name = pageElement;
-       }
-    );
+	attributes = (
+		{
+			columnName = page_id;
+			name = abstractPageId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			columnName = element_on_page_id;
+			name = elementOnPageId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = order_number;
+			name = orderNumber;
+			prototypeName = integer;
+		},
+		{
+			columnName = element_id;
+			name = pageElementId;
+			prototypeName = key;
+		}
+	);
+	className = net.events.cms.eo.PageElementOnPage;
+	classProperties = (
+		abstractPage,
+		client,
+		orderNumber,
+		pageElement
+	);
+	externalName = page_element_on_page;
+	internalInfo = {
+		_clientClassPropertyNames = (
+			abstractPage,
+			orderNumber,
+			pageElement
+		);
+	};
+	name = PageElementOnPage;
+	primaryKeyAttributes = (
+		elementOnPageId
+	);
+	relationships = (
+		{
+			destination = AbstractPage;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = pageId;
+					sourceAttribute = abstractPageId;
+				}
+			);
+			name = abstractPage;
+		},
+		{
+			destination = Client;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		},
+		{
+			destination = PageElement;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = pageElementId;
+					sourceAttribute = pageElementId;
+				}
+			);
+			name = pageElement;
+		}
+	);
 }

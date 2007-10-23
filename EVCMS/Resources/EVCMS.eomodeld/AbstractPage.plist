@@ -1,275 +1,229 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           columnName = active;
-           name = active;
-           prototypeName = flag;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = component_name;
-           name = componentName;
-           prototypeName = string256;
-       }, 
-       
-       {
-           columnName = created_by_id;
-           name = createdById;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = creation_time;
-           name = creationTime;
-           prototypeName = datetime;
-       }, 
-       
-       {
-           columnName = css_container_name;
-           name = cssContainerName;
-           prototypeName = string256;
-       }, 
-       
-       {
-           columnName = css_container_type;
-           name = cssContainerType;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = inheritance_type;
-           name = inheritanceType;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = order_number;
-           name = orderNumber;
-           prototypeName = integer;
-       }, 
-       
-       {
-           columnName = page_description;
-           name = pageDescription;
-           prototypeName = string4k;
-       }, 
-       
-       {
-           columnName = page_id;
-           name = pageId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = page_name;
-           name = pageName;
-           prototypeName = string256;
-       }, 
-       
-       {
-           columnName = page_wrapper_id;
-           name = pageWrapperId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = Y;
-           columnName = parent_page_id;
-           name = parentPageId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = site_id;
-           name = siteId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = Y;
-           columnName = stylesheet_id;
-           name = stylesheetId;
-           prototypeName = key;
-       }
-    );
-    className = net.events.cms.eo.AbstractPage;
-    classProperties = 
-    (
-       active, 
-       childPages, 
-       client, 
-       componentName, 
-       createdBy, 
-       creationTime, 
-       cssContainerName, 
-       cssContainerType, 
-       inheritanceType, 
-       orderNumber, 
-       pageDescription, 
-       pageElements, 
-       pageName, 
-       pageWrapper, 
-       parentPage, 
-       site, 
-       stylesheet
-    );
-    externalName = pages;
-    internalInfo = 
-    {
-        _clientClassPropertyNames = 
-        (
-           inheritanceType, 
-           pageElements, 
-           pageWrapper, 
-           site, 
-           stylesheet
-        );
-    };
-    isAbstractEntity = Y;
-    name = AbstractPage;
-    primaryKeyAttributes = 
-    (
-       pageId
-    );
-    relationships = 
-    (
-       
-       {
-           deleteRule = EODeleteRuleDeny;
-           destination = AbstractPage;
-           isToMany = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = parentPageId;
-                  sourceAttribute = pageId;
-              }
-           );
-           name = childPages;
-       }, 
-       
-       {
-           destination = Client;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = clientId;
-                  sourceAttribute = clientId;
-              }
-           );
-           name = client;
-       }, 
-       
-       {
-           destination = Person;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = contactId;
-                  sourceAttribute = createdById;
-              }
-           );
-           name = createdBy;
-       }, 
-       
-       {
-           deleteRule = EODeleteRuleCascade;
-           destination = PageElementOnPage;
-           isToMany = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = abstractPageId;
-                  sourceAttribute = pageId;
-              }
-           );
-           name = pageElements;
-       }, 
-       
-       {
-           destination = PageWrapper;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = pagewrapperId;
-                  sourceAttribute = pageWrapperId;
-              }
-           );
-           name = pageWrapper;
-       }, 
-       
-       {
-           destination = AbstractPage;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = pageId;
-                  sourceAttribute = parentPageId;
-              }
-           );
-           name = parentPage;
-       }, 
-       
-       {
-           destination = Site;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = siteId;
-                  sourceAttribute = siteId;
-              }
-           );
-           name = site;
-       }, 
-       
-       {
-           destination = Stylesheet;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = filesystemObjectId;
-                  sourceAttribute = stylesheetId;
-              }
-           );
-           name = stylesheet;
-       }
-    );
+	attributes = (
+		{
+			columnName = active;
+			name = active;
+			prototypeName = flag;
+		},
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = component_name;
+			name = componentName;
+			prototypeName = string256;
+		},
+		{
+			columnName = created_by_id;
+			name = createdById;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		},
+		{
+			columnName = css_container_name;
+			name = cssContainerName;
+			prototypeName = string256;
+		},
+		{
+			columnName = css_container_type;
+			name = cssContainerType;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = inheritance_type;
+			name = inheritanceType;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = order_number;
+			name = orderNumber;
+			prototypeName = integer;
+		},
+		{
+			columnName = page_description;
+			name = pageDescription;
+			prototypeName = string4k;
+		},
+		{
+			columnName = page_id;
+			name = pageId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = page_name;
+			name = pageName;
+			prototypeName = string256;
+		},
+		{
+			columnName = page_wrapper_id;
+			name = pageWrapperId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = Y;
+			columnName = parent_page_id;
+			name = parentPageId;
+			prototypeName = key;
+		},
+		{
+			columnName = site_id;
+			name = siteId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = Y;
+			columnName = stylesheet_id;
+			name = stylesheetId;
+			prototypeName = key;
+		}
+	);
+	className = net.events.cms.eo.AbstractPage;
+	classProperties = (
+		active,
+		childPages,
+		client,
+		componentName,
+		createdBy,
+		creationTime,
+		cssContainerName,
+		cssContainerType,
+		inheritanceType,
+		orderNumber,
+		pageDescription,
+		pageElements,
+		pageName,
+		pageWrapper,
+		parentPage,
+		site,
+		stylesheet
+	);
+	externalName = pages;
+	internalInfo = {
+		_clientClassPropertyNames = (
+			inheritanceType,
+			pageElements,
+			pageWrapper,
+			site,
+			stylesheet
+		);
+	};
+	isAbstractEntity = Y;
+	name = AbstractPage;
+	primaryKeyAttributes = (
+		pageId
+	);
+	relationships = (
+		{
+			deleteRule = EODeleteRuleDeny;
+			destination = AbstractPage;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = parentPageId;
+					sourceAttribute = pageId;
+				}
+			);
+			name = childPages;
+		},
+		{
+			destination = Client;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		},
+		{
+			destination = Person;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = contactId;
+					sourceAttribute = createdById;
+				}
+			);
+			name = createdBy;
+		},
+		{
+			deleteRule = EODeleteRuleCascade;
+			destination = PageElementOnPage;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = abstractPageId;
+					sourceAttribute = pageId;
+				}
+			);
+			name = pageElements;
+		},
+		{
+			destination = PageWrapperEO;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = pagewrapperId;
+					sourceAttribute = pageWrapperId;
+				}
+			);
+			name = pageWrapper;
+		},
+		{
+			destination = AbstractPage;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = pageId;
+					sourceAttribute = parentPageId;
+				}
+			);
+			name = parentPage;
+		},
+		{
+			destination = Site;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = siteId;
+					sourceAttribute = siteId;
+				}
+			);
+			name = site;
+		},
+		{
+			destination = Stylesheet;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = filesystemObjectId;
+					sourceAttribute = stylesheetId;
+				}
+			);
+			name = stylesheet;
+		}
+	);
 }

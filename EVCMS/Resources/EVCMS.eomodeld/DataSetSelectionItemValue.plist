@@ -1,130 +1,107 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = data_set_entry_id;
-           name = dataSetEntryId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = data_set_item_id;
-           name = dataSetItemId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = data_set_item_value_id;
-           name = dataSetItemValueId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = inheritance_type;
-           name = inheritanceType;
-           prototypeName = string32;
-       }, 
-       
-       {
-           allowsNull = Y;
-           columnName = selected_option_id;
-           name = selectedOptionId;
-           prototypeName = key;
-       }
-    );
-    className = net.events.cms.eo.DataSetSelectionItemValue;
-    classProperties = 
-    (
-       client, 
-       dataSetEntry, 
-       dataSetItem, 
-       inheritanceType, 
-       selectedOption
-    );
-    externalName = data_set_item_value;
-    internalInfo = 
-    {};
-    isAbstractEntity = N;
-    name = DataSetSelectionItemValue;
-    parent = DataSetItemValue;
-    primaryKeyAttributes = 
-    (
-       dataSetItemValueId
-    );
-    relationships = 
-    (
-       
-       {
-           destination = Client;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = clientId;
-                  sourceAttribute = clientId;
-              }
-           );
-           name = client;
-       }, 
-       
-       {
-           destination = DataSetEntry;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = dataSetEntryId;
-                  sourceAttribute = dataSetEntryId;
-              }
-           );
-           name = dataSetEntry;
-       }, 
-       
-       {
-           destination = DataSetItem;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = dataSetItemId;
-                  sourceAttribute = dataSetItemId;
-              }
-           );
-           name = dataSetItem;
-       }, 
-       
-       {
-           destination = DataSetSelectionOption;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = dataSetSelectionOptionId;
-                  sourceAttribute = selectedOptionId;
-              }
-           );
-           name = selectedOption;
-       }
-    );
-    restrictingQualifier = "inheritanceType = 'DataSetSelectionItemValue'";
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = data_set_entry_id;
+			name = dataSetEntryId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = data_set_item_id;
+			name = dataSetItemId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = data_set_item_value_id;
+			name = dataSetItemValueId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = inheritance_type;
+			name = inheritanceType;
+			prototypeName = string32;
+		},
+		{
+			allowsNull = Y;
+			columnName = selected_option_id;
+			name = selectedOptionId;
+			prototypeName = key;
+		}
+	);
+	className = net.events.cms.eo.DataSetSelectionItemValue;
+	classProperties = (
+		client,
+		dataSetEntry,
+		dataSetItem,
+		inheritanceType,
+		selectedOption
+	);
+	externalName = data_set_item_value;
+	internalInfo = {};
+	isAbstractEntity = N;
+	name = DataSetSelectionItemValue;
+	parent = DataSetItemValue;
+	primaryKeyAttributes = (
+		dataSetItemValueId
+	);
+	relationships = (
+		{
+			destination = Client;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		},
+		{
+			destination = DataSetEntry;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetEntryId;
+					sourceAttribute = dataSetEntryId;
+				}
+			);
+			name = dataSetEntry;
+		},
+		{
+			destination = DataSetItem;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetItemId;
+					sourceAttribute = dataSetItemId;
+				}
+			);
+			name = dataSetItem;
+		},
+		{
+			destination = DataSetSelectionOption;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetSelectionOptionId;
+					sourceAttribute = selectedOptionId;
+				}
+			);
+			name = selectedOption;
+		}
+	);
+	restrictingQualifier = "inheritanceType = 'DataSetSelectionItemValue'";
 }

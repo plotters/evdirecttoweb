@@ -1,26 +1,21 @@
-
+// Entity Modeler v1.0.0
 {
-    ToOneUserInterfaceElementsFS = 
-    {
-        class = EOFetchSpecification;
-        entityName = InterfaceElementType;
-        prefetchingRelationshipKeyPaths = 
-        ();
-        qualifier = 
-        {
-            class = EOKeyValueQualifier;
-            key = componentName;
-            selectorName = isEqualTo:;
-            value = EVAnswerSelectionComponent;
-        };
-        sortOrderings = 
-        (
-           
-           {
-               class = EOSortOrdering;
-               key = componentName;
-               selectorName = compareAscending;
-           }
-        );
-    };
+	ToOneUserInterfaceElementsFS = {
+		class = EOFetchSpecification;
+		entityName = InterfaceElementType;
+		prefetchingRelationshipKeyPaths = ();
+		qualifier = {
+			class = EOKeyValueQualifier;
+			key = componentName;
+			selectorName = isEqualTo:;
+			value = EVAnswerSelectionComponent;
+		};
+		sortOrderings = (
+			{
+				class = EOSortOrdering;
+				key = componentName;
+				selectorName = compareAscending;
+			}
+		);
+	};
 }
