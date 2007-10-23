@@ -1,0 +1,35 @@
+<webobject name="ListTable">
+    <tr>
+        <webobject name="HeaderCell"><webobject name="EntityName"></webobject></webobject>
+    </tr>
+    <tr>
+       <webobject name="ColumnLabelRepetition">
+            <th><webobject name="PropertyName"></webobject></th>
+        </webobject>
+    </tr>
+    <webobject name="GroupingRepetition">
+        <tr>
+            <webobject name="SectionCell">
+                <webobject name="SectionDisplay"></webobject>
+            </webobject>
+        </tr>
+        <webobject name="EntityRepetition">
+        	<webobject name="ListTableRow">
+                <webobject name="AttributeRepetition">
+					<webobject name="AttributeCell"><webobject name="InspectLink"><webobject name="AttributeDisplay"></webobject></webobject></webobject>
+                </webobject>
+            </webobject>
+        </webobject>
+        <webobject name="HasTotal">
+            <tr class="Summary">
+                <webobject name="AttributeRepetition2">
+                    <webobject name="SumCell">
+                        <webobject name="IsTotallingKey">
+                            <webobject name="SumForSubList"></webobject>
+                        </webobject>
+                    </webobject>
+                </webobject>
+            </tr>
+        </webobject>
+    </webobject>
+</webobject>

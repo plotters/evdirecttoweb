@@ -517,6 +517,26 @@ td, th {
 	border-bottom: 1px solid #ccc;
 }
 
+.d2w_grouping_list_table th {
+	padding: 4px;
+	background-color: #ddd;
+	color: black;
+}
+
+.d2w_section_in_grouped_list {
+	background-color: #eee;
+	padding: 4px;
+}
+
+.d2w_section_in_grouped_list td, .d2w_section_in_grouped_list th {
+	border: none;
+}
+
+.d2w_grouped_list_row td {
+	padding: 4px;
+	border: 1px solid #ddd;
+}
+
 /* @end */
 
 /* @group Wizard / Inspect / Edit / Query Page */
@@ -638,6 +658,10 @@ td, th {
 	font-size: 0.8em;
 	margin-top: 0;
 	margin-bottom: 4px;
+}
+
+.radioButtonTable td {
+	padding: 4px;
 }
 
 /* @end */
