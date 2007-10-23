@@ -55,7 +55,7 @@
 	},
 	{
 		name = "Show Look&Feel Components";
-		action = "session.listPage.PageWrapper";
+		action = "session.listPage.PageWrapperEO";
 	},
 	{
 		name = "Domains";
