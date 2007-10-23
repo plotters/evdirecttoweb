@@ -66,7 +66,7 @@ public abstract class _DataSetPageTemplate extends net.events.cms.eo.AbstractPag
 	/**
 	 * Create a "DataSetPageTemplate" object with all required values
 	 */
-	public static DataSetPageTemplate createDataSetPageTemplate(EOEditingContext editingContext, String componentName, NSTimestamp creationTime, Number orderNumber, String pageName, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapper pageWrapper, net.events.cms.eo.Site site) {
+	public static DataSetPageTemplate createDataSetPageTemplate(EOEditingContext editingContext, String componentName, NSTimestamp creationTime, Number orderNumber, String pageName, net.events.cms.eo.Client client, net.events.cms.eo.Person createdBy, net.events.cms.eo.PageWrapperEO pageWrapper, net.events.cms.eo.Site site) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: DataSetPageTemplate");
 		DataSetPageTemplate eoObject = (DataSetPageTemplate)EOUtilities.createAndInsertInstance(editingContext, _DataSetPageTemplate.ENTITY_NAME);
 		eoObject.setComponentName(componentName);

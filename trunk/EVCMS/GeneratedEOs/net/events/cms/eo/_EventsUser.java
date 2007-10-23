@@ -39,6 +39,8 @@ public abstract class _EventsUser extends net.events.cms.eo.Person {
     public static final String DATEOFBIRTH = "dateOfBirth";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
+    public static final String COMPANYNAME2 = "companyName2";
+    public static final String COMPANYNAME = "companyName";
     public static final String COMPANY = "company";
     public static final String CLIENT = "client";
     public static final String ADDRESSES = "addresses";
@@ -74,14 +76,10 @@ public abstract class _EventsUser extends net.events.cms.eo.Person {
 	/**
 	 * Create a "EventsUser" object with all required values
 	 */
-	public static EventsUser createEventsUser(EOEditingContext editingContext, Boolean active, String firstname, String lastname, String login, String password, Number passwordAttempts, net.events.cms.eo.Gender gender) {
+	public static EventsUser createEventsUser(EOEditingContext editingContext, Boolean active, Number passwordAttempts, net.events.cms.eo.Gender gender) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: EventsUser");
 		EventsUser eoObject = (EventsUser)EOUtilities.createAndInsertInstance(editingContext, _EventsUser.ENTITY_NAME);
 		eoObject.setActive(active);
-		eoObject.setFirstname(firstname);
-		eoObject.setLastname(lastname);
-		eoObject.setLogin(login);
-		eoObject.setPassword(password);
 		eoObject.setPasswordAttempts(passwordAttempts);
 		eoObject.setGender(gender);
 		return eoObject;

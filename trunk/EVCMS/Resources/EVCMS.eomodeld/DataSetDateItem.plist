@@ -1,200 +1,167 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           columnName = active;
-           name = active;
-           prototypeName = flag;
-       }, 
-       
-       {
-           columnName = autoset_to_today;
-           name = autosetToToday;
-           prototypeName = flag;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = creation_time;
-           name = creationTime;
-           prototypeName = datetime;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = data_set_id;
-           name = dataSetId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = data_set_item_id;
-           name = dataSetItemId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = inheritance_type;
-           name = inheritanceType;
-           prototypeName = string32;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = interface_element_type_id;
-           name = interfaceElementTypeId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = is_required;
-           name = isRequired;
-           prototypeName = flag;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = name;
-           name = name;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = order_number;
-           name = orderNumber;
-           prototypeName = integer;
-       }, 
-       
-       {
-           allowsNull = Y;
-           columnName = section_id;
-           name = sectionId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = text_description;
-           name = textDescription;
-           prototypeName = string4k;
-       }
-    );
-    className = net.events.cms.eo.DataSetDateItem;
-    classProperties = 
-    (
-       active, 
-       answers, 
-       autosetToToday, 
-       client, 
-       creationTime, 
-       dataSetTemplate, 
-       inheritanceType, 
-       interfaceElementType, 
-       isRequired, 
-       name, 
-       orderNumber, 
-       section, 
-       textDescription
-    );
-    externalName = data_set_item;
-    internalInfo = 
-    {};
-    isAbstractEntity = N;
-    name = DataSetDateItem;
-    parent = DataSetItem;
-    primaryKeyAttributes = 
-    (
-       dataSetItemId
-    );
-    relationships = 
-    (
-       
-       {
-           deleteRule = EODeleteRuleDeny;
-           destination = DataSetItemValue;
-           isToMany = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = dataSetItemId;
-                  sourceAttribute = dataSetItemId;
-              }
-           );
-           name = answers;
-       }, 
-       
-       {
-           destination = Client;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = clientId;
-                  sourceAttribute = clientId;
-              }
-           );
-           name = client;
-       }, 
-       
-       {
-           destination = DataSetTemplate;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = dataSetId;
-                  sourceAttribute = dataSetId;
-              }
-           );
-           name = dataSetTemplate;
-       }, 
-       
-       {
-           destination = InterfaceElementType;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = elementId;
-                  sourceAttribute = interfaceElementTypeId;
-              }
-           );
-           name = interfaceElementType;
-       }, 
-       
-       {
-           destination = DataSetSection;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = dataSetSectionId;
-                  sourceAttribute = sectionId;
-              }
-           );
-           name = section;
-       }
-    );
-    restrictingQualifier = "inheritanceType = 'DataSetDateItem'";
+	attributes = (
+		{
+			columnName = active;
+			name = active;
+			prototypeName = flag;
+		},
+		{
+			columnName = autoset_to_today;
+			name = autosetToToday;
+			prototypeName = flag;
+		},
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		},
+		{
+			allowsNull = N;
+			columnName = data_set_id;
+			name = dataSetId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = data_set_item_id;
+			name = dataSetItemId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = inheritance_type;
+			name = inheritanceType;
+			prototypeName = string32;
+		},
+		{
+			allowsNull = N;
+			columnName = interface_element_type_id;
+			name = interfaceElementTypeId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = is_required;
+			name = isRequired;
+			prototypeName = flag;
+		},
+		{
+			allowsNull = N;
+			columnName = name;
+			name = name;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = order_number;
+			name = orderNumber;
+			prototypeName = integer;
+		},
+		{
+			allowsNull = Y;
+			columnName = section_id;
+			name = sectionId;
+			prototypeName = key;
+		},
+		{
+			columnName = text_description;
+			name = textDescription;
+			prototypeName = string4k;
+		}
+	);
+	className = net.events.cms.eo.DataSetDateItem;
+	classProperties = (
+		active,
+		answers,
+		autosetToToday,
+		client,
+		creationTime,
+		dataSetTemplate,
+		inheritanceType,
+		interfaceElementType,
+		isRequired,
+		name,
+		orderNumber,
+		section,
+		textDescription
+	);
+	externalName = data_set_item;
+	internalInfo = {};
+	isAbstractEntity = N;
+	name = DataSetDateItem;
+	parent = DataSetItem;
+	primaryKeyAttributes = (
+		dataSetItemId
+	);
+	relationships = (
+		{
+			deleteRule = EODeleteRuleDeny;
+			destination = DataSetItemValue;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetItemId;
+					sourceAttribute = dataSetItemId;
+				}
+			);
+			name = answers;
+		},
+		{
+			destination = Client;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		},
+		{
+			destination = DataSetTemplate;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetId;
+					sourceAttribute = dataSetId;
+				}
+			);
+			name = dataSetTemplate;
+		},
+		{
+			destination = InterfaceElementType;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = elementId;
+					sourceAttribute = interfaceElementTypeId;
+				}
+			);
+			name = interfaceElementType;
+		},
+		{
+			destination = DataSetSection;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetSectionId;
+					sourceAttribute = sectionId;
+				}
+			);
+			name = section;
+		}
+	);
+	restrictingQualifier = "inheritanceType = 'DataSetDateItem'";
 }

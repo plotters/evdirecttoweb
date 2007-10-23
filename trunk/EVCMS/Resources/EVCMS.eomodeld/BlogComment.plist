@@ -1,105 +1,87 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           columnName = blog_entry_id;
-           name = blogEntryId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = comment;
-           name = comment;
-           prototypeName = string4k;
-       }, 
-       
-       {
-           columnName = comment_id;
-           name = commentId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = creation_time;
-           name = creationTime;
-           prototypeName = datetime;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = email;
-           name = email;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = name;
-           name = name;
-           prototypeName = string256;
-       }
-    );
-    className = net.events.cms.eo.BlogComment;
-    classProperties = 
-    (
-       blogEntry, 
-       client, 
-       comment, 
-       creationTime, 
-       email, 
-       name
-    );
-    externalName = blog_comments;
-    internalInfo = 
-    {};
-    name = BlogComment;
-    primaryKeyAttributes = 
-    (
-       commentId
-    );
-    relationships = 
-    (
-       
-       {
-           destination = BlogEntry;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = entryId;
-                  sourceAttribute = blogEntryId;
-              }
-           );
-           name = blogEntry;
-       }, 
-       
-       {
-           destination = Client;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = clientId;
-                  sourceAttribute = clientId;
-              }
-           );
-           name = client;
-       }
-    );
+	attributes = (
+		{
+			columnName = blog_entry_id;
+			name = blogEntryId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = comment;
+			name = comment;
+			prototypeName = string4k;
+		},
+		{
+			columnName = comment_id;
+			name = commentId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		},
+		{
+			allowsNull = N;
+			columnName = email;
+			name = email;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = name;
+			name = name;
+			prototypeName = string256;
+		}
+	);
+	className = net.events.cms.eo.BlogComment;
+	classProperties = (
+		blogEntry,
+		client,
+		comment,
+		creationTime,
+		email,
+		name
+	);
+	externalName = blog_comments;
+	internalInfo = {};
+	name = BlogComment;
+	primaryKeyAttributes = (
+		commentId
+	);
+	relationships = (
+		{
+			destination = BlogEntry;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = entryId;
+					sourceAttribute = blogEntryId;
+				}
+			);
+			name = blogEntry;
+		},
+		{
+			destination = Client;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		}
+	);
 }

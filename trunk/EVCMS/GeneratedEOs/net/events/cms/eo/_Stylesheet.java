@@ -189,35 +189,35 @@ public abstract class _Stylesheet extends net.events.cms.eo.FilesystemObject {
         takeStoredValueForKey(aValue, "pageWrappers");
     }
 
-    public void addToPageWrappers(net.events.cms.eo.PageWrapper object) {
+    public void addToPageWrappers(net.events.cms.eo.PageWrapperEO object) {
         if( log.isDebugEnabled() ) log.debug( "adding "+object+" to pageWrappers" );
 	    includeObjectIntoPropertyWithKey(object, "pageWrappers");
     }
     
 
-    public void removeFromPageWrappers(net.events.cms.eo.PageWrapper object) {
+    public void removeFromPageWrappers(net.events.cms.eo.PageWrapperEO object) {
         if( log.isDebugEnabled() ) log.debug( "removing "+object+" from pageWrappers" );
 	    excludeObjectFromPropertyWithKey(object, "pageWrappers");
     }
 	
     
     /** 
-     * creates a new object "net.events.cms.eo.PageWrapper" and add it
+     * creates a new object "net.events.cms.eo.PageWrapperEO" and add it
      * to the relationship "pageWrappers"
      */
-    public net.events.cms.eo.PageWrapper createObjectAndAddToPageWrappers() {
+    public net.events.cms.eo.PageWrapperEO createObjectAndAddToPageWrappers() {
     	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: pageWrappers");
-	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("PageWrapper");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("PageWrapperEO");
 	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
 	    editingContext().insertObject(eoObject);
 	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "pageWrappers");
-	    return (net.events.cms.eo.PageWrapper) eoObject;
+	    return (net.events.cms.eo.PageWrapperEO) eoObject;
     }
     
     /**
      * Removes object from the relationship "pageWrappers" and delete object
      */
-    public void removeFromPageWrappersAndDelete(net.events.cms.eo.PageWrapper object) {
+    public void removeFromPageWrappersAndDelete(net.events.cms.eo.PageWrapperEO object) {
     	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: pageWrappers");
         removeObjectFromBothSidesOfRelationshipWithKey(object, "pageWrappers");
         editingContext().deleteObject(object);
@@ -231,7 +231,7 @@ public abstract class _Stylesheet extends net.events.cms.eo.FilesystemObject {
     	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: pageWrappers");
 	    Enumeration objects = pageWrappers().objectEnumerator();
 	    while ( objects.hasMoreElements() )
-	        removeFromPageWrappersAndDelete((net.events.cms.eo.PageWrapper)objects.nextElement());
+	        removeFromPageWrappersAndDelete((net.events.cms.eo.PageWrapperEO)objects.nextElement());
     }
 
 	/**

@@ -36,6 +36,6 @@ public class ClinicalTrial extends _ClinicalTrial {
     	if (log.isDebugEnabled()) log.debug ("Created an object of class ClinicalTrial and inserted it into an editingContext");
         ec.insertObject( this );
     }
- 
+     
 
 }

@@ -1,211 +1,175 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           allowsNull = N;
-           columnName = active;
-           name = active;
-           prototypeName = flag;
-       }, 
-       
-       {
-           columnName = allow_digging;
-           name = allowDigging;
-           prototypeName = flag;
-       }, 
-       
-       {
-           columnName = blog_id;
-           name = blogId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = Y;
-           columnName = category_id;
-           name = categoryId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = content;
-           name = content;
-           prototypeName = string4m;
-       }, 
-       
-       {
-           columnName = created_by_id;
-           name = createdById;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = creation_time;
-           name = creationTime;
-           prototypeName = datetime;
-       }, 
-       
-       {
-           columnName = entry_id;
-           name = entryId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = Y;
-           columnName = language_id;
-           name = languageId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = subtitle;
-           name = subtitle;
-           prototypeName = string4k;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = teaser;
-           name = teaser;
-           prototypeName = string64k;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = title;
-           name = title;
-           prototypeName = string4k;
-       }
-    );
-    className = net.events.cms.eo.BlogEntry;
-    classProperties = 
-    (
-       active, 
-       allowDigging, 
-       blog, 
-       category, 
-       client, 
-       comments, 
-       content, 
-       createdBy, 
-       creationTime, 
-       language, 
-       subtitle, 
-       teaser, 
-       title
-    );
-    externalName = blog_entries;
-    internalInfo = 
-    {};
-    name = BlogEntry;
-    primaryKeyAttributes = 
-    (
-       entryId
-    );
-    relationships = 
-    (
-       
-       {
-           destination = Blog;
-           isMandatory = Y;
-           isToMany = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = blogId;
-                  sourceAttribute = blogId;
-              }
-           );
-           name = blog;
-       }, 
-       
-       {
-           destination = BlogEntryCategory;
-           isMandatory = N;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = entryCategoryId;
-                  sourceAttribute = categoryId;
-              }
-           );
-           name = category;
-       }, 
-       
-       {
-           destination = Client;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = clientId;
-                  sourceAttribute = clientId;
-              }
-           );
-           name = client;
-       }, 
-       
-       {
-           deleteRule = EODeleteRuleCascade;
-           destination = BlogComment;
-           isToMany = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = blogEntryId;
-                  sourceAttribute = entryId;
-              }
-           );
-           name = comments;
-           numberOfToManyFaultsToBatchFetch = 10;
-       }, 
-       
-       {
-           destination = Person;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = contactId;
-                  sourceAttribute = createdById;
-              }
-           );
-           name = createdBy;
-       }, 
-       
-       {
-           destination = Language;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = languageId;
-                  sourceAttribute = languageId;
-              }
-           );
-           name = language;
-       }
-    );
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = active;
+			name = active;
+			prototypeName = flag;
+		},
+		{
+			columnName = allow_digging;
+			name = allowDigging;
+			prototypeName = flag;
+		},
+		{
+			columnName = blog_id;
+			name = blogId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = Y;
+			columnName = category_id;
+			name = categoryId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			columnName = content;
+			name = content;
+			prototypeName = string4m;
+		},
+		{
+			columnName = created_by_id;
+			name = createdById;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		},
+		{
+			columnName = entry_id;
+			name = entryId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = Y;
+			columnName = language_id;
+			name = languageId;
+			prototypeName = key;
+		},
+		{
+			columnName = subtitle;
+			name = subtitle;
+			prototypeName = string4k;
+		},
+		{
+			allowsNull = N;
+			columnName = teaser;
+			name = teaser;
+			prototypeName = string64k;
+		},
+		{
+			allowsNull = N;
+			columnName = title;
+			name = title;
+			prototypeName = string4k;
+		}
+	);
+	className = net.events.cms.eo.BlogEntry;
+	classProperties = (
+		active,
+		allowDigging,
+		blog,
+		category,
+		client,
+		comments,
+		content,
+		createdBy,
+		creationTime,
+		language,
+		subtitle,
+		teaser,
+		title
+	);
+	externalName = blog_entries;
+	internalInfo = {};
+	name = BlogEntry;
+	primaryKeyAttributes = (
+		entryId
+	);
+	relationships = (
+		{
+			destination = Blog;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = blogId;
+					sourceAttribute = blogId;
+				}
+			);
+			name = blog;
+		},
+		{
+			destination = BlogEntryCategory;
+			isMandatory = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = entryCategoryId;
+					sourceAttribute = categoryId;
+				}
+			);
+			name = category;
+		},
+		{
+			destination = Client;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		},
+		{
+			deleteRule = EODeleteRuleCascade;
+			destination = BlogComment;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = blogEntryId;
+					sourceAttribute = entryId;
+				}
+			);
+			name = comments;
+			numberOfToManyFaultsToBatchFetch = 10;
+		},
+		{
+			destination = Person;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = contactId;
+					sourceAttribute = createdById;
+				}
+			);
+			name = createdBy;
+		},
+		{
+			destination = Language;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = languageId;
+					sourceAttribute = languageId;
+				}
+			);
+			name = language;
+		}
+	);
 }

@@ -1,76 +1,63 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           allowsNull = N;
-           columnName = client_id;
-           name = clientId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = filesystem_object_id;
-           name = filesystemObjectId;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = inheritance_type;
-           name = inheritanceType;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = name;
-           name = name;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = path;
-           name = path;
-           prototypeName = string4k;
-       }
-    );
-    className = net.events.cms.eo.Image;
-    classProperties = 
-    (
-       client, 
-       inheritanceType, 
-       name, 
-       path
-    );
-    externalName = filesystem_objects;
-    internalInfo = 
-    {};
-    name = Image;
-    parent = FilesystemObject;
-    primaryKeyAttributes = 
-    (
-       filesystemObjectId
-    );
-    relationships = 
-    (
-       
-       {
-           destination = Client;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = clientId;
-                  sourceAttribute = clientId;
-              }
-           );
-           name = client;
-       }
-    );
-    restrictingQualifier = "(inheritanceType = 'Image')";
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = client_id;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			columnName = filesystem_object_id;
+			name = filesystemObjectId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = inheritance_type;
+			name = inheritanceType;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = name;
+			name = name;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = path;
+			name = path;
+			prototypeName = string4k;
+		}
+	);
+	className = net.events.cms.eo.Image;
+	classProperties = (
+		client,
+		inheritanceType,
+		name,
+		path
+	);
+	externalName = filesystem_objects;
+	internalInfo = {};
+	name = Image;
+	parent = FilesystemObject;
+	primaryKeyAttributes = (
+		filesystemObjectId
+	);
+	relationships = (
+		{
+			destination = Client;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		}
+	);
+	restrictingQualifier = "(inheritanceType = 'Image')";
 }

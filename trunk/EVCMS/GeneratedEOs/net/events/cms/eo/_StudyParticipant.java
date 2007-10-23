@@ -42,6 +42,8 @@ public abstract class _StudyParticipant extends net.events.cms.eo.Person {
     public static final String DATEOFBIRTH = "dateOfBirth";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
+    public static final String COMPANYNAME2 = "companyName2";
+    public static final String COMPANYNAME = "companyName";
     public static final String COMPANY = "company";
     public static final String CLINICALTRIAL = "clinicalTrial";
     public static final String CLIENT = "client";
@@ -78,15 +80,11 @@ public abstract class _StudyParticipant extends net.events.cms.eo.Person {
 	/**
 	 * Create a "StudyParticipant" object with all required values
 	 */
-	public static StudyParticipant createStudyParticipant(EOEditingContext editingContext, String participantId, String firstname, String lastname, String login, String password, Number passwordAttempts, net.events.cms.eo.ClinicalTrial clinicalTrial, net.events.cms.eo.Gender gender) {
+	public static StudyParticipant createStudyParticipant(EOEditingContext editingContext, String participantId, Number passwordAttempts, net.events.cms.eo.ClinicalTrial clinicalTrial, net.events.cms.eo.Gender gender) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: StudyParticipant");
 		StudyParticipant eoObject = (StudyParticipant)EOUtilities.createAndInsertInstance(editingContext, _StudyParticipant.ENTITY_NAME);
 		eoObject.setParticipantId(participantId);
 		eoObject.setClinicalTrial(clinicalTrial);
-		eoObject.setFirstname(firstname);
-		eoObject.setLastname(lastname);
-		eoObject.setLogin(login);
-		eoObject.setPassword(password);
 		eoObject.setPasswordAttempts(passwordAttempts);
 		eoObject.setGender(gender);
 		return eoObject;

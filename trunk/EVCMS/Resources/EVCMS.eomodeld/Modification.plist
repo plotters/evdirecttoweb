@@ -1,90 +1,75 @@
-
+// Entity Modeler v1.0.0
 {
-    attributes = 
-    (
-       
-       {
-           allowsNull = N;
-           columnName = created_by_id;
-           name = createdById;
-           prototypeName = key;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = creation_time;
-           name = creationTime;
-           prototypeName = datetime;
-       }, 
-       
-       {
-           columnName = modification_id;
-           name = modificationId;
-           prototypeName = key;
-       }, 
-       
-       {
-           columnName = modifications_array;
-           name = modificationsArray;
-           prototypeName = mutableArray;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = primary_key_name;
-           name = primaryKeyName;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = primary_key_value;
-           name = primaryKeyValue;
-           prototypeName = string256;
-       }, 
-       
-       {
-           allowsNull = N;
-           columnName = type;
-           name = type;
-           prototypeName = string256;
-       }
-    );
-    className = net.events.cms.eo.Modification;
-    classProperties = 
-    (
-       createdBy, 
-       creationTime, 
-       modificationsArray, 
-       primaryKeyName, 
-       primaryKeyValue, 
-       type
-    );
-    externalName = modifications;
-    internalInfo = 
-    {};
-    isAbstractEntity = N;
-    name = Modification;
-    primaryKeyAttributes = 
-    (
-       modificationId
-    );
-    relationships = 
-    (
-       
-       {
-           destination = Person;
-           isMandatory = Y;
-           joinSemantic = EOInnerJoin;
-           joins = 
-           (
-              
-              {
-                  destinationAttribute = contactId;
-                  sourceAttribute = createdById;
-              }
-           );
-           name = createdBy;
-       }
-    );
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = created_by_id;
+			name = createdById;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		},
+		{
+			columnName = modification_id;
+			name = modificationId;
+			prototypeName = key;
+		},
+		{
+			columnName = modifications_array;
+			name = modificationsArray;
+			prototypeName = mutableArray;
+		},
+		{
+			allowsNull = N;
+			columnName = primary_key_name;
+			name = primaryKeyName;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = primary_key_value;
+			name = primaryKeyValue;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = type;
+			name = type;
+			prototypeName = string256;
+		}
+	);
+	className = net.events.cms.eo.Modification;
+	classProperties = (
+		createdBy,
+		creationTime,
+		modificationsArray,
+		primaryKeyName,
+		primaryKeyValue,
+		type
+	);
+	externalName = modifications;
+	internalInfo = {};
+	isAbstractEntity = N;
+	name = Modification;
+	primaryKeyAttributes = (
+		modificationId
+	);
+	relationships = (
+		{
+			destination = Person;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = contactId;
+					sourceAttribute = createdById;
+				}
+			);
+			name = createdBy;
+		}
+	);
 }

@@ -1,40 +1,32 @@
-
+// Entity Modeler v1.0.0
 {
-    NameAndTitleFetchSpec = 
-    {
-        class = EOFetchSpecification;
-        entityName = Site;
-        fetchLimit = 0;
-        prefetchingRelationshipKeyPaths = 
-        ();
-        qualifier = 
-        {
-            class = EOAndQualifier;
-            qualifiers = 
-            (
-               
-               {
-                   class = EOKeyValueQualifier;
-                   key = name;
-                   selectorName = isEqualTo:;
-                   value = 
-                   {
-                       _key = name;
-                       class = EOQualifierVariable;
-                   };
-               }, 
-               
-               {
-                   class = EOKeyValueQualifier;
-                   key = defaultTitle;
-                   selectorName = isEqualTo:;
-                   value = 
-                   {
-                       _key = title;
-                       class = EOQualifierVariable;
-                   };
-               }
-            );
-        };
-    };
+	NameAndTitleFetchSpec = {
+		class = EOFetchSpecification;
+		entityName = Site;
+		fetchLimit = 0;
+		prefetchingRelationshipKeyPaths = ();
+		qualifier = {
+			class = EOAndQualifier;
+			qualifiers = (
+				{
+					class = EOKeyValueQualifier;
+					key = name;
+					selectorName = isEqualTo:;
+					value = {
+						_key = name;
+						class = EOQualifierVariable;
+					};
+				},
+				{
+					class = EOKeyValueQualifier;
+					key = defaultTitle;
+					selectorName = isEqualTo:;
+					value = {
+						_key = title;
+						class = EOQualifierVariable;
+					};
+				}
+			);
+		};
+	};
 }
