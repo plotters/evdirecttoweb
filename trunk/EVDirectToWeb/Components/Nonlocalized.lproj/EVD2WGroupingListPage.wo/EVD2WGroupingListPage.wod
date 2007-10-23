@@ -81,7 +81,7 @@ NavBar1: WOSwitchComponent {
 
 PageWrapper: WOSwitchComponent {
 	WOComponentName = d2wContext.pageWrapperName;
-	_componentUnroll = true;
+//	_componentUnroll = true;
 	_unroll = true;
 }
 
