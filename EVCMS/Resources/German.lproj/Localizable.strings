@@ -1,15 +1,14 @@
 {
-	"Academic Title" = "Abschlie\U00dfen";
-	"Active" = "Kurztext";
+	"Academic Title" = "Akademischer Titel";
+	"Active" = "Aktiv";
 	"Add Domain" = "Domain hinzuf\U00fcgen";
 	"Add Website" = "Website hinzuf\U00fcgen";
-	"AddressSection" = "Anrede";
+	"AddressSection" = "Adresse";
 	"AdministrativeInformationSectionName" = "Administrative Informationen";
-	"AdverseEventOutcomesSectionName" = "URL";
-	"AdverseEvents" = "Benutzergruppe";
-	"AdverseEventsTabName" = "Benutzergruppen";
-	"Blog Entry" = "Benutzerinformationen";
-	"Blog.CREATE_NEW" = "Benutzer";
+	"AdverseEvents" = "Unerw\U00fcnschte Ereignisse";
+	"AdverseEventsTabName" = "Unerw\U00fcnschtes Ereignis";
+	"Blog Entry" = "Blogeintrag";
+	"Blog.CREATE_NEW" = "Neu anlegen";
 	"BlogComment.COMMENT" = "Kommentar";
 	"BlogComment.COMMENT_NOTE" = "Kommentar Notiz";
 	"BlogComment.COMMENTS" = "Kommentare";

@@ -1,15 +1,15 @@
 {
-	"Academic Title" = "Submit Answers";
-	"Active" = "Teaser";
+	"Academic Title" = "Academic Title";
+	"Active" = "Active";
 	"Add Domain" = "Add Domain";
 	"Add Website" = "Add Website";
-	"AddressSection" = "Title";
+	"AddressSection" = "Address";
 	"AdministrativeInformationSectionName" = "Administrative Information";
-	"AdverseEventOutcomesSectionName" = "URL";
-	"AdverseEvents" = "Usergroup";
-	"AdverseEventsTabName" = "Usergroups";
-	"Blog Entry" = "User Information";
-	"Blog.CREATE_NEW" = "Users";
+	"AdverseEventOutcomesSectionName" = "Adverse Event Outcomes";
+	"AdverseEvents" = "Adverse Events";
+	"AdverseEventsTabName" = "Adverse Events";
+	"Blog Entry" = "Blog Entry";
+	"Blog.CREATE_NEW" = "Create New";
 	"BlogComment.COMMENT" = "Comment";
 	"BlogComment.COMMENT_NOTE" = "Comment Note";
 	"BlogComment.COMMENTS" = "Comments";
