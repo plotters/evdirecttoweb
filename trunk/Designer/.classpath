@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/ERStartup.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EVPrototypes"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EVExtensions"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EVCMS"/>
@@ -13,7 +14,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/Ajax"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ERJavaMail"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/WOOgnl"/>
-	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/ERStartup.jar"/>
 	<classpathentry kind="con" path="org.objectstyle.wolips.WO_CLASSPATH/JavaDirectToWeb/JavaDTWGeneration/JavaEOAccess/JavaEOControl/JavaEOProject/JavaFoundation/JavaJDBCAdaptor/JavaWebObjects/JavaXML"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
