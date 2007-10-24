@@ -22,6 +22,7 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
     public static final String VALUES = "values";
     public static final String PERSON = "person";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String DATE = "date";
     public static final String DATASETTEMPLATE = "dataSetTemplate";
     public static final String CREATIONTIME = "creationTime";
     public static final String CLIENT = "client";
@@ -192,6 +193,21 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
     public void setCreationTime(NSTimestamp aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating creationTime from "+creationTime()+" to "+aValue );
         takeStoredValueForKey(aValue, "creationTime");
+    }
+
+	/**
+	 * The value for "date"
+	 */
+    public NSTimestamp date() {
+        return (NSTimestamp) storedValueForKey("date");
+    }
+
+	/**
+	 * Set the value for "date"
+	 */
+    public void setDate(NSTimestamp aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating date from "+date()+" to "+aValue );
+        takeStoredValueForKey(aValue, "date");
     }
 
 	/**

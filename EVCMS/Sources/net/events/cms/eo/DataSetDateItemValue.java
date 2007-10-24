@@ -2,6 +2,8 @@
 
 package net.events.cms.eo;
 
+import net.events.cms.extensions.*;
+
 import org.apache.log4j.*;
 
 import com.webobjects.eocontrol.*;
@@ -44,7 +46,10 @@ public class DataSetDateItemValue extends _DataSetDateItemValue {
 			return "";
 		}
 		// TODO cug: use formatter here
-		else return this.dateValue().toString();
+		else {
+			NSTimestampFormatter formatter=new NSTimestampFormatter("%b %d, %Y");
+			return formatter.format(this.dateValue());
+		}
 	}
  
 	public void setDataSetItem (DataSetItem item) {
@@ -54,6 +59,11 @@ public class DataSetDateItemValue extends _DataSetDateItemValue {
 		}
 	}
 	
+	/**
+	 * Validates, that the date is in the past and pushes it to the dataSetEntry
+	 * @param value
+	 * @return
+	 */
 	public NSTimestamp validateDateValue (Object value) {
 		if (value != null && !(value instanceof NSTimestamp)) {
 			throw new NSValidation.ValidationException("Wrong value class, expecting NSTimestamp, but received a " + value.getClass().getName());
@@ -63,6 +73,10 @@ public class DataSetDateItemValue extends _DataSetDateItemValue {
 			if (given != null && given.after(new NSTimestamp())) {
 				throw new NSValidation.ValidationException("Wrong date!");
 			}
+		}
+		// push the value to the dataset date, if necessary
+		if (((DataSetDateItem) this.dataSetItem()).pushAsDateToDataSet() != null && ((DataSetDateItem) this.dataSetItem()).pushAsDateToDataSet().booleanValue() == true) {
+			this.dataSetEntry().setDate((NSTimestamp) value);
 		}
 		return (NSTimestamp) value;
 	}
