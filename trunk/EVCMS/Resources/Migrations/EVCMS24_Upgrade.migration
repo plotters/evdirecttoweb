@@ -1,0 +1,4 @@
+alter table data_set_entries add column date timestamp;
+create index data_set_entries__date__index on data_set_entries  (date);
+
+alter table data_set_item add column push_as_date_to_data_set bool;
