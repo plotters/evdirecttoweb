@@ -66,6 +66,11 @@
 			prototypeName = integer;
 		},
 		{
+			columnName = push_as_date_to_data_set;
+			name = pushAsDateToDataSet;
+			prototypeName = flag;
+		},
+		{
 			allowsNull = Y;
 			columnName = section_id;
 			name = sectionId;
@@ -90,6 +95,7 @@
 		isRequired,
 		name,
 		orderNumber,
+		pushAsDateToDataSet,
 		section,
 		textDescription
 	);

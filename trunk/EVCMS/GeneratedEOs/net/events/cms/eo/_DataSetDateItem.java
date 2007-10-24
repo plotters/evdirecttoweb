@@ -21,6 +21,7 @@ public abstract class _DataSetDateItem extends net.events.cms.eo.DataSetItem {
 	
     public static final String TEXTDESCRIPTION = "textDescription";
     public static final String SECTION = "section";
+    public static final String PUSHASDATETODATASET = "pushAsDateToDataSet";
     public static final String ORDERNUMBER = "orderNumber";
     public static final String NAME = "name";
     public static final String ISREQUIRED = "isRequired";
@@ -191,5 +192,20 @@ public abstract class _DataSetDateItem extends net.events.cms.eo.DataSetItem {
     public void setAutosetToToday(Boolean aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating autosetToToday from "+autosetToToday()+" to "+aValue );
         takeStoredValueForKey(aValue, "autosetToToday");
+    }
+
+	/**
+	 * The value for "pushAsDateToDataSet"
+	 */
+    public Boolean pushAsDateToDataSet() {
+        return (Boolean) storedValueForKey("pushAsDateToDataSet");
+    }
+
+	/**
+	 * Set the value for "pushAsDateToDataSet"
+	 */
+    public void setPushAsDateToDataSet(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating pushAsDateToDataSet from "+pushAsDateToDataSet()+" to "+aValue );
+        takeStoredValueForKey(aValue, "pushAsDateToDataSet");
     }
 }

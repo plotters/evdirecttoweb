@@ -39,5 +39,4 @@ public class DataSetDateItem extends _DataSetDateItem {
         ec.insertObject( this );
     }
  
-
 }

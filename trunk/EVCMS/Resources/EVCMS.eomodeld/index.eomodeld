@@ -305,11 +305,6 @@
 			name = XVisitorBlog;
 		}
 	);
-	internalInfo = {
-		_deletedEntityNamesInObjectStore = (
-			PageWrapper
-		);
-	};
 	userInfo = {
 		_EntityModeler = {
 			activeDatabaseConfigName = Development;
