@@ -3,6 +3,8 @@ package net.events.cms.pages;
 
 import java.util.*;
 
+import org.apache.log4j.*;
+
 import net.events.cms.eo.*;
 import net.events.cms.extensions.*;
 import net.events.eof.*;
@@ -35,6 +37,8 @@ public class EVSiteLoginPage extends EVCMSPage {
 	private EVGenericRecord objectToCheckForUser;
 
 	private String keyToCheckForUser;
+	
+	private Logger log = Logger.getLogger(EVSiteLoginPage.class);
 	
     public EVSiteLoginPage(WOContext context) {
         super(context);
@@ -106,6 +110,8 @@ public class EVSiteLoginPage extends EVCMSPage {
 
 			this.session().takeValueForKey (user, "currentUser");
 			this.session().takeValueForKey(user.client(), "currentClient");
+			
+			log.info("****** User logged in: " + user.toString());
 			
 			return this.pageToView();
 			

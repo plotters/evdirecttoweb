@@ -75,4 +75,8 @@ public class StudyParticipant extends _StudyParticipant {
     	}
     }
     
+    public String toString () {
+    	return this.participantId() + " -- " + this.firstnameLastname();
+    }
+    
 }
