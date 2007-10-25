@@ -5,6 +5,9 @@ package net.events.cms.eo;
 import org.apache.log4j.*;
 
 import com.webobjects.eocontrol.*;
+import com.webobjects.foundation.*;
+
+import er.extensions.*;
 
 public class ClinicalTrial extends _ClinicalTrial {
 	
@@ -37,5 +40,45 @@ public class ClinicalTrial extends _ClinicalTrial {
         ec.insertObject( this );
     }
      
+    /**
+     * Returns the active number of participants for the trial
+     * 
+     * @return
+     */
+    public Integer activeParticipants () {
+    	return this.countForStatus("active");
+    }
+    
+    /**
+     * Returns the number of out participants for the trial
+     * 
+     * @return
+     */
+    public Integer outParticipants () {
+    	return this.countForStatus("out");
+    }
+    
+    /**
+     * Returns the number of withdrawn participants for the trial
+     * 
+     * @return
+     */
+    public Integer withdrawnParticipants () {
+    	return this.countForStatus("withdrawn");
+    }
 
+    /**
+     * Returns the number of participants for status "s"
+     * 
+     * @param s - the status
+     * 
+     * @return the number
+     */
+    private Integer countForStatus (String s) {
+    	if (s != null) {
+	    	EOQualifier q = EOQualifier.qualifierWithQualifierFormat("status = '" + s + "' and clinicalTrial = %@", new NSArray(this));
+	    	return ERXEOControlUtilities.objectCountWithQualifier(this.editingContext(), StudyParticipant.ENTITY_NAME, q);
+    	}
+    	else return new Integer(0);
+    }
 }
