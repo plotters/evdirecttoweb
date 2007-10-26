@@ -14,20 +14,26 @@
 		},
 		{
 			allowsNull = N;
-			columnName = clientId;
+			columnName = client_id;
 			name = clientId;
 			prototypeName = key;
 		},
 		{
 			allowsNull = N;
-			columnName = createdById;
+			columnName = created_by_id;
 			name = createdById;
 			prototypeName = key;
 		},
 		{
 			allowsNull = N;
-			columnName = from;
-			name = from;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		},
+		{
+			allowsNull = N;
+			columnName = from_address;
+			name = fromAddress;
 			prototypeName = string256;
 		},
 		{
@@ -56,8 +62,8 @@
 		},
 		{
 			allowsNull = N;
-			columnName = to;
-			name = to;
+			columnName = to_address;
+			name = toAddress;
 			prototypeName = string256;
 		}
 	);
@@ -67,12 +73,13 @@
 		actionTriggers,
 		client,
 		createdBy,
-		from,
+		creationTime,
+		fromAddress,
 		inheritanceType,
 		name,
 		subject,
 		template,
-		to
+		toAddress
 	);
 	externalName = actions;
 	internalInfo = {};

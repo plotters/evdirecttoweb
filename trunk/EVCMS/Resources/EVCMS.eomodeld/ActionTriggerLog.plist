@@ -9,13 +9,13 @@
 		},
 		{
 			allowsNull = N;
-			columnName = actionTriggerId;
+			columnName = action_trigger_id;
 			name = actionTriggerId;
 			prototypeName = key;
 		},
 		{
 			allowsNull = N;
-			columnName = clientId;
+			columnName = client_id;
 			name = clientId;
 			prototypeName = key;
 		},

@@ -21,7 +21,7 @@
 		},
 		{
 			allowsNull = N;
-			columnName = clientId;
+			columnName = client_id;
 			name = clientId;
 			prototypeName = key;
 		},
@@ -33,13 +33,19 @@
 		},
 		{
 			allowsNull = N;
-			columnName = createdById;
+			columnName = created_by_id;
 			name = createdById;
 			prototypeName = key;
 		},
 		{
 			allowsNull = N;
-			columnName = dataSetNumberItemId;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		},
+		{
+			allowsNull = N;
+			columnName = data_set_number_item_id;
 			name = dataSetNumberItemId;
 			prototypeName = key;
 		},
@@ -57,7 +63,7 @@
 		},
 		{
 			allowsNull = N;
-			columnName = personId;
+			columnName = person_id;
 			name = personId;
 			prototypeName = key;
 		},
@@ -81,6 +87,7 @@
 		client,
 		comparator,
 		createdBy,
+		creationTime,
 		dataSetNumberItem,
 		inheritanceType,
 		name,
