@@ -37,6 +37,7 @@ public abstract class _EventsUser extends net.events.cms.eo.Person {
     public static final String EDITEDBLOGS = "editedBlogs";
     public static final String DELETED = "deleted";
     public static final String DATEOFBIRTH = "dateOfBirth";
+    public static final String DATASETITEMACTIONTRIGGERS = "dataSetItemActionTriggers";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String COMPANYNAME2 = "companyName2";

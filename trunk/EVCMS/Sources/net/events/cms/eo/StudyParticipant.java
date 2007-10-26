@@ -73,6 +73,10 @@ public class StudyParticipant extends _StudyParticipant {
     			throw new NSValidation.ValidationException("StudyParticipant.SPECIFY_ETHNIC_GROUP");
     		}
     	}
+    	
+    	if (this.randomized() != null && this.randomized().booleanValue() == true && this.status() != null && this.status().equals("not accepted")) {
+    		throw new NSValidation.ValidationException("StudyParticipant.CANT_BE_NOT_ACCEPTED_AND_RANDOMIZED");
+    	}
     }
     
     public String toString () {

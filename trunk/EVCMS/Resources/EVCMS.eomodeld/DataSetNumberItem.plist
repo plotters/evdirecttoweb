@@ -86,6 +86,7 @@
 	);
 	className = net.events.cms.eo.DataSetNumberItem;
 	classProperties = (
+		actionTriggers,
 		active,
 		answers,
 		client,
@@ -110,6 +111,19 @@
 		dataSetItemId
 	);
 	relationships = (
+		{
+			destination = DataSetNumberItemActionTrigger;
+			isMandatory = N;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetNumberItemId;
+					sourceAttribute = dataSetItemId;
+				}
+			);
+			name = actionTriggers;
+		},
 		{
 			deleteRule = EODeleteRuleDeny;
 			destination = DataSetItemValue;

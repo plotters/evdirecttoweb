@@ -1,0 +1,27 @@
+// Entity Modeler v1.0.0
+{
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = action_log_id;
+			name = actionLogId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
+		}
+	);
+	className = net.events.cms.eo.ActionTriggerLog;
+	classProperties = (
+		creationTime
+	);
+	externalName = action_trigger_logs;
+	internalInfo = {};
+	name = ActionTriggerLog;
+	primaryKeyAttributes = (
+		actionLogId
+	);
+}

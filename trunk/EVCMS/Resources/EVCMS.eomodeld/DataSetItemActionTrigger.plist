@@ -1,0 +1,92 @@
+// Entity Modeler v1.0.0
+{
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = action_id;
+			name = actionId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = action_trigger_id;
+			name = actionTriggerId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = active;
+			name = active;
+			prototypeName = flag;
+		},
+		{
+			allowsNull = N;
+			columnName = inheritance_type;
+			name = inheritanceType;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = name;
+			name = name;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = personId;
+			name = personId;
+			prototypeName = key;
+		},
+		{
+			columnName = trigger_description;
+			name = triggerDescription;
+			prototypeName = string4k;
+		}
+	);
+	className = net.events.cms.eo.DataSetItemActionTrigger;
+	classProperties = (
+		action,
+		active,
+		inheritanceType,
+		name,
+		person,
+		triggerDescription
+	);
+	externalName = action_trigger;
+	internalInfo = {};
+	isAbstractEntity = N;
+	name = DataSetItemActionTrigger;
+	parent = ActionTrigger;
+	primaryKeyAttributes = (
+		actionTriggerId
+	);
+	relationships = (
+		{
+			destination = Action;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = actionId;
+					sourceAttribute = actionId;
+				}
+			);
+			name = action;
+		},
+		{
+			destination = Person;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = contactId;
+					sourceAttribute = personId;
+				}
+			);
+			name = person;
+		}
+	);
+	restrictingQualifier = "inheritanceType = 'DataSetItemActionTrigger'";
+}

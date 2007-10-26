@@ -1,0 +1,3 @@
+alter table contacts add column randomized bool;
+
+create index contacts__status__index on contacts (status varchar_pattern_ops);
