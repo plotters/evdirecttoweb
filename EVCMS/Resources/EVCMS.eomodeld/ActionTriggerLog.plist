@@ -9,6 +9,18 @@
 		},
 		{
 			allowsNull = N;
+			columnName = actionTriggerId;
+			name = actionTriggerId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = clientId;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
 			columnName = creation_time;
 			name = creationTime;
 			prototypeName = datetime;
@@ -16,6 +28,8 @@
 	);
 	className = net.events.cms.eo.ActionTriggerLog;
 	classProperties = (
+		actionTrigger,
+		client,
 		creationTime
 	);
 	externalName = action_trigger_logs;
@@ -23,5 +37,33 @@
 	name = ActionTriggerLog;
 	primaryKeyAttributes = (
 		actionLogId
+	);
+	relationships = (
+		{
+			destination = ActionTrigger;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = actionTriggerId;
+					sourceAttribute = actionTriggerId;
+				}
+			);
+			name = actionTrigger;
+		},
+		{
+			destination = Client;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		}
 	);
 }

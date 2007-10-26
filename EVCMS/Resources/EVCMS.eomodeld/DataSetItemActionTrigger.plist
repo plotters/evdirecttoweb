@@ -21,6 +21,18 @@
 		},
 		{
 			allowsNull = N;
+			columnName = clientId;
+			name = clientId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = createdById;
+			name = createdById;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
 			columnName = inheritance_type;
 			name = inheritanceType;
 			prototypeName = string256;
@@ -46,7 +58,10 @@
 	className = net.events.cms.eo.DataSetItemActionTrigger;
 	classProperties = (
 		action,
+		actionTriggerLogs,
 		active,
+		client,
+		createdBy,
 		inheritanceType,
 		name,
 		person,
@@ -73,6 +88,45 @@
 				}
 			);
 			name = action;
+		},
+		{
+			destination = ActionTriggerLog;
+			isMandatory = N;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = actionTriggerId;
+					sourceAttribute = actionTriggerId;
+				}
+			);
+			name = actionTriggerLogs;
+		},
+		{
+			destination = Client;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = client;
+		},
+		{
+			destination = EventsUser;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = contactId;
+					sourceAttribute = createdById;
+				}
+			);
+			name = createdBy;
 		},
 		{
 			destination = Person;

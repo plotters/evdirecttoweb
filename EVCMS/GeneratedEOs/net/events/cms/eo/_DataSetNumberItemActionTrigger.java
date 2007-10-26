@@ -25,8 +25,11 @@ public abstract class _DataSetNumberItemActionTrigger extends net.events.cms.eo.
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
     public static final String DATASETNUMBERITEM = "dataSetNumberItem";
+    public static final String CREATEDBY = "createdBy";
     public static final String COMPARATOR = "comparator";
+    public static final String CLIENT = "client";
     public static final String ACTIVE = "active";
+    public static final String ACTIONTRIGGERLOGS = "actionTriggerLogs";
     public static final String ACTION = "action";
     
     /**

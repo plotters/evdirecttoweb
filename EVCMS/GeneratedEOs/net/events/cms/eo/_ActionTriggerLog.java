@@ -20,6 +20,8 @@ public abstract class _ActionTriggerLog extends net.events.cms.eo.EVCMSGenericRe
 	// KeyValueCoding support
 	
     public static final String CREATIONTIME = "creationTime";
+    public static final String CLIENT = "client";
+    public static final String ACTIONTRIGGER = "actionTrigger";
     
     /**
      * For KeyValueCoding support
@@ -60,10 +62,12 @@ public abstract class _ActionTriggerLog extends net.events.cms.eo.EVCMSGenericRe
 	/**
 	 * Create a "ActionTriggerLog" object with all required values
 	 */
-	public static ActionTriggerLog createActionTriggerLog(EOEditingContext editingContext, NSTimestamp creationTime) {
+	public static ActionTriggerLog createActionTriggerLog(EOEditingContext editingContext, NSTimestamp creationTime, net.events.cms.eo.ActionTrigger actionTrigger, net.events.cms.eo.Client client) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: ActionTriggerLog");
 		ActionTriggerLog eoObject = (ActionTriggerLog)EOUtilities.createAndInsertInstance(editingContext, _ActionTriggerLog.ENTITY_NAME);
 		eoObject.setCreationTime(creationTime);
+		eoObject.setActionTrigger(actionTrigger);
+		eoObject.setClient(client);
 		return eoObject;
 	}
  
@@ -183,5 +187,21 @@ public abstract class _ActionTriggerLog extends net.events.cms.eo.EVCMSGenericRe
     public void setCreationTime(NSTimestamp aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating creationTime from "+creationTime()+" to "+aValue );
         takeStoredValueForKey(aValue, "creationTime");
+    }
+
+    public net.events.cms.eo.ActionTrigger actionTrigger() {
+        return (net.events.cms.eo.ActionTrigger)storedValueForKey("actionTrigger");
+    }
+
+    public void setActionTrigger(net.events.cms.eo.ActionTrigger aValue) {
+        takeStoredValueForKey(aValue, "actionTrigger");
+    }
+
+    public net.events.cms.eo.Client client() {
+        return (net.events.cms.eo.Client)storedValueForKey("client");
+    }
+
+    public void setClient(net.events.cms.eo.Client aValue) {
+        takeStoredValueForKey(aValue, "client");
     }
 }
