@@ -14,15 +14,21 @@
 		},
 		{
 			allowsNull = N;
-			columnName = clientId;
+			columnName = client_id;
 			name = clientId;
 			prototypeName = key;
 		},
 		{
 			allowsNull = N;
-			columnName = createdById;
+			columnName = created_by_id;
 			name = createdById;
 			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = creation_time;
+			name = creationTime;
+			prototypeName = datetime;
 		},
 		{
 			allowsNull = N;
@@ -43,6 +49,7 @@
 		actionTriggers,
 		client,
 		createdBy,
+		creationTime,
 		inheritanceType,
 		name
 	);
