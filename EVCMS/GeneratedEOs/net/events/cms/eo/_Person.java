@@ -34,6 +34,7 @@ public abstract class _Person extends net.events.cms.eo.Contact {
     public static final String EMAIL = "email";
     public static final String DELETED = "deleted";
     public static final String DATEOFBIRTH = "dateOfBirth";
+    public static final String DATASETITEMACTIONTRIGGERS = "dataSetItemActionTriggers";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String COMPANYNAME2 = "companyName2";
@@ -297,6 +298,63 @@ public abstract class _Person extends net.events.cms.eo.Contact {
 
     public void setUsergroup(net.events.cms.eo.Usergroup aValue) {
         takeStoredValueForKey(aValue, "usergroup");
+    }
+
+	/**
+	 * Returns the objects for the relationship "dataSetItemActionTriggers"
+	 */
+    public NSArray dataSetItemActionTriggers() {
+        return (NSArray)storedValueForKey("dataSetItemActionTriggers");
+    }
+
+    public void setDataSetItemActionTriggers(NSArray aValue) {
+    	if( log.isDebugEnabled() ) log.debug( "updating dataSetItemActionTriggers from "+dataSetItemActionTriggers()+" to "+aValue );
+        takeStoredValueForKey(aValue, "dataSetItemActionTriggers");
+    }
+
+    public void addToDataSetItemActionTriggers(net.events.cms.eo.DataSetItemActionTrigger object) {
+        if( log.isDebugEnabled() ) log.debug( "adding "+object+" to dataSetItemActionTriggers" );
+	    includeObjectIntoPropertyWithKey(object, "dataSetItemActionTriggers");
+    }
+    
+
+    public void removeFromDataSetItemActionTriggers(net.events.cms.eo.DataSetItemActionTrigger object) {
+        if( log.isDebugEnabled() ) log.debug( "removing "+object+" from dataSetItemActionTriggers" );
+	    excludeObjectFromPropertyWithKey(object, "dataSetItemActionTriggers");
+    }
+	
+    
+    /** 
+     * creates a new object "net.events.cms.eo.DataSetItemActionTrigger" and add it
+     * to the relationship "dataSetItemActionTriggers"
+     */
+    public net.events.cms.eo.DataSetItemActionTrigger createObjectAndAddToDataSetItemActionTriggers() {
+    	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: dataSetItemActionTriggers");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("DataSetItemActionTrigger");
+	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+	    editingContext().insertObject(eoObject);
+	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "dataSetItemActionTriggers");
+	    return (net.events.cms.eo.DataSetItemActionTrigger) eoObject;
+    }
+    
+    /**
+     * Removes object from the relationship "dataSetItemActionTriggers" and delete object
+     */
+    public void removeFromDataSetItemActionTriggersAndDelete(net.events.cms.eo.DataSetItemActionTrigger object) {
+    	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: dataSetItemActionTriggers");
+        removeObjectFromBothSidesOfRelationshipWithKey(object, "dataSetItemActionTriggers");
+        editingContext().deleteObject(object);
+    }
+    
+    /**
+     * Delete all objects found in the relationship "dataSetItemActionTriggers", be careful, this method
+     * DELETES it does not only a remove!
+     */
+    public void deleteAllDataSetItemActionTriggers() {
+    	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: dataSetItemActionTriggers");
+	    Enumeration objects = dataSetItemActionTriggers().objectEnumerator();
+	    while ( objects.hasMoreElements() )
+	        removeFromDataSetItemActionTriggersAndDelete((net.events.cms.eo.DataSetItemActionTrigger)objects.nextElement());
     }
 
 	/**

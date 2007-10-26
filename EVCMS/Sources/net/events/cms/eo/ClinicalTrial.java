@@ -66,6 +66,15 @@ public class ClinicalTrial extends _ClinicalTrial {
     public Integer withdrawnParticipants () {
     	return this.countForStatus("withdrawn");
     }
+    
+    /**
+     * Returns the number of not accepted participants for the trial
+     * 
+     * @return
+     */
+    public Integer notAcceptedParticipants () {
+    	return this.countForStatus("not accepted");
+    }
 
     /**
      * Returns the number of participants for status "s"
@@ -76,9 +85,18 @@ public class ClinicalTrial extends _ClinicalTrial {
      */
     private Integer countForStatus (String s) {
     	if (s != null) {
-	    	EOQualifier q = EOQualifier.qualifierWithQualifierFormat("status = '" + s + "' and clinicalTrial = %@", new NSArray(this));
+	    	EOQualifier q = EOQualifier.qualifierWithQualifierFormat("status = '" + s + "' and clinicalTrial = %@", new NSArray<ClinicalTrial>(this));
 	    	return ERXEOControlUtilities.objectCountWithQualifier(this.editingContext(), StudyParticipant.ENTITY_NAME, q);
     	}
     	else return new Integer(0);
+    }
+    
+    /**
+     * Return the number of randomized participants
+     * @return
+     */
+    public Integer numberOfRandomizedParticipants () {
+    	EOQualifier q = EOQualifier.qualifierWithQualifierFormat("randomized = %@ and clinicalTrial = %@", new NSArray<Object>(new Object[] {Boolean.TRUE, this}));
+    	return ERXEOControlUtilities.objectCountWithQualifier(this.editingContext(), StudyParticipant.ENTITY_NAME, q);
     }
 }

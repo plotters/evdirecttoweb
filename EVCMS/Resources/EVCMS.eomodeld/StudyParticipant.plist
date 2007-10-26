@@ -134,6 +134,11 @@
 			prototypeName = integer;
 		},
 		{
+			columnName = randomized;
+			name = randomized;
+			prototypeName = flag;
+		},
+		{
 			columnName = status;
 			name = status;
 			prototypeName = string32;
@@ -167,6 +172,7 @@
 		companyName2,
 		createdBy,
 		creationTime,
+		dataSetItemActionTriggers,
 		dateOfBirth,
 		deleted,
 		email,
@@ -184,6 +190,7 @@
 		participantId,
 		password,
 		passwordAttempts,
+		randomized,
 		status,
 		title,
 		usergroup,
@@ -290,6 +297,19 @@
 				}
 			);
 			name = createdBy;
+		},
+		{
+			destination = DataSetItemActionTrigger;
+			isMandatory = N;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = personId;
+					sourceAttribute = contactId;
+				}
+			);
+			name = dataSetItemActionTriggers;
 		},
 		{
 			destination = Gender;

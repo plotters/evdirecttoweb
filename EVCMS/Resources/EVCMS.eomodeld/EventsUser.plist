@@ -139,6 +139,7 @@
 		companyName2,
 		createdBy,
 		creationTime,
+		dataSetItemActionTriggers,
 		dateOfBirth,
 		deleted,
 		editedBlogs,
@@ -237,6 +238,19 @@
 				}
 			);
 			name = createdBy;
+		},
+		{
+			destination = DataSetItemActionTrigger;
+			isMandatory = N;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = personId;
+					sourceAttribute = contactId;
+				}
+			);
+			name = dataSetItemActionTriggers;
 		},
 		{
 			definition = xEditorlogs.blog;

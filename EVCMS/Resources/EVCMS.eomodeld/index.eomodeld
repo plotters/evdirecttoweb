@@ -14,6 +14,18 @@
 			name = AbstractPage;
 		},
 		{
+			className = net.events.cms.eo.Action;
+			name = Action;
+		},
+		{
+			className = net.events.cms.eo.ActionTrigger;
+			name = ActionTrigger;
+		},
+		{
+			className = net.events.cms.eo.ActionTriggerLog;
+			name = ActionTriggerLog;
+		},
+		{
 			className = net.events.cms.eo.Address;
 			name = Address;
 		},
@@ -105,6 +117,11 @@
 			name = DataSetItem;
 		},
 		{
+			className = net.events.cms.eo.DataSetItemActionTrigger;
+			name = DataSetItemActionTrigger;
+			parent = ActionTrigger;
+		},
+		{
 			className = net.events.cms.eo.DataSetItemValue;
 			name = DataSetItemValue;
 		},
@@ -112,6 +129,11 @@
 			className = net.events.cms.eo.DataSetNumberItem;
 			name = DataSetNumberItem;
 			parent = DataSetItem;
+		},
+		{
+			className = net.events.cms.eo.DataSetNumberItemActionTrigger;
+			name = DataSetNumberItemActionTrigger;
+			parent = DataSetItemActionTrigger;
 		},
 		{
 			className = net.events.cms.eo.DataSetNumberItemValue;
@@ -170,6 +192,11 @@
 		{
 			className = net.events.cms.eo.EditedSite;
 			name = EditedSite;
+		},
+		{
+			className = net.events.cms.eo.EmailAction;
+			name = EmailAction;
+			parent = Action;
 		},
 		{
 			className = net.events.cms.eo.EventsUser;

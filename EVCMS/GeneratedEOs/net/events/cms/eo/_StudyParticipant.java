@@ -23,6 +23,7 @@ public abstract class _StudyParticipant extends net.events.cms.eo.Person {
     public static final String USERGROUP = "usergroup";
     public static final String TITLE = "title";
     public static final String STATUS = "status";
+    public static final String RANDOMIZED = "randomized";
     public static final String PASSWORDATTEMPTS = "passwordAttempts";
     public static final String PASSWORD = "password";
     public static final String PARTICIPANTID = "participantId";
@@ -40,6 +41,7 @@ public abstract class _StudyParticipant extends net.events.cms.eo.Person {
     public static final String EMAIL = "email";
     public static final String DELETED = "deleted";
     public static final String DATEOFBIRTH = "dateOfBirth";
+    public static final String DATASETITEMACTIONTRIGGERS = "dataSetItemActionTriggers";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String COMPANYNAME2 = "companyName2";
@@ -251,6 +253,21 @@ public abstract class _StudyParticipant extends net.events.cms.eo.Person {
     public void setParticipantId(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating participantId from "+participantId()+" to "+aValue );
         takeStoredValueForKey(aValue, "participantId");
+    }
+
+	/**
+	 * The value for "randomized"
+	 */
+    public Boolean randomized() {
+        return (Boolean) storedValueForKey("randomized");
+    }
+
+	/**
+	 * Set the value for "randomized"
+	 */
+    public void setRandomized(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating randomized from "+randomized()+" to "+aValue );
+        takeStoredValueForKey(aValue, "randomized");
     }
 
 	/**

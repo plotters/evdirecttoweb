@@ -1,0 +1,125 @@
+// Entity Modeler v1.0.0
+{
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = action_id;
+			name = actionId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = action_trigger_id;
+			name = actionTriggerId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = active;
+			name = active;
+			prototypeName = flag;
+		},
+		{
+			allowsNull = N;
+			columnName = comparator;
+			name = comparator;
+			prototypeName = string32;
+		},
+		{
+			allowsNull = N;
+			columnName = dataSetNumberItemId;
+			name = dataSetNumberItemId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = inheritance_type;
+			name = inheritanceType;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = name;
+			name = name;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = personId;
+			name = personId;
+			prototypeName = key;
+		},
+		{
+			columnName = trigger_description;
+			name = triggerDescription;
+			prototypeName = string4k;
+		},
+		{
+			allowsNull = N;
+			columnName = trigger_value;
+			name = triggerValue;
+			prototypeName = long;
+		}
+	);
+	className = net.events.cms.eo.DataSetNumberItemActionTrigger;
+	classProperties = (
+		action,
+		active,
+		comparator,
+		dataSetNumberItem,
+		inheritanceType,
+		name,
+		person,
+		triggerDescription,
+		triggerValue
+	);
+	externalName = action_trigger;
+	internalInfo = {};
+	name = DataSetNumberItemActionTrigger;
+	parent = DataSetItemActionTrigger;
+	primaryKeyAttributes = (
+		actionTriggerId
+	);
+	relationships = (
+		{
+			destination = Action;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = actionId;
+					sourceAttribute = actionId;
+				}
+			);
+			name = action;
+		},
+		{
+			destination = DataSetNumberItem;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = dataSetItemId;
+					sourceAttribute = dataSetNumberItemId;
+				}
+			);
+			name = dataSetNumberItem;
+		},
+		{
+			destination = Person;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = contactId;
+					sourceAttribute = personId;
+				}
+			);
+			name = person;
+		}
+	);
+	restrictingQualifier = "inheritanceType = 'DataSetNumberItemActionTrigger'";
+}

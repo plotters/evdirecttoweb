@@ -1,0 +1,70 @@
+// Entity Modeler v1.0.0
+{
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = action_id;
+			name = actionId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = action_trigger_id;
+			name = actionTriggerId;
+			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = active;
+			name = active;
+			prototypeName = flag;
+		},
+		{
+			allowsNull = N;
+			columnName = inheritance_type;
+			name = inheritanceType;
+			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = name;
+			name = name;
+			prototypeName = string256;
+		},
+		{
+			columnName = trigger_description;
+			name = triggerDescription;
+			prototypeName = string4k;
+		}
+	);
+	className = net.events.cms.eo.ActionTrigger;
+	classProperties = (
+		action,
+		active,
+		inheritanceType,
+		name,
+		triggerDescription
+	);
+	externalName = action_trigger;
+	internalInfo = {};
+	isAbstractEntity = Y;
+	name = ActionTrigger;
+	primaryKeyAttributes = (
+		actionTriggerId
+	);
+	relationships = (
+		{
+			destination = Action;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = actionId;
+					sourceAttribute = actionId;
+				}
+			);
+			name = action;
+		}
+	);
+}
