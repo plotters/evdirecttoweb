@@ -93,6 +93,8 @@
 	);
 	className = net.events.cms.eo.Client;
 	classProperties = (
+		actionTriggers,
+		actions,
 		active,
 		adminStylesheet,
 		blogs,
@@ -122,6 +124,32 @@
 		clientId
 	);
 	relationships = (
+		{
+			destination = ActionTrigger;
+			isMandatory = N;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = actionTriggers;
+		},
+		{
+			destination = Action;
+			isMandatory = N;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = clientId;
+					sourceAttribute = clientId;
+				}
+			);
+			name = actions;
+		},
 		{
 			deleteRule = EODeleteRuleCascade;
 			destination = Blog;

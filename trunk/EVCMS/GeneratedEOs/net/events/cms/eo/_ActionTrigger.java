@@ -22,7 +22,10 @@ public abstract class _ActionTrigger extends net.events.cms.eo.EVCMSGenericRecor
     public static final String TRIGGERDESCRIPTION = "triggerDescription";
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String CREATEDBY = "createdBy";
+    public static final String CLIENT = "client";
     public static final String ACTIVE = "active";
+    public static final String ACTIONTRIGGERLOGS = "actionTriggerLogs";
     public static final String ACTION = "action";
     
     /**
@@ -64,13 +67,15 @@ public abstract class _ActionTrigger extends net.events.cms.eo.EVCMSGenericRecor
 	/**
 	 * Create a "ActionTrigger" object with all required values
 	 */
-	public static ActionTrigger createActionTrigger(EOEditingContext editingContext, Boolean active, String inheritanceType, String name, net.events.cms.eo.Action action) {
+	public static ActionTrigger createActionTrigger(EOEditingContext editingContext, Boolean active, String inheritanceType, String name, net.events.cms.eo.Action action, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: ActionTrigger");
 		ActionTrigger eoObject = (ActionTrigger)EOUtilities.createAndInsertInstance(editingContext, _ActionTrigger.ENTITY_NAME);
 		eoObject.setActive(active);
 		eoObject.setInheritanceType(inheritanceType);
 		eoObject.setName(name);
 		eoObject.setAction(action);
+		eoObject.setClient(client);
+		eoObject.setCreatedBy(createdBy);
 		return eoObject;
 	}
  
@@ -243,5 +248,78 @@ public abstract class _ActionTrigger extends net.events.cms.eo.EVCMSGenericRecor
 
     public void setAction(net.events.cms.eo.Action aValue) {
         takeStoredValueForKey(aValue, "action");
+    }
+
+    public net.events.cms.eo.Client client() {
+        return (net.events.cms.eo.Client)storedValueForKey("client");
+    }
+
+    public void setClient(net.events.cms.eo.Client aValue) {
+        takeStoredValueForKey(aValue, "client");
+    }
+
+    public net.events.cms.eo.EventsUser createdBy() {
+        return (net.events.cms.eo.EventsUser)storedValueForKey("createdBy");
+    }
+
+    public void setCreatedBy(net.events.cms.eo.EventsUser aValue) {
+        takeStoredValueForKey(aValue, "createdBy");
+    }
+
+	/**
+	 * Returns the objects for the relationship "actionTriggerLogs"
+	 */
+    public NSArray actionTriggerLogs() {
+        return (NSArray)storedValueForKey("actionTriggerLogs");
+    }
+
+    public void setActionTriggerLogs(NSArray aValue) {
+    	if( log.isDebugEnabled() ) log.debug( "updating actionTriggerLogs from "+actionTriggerLogs()+" to "+aValue );
+        takeStoredValueForKey(aValue, "actionTriggerLogs");
+    }
+
+    public void addToActionTriggerLogs(net.events.cms.eo.ActionTriggerLog object) {
+        if( log.isDebugEnabled() ) log.debug( "adding "+object+" to actionTriggerLogs" );
+	    includeObjectIntoPropertyWithKey(object, "actionTriggerLogs");
+    }
+    
+
+    public void removeFromActionTriggerLogs(net.events.cms.eo.ActionTriggerLog object) {
+        if( log.isDebugEnabled() ) log.debug( "removing "+object+" from actionTriggerLogs" );
+	    excludeObjectFromPropertyWithKey(object, "actionTriggerLogs");
+    }
+	
+    
+    /** 
+     * creates a new object "net.events.cms.eo.ActionTriggerLog" and add it
+     * to the relationship "actionTriggerLogs"
+     */
+    public net.events.cms.eo.ActionTriggerLog createObjectAndAddToActionTriggerLogs() {
+    	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: actionTriggerLogs");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("ActionTriggerLog");
+	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+	    editingContext().insertObject(eoObject);
+	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "actionTriggerLogs");
+	    return (net.events.cms.eo.ActionTriggerLog) eoObject;
+    }
+    
+    /**
+     * Removes object from the relationship "actionTriggerLogs" and delete object
+     */
+    public void removeFromActionTriggerLogsAndDelete(net.events.cms.eo.ActionTriggerLog object) {
+    	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: actionTriggerLogs");
+        removeObjectFromBothSidesOfRelationshipWithKey(object, "actionTriggerLogs");
+        editingContext().deleteObject(object);
+    }
+    
+    /**
+     * Delete all objects found in the relationship "actionTriggerLogs", be careful, this method
+     * DELETES it does not only a remove!
+     */
+    public void deleteAllActionTriggerLogs() {
+    	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: actionTriggerLogs");
+	    Enumeration objects = actionTriggerLogs().objectEnumerator();
+	    while ( objects.hasMoreElements() )
+	        removeFromActionTriggerLogsAndDelete((net.events.cms.eo.ActionTriggerLog)objects.nextElement());
     }
 }

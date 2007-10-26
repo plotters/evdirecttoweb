@@ -21,6 +21,8 @@ public abstract class _Action extends net.events.cms.eo.EVCMSGenericRecord {
 	
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String CREATEDBY = "createdBy";
+    public static final String CLIENT = "client";
     public static final String ACTIONTRIGGERS = "actionTriggers";
     public static final String ACTIONDESCRIPTION = "actionDescription";
     
@@ -63,11 +65,13 @@ public abstract class _Action extends net.events.cms.eo.EVCMSGenericRecord {
 	/**
 	 * Create a "Action" object with all required values
 	 */
-	public static Action createAction(EOEditingContext editingContext, String inheritanceType, String name) {
+	public static Action createAction(EOEditingContext editingContext, String inheritanceType, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: Action");
 		Action eoObject = (Action)EOUtilities.createAndInsertInstance(editingContext, _Action.ENTITY_NAME);
 		eoObject.setInheritanceType(inheritanceType);
 		eoObject.setName(name);
+		eoObject.setClient(client);
+		eoObject.setCreatedBy(createdBy);
 		return eoObject;
 	}
  
@@ -217,6 +221,22 @@ public abstract class _Action extends net.events.cms.eo.EVCMSGenericRecord {
     public void setName(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating name from "+name()+" to "+aValue );
         takeStoredValueForKey(aValue, "name");
+    }
+
+    public net.events.cms.eo.Client client() {
+        return (net.events.cms.eo.Client)storedValueForKey("client");
+    }
+
+    public void setClient(net.events.cms.eo.Client aValue) {
+        takeStoredValueForKey(aValue, "client");
+    }
+
+    public net.events.cms.eo.EventsUser createdBy() {
+        return (net.events.cms.eo.EventsUser)storedValueForKey("createdBy");
+    }
+
+    public void setCreatedBy(net.events.cms.eo.EventsUser aValue) {
+        takeStoredValueForKey(aValue, "createdBy");
     }
 
 	/**

@@ -25,6 +25,8 @@ public abstract class _EmailAction extends net.events.cms.eo.Action {
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
     public static final String FROM = "from";
+    public static final String CREATEDBY = "createdBy";
+    public static final String CLIENT = "client";
     public static final String ACTIONTRIGGERS = "actionTriggers";
     public static final String ACTIONDESCRIPTION = "actionDescription";
     
@@ -57,7 +59,7 @@ public abstract class _EmailAction extends net.events.cms.eo.Action {
 	/**
 	 * Create a "EmailAction" object with all required values
 	 */
-	public static EmailAction createEmailAction(EOEditingContext editingContext, String from, String subject, String template, String to, String name) {
+	public static EmailAction createEmailAction(EOEditingContext editingContext, String from, String subject, String template, String to, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: EmailAction");
 		EmailAction eoObject = (EmailAction)EOUtilities.createAndInsertInstance(editingContext, _EmailAction.ENTITY_NAME);
 		eoObject.setFrom(from);
@@ -65,6 +67,8 @@ public abstract class _EmailAction extends net.events.cms.eo.Action {
 		eoObject.setTemplate(template);
 		eoObject.setTo(to);
 		eoObject.setName(name);
+		eoObject.setClient(client);
+		eoObject.setCreatedBy(createdBy);
 		return eoObject;
 	}
  

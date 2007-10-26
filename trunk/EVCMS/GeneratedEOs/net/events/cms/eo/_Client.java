@@ -39,6 +39,8 @@ public abstract class _Client extends net.events.cms.eo.EVCMSGenericRecord {
     public static final String BLOGS = "blogs";
     public static final String ADMINSTYLESHEET = "adminStylesheet";
     public static final String ACTIVE = "active";
+    public static final String ACTIONS = "actions";
+    public static final String ACTIONTRIGGERS = "actionTriggers";
     
     /**
      * For KeyValueCoding support
@@ -414,6 +416,120 @@ public abstract class _Client extends net.events.cms.eo.EVCMSGenericRecord {
 
     public void setCountry(net.events.cms.eo.Country aValue) {
         takeStoredValueForKey(aValue, "country");
+    }
+
+	/**
+	 * Returns the objects for the relationship "actionTriggers"
+	 */
+    public NSArray actionTriggers() {
+        return (NSArray)storedValueForKey("actionTriggers");
+    }
+
+    public void setActionTriggers(NSArray aValue) {
+    	if( log.isDebugEnabled() ) log.debug( "updating actionTriggers from "+actionTriggers()+" to "+aValue );
+        takeStoredValueForKey(aValue, "actionTriggers");
+    }
+
+    public void addToActionTriggers(net.events.cms.eo.ActionTrigger object) {
+        if( log.isDebugEnabled() ) log.debug( "adding "+object+" to actionTriggers" );
+	    includeObjectIntoPropertyWithKey(object, "actionTriggers");
+    }
+    
+
+    public void removeFromActionTriggers(net.events.cms.eo.ActionTrigger object) {
+        if( log.isDebugEnabled() ) log.debug( "removing "+object+" from actionTriggers" );
+	    excludeObjectFromPropertyWithKey(object, "actionTriggers");
+    }
+	
+    
+    /** 
+     * creates a new object "net.events.cms.eo.ActionTrigger" and add it
+     * to the relationship "actionTriggers"
+     */
+    public net.events.cms.eo.ActionTrigger createObjectAndAddToActionTriggers() {
+    	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: actionTriggers");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("ActionTrigger");
+	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+	    editingContext().insertObject(eoObject);
+	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "actionTriggers");
+	    return (net.events.cms.eo.ActionTrigger) eoObject;
+    }
+    
+    /**
+     * Removes object from the relationship "actionTriggers" and delete object
+     */
+    public void removeFromActionTriggersAndDelete(net.events.cms.eo.ActionTrigger object) {
+    	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: actionTriggers");
+        removeObjectFromBothSidesOfRelationshipWithKey(object, "actionTriggers");
+        editingContext().deleteObject(object);
+    }
+    
+    /**
+     * Delete all objects found in the relationship "actionTriggers", be careful, this method
+     * DELETES it does not only a remove!
+     */
+    public void deleteAllActionTriggers() {
+    	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: actionTriggers");
+	    Enumeration objects = actionTriggers().objectEnumerator();
+	    while ( objects.hasMoreElements() )
+	        removeFromActionTriggersAndDelete((net.events.cms.eo.ActionTrigger)objects.nextElement());
+    }
+
+	/**
+	 * Returns the objects for the relationship "actions"
+	 */
+    public NSArray actions() {
+        return (NSArray)storedValueForKey("actions");
+    }
+
+    public void setActions(NSArray aValue) {
+    	if( log.isDebugEnabled() ) log.debug( "updating actions from "+actions()+" to "+aValue );
+        takeStoredValueForKey(aValue, "actions");
+    }
+
+    public void addToActions(net.events.cms.eo.Action object) {
+        if( log.isDebugEnabled() ) log.debug( "adding "+object+" to actions" );
+	    includeObjectIntoPropertyWithKey(object, "actions");
+    }
+    
+
+    public void removeFromActions(net.events.cms.eo.Action object) {
+        if( log.isDebugEnabled() ) log.debug( "removing "+object+" from actions" );
+	    excludeObjectFromPropertyWithKey(object, "actions");
+    }
+	
+    
+    /** 
+     * creates a new object "net.events.cms.eo.Action" and add it
+     * to the relationship "actions"
+     */
+    public net.events.cms.eo.Action createObjectAndAddToActions() {
+    	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: actions");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("Action");
+	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+	    editingContext().insertObject(eoObject);
+	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "actions");
+	    return (net.events.cms.eo.Action) eoObject;
+    }
+    
+    /**
+     * Removes object from the relationship "actions" and delete object
+     */
+    public void removeFromActionsAndDelete(net.events.cms.eo.Action object) {
+    	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: actions");
+        removeObjectFromBothSidesOfRelationshipWithKey(object, "actions");
+        editingContext().deleteObject(object);
+    }
+    
+    /**
+     * Delete all objects found in the relationship "actions", be careful, this method
+     * DELETES it does not only a remove!
+     */
+    public void deleteAllActions() {
+    	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: actions");
+	    Enumeration objects = actions().objectEnumerator();
+	    while ( objects.hasMoreElements() )
+	        removeFromActionsAndDelete((net.events.cms.eo.Action)objects.nextElement());
     }
 
 	/**
