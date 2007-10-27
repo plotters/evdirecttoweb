@@ -20,6 +20,7 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
 	// KeyValueCoding support
 	
     public static final String VALUES = "values";
+    public static final String VALID = "valid";
     public static final String PERSON = "person";
     public static final String INHERITANCETYPE = "inheritanceType";
     public static final String DATE = "date";
@@ -66,11 +67,12 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
 	/**
 	 * Create a "DataSetEntry" object with all required values
 	 */
-	public static DataSetEntry createDataSetEntry(EOEditingContext editingContext, NSTimestamp creationTime, String inheritanceType, net.events.cms.eo.Client client, net.events.cms.eo.DataSetTemplate dataSetTemplate, net.events.cms.eo.Person person) {
+	public static DataSetEntry createDataSetEntry(EOEditingContext editingContext, NSTimestamp creationTime, String inheritanceType, Boolean valid, net.events.cms.eo.Client client, net.events.cms.eo.DataSetTemplate dataSetTemplate, net.events.cms.eo.Person person) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: DataSetEntry");
 		DataSetEntry eoObject = (DataSetEntry)EOUtilities.createAndInsertInstance(editingContext, _DataSetEntry.ENTITY_NAME);
 		eoObject.setCreationTime(creationTime);
 		eoObject.setInheritanceType(inheritanceType);
+		eoObject.setValid(valid);
 		eoObject.setClient(client);
 		eoObject.setDataSetTemplate(dataSetTemplate);
 		eoObject.setPerson(person);
@@ -223,6 +225,21 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
     public void setInheritanceType(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating inheritanceType from "+inheritanceType()+" to "+aValue );
         takeStoredValueForKey(aValue, "inheritanceType");
+    }
+
+	/**
+	 * The value for "valid"
+	 */
+    public Boolean valid() {
+        return (Boolean) storedValueForKey("valid");
+    }
+
+	/**
+	 * Set the value for "valid"
+	 */
+    public void setValid(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating valid from "+valid()+" to "+aValue );
+        takeStoredValueForKey(aValue, "valid");
     }
 
     public net.events.cms.eo.Client client() {

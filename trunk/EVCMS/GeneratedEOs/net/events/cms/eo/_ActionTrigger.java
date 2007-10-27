@@ -22,6 +22,7 @@ public abstract class _ActionTrigger extends net.events.cms.eo.EVCMSGenericRecor
     public static final String TRIGGERDESCRIPTION = "triggerDescription";
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
     public static final String ACTIVE = "active";
@@ -67,10 +68,11 @@ public abstract class _ActionTrigger extends net.events.cms.eo.EVCMSGenericRecor
 	/**
 	 * Create a "ActionTrigger" object with all required values
 	 */
-	public static ActionTrigger createActionTrigger(EOEditingContext editingContext, Boolean active, String inheritanceType, String name, net.events.cms.eo.Action action, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
+	public static ActionTrigger createActionTrigger(EOEditingContext editingContext, Boolean active, NSTimestamp creationTime, String inheritanceType, String name, net.events.cms.eo.Action action, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: ActionTrigger");
 		ActionTrigger eoObject = (ActionTrigger)EOUtilities.createAndInsertInstance(editingContext, _ActionTrigger.ENTITY_NAME);
 		eoObject.setActive(active);
+		eoObject.setCreationTime(creationTime);
 		eoObject.setInheritanceType(inheritanceType);
 		eoObject.setName(name);
 		eoObject.setAction(action);
@@ -195,6 +197,21 @@ public abstract class _ActionTrigger extends net.events.cms.eo.EVCMSGenericRecor
     public void setActive(Boolean aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating active from "+active()+" to "+aValue );
         takeStoredValueForKey(aValue, "active");
+    }
+
+	/**
+	 * The value for "creationTime"
+	 */
+    public NSTimestamp creationTime() {
+        return (NSTimestamp) storedValueForKey("creationTime");
+    }
+
+	/**
+	 * Set the value for "creationTime"
+	 */
+    public void setCreationTime(NSTimestamp aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating creationTime from "+creationTime()+" to "+aValue );
+        takeStoredValueForKey(aValue, "creationTime");
     }
 
 	/**

@@ -21,6 +21,7 @@ public abstract class _Action extends net.events.cms.eo.EVCMSGenericRecord {
 	
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
     public static final String ACTIONTRIGGERS = "actionTriggers";
@@ -65,9 +66,10 @@ public abstract class _Action extends net.events.cms.eo.EVCMSGenericRecord {
 	/**
 	 * Create a "Action" object with all required values
 	 */
-	public static Action createAction(EOEditingContext editingContext, String inheritanceType, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
+	public static Action createAction(EOEditingContext editingContext, NSTimestamp creationTime, String inheritanceType, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: Action");
 		Action eoObject = (Action)EOUtilities.createAndInsertInstance(editingContext, _Action.ENTITY_NAME);
+		eoObject.setCreationTime(creationTime);
 		eoObject.setInheritanceType(inheritanceType);
 		eoObject.setName(name);
 		eoObject.setClient(client);
@@ -191,6 +193,21 @@ public abstract class _Action extends net.events.cms.eo.EVCMSGenericRecord {
     public void setActionDescription(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating actionDescription from "+actionDescription()+" to "+aValue );
         takeStoredValueForKey(aValue, "actionDescription");
+    }
+
+	/**
+	 * The value for "creationTime"
+	 */
+    public NSTimestamp creationTime() {
+        return (NSTimestamp) storedValueForKey("creationTime");
+    }
+
+	/**
+	 * Set the value for "creationTime"
+	 */
+    public void setCreationTime(NSTimestamp aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating creationTime from "+creationTime()+" to "+aValue );
+        takeStoredValueForKey(aValue, "creationTime");
     }
 
 	/**
