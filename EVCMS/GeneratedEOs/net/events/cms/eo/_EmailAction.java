@@ -19,12 +19,13 @@ public abstract class _EmailAction extends net.events.cms.eo.Action {
 	
 	// KeyValueCoding support
 	
-    public static final String TO = "to";
+    public static final String TOADDRESS = "toAddress";
     public static final String TEMPLATE = "template";
     public static final String SUBJECT = "subject";
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
-    public static final String FROM = "from";
+    public static final String FROMADDRESS = "fromAddress";
+    public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
     public static final String ACTIONTRIGGERS = "actionTriggers";
@@ -59,13 +60,14 @@ public abstract class _EmailAction extends net.events.cms.eo.Action {
 	/**
 	 * Create a "EmailAction" object with all required values
 	 */
-	public static EmailAction createEmailAction(EOEditingContext editingContext, String from, String subject, String template, String to, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
+	public static EmailAction createEmailAction(EOEditingContext editingContext, String fromAddress, String subject, String template, String toAddress, NSTimestamp creationTime, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: EmailAction");
 		EmailAction eoObject = (EmailAction)EOUtilities.createAndInsertInstance(editingContext, _EmailAction.ENTITY_NAME);
-		eoObject.setFrom(from);
+		eoObject.setFromAddress(fromAddress);
 		eoObject.setSubject(subject);
 		eoObject.setTemplate(template);
-		eoObject.setTo(to);
+		eoObject.setToAddress(toAddress);
+		eoObject.setCreationTime(creationTime);
 		eoObject.setName(name);
 		eoObject.setClient(client);
 		eoObject.setCreatedBy(createdBy);
@@ -176,18 +178,18 @@ public abstract class _EmailAction extends net.events.cms.eo.Action {
   
 
 	/**
-	 * The value for "from"
+	 * The value for "fromAddress"
 	 */
-    public String from() {
-        return (String) storedValueForKey("from");
+    public String fromAddress() {
+        return (String) storedValueForKey("fromAddress");
     }
 
 	/**
-	 * Set the value for "from"
+	 * Set the value for "fromAddress"
 	 */
-    public void setFrom(String aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating from from "+from()+" to "+aValue );
-        takeStoredValueForKey(aValue, "from");
+    public void setFromAddress(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating fromAddress from "+fromAddress()+" to "+aValue );
+        takeStoredValueForKey(aValue, "fromAddress");
     }
 
 	/**
@@ -221,17 +223,17 @@ public abstract class _EmailAction extends net.events.cms.eo.Action {
     }
 
 	/**
-	 * The value for "to"
+	 * The value for "toAddress"
 	 */
-    public String to() {
-        return (String) storedValueForKey("to");
+    public String toAddress() {
+        return (String) storedValueForKey("toAddress");
     }
 
 	/**
-	 * Set the value for "to"
+	 * Set the value for "toAddress"
 	 */
-    public void setTo(String aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating to from "+to()+" to "+aValue );
-        takeStoredValueForKey(aValue, "to");
+    public void setToAddress(String aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating toAddress from "+toAddress()+" to "+aValue );
+        takeStoredValueForKey(aValue, "toAddress");
     }
 }

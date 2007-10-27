@@ -69,3 +69,8 @@ CREATE INDEX action_trigger_logs_action_trigger_id_idx ON action_trigger_logs( a
 ALTER TABLE action_trigger_logs ADD CONSTRAINT action_trigger_logs_client_FK FOREIGN KEY (client_id) REFERENCES clients (client_id) DEFERRABLE INITIALLY DEFERRED;
 CREATE INDEX action_trigger_logs_client_id_idx ON action_trigger_logs( client_id );
 
+
+alter table data_set_entries add column valid bool;
+update data_set_entries set valid = true;
+alter table data_set_entries alter column valid set not null;
+create index data_set_entries__valid__index on data_set_entries (valid);

@@ -23,6 +23,7 @@ public abstract class _DataSetItemActionTrigger extends net.events.cms.eo.Action
     public static final String PERSON = "person";
     public static final String NAME = "name";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
     public static final String ACTIVE = "active";
@@ -58,11 +59,12 @@ public abstract class _DataSetItemActionTrigger extends net.events.cms.eo.Action
 	/**
 	 * Create a "DataSetItemActionTrigger" object with all required values
 	 */
-	public static DataSetItemActionTrigger createDataSetItemActionTrigger(EOEditingContext editingContext, Boolean active, String name, net.events.cms.eo.Person person, net.events.cms.eo.Action action, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
+	public static DataSetItemActionTrigger createDataSetItemActionTrigger(EOEditingContext editingContext, Boolean active, NSTimestamp creationTime, String name, net.events.cms.eo.Person person, net.events.cms.eo.Action action, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: DataSetItemActionTrigger");
 		DataSetItemActionTrigger eoObject = (DataSetItemActionTrigger)EOUtilities.createAndInsertInstance(editingContext, _DataSetItemActionTrigger.ENTITY_NAME);
 		eoObject.setPerson(person);
 		eoObject.setActive(active);
+		eoObject.setCreationTime(creationTime);
 		eoObject.setName(name);
 		eoObject.setAction(action);
 		eoObject.setClient(client);

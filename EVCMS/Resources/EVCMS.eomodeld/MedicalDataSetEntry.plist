@@ -41,6 +41,12 @@
 			columnName = person_id;
 			name = personId;
 			prototypeName = key;
+		},
+		{
+			allowsNull = N;
+			columnName = valid;
+			name = valid;
+			prototypeName = flag;
 		}
 	);
 	className = net.events.cms.eo.MedicalDataSetEntry;
@@ -51,6 +57,7 @@
 		date,
 		inheritanceType,
 		person,
+		valid,
 		values
 	);
 	externalName = data_set_entries;

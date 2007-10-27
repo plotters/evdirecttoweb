@@ -20,6 +20,7 @@ public abstract class _MedicalDataSetEntry extends net.events.cms.eo.DataSetEntr
 	// KeyValueCoding support
 	
     public static final String VALUES = "values";
+    public static final String VALID = "valid";
     public static final String PERSON = "person";
     public static final String INHERITANCETYPE = "inheritanceType";
     public static final String DATE = "date";
@@ -56,10 +57,11 @@ public abstract class _MedicalDataSetEntry extends net.events.cms.eo.DataSetEntr
 	/**
 	 * Create a "MedicalDataSetEntry" object with all required values
 	 */
-	public static MedicalDataSetEntry createMedicalDataSetEntry(EOEditingContext editingContext, NSTimestamp creationTime, net.events.cms.eo.Client client, net.events.cms.eo.DataSetTemplate dataSetTemplate, net.events.cms.eo.Person person) {
+	public static MedicalDataSetEntry createMedicalDataSetEntry(EOEditingContext editingContext, NSTimestamp creationTime, Boolean valid, net.events.cms.eo.Client client, net.events.cms.eo.DataSetTemplate dataSetTemplate, net.events.cms.eo.Person person) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: MedicalDataSetEntry");
 		MedicalDataSetEntry eoObject = (MedicalDataSetEntry)EOUtilities.createAndInsertInstance(editingContext, _MedicalDataSetEntry.ENTITY_NAME);
 		eoObject.setCreationTime(creationTime);
+		eoObject.setValid(valid);
 		eoObject.setClient(client);
 		eoObject.setDataSetTemplate(dataSetTemplate);
 		eoObject.setPerson(person);
