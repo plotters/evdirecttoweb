@@ -136,6 +136,7 @@
 				}
 			);
 			name = actionTriggers;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = Action;
@@ -149,6 +150,7 @@
 				}
 			);
 			name = actions;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -162,6 +164,7 @@
 				}
 			);
 			name = blogs;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			deleteRule = EODeleteRuleDeny;

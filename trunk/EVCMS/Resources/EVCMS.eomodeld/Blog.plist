@@ -65,6 +65,7 @@
 				}
 			);
 			name = blogPages;
+			numberOfToManyFaultsToBatchFetch = 5;
 		},
 		{
 			destination = BlogEntryCategory;
@@ -77,6 +78,7 @@
 				}
 			);
 			name = categories;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = Client;
@@ -104,6 +106,7 @@
 		{
 			definition = xEditorlogs.eventsUser;
 			name = editors;
+			numberOfToManyFaultsToBatchFetch = 5;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -117,6 +120,7 @@
 				}
 			);
 			name = entries;
+			numberOfToManyFaultsToBatchFetch = 50;
 		},
 		{
 			destination = Site;

@@ -91,6 +91,7 @@
 	externalName = data_set_item;
 	internalInfo = {};
 	isAbstractEntity = N;
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetSelectionItem;
 	parent = DataSetItem;
 	primaryKeyAttributes = (
@@ -109,6 +110,7 @@
 				}
 			);
 			name = answers;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = Client;
@@ -158,6 +160,7 @@
 				}
 			);
 			name = options;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = DataSetSection;

@@ -63,6 +63,7 @@
 	externalName = data_set_entries;
 	internalInfo = {};
 	isAbstractEntity = N;
+	maxNumberOfInstancesToBatchFetch = 10;
 	name = MedicalDataSetEntry;
 	parent = DataSetEntry;
 	primaryKeyAttributes = (
@@ -118,6 +119,7 @@
 				}
 			);
 			name = values;
+			numberOfToManyFaultsToBatchFetch = 20;
 		}
 	);
 	restrictingQualifier = "inheritanceType = 'MedicalDataSetEntry'";

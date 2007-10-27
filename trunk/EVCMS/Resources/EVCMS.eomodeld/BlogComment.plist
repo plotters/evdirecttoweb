@@ -53,6 +53,7 @@
 	);
 	externalName = blog_comments;
 	internalInfo = {};
+	maxNumberOfInstancesToBatchFetch = 10;
 	name = BlogComment;
 	primaryKeyAttributes = (
 		commentId

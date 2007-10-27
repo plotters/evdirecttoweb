@@ -102,6 +102,7 @@
 	externalName = data_set_item;
 	internalInfo = {};
 	isAbstractEntity = N;
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetDateItem;
 	parent = DataSetItem;
 	primaryKeyAttributes = (
@@ -120,6 +121,7 @@
 				}
 			);
 			name = answers;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Client;

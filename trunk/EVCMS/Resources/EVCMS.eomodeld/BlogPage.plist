@@ -165,6 +165,7 @@
 				}
 			);
 			name = childPages;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = Client;
@@ -202,6 +203,7 @@
 				}
 			);
 			name = pageElements;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = PageWrapperEO;

@@ -74,6 +74,7 @@
 				}
 			);
 			name = entries;
+			numberOfToManyFaultsToBatchFetch = 50;
 		}
 	);
 }

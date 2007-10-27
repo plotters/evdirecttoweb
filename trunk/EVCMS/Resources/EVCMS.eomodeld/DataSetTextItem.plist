@@ -101,6 +101,7 @@
 	);
 	externalName = data_set_item;
 	internalInfo = {};
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetTextItem;
 	parent = DataSetItem;
 	primaryKeyAttributes = (
@@ -119,6 +120,7 @@
 				}
 			);
 			name = answers;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Client;

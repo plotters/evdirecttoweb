@@ -248,6 +248,7 @@
 				}
 			);
 			name = adverseEvents;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = Client;
@@ -310,6 +311,7 @@
 				}
 			);
 			name = dataSetItemActionTriggers;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = Gender;
@@ -334,6 +336,7 @@
 				}
 			);
 			name = medicalDataSetEntries;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;

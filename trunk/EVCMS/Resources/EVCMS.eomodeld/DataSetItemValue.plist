@@ -42,6 +42,7 @@
 	externalName = data_set_item_value;
 	internalInfo = {};
 	isAbstractEntity = Y;
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetItemValue;
 	primaryKeyAttributes = (
 		dataSetItemValueId

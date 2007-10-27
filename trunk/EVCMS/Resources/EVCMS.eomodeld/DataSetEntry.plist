@@ -63,6 +63,7 @@
 	externalName = data_set_entries;
 	internalInfo = {};
 	isAbstractEntity = Y;
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetEntry;
 	primaryKeyAttributes = (
 		dataSetEntryId
@@ -117,6 +118,7 @@
 				}
 			);
 			name = values;
+			numberOfToManyFaultsToBatchFetch = 50;
 		}
 	);
 }
