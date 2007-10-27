@@ -3,9 +3,9 @@
 		name = Root;
 		children = "session.currentUser.usergroup.name";
 		childrenChoices = {
-			"Super Admin" = ("Site Admin", "Contacts", "Trial Management",  "Admin");
-			"Study Administrator" = ("Trial Management", "Admin");
-			"Site Admin" = ("Site Admin");
+			"Super Admin" = ("Site Admin", "Contacts", "Trial Management", "Settings", "Admin");
+			"Study Administrator" = ("Trial Management", "Settings", "Admin");
+			"Site Admin" = ("Site Admin", "Settings");
 		};
 	},
 	{
@@ -106,6 +106,15 @@
 	{
 		name = "Adverse Events";
 		action = "session.queryPage.AdverseEvent";
+	},
+	{
+		name = "Settings";
+		action = "session.listPage.Action";
+		children = ("Actions");
+	},
+	{
+		name = "Actions";
+		action = "session.listPage.Action";
 	},
 	{
 		name = "Admin";

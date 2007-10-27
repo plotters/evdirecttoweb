@@ -1,4 +1,5 @@
 (
+    0 : pageConfiguration = 'ListAction' => navigationState = Settings.Actions [com.webobjects.directtoweb.Assignment], 
     60 : task = 'list' => actions = {"right" = ("deleteAction"); 
 } [com.webobjects.directtoweb.Assignment], 
     60 : (pageConfiguration like 'Edit*' or pageConfiguration like 'Inspect*') => pageName = EVD2WTabInspectPage [com.webobjects.directtoweb.Assignment], 
