@@ -637,6 +637,11 @@ td, th {
 	padding: 4px 2px 2px 2px;
 }
 
+.d2w_query_boolean input{
+	margin-right: 4px;
+	margin-left: 12px;
+}
+
 .d2w_error_label {
 	color: #B52C07;
 	font-weight: bold;
