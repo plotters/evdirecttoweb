@@ -80,6 +80,7 @@
 	);
 	externalName = data_set_sections;
 	internalInfo = {};
+	maxNumberOfInstancesToBatchFetch = 10;
 	name = DataSetSection;
 	primaryKeyAttributes = (
 		dataSetSectionId
@@ -121,6 +122,7 @@
 				}
 			);
 			name = dataSetItems;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = DataSetTemplate;

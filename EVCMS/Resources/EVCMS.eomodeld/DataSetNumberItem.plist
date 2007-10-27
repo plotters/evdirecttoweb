@@ -105,6 +105,7 @@
 	externalName = data_set_item;
 	internalInfo = {};
 	isAbstractEntity = N;
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetNumberItem;
 	parent = DataSetItem;
 	primaryKeyAttributes = (
@@ -123,6 +124,7 @@
 				}
 			);
 			name = actionTriggers;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			deleteRule = EODeleteRuleDeny;
@@ -136,6 +138,7 @@
 				}
 			);
 			name = answers;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Client;

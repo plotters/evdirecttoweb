@@ -162,6 +162,7 @@
 				}
 			);
 			name = dataSetEntries;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -175,6 +176,7 @@
 				}
 			);
 			name = dataSetItems;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = DataSetPageTemplate;
@@ -199,6 +201,7 @@
 				}
 			);
 			name = pages;
+			numberOfToManyFaultsToBatchFetch = 5;
 		},
 		{
 			destination = DataSetSection;
@@ -211,6 +214,7 @@
 				}
 			);
 			name = sections;
+			numberOfToManyFaultsToBatchFetch = 10;
 		}
 	);
 	restrictingQualifier = "inheritanceType = 'MedicalDataSetTemplate'";

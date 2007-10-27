@@ -93,6 +93,7 @@
 				}
 			);
 			name = domains;
+			numberOfToManyFaultsToBatchFetch = 5;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -106,6 +107,7 @@
 				}
 			);
 			name = editors;
+			numberOfToManyFaultsToBatchFetch = 5;
 		},
 		{
 			destination = PageWrapperEO;
@@ -118,6 +120,7 @@
 				}
 			);
 			name = pageWrappers;
+			numberOfToManyFaultsToBatchFetch = 5;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -131,6 +134,7 @@
 				}
 			);
 			name = pages;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = AbstractPage;
@@ -155,6 +159,7 @@
 				}
 			);
 			name = stylesheets;
+			numberOfToManyFaultsToBatchFetch = 5;
 		}
 	);
 }

@@ -90,6 +90,7 @@
 	externalName = data_set_item;
 	internalInfo = {};
 	isAbstractEntity = Y;
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetItem;
 	primaryKeyAttributes = (
 		dataSetItemId
@@ -107,6 +108,7 @@
 				}
 			);
 			name = answers;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Client;

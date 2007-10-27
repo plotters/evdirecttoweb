@@ -108,6 +108,7 @@
 				}
 			);
 			name = actionTriggerLogs;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Client;

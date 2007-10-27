@@ -251,10 +251,12 @@
 				}
 			);
 			name = dataSetItemActionTriggers;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			definition = xEditorlogs.blog;
 			name = editedBlogs;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -268,6 +270,7 @@
 				}
 			);
 			name = editedSites;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Gender;
@@ -292,6 +295,7 @@
 				}
 			);
 			name = medicalDataSetEntries;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -305,6 +309,7 @@
 				}
 			);
 			name = notes;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Usergroup;
@@ -331,6 +336,7 @@
 				}
 			);
 			name = visitedBlogs;
+			numberOfToManyFaultsToBatchFetch = 20;
 			propagatesPrimaryKey = Y;
 		},
 		{

@@ -51,6 +51,7 @@
 				}
 			);
 			name = users;
+			numberOfToManyFaultsToBatchFetch = 20;
 		}
 	);
 }

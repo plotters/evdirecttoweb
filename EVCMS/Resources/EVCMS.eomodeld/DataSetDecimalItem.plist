@@ -104,6 +104,7 @@
 	externalName = data_set_item;
 	internalInfo = {};
 	isAbstractEntity = N;
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetDecimalItem;
 	parent = DataSetItem;
 	primaryKeyAttributes = (
@@ -122,6 +123,7 @@
 				}
 			);
 			name = answers;
+			numberOfToManyFaultsToBatchFetch = 20;
 		},
 		{
 			destination = Client;

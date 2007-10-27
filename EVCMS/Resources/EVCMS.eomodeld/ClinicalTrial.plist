@@ -58,6 +58,7 @@
 				}
 			);
 			name = adverseEventOutcomes;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			deleteRule = EODeleteRuleDeny;
@@ -71,6 +72,7 @@
 				}
 			);
 			name = adverseEvents;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -84,6 +86,7 @@
 				}
 			);
 			name = causalityAssessments;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = Client;
@@ -109,6 +112,7 @@
 				}
 			);
 			name = medicalDataSetTemplates;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			destination = StudyParticipant;
@@ -121,6 +125,7 @@
 				}
 			);
 			name = participants;
+			numberOfToManyFaultsToBatchFetch = 50;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -134,6 +139,7 @@
 				}
 			);
 			name = seriousnesses;
+			numberOfToManyFaultsToBatchFetch = 10;
 		},
 		{
 			deleteRule = EODeleteRuleCascade;
@@ -147,6 +153,7 @@
 				}
 			);
 			name = severityGrades;
+			numberOfToManyFaultsToBatchFetch = 10;
 		}
 	);
 }

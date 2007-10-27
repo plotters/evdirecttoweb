@@ -120,6 +120,7 @@
 				}
 			);
 			name = sections;
+			numberOfToManyFaultsToBatchFetch = 10;
 		}
 	);
 }

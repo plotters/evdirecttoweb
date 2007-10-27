@@ -68,6 +68,7 @@
 	);
 	externalName = data_set_selection_options;
 	internalInfo = {};
+	maxNumberOfInstancesToBatchFetch = 20;
 	name = DataSetSelectionOption;
 	primaryKeyAttributes = (
 		dataSetSelectionOptionId
