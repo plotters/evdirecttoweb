@@ -22,3 +22,18 @@ OldValue : WOSwitchComponent {
 	value = dict.lastValue;
 	addLineBreaks = true;
 }
+
+NotPasswordConditional : ERXEqualConditional {
+	value1 = "password";
+	value2 = dict.attributeName;
+	negate = true;
+}
+
+PasswordConditional : ERXEqualConditional {
+	value1 = "password";
+	value2 = dict.attributeName;
+}
+
+PasswortHiddenString : ERXLocalizedString {
+	value = "hidden";
+}
