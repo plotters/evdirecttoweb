@@ -2,6 +2,11 @@
 {
 	attributes = (
 		{
+			columnName = calculate_averages;
+			name = calculateAverages;
+			prototypeName = flag;
+		},
+		{
 			allowsNull = N;
 			columnName = client_id;
 			name = clientId;
@@ -66,6 +71,7 @@
 	);
 	className = net.events.cms.eo.DataSetSection;
 	classProperties = (
+		calculateAverages,
 		client,
 		createdBy,
 		creationTime,
