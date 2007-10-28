@@ -47,5 +47,28 @@ public class DataSetItem extends _DataSetItem {
 			this.setIsRequired(Boolean.FALSE);
 		}
 	}
+	
+	public String dataSetNameAndItemName() {
+		if (this.section() != null) {
+			return this.section().sectionName() + " - " + this.name();
+		}
+		else {
+			return this.name(); 
+		}
+	}
+	
+	public String dataSetPlusSectionPlusNameForSorting () {
+		StringBuffer sb = new StringBuffer();
+		sb.append(this.dataSetTemplate().name() + " - ");
+		if (this.section() != null) {
+			sb.append(this.section().sectionName() + " - ");
+		}
+		else {
+			sb.append(" ");
+		}
+		sb.append(this.name());
+		return sb.toString();
+		
+	}
 
 }

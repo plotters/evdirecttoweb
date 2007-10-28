@@ -2,6 +2,7 @@ package net.events.cms.extensions;
 
 import com.webobjects.appserver.*;
 
+import er.extensions.*;
 import er.javamail.*;
 
 import net.events.cms.eo.*;
@@ -41,6 +42,27 @@ public class EVMailManager {
 
 		}
 
+	}
+	
+	public static void sendActionTriggerMailWithObject (EmailAction action, Object object) {
+		ERXSimpleTemplateParser parser = new ERXSimpleTemplateParser();
+		String textContent = parser.parseTemplateWithObject(action.template(), "@@", object);
+		String subject = parser.parseTemplateWithObject(action.subject(), "@@", object);
+		
+		ERMailDeliveryPlainText mail = new ERMailDeliveryPlainText();
+		try {
+			mail.newMail();
+			mail.setFromAddress("designer@event-s.net");
+			mail.setReplyToAddress(action.fromAddress());
+			mail.setToAddress(action.toAddress());
+			mail.setSubject(subject);
+			mail.setTextContent(textContent);
+			
+			mail.sendMail();
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
 	}
 
 }

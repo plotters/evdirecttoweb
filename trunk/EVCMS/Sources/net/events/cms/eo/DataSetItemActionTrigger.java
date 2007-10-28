@@ -2,14 +2,11 @@
 
 package net.events.cms.eo;
 
-import com.webobjects.eoaccess.*;
-import com.webobjects.eocontrol.*;
-import com.webobjects.foundation.*;
-import java.math.BigDecimal;
-import java.util.*;
-import org.apache.log4j.Logger;
+import org.apache.log4j.*;
 
-public class DataSetItemActionTrigger extends _DataSetItemActionTrigger {
+import com.webobjects.eocontrol.*;
+
+public abstract class DataSetItemActionTrigger extends _DataSetItemActionTrigger {
 	
 	private static Logger log = Logger.getLogger( DataSetItemActionTrigger.class );
 
@@ -39,6 +36,7 @@ public class DataSetItemActionTrigger extends _DataSetItemActionTrigger {
     	if (log.isDebugEnabled()) log.debug ("Created an object of class DataSetItemActionTrigger and inserted it into an editingContext");
         ec.insertObject( this );
     }
+    
+    abstract public DataSetItem dataSetItem();
  
-
 }

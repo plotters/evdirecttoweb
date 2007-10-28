@@ -55,4 +55,11 @@ public class DataSetTextItemValue extends _DataSetTextItemValue {
     public String valueAsString () {
     	return this.textValue();
     }
+
+	@Override
+	protected void checkTriggers()  {
+    	DataSetItemActionTrigger trigger = this.dataSetEntry().person().triggerForDataSetItem(this.dataSetItem()); 
+    	if (trigger != null) { 
+    	}
+    }
 }

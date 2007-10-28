@@ -21,6 +21,7 @@ public abstract class _DataSetNumberItemValue extends net.events.cms.eo.DataSetI
 	
     public static final String NUMBERVALUE = "numberValue";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASTRIGGERED = "hasTriggered";
     public static final String DATASETITEM = "dataSetItem";
     public static final String DATASETENTRY = "dataSetEntry";
     public static final String CLIENT = "client";

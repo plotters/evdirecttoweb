@@ -21,6 +21,7 @@ public abstract class _DataSetSelectionItemValue extends net.events.cms.eo.DataS
 	
     public static final String SELECTEDOPTION = "selectedOption";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASTRIGGERED = "hasTriggered";
     public static final String DATASETITEM = "dataSetItem";
     public static final String DATASETENTRY = "dataSetEntry";
     public static final String CLIENT = "client";

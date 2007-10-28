@@ -26,6 +26,11 @@
 			prototypeName = key;
 		},
 		{
+			columnName = has_triggered;
+			name = hasTriggered;
+			prototypeName = flag;
+		},
+		{
 			allowsNull = N;
 			columnName = inheritance_type;
 			name = inheritanceType;
@@ -42,6 +47,7 @@
 		client,
 		dataSetEntry,
 		dataSetItem,
+		hasTriggered,
 		inheritanceType,
 		textValue
 	);

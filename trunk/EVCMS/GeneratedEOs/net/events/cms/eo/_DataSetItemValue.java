@@ -20,6 +20,7 @@ public abstract class _DataSetItemValue extends net.events.cms.eo.EVCMSGenericRe
 	// KeyValueCoding support
 	
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASTRIGGERED = "hasTriggered";
     public static final String DATASETITEM = "dataSetItem";
     public static final String DATASETENTRY = "dataSetEntry";
     public static final String CLIENT = "client";
@@ -175,6 +176,21 @@ public abstract class _DataSetItemValue extends net.events.cms.eo.EVCMSGenericRe
 		return (_eo == null) ? null : (DataSetItemValue)EOUtilities.localInstanceOfObject(_editingContext, _eo);
 	}
   
+
+	/**
+	 * The value for "hasTriggered"
+	 */
+    public Boolean hasTriggered() {
+        return (Boolean) storedValueForKey("hasTriggered");
+    }
+
+	/**
+	 * Set the value for "hasTriggered"
+	 */
+    public void setHasTriggered(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating hasTriggered from "+hasTriggered()+" to "+aValue );
+        takeStoredValueForKey(aValue, "hasTriggered");
+    }
 
 	/**
 	 * The value for "inheritanceType"

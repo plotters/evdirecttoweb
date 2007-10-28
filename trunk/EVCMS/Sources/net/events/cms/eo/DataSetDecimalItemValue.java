@@ -54,4 +54,10 @@ public class DataSetDecimalItemValue extends _DataSetDecimalItemValue {
 		}
 	}
 
+	@Override
+	protected void checkTriggers()  {
+    	DataSetItemActionTrigger trigger = this.dataSetEntry().person().triggerForDataSetItem(this.dataSetItem()); 
+    	if (trigger != null) { 
+    	}
+    }
 }

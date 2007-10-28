@@ -96,4 +96,8 @@ public class EVCMSConstants {
 	 * Sorts with the key "orderNumber" ascending
 	 */
 	public static EOSortOrdering orderNumberDescendingOrdering = EOSortOrdering.sortOrderingWithKey("orderNumber", EOSortOrdering.CompareDescending);
+	
+	public static String LOWER_THAN_COMPARATOR_KEY = "is lower than";
+	public static String GREATER_THAN_COMPARATOR_KEY = "is greater than";
+	public static String EQUAL_TO_COMPARATOR_KEY = "is equal to";
 }
