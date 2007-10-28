@@ -30,6 +30,7 @@ public abstract class _DataSetSection extends net.events.cms.eo.EVCMSGenericReco
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
+    public static final String CALCULATEAVERAGES = "calculateAverages";
     
     /**
      * For KeyValueCoding support
@@ -183,6 +184,21 @@ public abstract class _DataSetSection extends net.events.cms.eo.EVCMSGenericReco
 		return (_eo == null) ? null : (DataSetSection)EOUtilities.localInstanceOfObject(_editingContext, _eo);
 	}
   
+
+	/**
+	 * The value for "calculateAverages"
+	 */
+    public Boolean calculateAverages() {
+        return (Boolean) storedValueForKey("calculateAverages");
+    }
+
+	/**
+	 * Set the value for "calculateAverages"
+	 */
+    public void setCalculateAverages(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating calculateAverages from "+calculateAverages()+" to "+aValue );
+        takeStoredValueForKey(aValue, "calculateAverages");
+    }
 
 	/**
 	 * The value for "creationTime"

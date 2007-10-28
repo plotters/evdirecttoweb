@@ -74,3 +74,10 @@ alter table data_set_entries add column valid bool;
 update data_set_entries set valid = true;
 alter table data_set_entries alter column valid set not null;
 create index data_set_entries__valid__index on data_set_entries (valid);
+
+alter table data_set_item_value add column has_triggered bool;
+
+update data_set_selection_options set score = order_number where data_set_item_id in (select data_set_item_id from data_set_item where data_set_id = 1002);
+update data_set_selection_options set score = order_number -1 where data_set_item_id in (select data_set_item_id from data_set_item where data_set_id = 2002);
+
+alter table data_set_sections add column calculate_averages bool;

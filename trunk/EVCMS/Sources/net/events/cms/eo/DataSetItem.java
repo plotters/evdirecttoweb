@@ -68,7 +68,6 @@ public class DataSetItem extends _DataSetItem {
 		}
 		sb.append(this.name());
 		return sb.toString();
-		
 	}
 
 }
