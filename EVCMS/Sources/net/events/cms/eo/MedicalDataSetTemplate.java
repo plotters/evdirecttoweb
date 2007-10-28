@@ -40,6 +40,10 @@ public class MedicalDataSetTemplate extends _MedicalDataSetTemplate {
 	public MedicalDataSetEntry createNewInstanceForTemplateInEditingContext(EOEditingContext editingContext) {
 		return MedicalDataSetEntry.createNewInstanceForTemplateInEditingContext(this, editingContext);
 	}
+	
+	public String userPresentableDescription () {
+		return this.name();
+	}
  
 
 }

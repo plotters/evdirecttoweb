@@ -81,5 +81,10 @@ public class DataSetDateItemValue extends _DataSetDateItemValue {
 		return (NSTimestamp) value;
 	}
 
-
+	@Override
+	protected void checkTriggers()  {
+    	DataSetItemActionTrigger trigger = this.dataSetEntry().person().triggerForDataSetItem(this.dataSetItem()); 
+    	if (trigger != null) { 
+    	}
+    }
 }

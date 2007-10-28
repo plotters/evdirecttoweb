@@ -21,6 +21,7 @@ public abstract class _DataSetTextItemValue extends net.events.cms.eo.DataSetIte
 	
     public static final String TEXTVALUE = "textValue";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASTRIGGERED = "hasTriggered";
     public static final String DATASETITEM = "dataSetItem";
     public static final String DATASETENTRY = "dataSetEntry";
     public static final String CLIENT = "client";

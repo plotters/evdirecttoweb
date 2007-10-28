@@ -76,7 +76,7 @@
 	);
 	externalName = action_trigger;
 	internalInfo = {};
-	isAbstractEntity = N;
+	isAbstractEntity = Y;
 	name = DataSetItemActionTrigger;
 	parent = ActionTrigger;
 	primaryKeyAttributes = (

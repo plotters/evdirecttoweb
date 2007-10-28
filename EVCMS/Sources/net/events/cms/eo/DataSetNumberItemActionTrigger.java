@@ -40,5 +40,9 @@ public class DataSetNumberItemActionTrigger extends _DataSetNumberItemActionTrig
         ec.insertObject( this );
     }
  
+    public DataSetItem dataSetItem() {
+    	return this.dataSetNumberItem();
+    }
+
 
 }

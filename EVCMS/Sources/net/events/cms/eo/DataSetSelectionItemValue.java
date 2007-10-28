@@ -59,5 +59,11 @@ public class DataSetSelectionItemValue extends _DataSetSelectionItemValue {
     	}
     	
     }
-    
+
+	@Override
+	protected void checkTriggers()  {
+    	DataSetItemActionTrigger trigger = this.dataSetEntry().person().triggerForDataSetItem(this.dataSetItem()); 
+    	if (trigger != null) { 
+    	}
+    }
 }

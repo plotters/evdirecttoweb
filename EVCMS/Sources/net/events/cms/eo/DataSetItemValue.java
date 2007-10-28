@@ -2,6 +2,8 @@
 
 package net.events.cms.eo;
 
+import net.events.cms.extensions.*;
+
 import org.apache.log4j.*;
 
 import com.webobjects.eocontrol.*;
@@ -38,5 +40,22 @@ public abstract class DataSetItemValue extends _DataSetItemValue {
     }
  
     public abstract String valueAsString();
+    
+    public void validateForSave () {
+    	super.validateForSave();
+    	this.checkTriggers();
+    }
+    
+    abstract protected void checkTriggers ();
+    
+    /**
+     * @param a
+     */
+    public void executeTrigger (Action a) {
+    	this.setHasTriggered(Boolean.TRUE);
+    	if (a instanceof EmailAction) {
+    		EVMailManager.sendActionTriggerMailWithObject((EmailAction) a, this);
+    	}
+    }
     
 }

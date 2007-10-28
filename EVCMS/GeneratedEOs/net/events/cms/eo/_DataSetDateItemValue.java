@@ -20,6 +20,7 @@ public abstract class _DataSetDateItemValue extends net.events.cms.eo.DataSetIte
 	// KeyValueCoding support
 	
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASTRIGGERED = "hasTriggered";
     public static final String DATEVALUE = "dateValue";
     public static final String DATASETITEM = "dataSetItem";
     public static final String DATASETENTRY = "dataSetEntry";

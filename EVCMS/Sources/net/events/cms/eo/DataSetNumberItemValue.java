@@ -2,6 +2,8 @@
 
 package net.events.cms.eo;
 
+import net.events.cms.extensions.*;
+
 import org.apache.log4j.*;
 
 import com.webobjects.eocontrol.*;
@@ -44,4 +46,19 @@ public class DataSetNumberItemValue extends _DataSetNumberItemValue {
     	else return "";
     }
     
+    protected void checkTriggers () {
+    	DataSetItemActionTrigger t = this.dataSetEntry().person().triggerForDataSetItem(this.dataSetItem()); 
+    	if (t != null && t instanceof DataSetNumberItemActionTrigger && this.numberValue() != null) { 
+    		DataSetNumberItemActionTrigger trigger = (DataSetNumberItemActionTrigger) t;
+    		if (EVCMSConstants.GREATER_THAN_COMPARATOR_KEY.equals(trigger.comparator()) && this.numberValue().longValue() > trigger.triggerValue().longValue()) {
+    			this.executeTrigger(trigger.action());
+    		}
+    		else if (EVCMSConstants.LOWER_THAN_COMPARATOR_KEY.equals(trigger.comparator()) && this.numberValue().longValue() < trigger.triggerValue().longValue()) { 
+    			this.executeTrigger(trigger.action());
+    		}
+    		else if (EVCMSConstants.EQUAL_TO_COMPARATOR_KEY.equals(trigger.comparator()) && this.numberValue().longValue() == trigger.triggerValue().longValue()) {
+    			this.executeTrigger(trigger.action());
+    		}
+    	}
+    }
 }

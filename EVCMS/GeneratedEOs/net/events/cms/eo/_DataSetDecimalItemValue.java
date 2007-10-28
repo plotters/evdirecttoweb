@@ -20,6 +20,7 @@ public abstract class _DataSetDecimalItemValue extends net.events.cms.eo.DataSet
 	// KeyValueCoding support
 	
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASTRIGGERED = "hasTriggered";
     public static final String DECIMALVALUE = "decimalValue";
     public static final String DATASETITEM = "dataSetItem";
     public static final String DATASETENTRY = "dataSetEntry";

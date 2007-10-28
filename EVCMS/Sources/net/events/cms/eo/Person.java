@@ -2,6 +2,8 @@
 
 package net.events.cms.eo;
 
+import java.util.*;
+
 import net.events.cms.extensions.*;
 
 import org.apache.log4j.*;
@@ -91,5 +93,16 @@ public class Person extends _Person {
     public String firstnameLastname () {
     	return this.firstname() + " " + this.lastname();
     }
+
+	public DataSetItemActionTrigger triggerForDataSetItem(DataSetItem dataSetItem) {
+		Enumeration<DataSetItemActionTrigger> enumeration = this.dataSetItemActionTriggers().objectEnumerator();
+		while (enumeration.hasMoreElements()) {
+			DataSetItemActionTrigger trigger = enumeration.nextElement();
+			if (trigger.dataSetItem().primaryKey().equals(dataSetItem.primaryKey())) {
+				return trigger;
+			}
+		}
+		return null;
+	}
     
 }
