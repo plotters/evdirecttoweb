@@ -1,0 +1,12 @@
+PopupList: ERXOptGroupPopupButton { 
+	displayString = theCurrentValue;
+	item = theCurrentItem;
+	list = theList;
+	selection = selection;
+    name=^popupName;
+	onChange = ^onChange;
+	onBlur = ^onBlur;
+	escapeHTML = false;
+	group = groupObject;
+	label = label;
+}
