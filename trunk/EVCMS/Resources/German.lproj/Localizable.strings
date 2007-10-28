@@ -60,6 +60,7 @@
 	"DescriptionSectionName" = "Beschreibung";
 	"Edit" = "Bearbeiten";
 	"EmptyListComponent.CREATE_NEW_ENTRY" = "Neuer Eintrag";
+	"ERDEmptyListMessage.emptyListMessage" = "Keine Eintr\U00e4ge vorhanden.";
 	"EthnicGroupSectionName" = "Ethnische Gruppe";
 	"EVCMS.BACK_TO_LIST" = "Zur\U00fcck zur Liste";
 	"EVCMS.COMMENTS" = "Kommentare";

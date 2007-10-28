@@ -61,6 +61,7 @@
 	"DescriptionSectionName" = "Description";
 	"Edit" = "Edit";
 	"EmptyListComponent.CREATE_NEW_ENTRY" = "Create New";
+	"ERDEmptyListMessage.emptyListMessage" = "No records to display.";
 	"EthnicGroupSectionName" = "Ethnic Group";
 	"EVCMS.BACK_TO_LIST" = "back to list";
 	"EVCMS.COMMENTS" = "Comments";
