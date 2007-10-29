@@ -80,6 +80,11 @@
 			columnName = text_description;
 			name = textDescription;
 			prototypeName = string4k;
+		},
+		{
+			columnName = use_text_area;
+			name = useTextArea;
+			prototypeName = flag;
 		}
 	);
 	className = net.events.cms.eo.DataSetTextItem;
@@ -97,7 +102,8 @@
 		predefinedValues,
 		section,
 		sortPredefinedValues,
-		textDescription
+		textDescription,
+		useTextArea
 	);
 	externalName = data_set_item;
 	internalInfo = {};

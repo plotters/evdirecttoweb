@@ -45,8 +45,14 @@ public class EVDataSetPage extends EVCMSEditPage {
 		DataSetEntry entry = dataSetTemplate.createNewInstanceForTemplateInEditingContext(editingContext);
 
 		if (ERXThreadStorage.valueForKey(EVCMSConstants.CURRENT_USER) != null) {
-			if (entry instanceof MedicalDataSetEntry)
-			((MedicalDataSetEntry) entry).setPerson((StudyParticipant) ERXThreadStorage.valueForKey(this.editingContext, EVCMSConstants.CURRENT_USER));
+			if (entry instanceof MedicalDataSetEntry) {
+				if (ERXThreadStorage.valueForKey("CURRENT_PARTICIPANT") != null) {
+					((MedicalDataSetEntry) entry).setPerson((StudyParticipant) ERXThreadStorage.valueForKey(this.editingContext, "CURRENT_PARTICIPANT"));
+				}
+				else {
+					((MedicalDataSetEntry) entry).setPerson((StudyParticipant) ERXThreadStorage.valueForKey(this.editingContext, EVCMSConstants.CURRENT_USER));
+				}
+			}
 		}
 		this.setObject(entry);
     }
@@ -77,13 +83,15 @@ public class EVDataSetPage extends EVCMSEditPage {
     		return null;
     	}
     	else {
-    		WOComponent nextpage = this.pageWithName(EVGenericMessagePage.class.getName());
-    		nextpage.takeValueForKey(this.dataSetTemplate.textForThankYouPage(), EVCMSConstants.MESSAGE_KEY);
-    		nextpage.takeValueForKey(this.dataSetTemplate.cssClassForThankYouMessage(), EVCMSConstants.CSS_CLASS_FOR_MESSAGE_KEY);
-    		nextpage.takeValueForKey(Boolean.TRUE, EVCMSConstants.SHALL_TERMINATE_SESSION_KEY);
-    		nextpage.takeValueForKey(this.dataSetTemplate.dataSetPageTemplate(), "previousPage");
-    		
-    		return nextpage;
+    		if (this.nextPage() == null) {
+    			WOComponent nextpage = this.pageWithName(EVGenericMessagePage.class.getName());
+    			nextpage.takeValueForKey(this.dataSetTemplate.textForThankYouPage(), EVCMSConstants.MESSAGE_KEY);
+    			nextpage.takeValueForKey(this.dataSetTemplate.cssClassForThankYouMessage(), EVCMSConstants.CSS_CLASS_FOR_MESSAGE_KEY);
+    			nextpage.takeValueForKey(Boolean.TRUE, EVCMSConstants.SHALL_TERMINATE_SESSION_KEY);
+    			nextpage.takeValueForKey(this.dataSetTemplate.dataSetPageTemplate(), "previousPage");
+    			return nextpage;
+    		}
+    		else return this.nextPage();
     	}
     }
 

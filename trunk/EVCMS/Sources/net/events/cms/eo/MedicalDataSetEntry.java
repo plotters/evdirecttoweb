@@ -55,7 +55,13 @@ public class MedicalDataSetEntry extends _MedicalDataSetEntry {
     	MedicalDataSetEntry entry = new MedicalDataSetEntry (editingContext);
     	
     	entry.addObjectToBothSidesOfRelationshipWithKey(template, DATASETTEMPLATE);
-		StudyParticipant sp = (StudyParticipant) ERXThreadStorage.valueForKey(editingContext, EVCMSConstants.CURRENT_USER);
+    	StudyParticipant sp;
+    	if (ERXThreadStorage.valueForKey("CURRENT_PARTICIPANT") != null) {
+    		sp = (StudyParticipant) ERXThreadStorage.valueForKey(editingContext, "CURRENT_PARTICIPANT");
+    	}
+    	else {
+    		sp = (StudyParticipant) ERXThreadStorage.valueForKey(editingContext, EVCMSConstants.CURRENT_USER);
+    	}
 		entry.addObjectToBothSidesOfRelationshipWithKey(sp, PERSON);
 		entry.addObjectToBothSidesOfRelationshipWithKey(template.client(), CLIENT);
 

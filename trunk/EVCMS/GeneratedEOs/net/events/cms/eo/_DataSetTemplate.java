@@ -35,6 +35,7 @@ public abstract class _DataSetTemplate extends net.events.cms.eo.EVCMSGenericRec
     public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
     public static final String BOTTOMTEXT = "bottomText";
+    public static final String ADMINONLY = "adminOnly";
     public static final String ACTIVE = "active";
     
     /**
@@ -203,6 +204,21 @@ public abstract class _DataSetTemplate extends net.events.cms.eo.EVCMSGenericRec
     public void setActive(Boolean aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating active from "+active()+" to "+aValue );
         takeStoredValueForKey(aValue, "active");
+    }
+
+	/**
+	 * The value for "adminOnly"
+	 */
+    public Boolean adminOnly() {
+        return (Boolean) storedValueForKey("adminOnly");
+    }
+
+	/**
+	 * Set the value for "adminOnly"
+	 */
+    public void setAdminOnly(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating adminOnly from "+adminOnly()+" to "+aValue );
+        takeStoredValueForKey(aValue, "adminOnly");
     }
 
 	/**

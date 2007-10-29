@@ -36,6 +36,7 @@ public abstract class _MedicalDataSetTemplate extends net.events.cms.eo.DataSetT
     public static final String CLINICALTRIAL = "clinicalTrial";
     public static final String CLIENT = "client";
     public static final String BOTTOMTEXT = "bottomText";
+    public static final String ADMINONLY = "adminOnly";
     public static final String ACTIVE = "active";
     
     /**

@@ -5,6 +5,8 @@ package net.events.cms.eo;
 import java.math.*;
 import java.util.*;
 
+import javax.swing.text.StyledEditorKit.*;
+
 import org.apache.log4j.*;
 
 import com.webobjects.eocontrol.*;
@@ -23,6 +25,7 @@ public abstract class DataSetEntry extends _DataSetEntry {
 		super.awakeFromInsertion (editingContext);
 
 		// initialize your object here
+		this.setValid(Boolean.TRUE);
 	}
 	
 	public static DataSetEntry createNewInstanceForTemplateInEditingContext(DataSetTemplate template, EOEditingContext editingContext) {

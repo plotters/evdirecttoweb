@@ -54,7 +54,7 @@ public class DataSetDateItemValue extends _DataSetDateItemValue {
  
 	public void setDataSetItem (DataSetItem item) {
 		super.setDataSetItem(item);
-		if (((DataSetDateItem)this.dataSetItem()).autosetToToday() != null && ((DataSetDateItem)this.dataSetItem()).autosetToToday().booleanValue()) {
+		if (this.dataSetItem() != null && ((DataSetDateItem)this.dataSetItem()).autosetToToday() != null && ((DataSetDateItem)this.dataSetItem()).autosetToToday().booleanValue()) {
 			this.setDateValue(new NSTimestamp());
 		}
 	}
