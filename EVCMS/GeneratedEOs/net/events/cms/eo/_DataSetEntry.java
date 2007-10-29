@@ -23,9 +23,11 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
     public static final String VALID = "valid";
     public static final String PERSON = "person";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASQUERY = "hasQuery";
     public static final String DATE = "date";
     public static final String DATASETTEMPLATE = "dataSetTemplate";
     public static final String CREATIONTIME = "creationTime";
+    public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
     
     /**
@@ -213,6 +215,21 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
     }
 
 	/**
+	 * The value for "hasQuery"
+	 */
+    public Boolean hasQuery() {
+        return (Boolean) storedValueForKey("hasQuery");
+    }
+
+	/**
+	 * Set the value for "hasQuery"
+	 */
+    public void setHasQuery(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating hasQuery from "+hasQuery()+" to "+aValue );
+        takeStoredValueForKey(aValue, "hasQuery");
+    }
+
+	/**
 	 * The value for "inheritanceType"
 	 */
     public String inheritanceType() {
@@ -248,6 +265,14 @@ public abstract class _DataSetEntry extends net.events.cms.eo.EVCMSGenericRecord
 
     public void setClient(net.events.cms.eo.Client aValue) {
         takeStoredValueForKey(aValue, "client");
+    }
+
+    public net.events.cms.eo.Person createdBy() {
+        return (net.events.cms.eo.Person)storedValueForKey("createdBy");
+    }
+
+    public void setCreatedBy(net.events.cms.eo.Person aValue) {
+        takeStoredValueForKey(aValue, "createdBy");
     }
 
     public net.events.cms.eo.DataSetTemplate dataSetTemplate() {

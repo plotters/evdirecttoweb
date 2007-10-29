@@ -8,6 +8,12 @@
 			prototypeName = key;
 		},
 		{
+			allowsNull = Y;
+			columnName = created_by_id;
+			name = createdById;
+			prototypeName = key;
+		},
+		{
 			allowsNull = N;
 			columnName = creation_time;
 			name = creationTime;
@@ -31,6 +37,11 @@
 			prototypeName = datetime;
 		},
 		{
+			columnName = has_query;
+			name = hasQuery;
+			prototypeName = flag;
+		},
+		{
 			allowsNull = N;
 			columnName = inheritance_type;
 			name = inheritanceType;
@@ -52,9 +63,11 @@
 	className = net.events.cms.eo.DataSetEntry;
 	classProperties = (
 		client,
+		createdBy,
 		creationTime,
 		dataSetTemplate,
 		date,
+		hasQuery,
 		inheritanceType,
 		person,
 		valid,
@@ -80,6 +93,19 @@
 				}
 			);
 			name = client;
+		},
+		{
+			destination = Person;
+			isMandatory = N;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = contactId;
+					sourceAttribute = createdById;
+				}
+			);
+			name = createdBy;
 		},
 		{
 			destination = DataSetTemplate;

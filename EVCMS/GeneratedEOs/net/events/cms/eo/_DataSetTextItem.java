@@ -19,6 +19,7 @@ public abstract class _DataSetTextItem extends net.events.cms.eo.DataSetItem {
 	
 	// KeyValueCoding support
 	
+    public static final String USETEXTAREA = "useTextArea";
     public static final String TEXTDESCRIPTION = "textDescription";
     public static final String SORTPREDEFINEDVALUES = "sortPredefinedValues";
     public static final String SECTION = "section";
@@ -207,5 +208,20 @@ public abstract class _DataSetTextItem extends net.events.cms.eo.DataSetItem {
     public void setSortPredefinedValues(Boolean aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating sortPredefinedValues from "+sortPredefinedValues()+" to "+aValue );
         takeStoredValueForKey(aValue, "sortPredefinedValues");
+    }
+
+	/**
+	 * The value for "useTextArea"
+	 */
+    public Boolean useTextArea() {
+        return (Boolean) storedValueForKey("useTextArea");
+    }
+
+	/**
+	 * Set the value for "useTextArea"
+	 */
+    public void setUseTextArea(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating useTextArea from "+useTextArea()+" to "+aValue );
+        takeStoredValueForKey(aValue, "useTextArea");
     }
 }

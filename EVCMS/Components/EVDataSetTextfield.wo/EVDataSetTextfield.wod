@@ -9,3 +9,22 @@ WOTextField : WOTextField {
   class = "ev_ds_textfield";
   value = value.textValue; // valid
 }
+
+WOText : WOText {
+  value = value.textValue; // valid
+}
+
+ValueDataSetItemUseTextArea : WOConditional {
+  condition = value.dataSetItem.useTextArea;
+  negate = true;
+}
+
+CurrentValuesCount : WOConditional {
+  condition = currentValues.count;
+}
+
+ERXElse : ERXElse {
+}
+
+ERXElse1 : ERXElse {
+}

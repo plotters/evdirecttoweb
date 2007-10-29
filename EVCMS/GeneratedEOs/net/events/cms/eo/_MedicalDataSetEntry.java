@@ -23,9 +23,11 @@ public abstract class _MedicalDataSetEntry extends net.events.cms.eo.DataSetEntr
     public static final String VALID = "valid";
     public static final String PERSON = "person";
     public static final String INHERITANCETYPE = "inheritanceType";
+    public static final String HASQUERY = "hasQuery";
     public static final String DATE = "date";
     public static final String DATASETTEMPLATE = "dataSetTemplate";
     public static final String CREATIONTIME = "creationTime";
+    public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
     
     /**

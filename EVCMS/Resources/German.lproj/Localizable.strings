@@ -1,5 +1,7 @@
 {
 	"Academic Title" = "Akademischer Titel";
+	"ActionTriggersSectionName" = "Aktionstrigger";
+	"ActionTriggersTabName" = "Aktionstrigger";
 	"Active" = "Aktiv";
 	"Add Domain" = "Domain hinzuf\U00fcgen";
 	"Add Website" = "Website hinzuf\U00fcgen";
@@ -48,10 +50,12 @@
 	"DataSetItemsSectionName" = "Datensatzteile";
 	"DataSetItemsTabName" = "Datensatzteile";
 	"DataSetItemTabName" = "Datensatzteil";
+	"DataSetItemValueTabName" = "Datensatzteil Wert";
 	"DataSets" = "Datens\U00e4tze";
 	"DataSetSectionsSectionName" = "Datensatz Abschnitte";
 	"DataSetSectionTabName" = "Datensatz Abschnitt";
 	"DataSetSelectionItem" = "Auswahleintrag";
+	"DataSetSelectionItemTabName" = "Datensatz Auswahlteil";
 	"DataSetsSectionName" = "Datens\U00e4tze";
 	"DataSetsTabName" = "Datens\U00e4tze";
 	"DataSetTextItem" = "Textfeld Eintrag";
@@ -59,6 +63,7 @@
 	"DemographicDataSectionName" = "Demographische Daten";
 	"DescriptionSectionName" = "Beschreibung";
 	"Edit" = "Bearbeiten";
+	"EditValueTabName" = "Wert bearbeiten";
 	"EmptyListComponent.CREATE_NEW_ENTRY" = "Neuer Eintrag";
 	"ERDEmptyListMessage.emptyListMessage" = "Keine Eintr\U00e4ge vorhanden.";
 	"EthnicGroupSectionName" = "Ethnische Gruppe";
@@ -73,6 +78,7 @@
 	"EVGenericErrorPage.GenericError" = "<br><br>Es tut uns leid, doch leider ist ein Fehler aufgetreten,<br>der nicht anderweitig behandelt werden konnte.<br><br>Unser Serviceteam wurde benachrichtigt!";
 	"Firstname" = "Vorname";
 	"GeneralInformationSectionName" = "Generelle Informationen";
+	"GeneralSectionName" = "Generelles";
 	"Lastname" = "Nachname";
 	"MedicalDataSet" = "Medizinischer Datensatz";
 	"MedicalDataSetEntryTabName" = "Medizinischer Datensatzeintrag";
@@ -80,6 +86,8 @@
 	"MedicalDataSetTemplateTabName" = "Medizinischer Datensatz (Vorlage)";
 	"Middlename" = "Zweiter Vorname";
 	"Misc" = "Allgemeine Informationen";
+	"MiscSectionName" = "Allgemeines";
+	"ModificationsTabName" = "Modifikationen";
 	"NameAndStatusSection" = "Name und Status";
 	"New Blog Entry" = "Neuer Eintrag";
 	"New Client" = "Neuer Kunde";
@@ -87,10 +95,12 @@
 	"New Survey" = "Neue Umfrage";
 	"New Trial" = "Neue Studie";
 	"New User" = "Neuer Benutzer";
+	"OptionsSectionName" = "Optionen";
 	"Page" = "Seite";
 	"Pages" = "Seiten";
 	"PersonalDataSectionName" = "Pers\U00f6nliche Daten";
 	"PersonalInformationSectionName" = "Pers\U00f6nliche Informationen";
+	"PersonInformationSectionName" = "Pers\U00f6nliche Informationen";
 	"Postal Code" = "Postleitzahl";
 	"Province" = "Staat / Provinz / Bundesland";
 	"RecentArticles.RECENT_ARTICLES" = "Aktuelle Artikel";

@@ -8,6 +8,11 @@
 			prototypeName = flag;
 		},
 		{
+			columnName = admin_only;
+			name = adminOnly;
+			prototypeName = flag;
+		},
+		{
 			columnName = bottom_text;
 			name = bottomText;
 			prototypeName = string4m;
@@ -82,6 +87,7 @@
 	className = net.events.cms.eo.DataSetTemplate;
 	classProperties = (
 		active,
+		adminOnly,
 		bottomText,
 		client,
 		createdBy,

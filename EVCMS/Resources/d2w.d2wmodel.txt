@@ -10,8 +10,10 @@
     80 : pageConfiguration = 'ListContact' => showActionBar = true [com.webobjects.directtoweb.Assignment], 
     80 : propertyKey = 'dataSetTemplate' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryStudyParticipant' => maxColumns = 4 [com.webobjects.directtoweb.Assignment], 
+    80 : propertyKey = 'dataSetNumberItem' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment], 
     80 : propertyKey = 'person' => keyWhenRelationship = firstnameLastname [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryAdverseEvent' => useMatrixLayout = true [com.webobjects.directtoweb.Assignment], 
+    80 : propertyKey = 'action.name' => displayNameForProperty = Action Name [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListBlog' => newObjectString = Blog.CREATE_NEW [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryStudyParticipant' => useMatrixLayout = true [com.webobjects.directtoweb.Assignment], 
     80 : propertyKey = 'seriousness' => displayNameForProperty = Is it serious? [com.webobjects.directtoweb.Assignment], 
@@ -20,6 +22,7 @@
     80 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => justification = left [com.webobjects.directtoweb.Assignment], 
     80 : (task = 'edit' and propertyKey = 'pageWrappers') => hidePropertyName = true [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListMedicalDataSetEntry' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment], 
+    80 : pageConfiguration = 'ListEmbeddedDataSetEntry' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListBlog' => defaultSortOrdering = (name, compareAscending) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => propertyIsSortable = false [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'EditEmbeddedDataSetSelectionOption' => hideSaveButton = true [com.webobjects.directtoweb.Assignment], 
@@ -37,7 +40,6 @@
     80 : (pageConfiguration = 'QueryStudyParticipant' and propertyKey = 'participantId') => length = 5 [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListAction' => displayPropertyKeys = (name, inheritanceType, creationTime) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListMedicalDataSetTemplate' => displayPropertyKeys = (name, clinicalTrial) [com.webobjects.directtoweb.Assignment], 
-    80 : pageConfiguration = 'ListMedicalDataSetTemplate' => defaultSortOrdering = (name, compareAscending) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'QueryAdverseEvent' and propertyKey = 'clinicalTrial') => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListEmbeddedDataSetItem' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryContact' => displayPropertyKeys = (companyName, firstname, lastname, email) [com.webobjects.directtoweb.Assignment], 
@@ -55,6 +57,8 @@
     80 : (pageConfiguration = 'ListEmbeddedDataSetEntry' and propertyKey = 'creationTime') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : ((task = 'edit' or task = 'inspect') and propertyKey = 'options') => componentName = EVD2WEditToManyRelationship [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEventsUser' => displayPropertyKeys = (lastname, firstname, login, "client.name", active) [com.webobjects.directtoweb.Assignment], 
+    80 : pageConfiguration = 'ListEmbeddedDataSetItemActionTrigger' => displayPropertyKeys = (name, "action.name", active) [com.webobjects.directtoweb.Assignment], 
+    80 : (pageConfiguration = 'ListEmbeddedDataSetItemActionTrigger' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryAdverseEvent' => displayPropertyKeys = ("studyParticipant.participantId", clinicalTrial) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'EditBlogEntry' and propertyKey = 'category') => restrictedChoiceKey = object.blog.categories [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListContact' => displayPropertyKeys = (companyName, firstname, lastname, email, inheritanceType) [com.webobjects.directtoweb.Assignment], 
@@ -64,12 +68,14 @@
     80 : pageConfiguration = 'QueryStudyParticipant' => displayPropertyKeys = (participantId, firstname, lastname, clinicalTrial) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'InspectStudyParticipant' and propertyKey = 'dataSetItemActionTriggers') => componentName = ERDList [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'QueryStudyParticipant' and (propertyKey = 'firstname' or propertyKey = 'lastname')) => length = 15 [com.webobjects.directtoweb.Assignment], 
+    80 : (pageConfiguration = 'EditDataSetDateItemValue' and propertyKey = 'dataSetItem.name') => componentName = D2WDisplayString [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'QueryAdverseEvent' and propertyKey = 'clinicalTrial') => componentName = ERD2WQueryToOneRelationship [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetEntry' => displayPropertyKeys = (creationTime, "dataSetTemplate.name", date, valid) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListContact' and (propertyKey = 'lastname' or propertyKey = 'companyName')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'QueryMedicalDataSetEntry' => displayPropertyKeys = ("person.participantId", date, dataSetTemplate, valid) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'QueryStudyParticipant' and propertyKey = 'clinicalTrial') => componentName = ERD2WQueryToOneRelationship [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListEmbeddedDataSetItemValue' and propertyKey = 'dataSetItem.name') => displayNameForProperty = Question [com.webobjects.directtoweb.Assignment], 
+    80 : (pageConfiguration = 'InspectMedicalDataSetTemplate' and propertyKey = 'dataSetPageTemplate') => keyWhenRelationship = pageName [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' and propertyKey = 'dataSetNumberItem') => groupKey = dataSetTemplate [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListEmbeddedAdverseEvent' and parentPageConfiguration = 'InspectStudyParticipant') => showCreateObjectLink = true [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'QueryAdverseEvent' and propertyKey = 'clinicalTrial') => restrictedChoiceKey = session.currentClient.clinicalTrials [com.webobjects.directtoweb.Assignment], 
@@ -78,6 +84,7 @@
     80 : (task = 'edit' and entity.name = 'DataSetNumberItem' and propertyKey = 'format') => possibleChoices = ({"#,###" = "#,###"; }, {"#" = "#"; }) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' and propertyKey = 'dataSetNumberItem') => componentName = EVD2WGroupingEditToOne [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'QueryStudyParticipant' and propertyKey = 'clinicalTrial') => restrictedChoiceKey = session.currentClient.clinicalTrials [com.webobjects.directtoweb.Assignment], 
+    80 : pageConfiguration = 'EditDataSetDateItemValue' => displayPropertyKeys = ((EditValueTabName, (ValueSectionName, "dataSetItem.name", dateValue))) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListMedicalDataSetEntry' => displayPropertyKeys = (creationTime, "person.participantId", date, "dataSetTemplate.name", valid) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' and propertyKey = 'dataSetNumberItem') => keyWhenRelationship = dataSetNameAndItemName [com.webobjects.directtoweb.Assignment], 
     80 : ((task = 'list' or task = 'inspect' or task = 'edit') and (propertyKey = 'blog' or propertyKey = 'createdBy')) => componentName = ERD2WDisplayToOne [com.webobjects.directtoweb.Assignment], 
@@ -85,12 +92,14 @@
     80 : (pageConfiguration = 'ListClinicalTrial' or pageConfiguration = 'ListEmbeddedDataSetItem' or pageConfiguration = 'ListAction') => showActionBar = true [com.webobjects.directtoweb.Assignment], 
     80 : (task = 'edit' and entity.name = 'DataSetDecimalItem' and propertyKey = 'format') => possibleChoices = ({"#,###.##" = "#,###.##"; }, {"#.##" = "#.##"; }) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'EditEmbeddedDataSetSelectionOption' or pageConfiguration = 'InspectEmbeddedDataSetSelectionOption') => pageName = EVD2WCompactInspectPage [com.webobjects.directtoweb.Assignment], 
+    80 : (pageConfiguration = 'ListMedicalDataSetTemplate' or pageConfiguration = 'ListEmbeddedMedicalDataSetTemplate') => defaultSortOrdering = (name, compareAscending) [com.webobjects.directtoweb.Assignment], 
     80 : (task = 'edit' and (entity.name = 'DataSetNumberItem' or entity.name = 'DataSetDecimalItem') and propertyKey = 'format') => componentName = ERDEditStringWithChoices [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListClinicalTrial' => branchChoices = ({    branchButtonLabel = "Create New Trial";     branchName = createNew;     cssClass = "d2w_createobject"; }
 ) [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'EditDataSetSelectionItemValue' or pageConfiguration = 'CreateDataSetSelectionItemValue') and propertyKey = 'selectedOption') => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'EditDataSetSelectionItemValue' or pageConfiguration = 'CreateDataSetSelectionItemValue') and propertyKey = 'selectedOption') => sortKey = orderNumber [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'CreateAdverseEvent' or pageConfiguration = 'EditAdverseEvent') and propertyKey = 'studyParticipant.participantId') => componentName = D2WDisplayString [com.webobjects.directtoweb.Assignment], 
+    80 : ((pageConfiguration = 'EditDataSetTextItemValue' or pageConfiguration = 'CreateDataSetTextItemValue') and propertyKey = 'dataSetItem.name') => componentName = D2WDisplayString [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListEmbeddedAdverseEvent' or pageConfiguration = 'ListAdverseEvent' or pageConfiguration = 'ListEmbeddedDataSetItemValue') => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'EditEmbeddedDataSetSelectionOption' or pageConfiguration = 'InspectEmbeddedDataSetSelectionOption') => displayPropertyKeys = (optionName, orderNumber, score, active) [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'CreateDataSetNumberItemActionTrigger' or pageConfiguration = 'EditDataSetNumberItemActionTrigger') and propertyKey = 'comparator') => componentName = ERDEditStringWithChoices [com.webobjects.directtoweb.Assignment], 
@@ -107,6 +116,8 @@
     80 : (pageConfiguration = 'EditDataSetNumberItemValue' or pageConfiguration = 'CreateDataSetNumberItemValue') => displayPropertyKeys = ((DataSetItemValueTabName, (MiscSectionName, "dataSetItem.name", numberValue))) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'EditDataSetDecimalItemValue' or pageConfiguration = 'CreateDataSetDecimalItemValue') => displayPropertyKeys = ((DataSetItemValueTabName, (MiscSectionName, "dataSetItem.name", decimalValue))
 ) [com.webobjects.directtoweb.Assignment], 
+    80 : pageConfiguration = 'InspectDataSetDateItemValue' => displayPropertyKeys = ((EditValueTabName, (ValueSectionName, "dataSetItem.name", dateValue)), (ModificationsTabName, (ModificationsSectionName, modifications))
+) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'InspectDataSetTextItemValue' => displayPropertyKeys = ((DataSetItemValueTabName, (MiscSectionName, "dataSetItem.name", textValue)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'EditMedicalDataSetTemplate' or pageConfiguration = 'CreateMedicalDataSetTemplate') and propertyKey = 'dataSetPageTemplate') => restrictedChoiceKey = session.currentClient.activeDataSetPageTemplates [com.webobjects.directtoweb.Assignment], 
@@ -118,10 +129,10 @@
     80 : (pageConfiguration = 'EditDataSetSelectionItemValue' or pageConfiguration = 'CreateDataSetSelectionItemValue') => displayPropertyKeys = ((    DataSetItemValueTabName,     (MiscSectionName, "dataSetItem.name", selectedOption))
 ) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'CreateAdverseEvent' and (propertyKey = 'outcome' or propertyKey = 'severityGrade' or propertyKey = 'causalityAssessment' or propertyKey = 'seriousness')) => keyWhenRelationship = relationshipRepresentation [com.webobjects.directtoweb.Assignment], 
-    80 : ((pageConfiguration = 'CreateEmailAction' or pageConfiguration = 'EditEmailAction' or pageConfiguration = 'InspectEmailAction') and (sectionKey = 'ActionSettingsSectionName' or sectionKey = 'TemplateSectionName')) => maxColumns = 1 [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListClinicalTrial' or pageConfiguration = 'ListEmbeddedDataSetItem' or pageConfiguration = 'ListAbstractPage' or pageConfiguration = 'ListContact' or pageConfiguration = 'ListAction') => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'InspectDataSetSelectionItemValue' => displayPropertyKeys = ((    DataSetItemValueTabName,     (MiscSectionName, "dataSetItem.name", selectedOption)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
+    80 : ((pageConfiguration = 'InspectDataSetNumberItemActionTrigger' or pageConfiguration = 'CreateDataSetNumberItemActionTrigger' or pageConfiguration = 'EditDataSetNumberItemActionTrigger') and sectionKey = 'TriggerSectionName') => maxColumns = 1 [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'CreateStudyParticipant') and propertyKey = 'status') => possibleChoices = ({active = active; }, {out = out; }, {withdrawn = withdrawn; }, {"not accepted" = "not accepted"; }
 ) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetItemActionTrigger' => branchChoices = ({    branchButtonLabel = "Create Number Item Trigger";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = DataSetNumberItemActionTrigger; }
@@ -132,11 +143,10 @@
 ) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'InspectDataSetPageTemplate' => displayPropertyKeys = ((    Page,     (GeneralInformation, site, pageName, pageWrapper, pageDescription),     (AdministrativeInformation, createdBy, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
-    80 : pageConfiguration = 'CreateDataSetNumberItemActionTrigger' => displayPropertyKeys = ((    ActionTriggerTabName,     (PersonInformationSectionName, "person.firstnameLastname", active),     (GeneralSectionName, name),     (TriggerSectionName, dataSetNumberItem, action, triggerValue, comparator))
-) [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'CreateStudyParticipant') and propertyKey = 'ethnicGroup') => possibleChoices = ({Caucasian = Caucasian; }, {Black = Black; }, {Asian = Asian; }, {Hispanic = Hispanic; }, {"Other - please specify" = "Other - please specify"; }
 ) [com.webobjects.directtoweb.Assignment], 
     80 : ((pageConfiguration = 'QueryStudyParticipant' and (propertyKey = 'participantId' or propertyKey = 'firstname' or propertyKey = 'lastname')) or pageConfiguration = 'QueryEventsUser' or pageConfiguration = 'QueryAdverseEvent' or pageConfiguration = 'QueryContact') => qualifierOperators = ("starts with") [com.webobjects.directtoweb.Assignment], 
+    80 : (((pageConfiguration = 'CreateEmailAction' or pageConfiguration = 'EditEmailAction' or pageConfiguration = 'InspectEmailAction') and (sectionKey = 'ActionSettingsSectionName' or sectionKey = 'TemplateSectionName')) or (pageConfiguration = 'InspectStudyParticipant' and sectionKey = 'DataSetsSectionName')) => maxColumns = 1 [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListContact' => branchChoices = ({    branchButtonLabel = "Create New Company";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = Company; }, {    branchButtonLabel = "Create New Person";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = Person; }
 ) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'ListClinicalTrial' or pageConfiguration = 'ListEmbeddedDataSetItem' or pageConfiguration = 'ListAbstractPage' or pageConfiguration = 'ListContact' or pageConfiguration = 'ListAction' or pageConfiguration = 'ListEmbeddedDataSetItemActionTrigger') => nextPageDelegate = net.events.designer.delegates.ListPageBranchDelegate [com.webobjects.directtoweb.Assignment], 
@@ -144,7 +154,11 @@
 ) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'CreateBlogPage' or pageConfiguration = 'EditBlogPage') => displayPropertyKeys = ((    "Blog Page",     (        GeneralInformation,         blog,         site,         pageName,         entriesPerPage,         pageWrapper,         orderNumber,         pageDescription    ),     (AdministrativeInformation, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
+    80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' or pageConfiguration = 'EditDataSetNumberItemActionTrigger') => displayPropertyKeys = ((    ActionTriggerTabName,     (PersonInformationSectionName, "person.firstnameLastname", active),     (GeneralSectionName, name),     (TriggerSectionName, dataSetNumberItem, comparator, triggerValue, action))
+) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'CreateEmailAction' or pageConfiguration = 'EditEmailAction') => displayPropertyKeys = ((    EmailActionTabName,     (ActionSettingsSectionName, name, actionDescription),     (AddressesSectionName, fromAddress, toAddress),     (TemplateSectionName, subject, template),     (AdministrativeInformationSectionName, createdBy, creationTime))
+) [com.webobjects.directtoweb.Assignment], 
+    80 : pageConfiguration = 'InspectDataSetNumberItemActionTrigger' => displayPropertyKeys = ((    ActionTriggerTabName,     (PersonInformationSectionName, "person.firstnameLastname", active),     (GeneralSectionName, name),     (TriggerSectionName, dataSetNumberItem, comparator, triggerValue, action)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'InspectBlogPage' => displayPropertyKeys = ((    "Blog Page",     (        GeneralInformation,         blog,         site,         pageName,         entriesPerPage,         pageWrapper,         orderNumber,         pageDescription    ),     (AdministrativeInformation, createdBy, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
@@ -158,6 +172,7 @@
 ) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetItem' => branchChoices = ({    branchButtonLabel = "Create Text Entry";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = DataSetTextItem; }, {    branchButtonLabel = "Create Number Entry";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = DataSetNumberItem; }, {    branchButtonLabel = "Create Decimal Entry";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = DataSetDecimalItem; }, {    branchButtonLabel = "Create Selection Entry";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = DataSetSelectionItem; }, {    branchButtonLabel = "Create Date Entry";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = DataSetDateItem; }
 ) [com.webobjects.directtoweb.Assignment], 
+    85 : pageConfiguration = 'CreateClinicalTrial' => displayPropertyKeys = ((ClinicalTrialTabName, ("Trial Information", name, protocolNumber))) [com.webobjects.directtoweb.Assignment], 
     90 : *true* => useMatrixLayout = true [com.webobjects.directtoweb.Assignment], 
     90 : *true* => isEntityEditable = true [com.webobjects.directtoweb.Assignment], 
     90 : propertyKey = 'age' => formatter = ##.## [com.webobjects.directtoweb.Assignment], 
@@ -250,7 +265,6 @@
     90 : (pageConfiguration = 'ListEmbeddedDataSetSection' and propertyKey = 'sectionName') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => displayPropertyKeys = ("dataSetItem.name", valueAsString) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'ListEmbeddedMedicalDataSetTemplate' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
-    90 : (task = 'list' and entity.name = 'StudyParticipant' and object.status = 'withdrawn') => cssClassForRow = yellow [com.webobjects.directtoweb.Assignment], 
     90 : (task = 'list' and entity.name = 'StudyParticipant' and object.status = 'active') => cssClassForRow = lightgreen [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListAbstractPage' => displayPropertyKeys = (pageName, "pageWrapper.name", orderNumber, site) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListEmbeddedDataSetSelectionOption' => defaultSortOrdering = (orderNumber, compareAscending) [com.webobjects.directtoweb.Assignment], 
@@ -260,6 +274,7 @@
     90 : (pageConfiguration = 'ListEmbeddedMedicalDataSetEntry' and propertyKey = 'creationTime') => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'InspectStudyParticipant' and propertyKey = 'medicalDataSetEntries') => componentName = ERDList [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'ListEmbeddedCausalityAssessment' => displayPropertyKeys = (causality, creationTime, orderNumber) [com.webobjects.directtoweb.Assignment], 
+    90 : (pageConfiguration = 'InspectStudyParticipant' and propertyKey = 'actionBar') => componentName = CreateDataSetActionBar [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') and propertyKey = 'articlesPerPage') => length = 4 [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'ListEmbeddedDataSetItemValue' and propertyKey = 'valueAsString') => displayNameForProperty = Answer [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') and propertyKey = 'content') => rows = 20 [com.webobjects.directtoweb.Assignment], 
@@ -275,7 +290,6 @@
     90 : pageConfiguration = 'EditClinicalTrial' => displayPropertyKeys = ((ClinicalTrialTabName, ("Trial Information", name, client, protocolNumber))) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'ListEmbeddedDataSetItem' or pageConfiguration = 'ListEmbeddedDataSetSection') => reverseRelationshipKey = dataSetTemplate [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'CreateStudyParticipant' or pageConfiguration = 'EditStudyParticipant') and propertyKey = 'participantId') => length = 10 [com.webobjects.directtoweb.Assignment], 
-    90 : pageConfiguration = 'CreateClinicalTrial' => displayPropertyKeys = ((ClinicalTrialTabName, ("Trial Information", name, client, protocolNumber))) [com.webobjects.directtoweb.Assignment], 
     90 : (task = 'list' and entity.name = 'DataSetItem') => defaultSortOrdering = ("section.orderNumber", compareAscending, orderNumber, compareAscending) [com.webobjects.directtoweb.Assignment], 
     90 : (propertyKey = 'cssClassForThankYouMessage' and task = 'edit') => displayNameForProperty = CSS Class - Change only, if you know what you are doing! [com.webobjects.directtoweb.Assignment], 
     90 : (task = 'edit' and (propertyKey = 'blog' or propertyKey = 'client' or propertyKey = 'site' or propertyKey = 'clinicalTrial')) => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment], 
@@ -295,10 +309,12 @@
 ) [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'QueryEventsUser' and (propertyKey = 'firstname' or propertyKey = 'lastname' or propertyKey = 'login')) or pageConfiguration = 'QueryContact') => length = 20 [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'ListEmbeddedStudyParticipant' or pageConfiguration = 'ListStudyParticipant') => displayPropertyKeys = (participantId, lastname, firstname, middlename, age, status) [com.webobjects.directtoweb.Assignment], 
+    90 : (pageConfiguration = 'CreateClinicalTrial' and session.currentUser.isSuperAdmin = 1) => displayPropertyKeys = ((ClinicalTrialTabName, ("Trial Information", name, client, protocolNumber))) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'ListEmbeddedDataSetEntry' or pageConfiguration = 'ListEmbeddedMedicalDataSetEntry') => defaultSortOrdering = (date, compareDescending, creationTime, compareDescending) [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'ListEmbeddedStudyParticipant' or pageConfiguration = 'ListStudyParticipant') and (propertyKey = 'participantId' or propertyKey = 'lastname')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') => displayPropertyKeys = ((    Blog,     (BlogInformationSectionName, name, password),     (BlogPagesSectionName, blogPages))
 ) [com.webobjects.directtoweb.Assignment], 
+    90 : ((task = 'list' and entity.name = 'StudyParticipant' and object.status = 'withdrawn') or (task = 'list' and entity.name = 'MedicalDataSetEntry' and object.hasQuery = 1)) => cssClassForRow = yellow [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'CreateStudyParticipant' or pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'InspectStudyParticipant') and propertyKey = 'dateOfBirth') => formatter = %Y-%m-%d [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') and (propertyKey = 'subtitle' or propertyKey = 'title' or propertyKey = 'teaser' or propertyKey = 'content')) => length = 80 [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'InspectMedicalDataSetTemplate' or pageConfiguration = 'EditMedicalDataSetTemplate' or pageConfiguration = 'CreateMedicalDataSetTemplate') and propertyKey like '*Text') => length = 100 [com.webobjects.directtoweb.Assignment], 
@@ -373,18 +389,16 @@
     90 : (pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') => displayPropertyKeys = ((    "Blog Entry",     (TitleSubtitleSectionName, blog, title, subtitle, category),     (ContentSectionName, teaser, content, active, allowDigging),     (        AdministrativeInformationSectionName,         "createdBy.firstnameLastname",         creationTime    ))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : ((pageConfiguration = 'ListEmbeddedCausalityAssessment' and propertyKey = 'orderNumber') or (pageConfiguration = 'ListEmbeddedSeriousness' and propertyKey = 'orderNumber') or (pageConfiguration = 'ListEmbeddedSeverityGrade' and propertyKey = 'orderNumber') or (pageConfiguration = 'ListEmbeddedAdverseEventOutcome' and propertyKey = 'orderNumber')) => justification = center [com.webobjects.directtoweb.Assignment], 
-    90 : (pageConfiguration = 'CreateDataSetTextItem' or pageConfiguration = 'EditDataSetTextItem') => displayPropertyKeys = ((    DataSetItemTabName,     (Misc, name, active, isRequired, section, orderNumber),     (DescriptionSectionName, textDescription),     (PredefinedValuesSectionName, predefinedValues, sortPredefinedValues),     (AdministrativeInformationSectionName, creationTime))
-) [com.webobjects.directtoweb.Assignment], 
-    90 : pageConfiguration = 'InspectDataSetTextItem' => displayPropertyKeys = ((    DataSetItemTabName,     (Misc, name, active, isRequired, section, orderNumber),     (DescriptionSectionName, textDescription),     (PredefinedValuesSectionName, predefinedValues, sortPredefinedValues),     (AdministrativeInformationSectionName, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
+    90 : (pageConfiguration = 'CreateDataSetTextItem' or pageConfiguration = 'EditDataSetTextItem') => displayPropertyKeys = ((    DataSetItemTabName,     (Misc, name, active, isRequired, useTextArea, section, orderNumber),     (DescriptionSectionName, textDescription),     (PredefinedValuesSectionName, predefinedValues, sortPredefinedValues),     (AdministrativeInformationSectionName, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'CreateMedicalDataSetTemplate' => displayPropertyKeys = ((    MedicalDataSetTemplateTabName,     (        Misc,         name,         clinicalTrial,         active,         loginRequired,         textDescription,         dataSetPageTemplate    ),     (ThankYouTextSectionName, textForThankYouPage, cssClassForThankYouMessage),     (AdministrativeInformationSection, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'CreateDataSetDateItem' or pageConfiguration = 'EditDataSetDateItem') => displayPropertyKeys = ((    DataSetItemTabName,     (        Misc,         name,         active,         isRequired,         autosetToToday,         pushAsDateToDataSet,         section,         orderNumber    ),     (DescriptionSectionName, textDescription),     (AdministrativeInformationSectionName, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
-    90 : (pageConfiguration = 'CreateDataSetSelectionItem' or pageConfiguration = 'EditDataSetSelectionItem') => displayPropertyKeys = ((    DataSetSelectionItemTabName,     (        MiscSectionName,         name,         isRequired,         section,         orderNumber,         textDescription,         interfaceElementType    ),     (OptionsSectionName, options),     (AdministrativeInformationSectionName, creationTime))
+    90 : pageConfiguration = 'InspectDataSetTextItem' => displayPropertyKeys = ((    DataSetItemTabName,     (Misc, name, active, isRequired, useTextArea, section, orderNumber),     (DescriptionSectionName, textDescription),     (PredefinedValuesSectionName, predefinedValues, sortPredefinedValues),     (AdministrativeInformationSectionName, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : (parentPageConfiguration = 'InspectClinicalTrial' and (pageConfiguration = 'ListEmbeddedCausalityAssessment' or pageConfiguration = 'ListEmbeddedSeriousness' or pageConfiguration = 'ListEmbeddedSeverityGrade' or pageConfiguration = 'ListEmbeddedAdverseEventOutcome' or pageConfiguration = 'ListEmbeddedStudyParticipant' or pageConfiguration = 'ListEmbeddedMedicalDataSetTemplate')) => reverseRelationshipKey = clinicalTrial [com.webobjects.directtoweb.Assignment], 
-    90 : pageConfiguration = 'InspectDataSetSelectionItem' => displayPropertyKeys = ((    DataSetSelectionItemTabName,     (        MiscSectionName,         name,         isRequired,         section,         orderNumber,         textDescription,         interfaceElementType    ),     (OptionsSectionName, options),     (AdministrativeInformationSectionName, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
+    90 : (pageConfiguration = 'CreateDataSetSelectionItem' or pageConfiguration = 'EditDataSetSelectionItem') => displayPropertyKeys = ((    DataSetSelectionItemTabName,     (        MiscSectionName,         name,         section,         active,         isRequired,         orderNumber,         textDescription,         interfaceElementType    ),     (OptionsSectionName, options),     (AdministrativeInformationSectionName, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'InspectDataSetDateItem' => displayPropertyKeys = ((    DataSetItemTabName,     (        Misc,         name,         active,         isRequired,         autosetToToday,         pushAsDateToDataSet,         section,         orderNumber    ),     (DescriptionSectionName, textDescription),     (AdministrativeInformationSectionName, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
@@ -392,9 +406,11 @@
 ) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'CreateDataSetSection' or pageConfiguration = 'EditDataSetSection') => displayPropertyKeys = ((    DataSetSectionTabName,     (        GeneralInformationSectionName,         sectionName,         page,         orderNumber,         enumerateQuestions,         calculateAverages    ),     (SectionDescriptionSectionName, sectionTopText, sectionBottomText),     (AdministrativeInformationSectionName, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
-    90 : pageConfiguration = 'EditMedicalDataSetTemplate' => displayPropertyKeys = ((    MedicalDataSetTemplateTabName,     (        Misc,         name,         clinicalTrial,         active,         loginRequired,         textDescription,         dataSetPageTemplate    ),     (ThankYouTextSectionName, textForThankYouPage, cssClassForThankYouMessage),     (TextsSectionName, topText, bottomText),     (AdministrativeInformationSectionName, createdBy, creationTime))
+    90 : pageConfiguration = 'InspectDataSetSelectionItem' => displayPropertyKeys = ((    DataSetSelectionItemTabName,     (        MiscSectionName,         name,         section,         active,         isRequired,         orderNumber,         textDescription,         interfaceElementType    ),     (OptionsSectionName, options),     (AdministrativeInformationSectionName, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'CreateAdverseEvent' or pageConfiguration = 'EditAdverseEvent') => displayPropertyKeys = ((    AdverseEventTabName,     ("Study Participant", "studyParticipant.participantId"),     (        DescriptionSectionName,         textDescription,         eventDate,         outcome,         dateOfResolution,         severityGrade,         causalityAssessment,         seriousness    ),     (AdministrativeInformationSectionName, createdBy, creationTime))
+) [com.webobjects.directtoweb.Assignment], 
+    90 : pageConfiguration = 'EditMedicalDataSetTemplate' => displayPropertyKeys = ((    MedicalDataSetTemplateTabName,     (        Misc,         name,         clinicalTrial,         active,         loginRequired,         adminOnly,         dataSetPageTemplate,         textDescription    ),     (ThankYouTextSectionName, textForThankYouPage, cssClassForThankYouMessage),     (TextsSectionName, topText, bottomText),     (AdministrativeInformationSectionName, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'InspectAdverseEvent' => displayPropertyKeys = ((    AdverseEventTabName,     ("Study Participant", "studyParticipant.participantId"),     (        DescriptionSectionName,         textDescription,         eventDate,         outcome,         dateOfResolution,         severityGrade,         causalityAssessment,         seriousness    ),     (AdministrativeInformationSectionName, createdBy, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
@@ -402,12 +418,12 @@
 ) [com.webobjects.directtoweb.Assignment], 
     90 : (pageConfiguration = 'CreateStudyParticipant' or pageConfiguration = 'EditStudyParticipant') => displayPropertyKeys = ((    StudyParticipantTabName,     (Trial, participantId, clinicalTrial, status, randomized),     (        PersonalDataSectionName,         title,         firstname,         middlename,         lastname,         login,         password    ),     (DemographicDataSectionName, dateOfBirth, gender, height, weight),     (EthnicGroupSectionName, ethnicGroup, otherEthnicGroup),     (AdministrativeInformationSectionName, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
-    90 : pageConfiguration = 'InspectMedicalDataSetTemplate' => displayPropertyKeys = ((    MedicalDataSetTemplateTabName,     (        Misc,         name,         clinicalTrial,         active,         loginRequired,         textDescription,         dataSetPageTemplate    ),     (DataSetSectionsSectionName, sections),     (DataSetItemsSectionName, dataSetItems),     (ThankYouTextSectionName, textForThankYouPage, cssClassForThankYouMessage),     (TextsSectionName, topText, bottomText),     (AdministrativeInformationSectionName, createdBy, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
+    90 : pageConfiguration = 'InspectMedicalDataSetTemplate' => displayPropertyKeys = ((    MedicalDataSetTemplateTabName,     (        Misc,         name,         clinicalTrial,         active,         loginRequired,         adminOnly,         dataSetPageTemplate,         textDescription    ),     (DataSetSectionsSectionName, sections),     (DataSetItemsSectionName, dataSetItems),     (ThankYouTextSectionName, textForThankYouPage, cssClassForThankYouMessage),     (TextsSectionName, topText, bottomText),     (AdministrativeInformationSectionName, createdBy, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
     90 : ((((pageConfiguration = 'InspectStudyParticipant' or pageConfiguration = 'InspectClinicalTrial') and propertyKey = 'adverseEvents') or ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog' or pageConfiguration = 'InspectBlog') and propertyKey = 'blogPages')) or ((pageConfiguration = 'InspectUsergroup' and propertyKey = 'users') or (pageConfiguration = 'InspectClinicalTrial' and (propertyKey = 'participants' or propertyKey = 'medicalDataSetTemplates' or propertyKey = 'causalityAssessments' or propertyKey = 'adverseEventOutcomes' or propertyKey = 'seriousnesses' or propertyKey = 'severityGrades')) or (pageConfiguration = 'InspectMedicalDataSetTemplate' and propertyKey = 'dataSetItems'))) => componentName = ERDList [com.webobjects.directtoweb.Assignment], 
     90 : pageConfiguration = 'InspectClinicalTrial' => displayPropertyKeys = ((    ClinicalTrialTabName,     ("Trial Information", name, client, protocolNumber),     (        StatisticsSectionName,         activeParticipants,         outParticipants,         withdrawnParticipants,         notAcceptedParticipants,         numberOfRandomizedParticipants    )), (Participants, (Participants, participants)), ("Data Sets", (MedicalDataSetsSectionName, medicalDataSetTemplates)), (AdverseEventsTabName, (AdverseEvents, adverseEvents)), (    Settings,     (CausalityAssessmentsSectionName, causalityAssessments),     (SeriousnessSectionName, seriousnesses),     (SeverityGradesSectionName, severityGrades),     (AdverseEventOutcomesSectionName, adverseEventOutcomes)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
-    90 : pageConfiguration = 'InspectStudyParticipant' => displayPropertyKeys = ((    StudyParticipantTabName,     (Trial, participantId, clinicalTrial, status, randomized),     (        PersonalDataSectionName,         title,         firstname,         middlename,         lastname,         login,         password    ),     (DemographicDataSectionName, dateOfBirth, gender, height, weight),     (EthnicGroupSectionName, ethnicGroup, otherEthnicGroup),     (AdministrativeInformationSectionName, createdBy, creationTime)), (AdverseEventsTabName, (AdverseEvents, adverseEvents)), (    DataSetsTabName,     (PersonalInformationSectionName, firstnameLastname, participantId),     (DataSetsSectionName, medicalDataSetEntries)), (    ActionTriggersTabName,     (PersonalInformationSectionName, firstnameLastname, participantId),     (ActionTriggersSectionName, dataSetItemActionTriggers)), (ModificationsTabName, (ModificationsSectionName, modifications))
+    90 : pageConfiguration = 'InspectStudyParticipant' => displayPropertyKeys = ((    StudyParticipantTabName,     (Trial, participantId, clinicalTrial, status, randomized),     (        PersonalDataSectionName,         title,         firstname,         middlename,         lastname,         login,         password    ),     (DemographicDataSectionName, dateOfBirth, gender, height, weight),     (EthnicGroupSectionName, ethnicGroup, otherEthnicGroup),     (AdministrativeInformationSectionName, createdBy, creationTime)), (    AdverseEventsTabName,     (PersonalInformationSectionName, firstnameLastname, participantId),     (AdverseEvents, adverseEvents)), (    DataSetsTabName,     (PersonalInformationSectionName, firstnameLastname, participantId),     (DataSetsSectionName, actionBar, medicalDataSetEntries)), (    ActionTriggersTabName,     (PersonalInformationSectionName, firstnameLastname, participantId),     (ActionTriggersSectionName, dataSetItemActionTriggers)), (    ModificationsTabName,     (PersonalInformationSectionName, firstnameLastname, participantId),     (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
     95 : (task = 'edit' and propertyKey = 'blog') => componentName = ERD2WEditToOneRelationship [com.webobjects.directtoweb.Assignment], 
     95 : (pageConfiguration = 'ListEmbeddedDataSetItem' and parentPageConfiguration = 'InspectDataSetSection') => reverseRelationshipKey = section [com.webobjects.directtoweb.Assignment], 
@@ -419,7 +435,9 @@
     100 : pageConfiguration = 'InspectEventsUser' => useMatrixLayout = true [com.webobjects.directtoweb.Assignment], 
     100 : pageConfiguration = 'ListEmbeddedEventsUser' => pageName = EVD2WListPage [com.webobjects.directtoweb.Assignment], 
     100 : pageConfiguration = 'InspectMedicalDataSetEntry' => isEntityEditable = false [com.webobjects.directtoweb.Assignment], 
+    100 : pageConfiguration like 'InspectEmbedded*' => pageName = EVD2WCompactInspectPage [com.webobjects.directtoweb.Assignment], 
     100 : pageConfiguration = 'ListClient' => defaultSortOrdering = (name, compareAscending) [com.webobjects.directtoweb.Assignment], 
+    100 : (task = 'inspect' and tabKey = 'ModificationsTabName') => isEntityEditable = false [com.webobjects.directtoweb.Assignment], 
     100 : (entity.name = 'EventsUser' and task = 'edit' and propertyKey = 'password') => rowSpan = 2 [com.webobjects.directtoweb.Assignment], 
     100 : pageConfiguration = 'ListEmbeddedEventsUser' => displayPropertyKeys = (firstname, lastname) [com.webobjects.directtoweb.Assignment], 
     100 : (pageConfiguration = 'InspectBlog' and propertyKey = 'categories') => componentName = ERDList [com.webobjects.directtoweb.Assignment], 
@@ -445,9 +463,9 @@
     100 : (pageConfiguration = 'InspectStudyParticipant' and (tabKey = 'ActionTriggersTabName' or tabKey = 'DataSetsTabName' or tabKey = 'AdverseEventsTabName')) => isEntityEditable = false [com.webobjects.directtoweb.Assignment], 
     100 : (task = 'list' and not (entity.name = 'Usergroup') and not (entity.name = 'Client') and not (entity.name like 'ABDA*') and not (entity.name = 'Country')) => restrictingObjectKey = client [com.webobjects.directtoweb.Assignment], 
     100 : (((pageConfiguration = 'ListEventsUser' and propertyKey = 'lastname') or (pageConfiguration = 'ListCountry' and propertyKey = 'name')) or (pageConfiguration = 'ListPerson' and propertyKey = 'lastname')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment], 
-    100 : pageConfiguration = 'EditMedicalDataSetEntry' => displayPropertyKeys = ((    MedicalDataSetEntryTabName,     (        PersonalInformationSectionName,         "person.firstnameLastname",         "person.participantId",         date,         creationTime,         valid    ))
+    100 : pageConfiguration = 'EditMedicalDataSetEntry' => displayPropertyKeys = ((    MedicalDataSetEntryTabName,     (        PersonalInformationSectionName,         "person.firstnameLastname",         "person.participantId",         date,         creationTime,         valid,         hasQuery    ),     (AdministrativeInformationSectionName, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
-    100 : pageConfiguration = 'InspectMedicalDataSetEntry' => displayPropertyKeys = ((    MedicalDataSetEntryTabName,     (        PersonalInformationSectionName,         "person.firstnameLastname",         "person.participantId",         date,         creationTime,         valid,         averageOverSectionSelectionScores    ),     (ValuesSectionName, values)), (ModificationsTabName, (ModificationsSectionName, modifications))
+    100 : pageConfiguration = 'InspectMedicalDataSetEntry' => displayPropertyKeys = ((    MedicalDataSetEntryTabName,     (        PersonalInformationSectionName,         "person.firstnameLastname",         "person.participantId",         date,         creationTime,         valid,         hasQuery,         averageOverSectionSelectionScores    ),     (ValuesSectionName, values),     (AdministrativeInformationSectionName, createdBy, creationTime)), (ModificationsTabName, (ModificationsSectionName, modifications))
 ) [com.webobjects.directtoweb.Assignment], 
     110 : pageConfiguration = 'ListEmbeddedDataSetItemValue' => defaultBatchSize = 0 [com.webobjects.directtoweb.Assignment], 
     110 : (task = 'list' and not (entity.name = 'Usergroup') and not (entity.name = 'Client') and not (entity.name like 'ABDA*') and not (entity.name = 'Country')) => restrictingObject = session.currentClient [com.webobjects.directtoweb.Assignment]

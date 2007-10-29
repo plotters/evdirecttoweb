@@ -1,5 +1,7 @@
 {
 	"Academic Title" = "Academic Title";
+	"ActionTriggersSectionName" = "Action Triggers";
+	"ActionTriggersTabName" = "Action Triggers";
 	"Active" = "Active";
 	"Add Domain" = "Add Domain";
 	"Add Website" = "Add Website";
@@ -49,10 +51,12 @@
 	"DataSetItemsSectionName" = "Dataset Items";
 	"DataSetItemsTabName" = "Dataset Items";
 	"DataSetItemTabName" = "Dataset Item";
+	"DataSetItemValueTabName" = "Dataset Item Value";
 	"DataSets" = "Datasets";
 	"DataSetSectionsSectionName" = "Dataset Sections";
 	"DataSetSectionTabName" = "Dataset Section";
 	"DataSetSelectionItem" = "Selection Item";
+	"DataSetSelectionItemTabName" = "Dataset Selection Item";
 	"DataSetsSectionName" = "Datasets";
 	"DataSetsTabName" = "Datasets";
 	"DataSetTextItem" = "Textfield Item";
@@ -60,6 +64,7 @@
 	"DemographicDataSectionName" = "Demographic Data";
 	"DescriptionSectionName" = "Description";
 	"Edit" = "Edit";
+	"EditValueTabName" = "Edit Value";
 	"EmptyListComponent.CREATE_NEW_ENTRY" = "Create New";
 	"ERDEmptyListMessage.emptyListMessage" = "No records to display.";
 	"EthnicGroupSectionName" = "Ethnic Group";
@@ -74,6 +79,7 @@
 	"EVGenericErrorPage.GenericError" = "We are very sorry, but an error occured<br>that was not handled otherwise.<br><br>The service team has been notified!";
 	"Firstname" = "First Name";
 	"GeneralInformationSectionName" = "General Information";
+	"GeneralSectionName" = "General";
 	"Lastname" = "Last Name";
 	"MedicalDataSet" = "Medical Dataset";
 	"MedicalDataSetEntryTabName" = "Medical Dataset Entry";
@@ -81,6 +87,8 @@
 	"MedicalDataSetTemplateTabName" = "Medical Dataset Template";
 	"Middlename" = "Middle Name";
 	"Misc" = "Miscellaneous Information";
+	"MiscSectionName" = "Miscellaneous";
+	"ModificationsTabName" = "Modifications";
 	"NameAndStatusSection" = "Name and Status";
 	"New Blog Entry" = "New Blog Entry";
 	"New Client" = "New Client";
@@ -88,10 +96,12 @@
 	"New Survey" = "New Survey";
 	"New Trial" = "New Trial";
 	"New User" = "New User";
+	"OptionsSectionName" = "Options";
 	"Page" = "Page";
 	"Pages" = "Pages";
 	"PersonalDataSectionName" = "Personal Data";
 	"PersonalInformationSectionName" = "Personal Information";
+	"PersonInformationSectionName" = "Personal Information";
 	"Postal Code" = "Postal Code";
 	"Province" = "State / Province";
 	"RecentArticles.RECENT_ARTICLES" = "Recent Articles";

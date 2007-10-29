@@ -127,6 +127,10 @@ public class Web extends EVDirectAction {
         		DataSetTemplate template = (DataSetTemplate) ERXEOControlUtilities.objectWithPrimaryKeyValue(this.editingContext, DataSetTemplate.ENTITY_NAME, id, null);
         		session.setRequestedObject(template);
         		
+        		if (template != null && template.adminOnly() != null && template.adminOnly().booleanValue()) {
+        			return this.messagePageWithMessageAndStyle("The survey you requested could not be found!", "d2w_rns_message");
+        		}
+        		
         		if (template != null && template.loginRequired() && session.currentUser() == null) {
         			nextpage = this.pageWithName(EVSiteLoginPage.class.getName());
         			
