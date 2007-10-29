@@ -57,6 +57,7 @@
     50 : *true* => cssClassForHLayoutValue = d2w_property_cell_hl_value [com.webobjects.directtoweb.Assignment], 
     50 : *true* => cssClassForQueryLayoutTable = d2w_query_layout_table [com.webobjects.directtoweb.Assignment], 
     50 : task = 'query' => cssClassNameForPropertyLabel = d2w_inspect_proplabel_span [com.webobjects.directtoweb.Assignment], 
+    50 : pageConfiguration like 'ConfirmDelete*' => explanationComponentName = ERXD2WInspect [com.webobjects.directtoweb.Assignment], 
     50 : (task = 'inspect' or task = 'edit') => classNameForPropertyLabel = d2w_inspect_proplabel_span [com.webobjects.directtoweb.Assignment], 
     60 : *true* => sectionComponentName = EVD2WSectionText [com.webobjects.directtoweb.Assignment], 
     60 : (task = 'create' or task = 'edit' or task = 'inspect' or task = 'query' or task = 'list') => propertyNameComponentName = EVD2WPropertyName [com.webobjects.directtoweb.Assignment], 
