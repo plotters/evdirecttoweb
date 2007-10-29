@@ -811,6 +811,11 @@ td, th {
 	font-weight: bold;
 }
 
+.ev_ds_a textarea {
+	width: 50em;
+	height: 10em;
+}
+
 .ev_ds_textfield {
 	width: 20em;
 	margin-top: 0.5em;
