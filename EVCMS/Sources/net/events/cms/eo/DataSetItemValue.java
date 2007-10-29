@@ -43,6 +43,15 @@ public abstract class DataSetItemValue extends _DataSetItemValue {
     
     public void validateForSave () {
     	super.validateForSave();
+    }
+    
+    public void willInsert () {
+    	super.willInsert();
+    	this.checkTriggers();
+    }
+    
+    public void willUpdate () {
+    	super.willUpdate();
     	this.checkTriggers();
     }
     

@@ -137,7 +137,7 @@
 ) [com.webobjects.directtoweb.Assignment], 
     80 : pageConfiguration = 'ListEmbeddedDataSetItemActionTrigger' => branchChoices = ({    branchButtonLabel = "Create Number Item Trigger";     branchName = createNew;     cssClass = "d2w_listActionButton";     entityName = DataSetNumberItemActionTrigger; }
 ) [com.webobjects.directtoweb.Assignment], 
-    80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' or pageConfiguration = 'EditDataSetNumberItemActionTrigger') => possibleChoices = ({"is greater than" = "is greater than"; }, {"is lower than " = "is lower than"; }, {"is equal to" = "is equal to"; }
+    80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' or pageConfiguration = 'EditDataSetNumberItemActionTrigger') => possibleChoices = ({"is greater than" = "is greater than"; }, {"is lower than" = "is lower than"; }, {"is equal to" = "is equal to"; }
 ) [com.webobjects.directtoweb.Assignment], 
     80 : (pageConfiguration = 'CreateDataSetPageTemplate' or pageConfiguration = 'EditDataSetPageTemplate') => displayPropertyKeys = ((    Page,     (GeneralInformation, site, pageName, pageWrapper, pageDescription),     (AdministrativeInformation, createdBy, creationTime))
 ) [com.webobjects.directtoweb.Assignment], 
