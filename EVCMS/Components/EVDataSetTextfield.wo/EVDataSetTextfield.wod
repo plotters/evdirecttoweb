@@ -15,7 +15,7 @@ WOText : WOText {
 }
 
 ValueDataSetItemUseTextArea : WOConditional {
-  condition = value.dataSetItem.useTextArea;
+  condition = value.dataSetItem.useTextArea; // valid
   negate = true;
 }
 
