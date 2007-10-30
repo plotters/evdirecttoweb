@@ -9,6 +9,8 @@ import org.apache.log4j.*;
 import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 
+import er.extensions.*;
+
 public class DataSetDateItemValue extends _DataSetDateItemValue {
 	
 	private static Logger log = Logger.getLogger( DataSetDateItemValue.class );
@@ -58,6 +60,15 @@ public class DataSetDateItemValue extends _DataSetDateItemValue {
 			this.setDateValue(new NSTimestamp());
 		}
 	}
+	
+    public void validateForSave () {
+    	super.validateForSave();
+    	if (this.dataSetItem().isRequired() != null && this.dataSetItem().isRequired().booleanValue()) {
+    		if (this.dateValue() == null) {
+    			throw new NSValidation.ValidationException(ERXLocalizer.currentLocalizer().localizedTemplateStringForKeyWithObject("Survey.MissingAnswer", this.dataSetItem()));
+    		}
+    	}
+    }
 	
 	/**
 	 * Validates, that the date is in the past and pushes it to the dataSetEntry

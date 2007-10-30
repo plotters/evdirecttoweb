@@ -7,6 +7,9 @@ import net.events.cms.extensions.*;
 import org.apache.log4j.*;
 
 import com.webobjects.eocontrol.*;
+import com.webobjects.foundation.*;
+
+import er.extensions.*;
 
 public class DataSetNumberItemValue extends _DataSetNumberItemValue {
 	
@@ -27,6 +30,18 @@ public class DataSetNumberItemValue extends _DataSetNumberItemValue {
     public DataSetNumberItemValue() {
         super();
     	if (log.isDebugEnabled()) log.debug ("Created an object of class DataSetNumberItemValue");
+    }
+    
+    /**
+     * Validates that the field is filled if it is required
+     */
+    public void validateForSave () {
+    	super.validateForSave();
+    	if (this.dataSetItem().isRequired() != null && this.dataSetItem().isRequired().booleanValue()) {
+    		if (this.numberValue() == null || this.numberValue().equals("")) {
+    			throw new NSValidation.ValidationException(ERXLocalizer.currentLocalizer().localizedTemplateStringForKeyWithObject("Survey.MissingAnswer", this.dataSetItem()));
+    		}
+    	}
     }
     
     /**
