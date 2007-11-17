@@ -2,14 +2,9 @@
 {
 	attributes = (
 		{
-			columnName = action_description;
-			name = actionDescription;
-			prototypeName = string4k;
-		},
-		{
 			allowsNull = N;
-			columnName = action_id;
-			name = actionId;
+			columnName = city_id;
+			name = cityId;
 			prototypeName = key;
 		},
 		{
@@ -32,12 +27,9 @@
 		},
 		{
 			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
+			columnName = domain;
+			name = domain;
 			prototypeName = string256;
-			userInfo = {
-				defaultValue = Test;
-			};
 		},
 		{
 			allowsNull = N;
@@ -46,43 +38,24 @@
 			prototypeName = string256;
 		}
 	);
-	className = net.events.cms.eo.Action;
+	className = net.events.cms.eo.City;
 	classProperties = (
-		actionDescription,
-		actionTriggers,
 		client,
 		createdBy,
 		creationTime,
-		inheritanceType,
+		domain,
 		name
 	);
-	externalName = actions;
+	externalName = cities;
 	internalInfo = {};
-	isAbstractEntity = Y;
-	name = Action;
+	name = City;
 	primaryKeyAttributes = (
-		actionId
+		cityId
 	);
 	relationships = (
 		{
-			deleteRule = EODeleteRuleDeny;
-			destination = ActionTrigger;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = actionId;
-					sourceAttribute = actionId;
-				}
-			);
-			name = actionTriggers;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
 			destination = Client;
 			isMandatory = Y;
-			isToMany = N;
 			joinSemantic = EOInnerJoin;
 			joins = (
 				{
@@ -95,7 +68,6 @@
 		{
 			destination = EventsUser;
 			isMandatory = Y;
-			isToMany = N;
 			joinSemantic = EOInnerJoin;
 			joins = (
 				{
@@ -104,6 +76,19 @@
 				}
 			);
 			name = createdBy;
+		},
+		{
+			deleteRule = EODeleteRuleDeny;
+			destination = Event;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = cityId;
+					sourceAttribute = cityId;
+				}
+			);
+			name = events;
 		}
 	);
 }

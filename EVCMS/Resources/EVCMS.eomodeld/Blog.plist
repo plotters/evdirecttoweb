@@ -1,6 +1,11 @@
-// Entity Modeler v1.0.0
+// Entity Modeler v1.0.1
 {
 	attributes = (
+		{
+			columnName = active;
+			name = active;
+			prototypeName = flag;
+		},
 		{
 			columnName = blog_id;
 			name = blogId;
@@ -36,6 +41,7 @@
 	);
 	className = net.events.cms.eo.Blog;
 	classProperties = (
+		active,
 		blogPages,
 		categories,
 		client,

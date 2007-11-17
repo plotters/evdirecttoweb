@@ -1,4 +1,4 @@
-// Entity Modeler v1.0.0
+// Entity Modeler v1.0.1
 {
 	EOModelVersion = 2.1;
 	adaptorName = JDBC;
@@ -6,6 +6,7 @@
 		URL = jdbc:postgresql://localhost/events;
 		driver = org.postgresql.Driver;
 		password = "";
+		plugin = com.webobjects.jdbcadaptor.PostgresqlPlugIn;
 		username = postgres;
 	};
 	entities = (
@@ -61,6 +62,10 @@
 		{
 			className = net.events.cms.eo.CausalityAssessment;
 			name = CausalityAssessment;
+		},
+		{
+			className = net.events.cms.eo.City;
+			name = City;
 		},
 		{
 			className = net.events.cms.eo.Client;
@@ -197,6 +202,18 @@
 			className = net.events.cms.eo.EmailAction;
 			name = EmailAction;
 			parent = Action;
+		},
+		{
+			className = net.events.cms.eo.Event;
+			name = Event;
+		},
+		{
+			className = net.events.cms.eo.EventCategory;
+			name = EventCategory;
+		},
+		{
+			className = net.events.cms.eo.EventPrice;
+			name = EventPrice;
 		},
 		{
 			className = net.events.cms.eo.EventsUser;
@@ -343,6 +360,7 @@
 						URL = jdbc:postgresql://localhost/events;
 						username = postgres;
 						driver = org.postgresql.Driver;
+						plugin = com.webobjects.jdbcadaptor.PostgresqlPlugIn;
 					};
 					prototypeEntityName = EOJDBCEVPostgresqlPrototypes;
 				};
