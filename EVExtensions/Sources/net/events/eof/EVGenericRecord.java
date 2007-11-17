@@ -201,6 +201,7 @@ public abstract class EVGenericRecord extends ERXGenericRecord {
 	public NSArray modifications () {
 		NSArray result = null;
 		EOFetchSpecification fs = new EOFetchSpecification();
+		fs.setRefreshesRefetchedObjects(true);
 		
 		fs.setEntityName(this.modificationEntityName());
 		
