@@ -3,7 +3,7 @@
 		name = Root;
 		children = "session.currentUser.usergroup.name";
 		childrenChoices = {
-			"Super Admin" = ("Site Admin", "Contacts", "Trial Management", "Settings", "Admin");
+			"Super Admin" = ("Site Admin", "Events", "Contacts", "Trial Management", "Settings", "Admin");
 			"Study Administrator" = ("Trial Management", "Settings", "Admin");
 			"Site Admin" = ("Site Admin", "Settings");
 		};
@@ -149,5 +149,22 @@
 	{
 		name = "Countries"; 
 		action = "session.listPage.Country";
+	},
+	{
+		name = "Events";
+		action = "session.listPage.Event";
+		children = ("All Events", "Event Categories", "Cities");
+	},
+	{
+		name = "All Events";
+		action = "session.listPage.Event";
+	},
+	{
+		name = "Event Categories";
+		action = "session.listPage.EventCategory";
+	},
+	{
+		name = "Cities";
+		action = "session.listPage.City";
 	}
 )
