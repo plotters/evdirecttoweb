@@ -28,6 +28,7 @@ public abstract class _Blog extends net.events.cms.eo.EVCMSGenericRecord {
     public static final String CLIENT = "client";
     public static final String CATEGORIES = "categories";
     public static final String BLOGPAGES = "blogPages";
+    public static final String ACTIVE = "active";
     
     /**
      * For KeyValueCoding support
@@ -179,6 +180,21 @@ public abstract class _Blog extends net.events.cms.eo.EVCMSGenericRecord {
 		return (_eo == null) ? null : (Blog)EOUtilities.localInstanceOfObject(_editingContext, _eo);
 	}
   
+
+	/**
+	 * The value for "active"
+	 */
+    public Boolean active() {
+        return (Boolean) storedValueForKey("active");
+    }
+
+	/**
+	 * Set the value for "active"
+	 */
+    public void setActive(Boolean aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating active from "+active()+" to "+aValue );
+        takeStoredValueForKey(aValue, "active");
+    }
 
 	/**
 	 * The value for "name"
