@@ -1,3 +1,10 @@
+#########################################################################
+## EOF
+#########################################################################
 er.extensions.ERXModelGroup.prototypeModelName=EVPrototypes
-
 er.extensions.ERXEnterpriseObject.updateInverseRelationships=true
+
+#########################################################################
+## DirectToWeb
+#########################################################################
+er.directtoweb.ERD2WModel.additionalModelNames = ("events.d2wmodel")
