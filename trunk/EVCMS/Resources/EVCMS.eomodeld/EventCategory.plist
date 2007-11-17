@@ -2,14 +2,14 @@
 {
 	attributes = (
 		{
-			columnName = action_description;
-			name = actionDescription;
-			prototypeName = string4k;
+			columnName = category_description;
+			name = categoryDescription;
+			prototypeName = string4m;
 		},
 		{
 			allowsNull = N;
-			columnName = action_id;
-			name = actionId;
+			columnName = category_id;
+			name = categoryId;
 			prototypeName = key;
 		},
 		{
@@ -32,57 +32,37 @@
 		},
 		{
 			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
-			prototypeName = string256;
-			userInfo = {
-				defaultValue = Test;
-			};
-		},
-		{
-			allowsNull = N;
 			columnName = name;
 			name = name;
 			prototypeName = string256;
+		},
+		{
+			allowsNull = Y;
+			columnName = parent_category_id;
+			name = parentCategoryId;
+			prototypeName = key;
 		}
 	);
-	className = net.events.cms.eo.Action;
+	className = net.events.cms.eo.EventCategory;
 	classProperties = (
-		actionDescription,
-		actionTriggers,
+		categoryDescription,
 		client,
 		createdBy,
 		creationTime,
-		inheritanceType,
-		name
+		name,
+		parentCategory,
+		subCategories
 	);
-	externalName = actions;
+	externalName = event_categories;
 	internalInfo = {};
-	isAbstractEntity = Y;
-	name = Action;
+	name = EventCategory;
 	primaryKeyAttributes = (
-		actionId
+		categoryId
 	);
 	relationships = (
 		{
-			deleteRule = EODeleteRuleDeny;
-			destination = ActionTrigger;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = actionId;
-					sourceAttribute = actionId;
-				}
-			);
-			name = actionTriggers;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
 			destination = Client;
 			isMandatory = Y;
-			isToMany = N;
 			joinSemantic = EOInnerJoin;
 			joins = (
 				{
@@ -95,7 +75,6 @@
 		{
 			destination = EventsUser;
 			isMandatory = Y;
-			isToMany = N;
 			joinSemantic = EOInnerJoin;
 			joins = (
 				{
@@ -104,6 +83,29 @@
 				}
 			);
 			name = createdBy;
+		},
+		{
+			destination = EventCategory;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = categoryId;
+					sourceAttribute = parentCategoryId;
+				}
+			);
+			name = parentCategory;
+		},
+		{
+			destination = EventCategory;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = parentCategoryId;
+					sourceAttribute = categoryId;
+				}
+			);
+			name = subCategories;
 		}
 	);
 }

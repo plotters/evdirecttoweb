@@ -2,17 +2,6 @@
 {
 	attributes = (
 		{
-			columnName = action_description;
-			name = actionDescription;
-			prototypeName = string4k;
-		},
-		{
-			allowsNull = N;
-			columnName = action_id;
-			name = actionId;
-			prototypeName = key;
-		},
-		{
 			allowsNull = N;
 			columnName = client_id;
 			name = clientId;
@@ -32,57 +21,48 @@
 		},
 		{
 			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
-			prototypeName = string256;
-			userInfo = {
-				defaultValue = Test;
-			};
+			columnName = eventId;
+			name = eventId;
+			prototypeName = key;
 		},
 		{
 			allowsNull = N;
-			columnName = name;
-			name = name;
+			columnName = label;
+			name = label;
 			prototypeName = string256;
+		},
+		{
+			allowsNull = N;
+			columnName = price;
+			name = price;
+			prototypeName = money;
+		},
+		{
+			allowsNull = N;
+			columnName = price_id;
+			name = priceId;
+			prototypeName = key;
 		}
 	);
-	className = net.events.cms.eo.Action;
+	className = net.events.cms.eo.EventPrice;
 	classProperties = (
-		actionDescription,
-		actionTriggers,
 		client,
 		createdBy,
 		creationTime,
-		inheritanceType,
-		name
+		event,
+		label,
+		price
 	);
-	externalName = actions;
+	externalName = event_prices;
 	internalInfo = {};
-	isAbstractEntity = Y;
-	name = Action;
+	name = EventPrice;
 	primaryKeyAttributes = (
-		actionId
+		priceId
 	);
 	relationships = (
 		{
-			deleteRule = EODeleteRuleDeny;
-			destination = ActionTrigger;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = actionId;
-					sourceAttribute = actionId;
-				}
-			);
-			name = actionTriggers;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
 			destination = Client;
 			isMandatory = Y;
-			isToMany = N;
 			joinSemantic = EOInnerJoin;
 			joins = (
 				{
@@ -95,7 +75,6 @@
 		{
 			destination = EventsUser;
 			isMandatory = Y;
-			isToMany = N;
 			joinSemantic = EOInnerJoin;
 			joins = (
 				{
@@ -104,6 +83,19 @@
 				}
 			);
 			name = createdBy;
+		},
+		{
+			destination = Event;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = eventId;
+					sourceAttribute = eventId;
+				}
+			);
+			name = event;
 		}
 	);
 }
