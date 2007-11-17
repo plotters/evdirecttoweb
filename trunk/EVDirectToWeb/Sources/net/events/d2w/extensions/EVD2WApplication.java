@@ -1,6 +1,6 @@
 package net.events.d2w.extensions;
 
-import java.util.Random;
+import java.util.*;
 
 import net.events.d2w.pages.EVGenericErrorPage;
 
@@ -15,13 +15,9 @@ import com.webobjects.appserver.WORequest;
 import com.webobjects.appserver.WORequestHandler;
 import com.webobjects.appserver.WOResponse;
 import com.webobjects.eocontrol.EOSharedEditingContext;
-import com.webobjects.foundation.NSDictionary;
-import com.webobjects.foundation.NSMutableDictionary;
-import com.webobjects.foundation.NSTimestamp;
+import com.webobjects.foundation.*;
 
-import er.extensions.ERXApplication;
-import er.extensions.ERXMessageEncoding;
-import er.extensions.ERXProperties;
+import er.extensions.*;
 
 public class EVD2WApplication extends ERXApplication {
 	
@@ -62,9 +58,10 @@ public class EVD2WApplication extends ERXApplication {
 	 * Overriden to make sure not to get any deadlocks by making sure, the session is checked in into the sessionStore 
 	 */
 	public WOResponse dispatchRequest(WORequest request) {
-		requestLogger.debug("\n====================== Start of Request - Response Loop ======================");
-		requestLogger.debug("Starting to dispatch URL: " + request.uri());
-		requestLogger.debug("request headers = " + request.headers());
+		
+		requestLogger.info("\n====================== Start of Request - Response Loop ======================");
+		requestLogger.info("Starting to dispatch URL: " + request.uri());
+		requestLogger.info("request headers = " + request.headers());
 		NSTimestamp startTime = new NSTimestamp();
 
 		WOResponse response = null;
@@ -74,24 +71,24 @@ public class EVD2WApplication extends ERXApplication {
 		}
 		finally {
 			
-			NSDictionary userInfo = request.userInfo();
-			if (userInfo != null) {
-				NSDictionary mutableDict = (NSDictionary) userInfo.valueForKey("mutableDict");
-				
-				WOContext context = (WOContext) mutableDict.valueForKey("context");
-				
-				if (context.hasSession()) {
-					sessionStore().checkInSessionForContext(context);
-				}
-			}
+//			NSDictionary userInfo = request.userInfo();
+//			if (userInfo != null) {
+//				NSDictionary mutableDict = (NSDictionary) userInfo.valueForKey("mutableDict");
+//				
+//				WOContext context = (WOContext) mutableDict.valueForKey("context");
+//				
+//				if (context.hasSession()) {
+//					sessionStore().checkInSessionForContext(context);
+//				}
+//			}
 		}
 		NSTimestamp endTime = new NSTimestamp();
-		requestLogger.debug ("response headers = " + response.headers());
-		requestLogger.debug ("Finished dispatching URL: " + request.uri());
+		requestLogger.info ("response headers = " + response.headers());
+		requestLogger.info ("Finished dispatching URL: " + request.uri());
 		
 		// Note odd output formatting.  This makes it easy to grep out these lines
 		// and load them into Excel as CSV for analysis
-		requestLogger.debug (",Elapsed Time," + new Double((endTime.getTime() - startTime.getTime())/1000.0).toString());
+		requestLogger.info (",Elapsed Time," + new Double((endTime.getTime() - startTime.getTime())/1000.0).toString());
 		
 		return response;
 	}
@@ -103,6 +100,8 @@ public class EVD2WApplication extends ERXApplication {
 		// setup user mutable dictionary to be available for the
 		// rest of this request. request.userInfo() always
 		// will return a immutable dictionary.
+		
+		log.info("Request: " + request);
 		
 		NSMutableDictionary mutableDict = new NSMutableDictionary();
 		NSDictionary userInfo = request.userInfo();
@@ -185,6 +184,7 @@ public class EVD2WApplication extends ERXApplication {
 		WOComponent errorPage = this.pageWithName(EVGenericErrorPage.class.getName(), aContext);
 		return errorPage.generateResponse();
 	}
-	
 
 }
+
+
