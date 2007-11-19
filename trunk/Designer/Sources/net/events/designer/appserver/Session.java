@@ -24,7 +24,7 @@ public class Session extends EVCMSSession {
 	 * @return
 	 */
 	public WOComponent uploadABDAFiles() {
-		ERXNavigationManager.manager().navigationStateForSession(this).setState(new NSArray(new Object[] { "ABDA", "UploadABDAFile" }));
+		ERXNavigationManager.manager().navigationStateForSession(this).setState(new NSArray<Object>(new Object[] { "ABDA", "UploadABDAFile" }));
 		return this.pageWithName("ABDAFileUploadPage");
 	}
 
