@@ -59,7 +59,7 @@ public class Main extends WOComponent {
 			return null;
 		}
 
-		NSDictionary values = new NSDictionary(new String[] { this.login, this.password }, new String[] { "login", "password" });
+		NSDictionary<String, String> values = new NSDictionary<String, String>(new String[] { this.login, this.password }, new String[] { "login", "password" });
 		try {
 			Person user = (Person) EOUtilities.objectMatchingValues(editingContext, Person.ENTITY_NAME, values);
 			
