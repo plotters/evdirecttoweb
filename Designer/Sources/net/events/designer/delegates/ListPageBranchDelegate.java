@@ -6,12 +6,30 @@ import com.webobjects.foundation.*;
 
 import er.extensions.*;
 
+/**
+ * Functions for list pages.
+ * 
+ * @author cug
+ *
+ */
 public class ListPageBranchDelegate extends BranchDelegate {
 	
+	/**
+	 * The branch choices.
+	 */
 	public NSArray<Object> branchChoicesForContext(D2WContext context) {
 		return super.branchChoicesForContext(context);
 	}
 
+	/**
+	 * Gets the entity name for the current context, creates a new edit page for
+	 * a new object for it, and returns that page.
+	 * 
+	 * Use this method with the EVD2WListPage and the action bar in there.
+	 * 
+	 * @param sender
+	 * @return
+	 */
 	public WOComponent createNew (WOComponent sender) {
 		String entityName = (String) sender.valueForKeyPath("branch.entityName");
 		if (entityName == null) {
