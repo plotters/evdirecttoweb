@@ -8,7 +8,7 @@ import er.extensions.*;
 
 public class ListPageBranchDelegate extends BranchDelegate {
 	
-	public NSArray branchChoicesForContext(D2WContext context) {
+	public NSArray<Object> branchChoicesForContext(D2WContext context) {
 		return super.branchChoicesForContext(context);
 	}
 
