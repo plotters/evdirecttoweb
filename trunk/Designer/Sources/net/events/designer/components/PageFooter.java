@@ -25,7 +25,7 @@ public class PageFooter extends WOComponent {
     }
     
     public WOComponent showLoggedInUsers() {
-    	ERXNavigationManager.manager().navigationStateForSession(this.session()).setState(new NSArray(new Object[] { "Admin", "LoggedInUsers" }));
+    	ERXNavigationManager.manager().navigationStateForSession(this.session()).setState(new NSArray<Object>(new Object[] { "Admin", "LoggedInUsers" }));
     	return this.pageWithName(AdminOverviewPage.class.getName());
     }
     
