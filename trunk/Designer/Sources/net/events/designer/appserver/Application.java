@@ -3,9 +3,11 @@ package net.events.designer.appserver;
 
 import net.events.cms.extensions.*;
 import net.events.d2w.extensions.*;
+import net.events.designer.components.*;
 
 import org.apache.log4j.*;
 
+import com.webobjects.appserver.*;
 import com.webobjects.directtoweb.*;
 import com.webobjects.eoaccess.*;
 
@@ -68,9 +70,20 @@ public class Application extends EVD2WApplication {
 		}
 	}
     
+    /**
+     * Returns a useful session timeout page
+     */
+    public WOResponse handleSessionRestorationErrorInContext(WOContext aContext) {
+        SessionTimeoutPage stp = (SessionTimeoutPage) pageWithName(SessionTimeoutPage.class.getName(),aContext);
+        return stp.generateResponse();
+    }
+    
+	/**
+	 * Make URLs nicer
+	 */
 	public String _rewriteURL(String url) {
 		if (ERXProperties.booleanForKeyWithDefault("net.events.Designer.shouldRewriteUrls", false)) {
-			url = url.replaceAll("/cgi-bin/WebObjects/Designer.woa/", "/");
+			url = url.replaceAll("/cgi-bin/WebObjects/Designer.woa/", "/Designer");
 		}
 		return url;
 	}   
