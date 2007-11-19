@@ -4,6 +4,7 @@ import net.events.cms.eo.*;
 
 import com.webobjects.appserver.*;
 import com.webobjects.directtoweb.*;
+import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 
 import er.extensions.*;
@@ -24,7 +25,7 @@ public class PageWrapper extends WOComponent {
 	/**
 	 * Cached array of clients 
 	 */
-	private NSArray clients;
+	private NSArray<EOGenericRecord> clients;
 	
 	/**
 	 * show link? 
@@ -91,7 +92,7 @@ public class PageWrapper extends WOComponent {
      * 
      * @return
      */
-    public NSArray clients () {
+    public NSArray<EOGenericRecord> clients () {
     	if (clients == null) {
     		clients = ERXArrayUtilities.sortedArraySortedWithKey(Client.fetchAllObjects(session().defaultEditingContext()), Client.NAME);
     	}
