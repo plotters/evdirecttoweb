@@ -1,0 +1,16 @@
+(
+    80 : pageConfiguration = 'ListCity' => displayPropertyKeys = (name,"site.name"
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListCity' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListEventCategory' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListEventCategory' => displayPropertyKeys = (name,"parentCategory.name",creationTime
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListEventCategory' and propertyKey = 'parentCategory.name') => displayNameForProperty = ParentCategory [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'EditEventCategory' or pageConfiguration = 'InspectEventCategory' or pageConfiguration = 'CreateEventCategory') and sectionKey = 'GeneralInformationSectionName') => maxColumns = 1 [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'InspectCity' or pageConfiguration = 'EditCity' or pageConfiguration = 'CreateCity') => displayPropertyKeys = (    (    City,            (        GeneralInformationSectionName,        name,        site    ),            (        AdministrativeInformation,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'InspectEventCategory' => displayPropertyKeys = (    (    "Event Category",            (        GeneralInformationSectionName,        name,        categoryDescription    ),            (        CategoryRelationsSectionName,        parentCategory,        subCategories    ),            (        AdministrativeInformation,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateEventCategory' or pageConfiguration = 'EditEventCategory') => displayPropertyKeys = (    (    "Event Category",            (        GeneralInformationSectionName,        name,        categoryDescription    ),            (        CategoryRelationsSectionName,        parentCategory    ),            (        AdministrativeInformation,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment]
+)

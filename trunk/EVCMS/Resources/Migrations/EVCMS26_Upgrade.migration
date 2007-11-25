@@ -3,8 +3,8 @@ CREATE TABLE cities (
 	client_id int8  NOT NULL, 
 	created_by_id int8  NOT NULL, 
 	creation_time timestamp  NOT NULL, 
-	domain varchar(256)  NOT NULL, 
-	name varchar(256)  NOT NULL
+	name varchar(256)  NOT NULL, 
+	site_id int8  NOT NULL
 );
 
 CREATE TABLE events (
@@ -54,6 +54,9 @@ CREATE INDEX cities_client_id_idx ON cities( client_id );
 
 ALTER TABLE cities ADD CONSTRAINT cities_createdBy_FK FOREIGN KEY (created_by_id) REFERENCES contacts (contact_id) DEFERRABLE INITIALLY DEFERRED;
 CREATE INDEX cities_created_by_id_idx ON cities( created_by_id );
+
+ALTER TABLE cities ADD CONSTRAINT cities_site_FK FOREIGN KEY (site_id) REFERENCES sites (site_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX cities_site_id_idx ON cities( site_id );
 
 ALTER TABLE events ADD CONSTRAINT events_category_FK FOREIGN KEY (category_id) REFERENCES event_categories (category_id) DEFERRABLE INITIALLY DEFERRED;
 CREATE INDEX events_category_id_idx ON events( category_id );

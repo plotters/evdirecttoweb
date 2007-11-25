@@ -37,6 +37,7 @@
 	);
 	className = net.events.cms.eo.Site;
 	classProperties = (
+		cities,
 		client,
 		defaultTitle,
 		domains,
@@ -68,6 +69,18 @@
 		siteId
 	);
 	relationships = (
+		{
+			destination = City;
+			isToMany = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = siteId;
+					sourceAttribute = siteId;
+				}
+			);
+			name = cities;
+		},
 		{
 			destination = Client;
 			isMandatory = Y;
