@@ -1,0 +1,277 @@
+(
+    40 : *true* => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment],
+    50 : (task = 'edit' and smartRelationship.isToMany = 0) => componentName = ERD2WEditToOneRelationship [com.webobjects.directtoweb.Assignment],
+    50 : (task = 'query' and smartRelationship.isToMany = 0) => componentName = ERD2WQueryToOneRelationship [com.webobjects.directtoweb.Assignment],
+    50 : (task = 'edit' and smartAttribute.userInfo.prototypeName = 'string256') => componentName = ERD2WEditString [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'date' => formatter = %b %d, %Y [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'action' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'client' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'pageWrapper' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListContact' => showActionBar = true [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'dataSetTemplate' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'dataSetNumberItem' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'person' => keyWhenRelationship = firstnameLastname [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'action.name' => displayNameForProperty = Action Name [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListBlog' => newObjectString = Blog.CREATE_NEW [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'seriousness' => displayNameForProperty = Is it serious? [com.webobjects.directtoweb.Assignment],
+    80 : propertyKey = 'interfaceElementType' => keyWhenRelationship = elementName [com.webobjects.directtoweb.Assignment],
+    80 : (task = 'edit' and propertyKey = 'pageWrappers') => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListEmbeddedDataSetEntry' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListBlog' => defaultSortOrdering = (name,compareAscending
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListUsergroup' => defaultSortOrdering = (name,compareAscending
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'EditEmbeddedPageWrapperEO' => pageName = EVD2WCompactInspectPage [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'QueryMedicalDataSetEntry' => qualifierOperators = ("starts with"
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListAction' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    80 : ((task = 'edit' or task = 'inspect') and propertyKey = 'options') => sortKey = orderNumber [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'InspectBlogEntryCategory' => displayPropertyKeys = (categoryName,blog
+) [com.webobjects.directtoweb.Assignment],
+    80 : (task = 'edit' and propertyKey = 'pageWrappers') => componentName = ERDEditToManyRelationship [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListAction' => displayPropertyKeys = (name,inheritanceType,creationTime
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'QueryContact' => displayPropertyKeys = (companyName,firstname,lastname,email
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'InspectMedicalDataSetEntry' and propertyKey = 'values') => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    80 : (task = 'edit' and (propertyKey = 'active' or propertyKey = 'isRequired')) => componentName = D2WEditBoolean [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListEventsUser' => displayPropertyKeys = (lastname,firstname,login,"client.name",active
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListContact' => displayPropertyKeys = (companyName,firstname,lastname,email,inheritanceType
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'EditBlogEntry' and propertyKey = 'category') => restrictedChoiceKey = object.blog.categories [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListContact' => defaultSortOrdering = (companyName,compareAscending,lastname,compareAscending
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration like 'EditDataSet*Item' and propertyKey = 'section') => sortKey = dataSetPlusSectionNameForSorting [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListContact' and (propertyKey = 'lastname' or propertyKey = 'companyName')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' and propertyKey = 'dataSetNumberItem') => keyWhenRelationship = dataSetNameAndItemName [com.webobjects.directtoweb.Assignment],
+    80 : ((task = 'list' or task = 'inspect' or task = 'edit') and (propertyKey = 'blog' or propertyKey = 'createdBy')) => componentName = ERD2WDisplayToOne [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' and propertyKey = 'dataSetNumberItem') => sortKey = dataSetPlusSectionPlusNameForSorting [com.webobjects.directtoweb.Assignment],
+    80 : (task = 'edit' and entity.name = 'DataSetNumberItem' and propertyKey = 'format') => possibleChoices = (    {    "#,###" = "#,###";},    {    "#" = "#";}
+) [com.webobjects.directtoweb.Assignment],
+    80 : (task = 'edit' and entity.name = 'DataSetDecimalItem' and propertyKey = 'format') => possibleChoices = (    {    "#,###.##" = "#,###.##";},    {    "#.##" = "#.##";}
+) [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') and (propertyKey = 'content' or propertyKey = 'teaserx')) => componentName = EVD2WEditHTML [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'EditDataSetSelectionItemValue' or pageConfiguration = 'CreateDataSetSelectionItemValue') and propertyKey = 'selectedOption') => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'EditDataSetSelectionItemValue' or pageConfiguration = 'CreateDataSetSelectionItemValue') and propertyKey = 'selectedOption') => sortKey = orderNumber [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateAdverseEvent' and (propertyKey = 'outcome' or propertyKey = 'severityGrade' or propertyKey = 'causalityAssessment' or propertyKey = 'seriousness')) => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateAdverseEvent' and (propertyKey = 'outcome' or propertyKey = 'severityGrade' or propertyKey = 'causalityAssessment' or propertyKey = 'seriousness')) => sortKey = orderNumber [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListAction' => branchChoices = (    {    branchButtonLabel = "Create E-Mail Action";    branchName = createNew;    cssClass = "d2w_listActionButton";    entityName = EmailAction;}
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'QueryStudyParticipant' or pageConfiguration = 'QueryAdverseEvent' or pageConfiguration = 'QueryContact' or pageConfiguration = 'QueryMedicalDataSetEntry') => showListInSamePage = true [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'EditDataSetSelectionItem' or pageConfiguration = 'CreateDataSetSelectionItem') and propertyKey = 'interfaceElementType') => restrictingFetchSpecification = ToOneUserInterfaceElementsFS [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'EditMedicalDataSetTemplate' or pageConfiguration = 'CreateMedicalDataSetTemplate') and propertyKey = 'dataSetPageTemplate') => restrictedChoiceKey = session.currentClient.activeDataSetPageTemplates [com.webobjects.directtoweb.Assignment],
+    80 : (((pageConfiguration = 'CreateEventsUser' or pageConfiguration = 'EditEventsUser') and propertyKey = 'usergroup') and session.currentUser.isSuperAdmin = 0) => restrictedChoiceKey = session.currentUser.availableUsergroups [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'InspectDataSetNumberItemActionTrigger' or pageConfiguration = 'CreateDataSetNumberItemActionTrigger' or pageConfiguration = 'EditDataSetNumberItemActionTrigger') and sectionKey = 'TriggerSectionName') => maxColumns = 1 [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'CreateStudyParticipant') and propertyKey = 'status') => possibleChoices = (    {    active = active;},    {    out = out;},    {    withdrawn = withdrawn;},    {    "not accepted" = "not accepted";}
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateDataSetNumberItemActionTrigger' or pageConfiguration = 'EditDataSetNumberItemActionTrigger') => possibleChoices = (    {    "is greater than" = "is greater than";},    {    "is lower than" = "is lower than";},    {    "is equal to" = "is equal to";}
+) [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'QueryStudyParticipant' and (propertyKey = 'participantId' or propertyKey = 'firstname' or propertyKey = 'lastname')) or pageConfiguration = 'QueryEventsUser' or pageConfiguration = 'QueryAdverseEvent' or pageConfiguration = 'QueryContact') => qualifierOperators = ("starts with"
+) [com.webobjects.directtoweb.Assignment],
+    80 : (((pageConfiguration = 'CreateEmailAction' or pageConfiguration = 'EditEmailAction' or pageConfiguration = 'InspectEmailAction') and (sectionKey = 'ActionSettingsSectionName' or sectionKey = 'TemplateSectionName')) or (pageConfiguration = 'InspectStudyParticipant' and sectionKey = 'DataSetsSectionName')) => maxColumns = 1 [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'CreateStudyParticipant') and propertyKey = 'ethnicGroup') => possibleChoices = (    {    Caucasian = Caucasian;},    {    Black = Black;},    {    Asian = Asian;},    {    Hispanic = Hispanic;},    {    "Other - please specify" = "Other - please specify";}
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListContact' => branchChoices = (    {    branchButtonLabel = "Create New Company";    branchName = createNew;    cssClass = "d2w_listActionButton";    entityName = Company;},    {    branchButtonLabel = "Create New Person";    branchName = createNew;    cssClass = "d2w_listActionButton";    entityName = Person;}
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateBlogPage' or pageConfiguration = 'EditBlogPage') => displayPropertyKeys = (    (    "Blog Page",            (        GeneralInformation,        blog,        site,        pageName,        entriesPerPage,        pageWrapper,        orderNumber,        pageDescription    ),            (        AdministrativeInformation,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateBlogPage' or pageConfiguration = 'EditBlogPage') => displayPropertyKeys = (    (    "Blog Page",            (        GeneralInformation,        blog,        site,        pageName,        entriesPerPage,        pageWrapper,        orderNumber,        pageDescription    ),            (        AdministrativeInformation,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'InspectBlogPage' => displayPropertyKeys = (    (    "Blog Page",            (        GeneralInformation,        blog,        site,        pageName,        entriesPerPage,        pageWrapper,        orderNumber,        pageDescription    ),            (        AdministrativeInformation,        createdBy,        creationTime    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateEmailAction' or pageConfiguration = 'EditEmailAction') => displayPropertyKeys = (    (    EmailActionTabName,            (        ActionSettingsSectionName,        name,        actionDescription    ),            (        AddressesSectionName,        fromAddress,        toAddress    ),            (        TemplateSectionName,        subject,        template    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListAbstractPage' => branchChoices = (    {    branchButtonLabel = "Create Dataset Page";    branchName = createNew;    cssClass = "d2w_listActionButton";    entityName = DataSetPageTemplate;},    {    branchButtonLabel = "Create Blog Page";    branchName = createNew;    cssClass = "d2w_listActionButton";    entityName = BlogPage;},    {    branchButtonLabel = "Create HTML Page";    branchName = createNew;    cssClass = "d2w_listActionButton";    entityName = HtmlPage;}
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateClient' or pageConfiguration = 'EditClient') => displayPropertyKeys = (    (    Client,            (        NameAndStatusSection,        name,        active,        customerNumber    ),            (        AddressSection,        street1,        street2,        postalCode,        city,        province,        country    ),            (        ContactInformationSection,        contactFirstname,        contactLastname,        contactPhone,        contactEmail    ),            (        Styles,        adminStylesheet    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'InspectEmailAction' => displayPropertyKeys = (    (    EmailActionTabName,            (        ActionSettingsSectionName,        name,        actionDescription    ),            (        AddressesSectionName,        fromAddress,        toAddress    ),            (        TemplateSectionName,        subject,        template    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'InspectClient' => displayPropertyKeys = (    (    Client,            (        NameAndStatusSection,        name,        active,        customerNumber    ),            (        AddressSection,        street1,        street2,        postalCode,        city,        province,        country    ),            (        ContactInformationSection,        contactFirstname,        contactLastname,        contactPhone,        contactEmail    ),            (        Styles,        adminStylesheet    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : *true* => useMatrixLayout = true [com.webobjects.directtoweb.Assignment],
+    90 : *true* => isEntityEditable = true [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'htmlContent' => length = 80 [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'gender' => sortKey = isoCode [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'componentTemplate' => rows = 20 [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'componentTemplate' => length = 100 [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'blog' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'site' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListModification' => actions = {
+} [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'modifications' => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'QueryAdverseEvent' => maxColumns = 2 [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'creationTime' => formatter = %d.%m.%Y %H:%M [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'modifications' => componentName = ERD2WList [com.webobjects.directtoweb.Assignment],
+    90 : entity.name = 'AbstractPage' => displayNameForEntity = Page [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'section' => keyWhenRelationship = sectionName [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'site.name' => displayNameForProperty = Sitename [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListAbstractPage' => showActionBar = true [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'height' => displayNameForProperty = Height in cm [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'weight' => displayNameForProperty = Weight in kg [com.webobjects.directtoweb.Assignment],
+    90 : (task = 'edit' and propertyKey = 'createdBy') => disabled = true [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'createdBy' => keyWhenRelationship = firstnameLastname [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'creationTime' => componentName = ERD2WDisplayDateOrNull [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListModification' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListBlog' => displayPropertyKeys = (name,password
+) [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'site' => restrictedChoiceKey = session.currentClient.sites [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'modifications' => listConfigurationName = ListModification [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedBlogPage' => reverseRelationshipKey = blog [com.webobjects.directtoweb.Assignment],
+    90 : (task = 'inspect' and propertyKey = 'componentTemplate') => disabled = true [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListDomain' => displayPropertyKeys = (url,"site.name"
+) [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'modificationsArray' => displayNameForProperty = Modifications [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedBlogComment' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment],
+    90 : (propertyKey = 'modificationsArray' and task = 'list') => justification = left [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'createdBy.firstnameLastname' => componentName = ERD2WDisplayString [com.webobjects.directtoweb.Assignment],
+    90 : (task = 'inspect' and propertyKey = 'teaser') => componentName = ERD2WDisplayHTML [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'createdBy.firstnameLastname' => displayNameForProperty = Created By [com.webobjects.directtoweb.Assignment],
+    90 : (entity.name = 'Client' and propertyKey = 'country') => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedBlogEntryCategory' => reverseRelationshipKey = blog [com.webobjects.directtoweb.Assignment],
+    90 : propertyKey = 'pageWrapper' => restrictedChoiceKey = session.currentClient.pageWrappers [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListClient' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedDataSetSelectionOption' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment],
+    90 : (entity.name = 'EventsUser' and propertyKey = 'usergroup') => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListSite' => displayPropertyKeys = (name,resourcePath,defaultTitle
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListPageWrapperEO' => displayPropertyKeys = (name,defaultTitle,site
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListDomain' => actions = {"right" = ("editAction", "deleteAction"); 
+} [com.webobjects.directtoweb.Assignment],
+    90 : (propertyKey = 'modificationsArray' and task = 'list') => componentName = EVD2WHistoryEntry [com.webobjects.directtoweb.Assignment],
+    90 : (entity.name = 'BlogEntry' and (task = 'edit' or task = 'inspect')) => useTableLayout = false [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListBlogEntry' => defaultSortOrdering = (creationTime,compareDescending
+) [com.webobjects.directtoweb.Assignment],
+    90 : (entity.name = 'BlogEntry' and (task = 'edit' or task = 'inspect')) => useMatrixLayout = false [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'QueryEventsUser' or pageConfiguration = 'QueryContact') => maxColumns = 4 [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'QueryEventsUser' => displayPropertyKeys = (firstname,lastname,login,email
+) [com.webobjects.directtoweb.Assignment],
+    90 : (entity.name = 'BlogEntry' and propertyKey = 'title') => displayNameForProperty = BlogEntryTitle [com.webobjects.directtoweb.Assignment],
+    90 : (task = 'inspect' and propertyKey = 'componentTemplate') => componentName = ERD2WEditLargeString [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'InspectBlogEntry' and propertyKey = 'comments') => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListModification' => defaultSortOrdering = (creationTime,compareDescending
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedBlogComment' => displayPropertyKeys = (name,email,creationTime
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListBlogEntry' and propertyKey = 'createdBy') => propertyIsSortable = false [com.webobjects.directtoweb.Assignment],
+    90 : (task = 'list' and propertyKey = 'inheritanceType') => componentName = EVD2WDisplayLocalizedString [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListEmbeddedBlogPage' and propertyKey = 'pageName') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedEventsUser' => displayPropertyKeys = (firstname,lastname,login,active
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedBlogComment' => defaultSortOrdering = (creationTime,compareDescending
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'InspectBlogEntry' and propertyKey = 'entryUrl') => componentName = ERD2WDisplayURL [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedBlogPage' => displayPropertyKeys = (pageName,inheritanceType,createdBy
+) [com.webobjects.directtoweb.Assignment],
+    90 : ((task = 'inspect' or task = 'list') and propertyKey = 'password') => componentName = ERD2WDisplayPassword [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListPerson' => displayPropertyKeys = (firstname,lastname,creationTime,inheritanceType
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListModification' => displayPropertyKeys = (creationTime,createdBy,modificationsArray
+) [com.webobjects.directtoweb.Assignment],
+    90 : ((task = 'inspect' or task = 'list') and smartRelationship.isToMany = 0) => componentName = ERD2WDisplayToOne [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListEmbeddedDataSetSection' and propertyKey = 'sectionName') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListAbstractPage' => displayPropertyKeys = (pageName,"pageWrapper.name",orderNumber,site
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListEmbeddedBlogEntryCategory' and propertyKey = 'categoryName') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') and propertyKey = 'password') => length = 12 [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') and propertyKey = 'articlesPerPage') => length = 4 [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListBlogEntry' => displayPropertyKeys = (creationTime,title,blog,active,"comments.count",createdBy
+) [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') and propertyKey = 'content') => rows = 20 [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListClient' => displayPropertyKeys = (name,postalCode,city,"country.name",contactFirstname,contactLastname
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'EditEmbeddedDataSetSelectionOption' and (propertyKey = 'orderNumber' or propertyKey = 'score')) => length = 5 [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') and propertyKey = 'password') => componentName = ERD2WEditString [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListEmbeddedStudyParticipant' or pageConfiguration = 'ListEmbeddedMedicalDataSetTemplate') => isEmbeddedInForm = true [com.webobjects.directtoweb.Assignment],
+    90 : (propertyKey = 'cssClassForThankYouMessage' and task = 'edit') => displayNameForProperty = CSS Class - Change only, if you know what you are doing! [com.webobjects.directtoweb.Assignment],
+    90 : (task = 'edit' and (propertyKey = 'blog' or propertyKey = 'client' or propertyKey = 'site' or propertyKey = 'clinicalTrial')) => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'ListSite' and propertyKey = 'name') or (pageConfiguration = 'ListClinicalTrial' and propertyKey = 'name')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreatePageWrapperEO' or pageConfiguration = 'EditPageWrapperEO') and propertyKey = 'site') => componentName = ERD2WEditToOneRelationship [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog' or pageConfiguration = 'InspectBlog') and propertyKey = 'blogPages') => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListModification' and (propertyKey = 'creationTime' or propertyKey = 'modificationsArray' or propertyKey = 'createdBy')) => propertyIsSortable = false [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration like 'CreateDataSet*Item' or pageConfiguration like 'EditDataSet*Item') and propertyKey = 'section') => restrictedChoiceKey = object.dataSetTemplate.sections [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'QueryEventsUser' and (propertyKey = 'firstname' or propertyKey = 'lastname' or propertyKey = 'login')) or pageConfiguration = 'QueryContact') => length = 20 [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateStudyParticipant' or pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'InspectStudyParticipant') and propertyKey = 'dateOfBirth') => formatter = %Y-%m-%d [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') and (propertyKey = 'subtitle' or propertyKey = 'title' or propertyKey = 'teaser' or propertyKey = 'content')) => length = 80 [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'EditUsergroup' or pageConfiguration = 'CreateUsergroup') => displayPropertyKeys = (    (    Usergroup,            (        "Usergroup Information",        name,        privilege    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'CreateSite' => displayPropertyKeys = (    (    SiteMainTabName,            (        SiteInformationSectionName,        client,        name,        resourcePath,        defaultTitle    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'InspectBlogEntry' and propertyKey = 'content') or (pageConfiguration = 'InspectDataSetTextItem' and propertyKey = 'predefinedValues')) => componentName = ERD2WDisplayStringWithLineBreaks [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'InspectClinicalTrial' and (propertyKey = 'causalityAssessments' or propertyKey = 'severityGrades' or propertyKey = 'adverseEventOutcomes' or propertyKey = 'seriousnesses')) => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    90 : ((entity.name = 'BlogEntry' and (task = 'edit' or task = 'inspect') and sectionKey = 'AdministrativeInformationSectionName') or (entity.name = 'TrialSurvey' and (task = 'inspect' or task = 'edit'))) => useMatrixLayout = false [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') => displayPropertyKeys = (    (    Blog,            (        BlogInformationSectionName,        name,        password    ),            (        BlogPagesSectionName,        blogPages    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : ((((task = 'edit' or task = 'inspect') and entity.name = 'HtmlPage') and (tabKey = 'HTML Page' and sectionKey = 'Content')) or (((task = 'edit' or task = 'inspect') and entity.name = 'PageWrapperEO') and (tabKey = 'Template' and sectionKey = 'componentTemplate'))) => maxColumns = 1 [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'EditPageWrapperEO' or pageConfiguration = 'CreatePageWrapperEO') => displayPropertyKeys = (    (    PageWrapper,            (        WrapperInformation,        name,        defaultTitle,        site    ),            (        Template,        componentTemplate    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'ListBlogEntry' and propertyKey = 'title') or (pageConfiguration = 'ListBlog' and propertyKey = 'name') or (pageConfiguration = 'ListPageWrapperEO' and propertyKey = 'name') or (pageConfiguration = 'ListAbstractPage' and propertyKey = 'pageName')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    90 : (task = 'edit' and (propertyKey = 'resourcePath' or propertyKey = 'subtitle' or propertyKey = 'defaultTitle' or propertyKey = 'url' or propertyKey = 'pageName' or propertyKey = 'adminStylesheet' or propertyKey = 'protocolNumber' or propertyKey = 'causality' or propertyKey = 'outcome')) => componentName = ERD2WEditString [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'CreatePerson' or pageConfiguration = 'EditPerson') => displayPropertyKeys = (    (    Person,            (        Name,        title,        academicTitle,        firstname,        lastname,        middlename    )),    (    WebsiteLoginTabName,            (        "Login Information",        login,        password    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectUsergroup' => displayPropertyKeys = (    (    Usergroup,            (        "Usergroup Information",        name,        privilege    )),    (    "Users in this Group",            (        Users,        users    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectPageWrapperEO' => displayPropertyKeys = (    (    PageWrapper,            (        WrapperInformation,        name,        defaultTitle,        site    ),            (        Template,        componentTemplate    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'EditSite' => displayPropertyKeys = (    (    SiteMainTabName,            (        SiteInformationSectionName,        client,        name,        resourcePath,        defaultTitle    ),            (        Domains,        domains    )),    (    PagesTabName,            (        PageWrappers,        pageWrappers    ),            (        Pages,        pages    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'EditHtmlPage' or pageConfiguration = 'CreateHtmlPage') => displayPropertyKeys = (    (    "HTML Page",            (        "Page Information",        pageName,        site,        pageWrapper,        orderNumber    ),            (        Content,        htmlContent    ),            (        "Administrative Information",        creationTime,        createdBy    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectBlog' => displayPropertyKeys = (    (    Blog,            (        BlogInformationSectionName,        name,        password    ),            (        CategoriesSectionName,        categories    ),            (        BlogPagesSectionName,        blogPages    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : ((pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') and session.currentUser.isSuperAdmin = 'true') => displayPropertyKeys = (    (    Blog,            (        BlogInformationSectionName,        client,        site,        name,        password    ),            (        CategoriesSectionName,        categories    ),            (        BlogPagesSectionName,        blogPages    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectPerson' => displayPropertyKeys = (    (    Person,            (        Name,        title,        academicTitle,        firstname,        lastname,        middlename    )),    (    WebsiteLoginTabName,            (        "Login Information",        login,        password    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'CreateEventsUser' or pageConfiguration = 'EditEventsUser') => displayPropertyKeys = (    (    UserInformationTab,            (        "Administrative  Information",        client,        active    ),            (        Name,        title,        academicTitle,        firstname,        lastname,        middlename,        email    ),            (        "Login Information",        login,        password,        usergroup    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectHtmlPage' => displayPropertyKeys = (    (    "HTML Page",            (        "Page Information",        pageName,        site,        pageWrapper,        orderNumber    ),            (        Content,        htmlContent    ),            (        "Administrative Information",        creationTime,        createdBy    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'InspectBlog' and session.currentUser.isSuperAdmin = 'true') => displayPropertyKeys = (    (    Blog,            (        BlogInformationSectionName,        client,        site,        name,        password    ),            (        CategoriesSectionName,        categories    ),            (        BlogPagesSectionName,        blogPages    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') => displayPropertyKeys = (    (    "Blog Entry",            (        TitleSubtitleSectionName,        blog,        title,        subtitle,        category    ),            (        ContentSectionName,        teaser,        content,        active,        allowDigging    ),            (        AdministrativeInformationSectionName,        "createdBy.firstnameLastname",        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectSite' => displayPropertyKeys = (    (    SiteMainTabName,            (        SiteInformationSectionName,        client,        name,        resourcePath,        defaultTitle    ),            (        Domains,        domains    )),    (    PagesTabName,            (        PageWrappers,        pageWrappers    ),            (        Pages,        pages    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectEventsUser' => displayPropertyKeys = (    (    UserInformationTab,            (        "Administrative  Information",        client,        active    ),            (        Name,        title,        academicTitle,        firstname,        lastname,        middlename,        email    ),            (        "Login Information",        login,        password,        usergroup    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectBlogEntry' => displayPropertyKeys = (    (    "Blog Entry",            (        TitleSubtitleSectionName,        blog,        title,        subtitle,        category,        entryUrl    ),            (        ContentSectionName,        teaser,        content,        active,        allowDigging    ),            (        AdministrativeInformationSectionName,        "createdBy.firstnameLastname",        creationTime    )),    (    Comments,            (        Comments,        comments    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    95 : (task = 'edit' and propertyKey = 'blog') => componentName = ERD2WEditToOneRelationship [com.webobjects.directtoweb.Assignment],
+    95 : ((pageConfiguration = 'CreateEventsUser' or pageConfiguration = 'EditEventsUser') and not (session.currentUser.isSuperAdmin = 1)) => displayPropertyKeys = (    (    UserInformationTab,            (        "Administrative Information",        active    ),            (        Name,        title,        academicTitle,        firstname,        lastname,        middlename,        email    ),            (        "Login Information",        login,        password,        usergroup    ))
+) [com.webobjects.directtoweb.Assignment],
+    95 : (pageConfiguration = 'InspectEventsUser' and not (session.currentUser.isSuperAdmin = 1)) => displayPropertyKeys = (    (    UserInformationTab,            (        "Administrative Information",        active    ),            (        Name,        title,        academicTitle,        firstname,        lastname,        middlename,        email    ),            (        "Login Information",        login,        password,        usergroup    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    100 : propertyKey = 'inheritanceType' => displayNameForProperty = Type [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'InspectEventsUser' => useMatrixLayout = true [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'ListEmbeddedEventsUser' => pageName = EVD2WListPage [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration like 'InspectEmbedded*' => pageName = EVD2WCompactInspectPage [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'ListClient' => defaultSortOrdering = (name,compareAscending
+) [com.webobjects.directtoweb.Assignment],
+    100 : (task = 'inspect' and tabKey = 'ModificationsTabName') => isEntityEditable = false [com.webobjects.directtoweb.Assignment],
+    100 : (entity.name = 'EventsUser' and task = 'edit' and propertyKey = 'password') => rowSpan = 2 [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'ListEmbeddedEventsUser' => displayPropertyKeys = (firstname,lastname
+) [com.webobjects.directtoweb.Assignment],
+    100 : (pageConfiguration = 'InspectBlogEntry' and propertyKey = 'comments') => componentName = ERDList [com.webobjects.directtoweb.Assignment],
+    100 : (task = 'edit' and smartAttribute.userInfo.prototypeName = 'flag') => componentName = D2WEditBoolean [com.webobjects.directtoweb.Assignment],
+    100 : (task = 'query' and smartAttribute.userInfo.prototypeName = 'flag') => componentName = EVD2WQueryBoolean [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'ListAbstractPage' => defaultSortOrdering = ("site.name",compareAscending,orderNumber,compareAscending
+) [com.webobjects.directtoweb.Assignment],
+    100 : ((task = 'inspect' or task = 'list') and smartAttribute.userInfo.prototypeName = 'flag') => componentName = D2WDisplayBoolean [com.webobjects.directtoweb.Assignment],
+    100 : (pageConfiguration = 'ListEventsUser' or pageConfiguration = 'ListPerson') => defaultSortOrdering = (lastname,compareAscending
+) [com.webobjects.directtoweb.Assignment],
+    100 : ((pageConfiguration = 'InspectBlog' or pageConfiguration = 'EditBlog') and propertyKey = 'categories') => componentName = ERDList [com.webobjects.directtoweb.Assignment],
+    100 : ((entity.name = 'EventsUser' and task = 'edit') and (propertyKey = 'usergroup' or propertyKey = 'client')) => toOneUIStyle = popup [com.webobjects.directtoweb.Assignment],
+    100 : (pageConfiguration = 'CreateEventsUser' or pageConfiguration = 'InspectEventsUser' or pageConfiguration = 'EditEventsUser') => useMatrixLayout = true [com.webobjects.directtoweb.Assignment],
+    100 : ((pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') and propertyKey = 'blog') => restrictedChoiceKey = session.currentClient.blogs [com.webobjects.directtoweb.Assignment],
+    100 : (pageConfiguration = 'InspectStudyParticipant' and (tabKey = 'ActionTriggersTabName' or tabKey = 'DataSetsTabName' or tabKey = 'AdverseEventsTabName')) => isEntityEditable = false [com.webobjects.directtoweb.Assignment],
+    100 : (task = 'list' and not (entity.name = 'Usergroup') and not (entity.name = 'Client') and not (entity.name like 'ABDA*') and not (entity.name = 'Country')) => restrictingObjectKey = client [com.webobjects.directtoweb.Assignment],
+    100 : (((pageConfiguration = 'ListEventsUser' and propertyKey = 'lastname') or (pageConfiguration = 'ListCountry' and propertyKey = 'name')) or (pageConfiguration = 'ListPerson' and propertyKey = 'lastname')) => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'EditMedicalDataSetEntry' => displayPropertyKeys = (    (    MedicalDataSetEntryTabName,            (        PersonalInformationSectionName,        "person.firstnameLastname",        "person.participantId",        date,        creationTime,        valid,        hasQuery    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'InspectMedicalDataSetEntry' => displayPropertyKeys = (    (    MedicalDataSetEntryTabName,            (        PersonalInformationSectionName,        "person.firstnameLastname",        "person.participantId",        date,        creationTime,        valid,        hasQuery,        averageOverSectionSelectionScores    ),            (        ValuesSectionName,        values    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    110 : (task = 'list' and not (entity.name = 'Usergroup') and not (entity.name = 'Client') and not (entity.name like 'ABDA*') and not (entity.name = 'Country')) => restrictingObject = session.currentClient [com.webobjects.directtoweb.Assignment]
+)

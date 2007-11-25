@@ -27,15 +27,15 @@
 		},
 		{
 			allowsNull = N;
-			columnName = domain;
-			name = domain;
+			columnName = name;
+			name = name;
 			prototypeName = string256;
 		},
 		{
 			allowsNull = N;
-			columnName = name;
-			name = name;
-			prototypeName = string256;
+			columnName = site_id;
+			name = siteId;
+			prototypeName = key;
 		}
 	);
 	className = net.events.cms.eo.City;
@@ -43,8 +43,8 @@
 		client,
 		createdBy,
 		creationTime,
-		domain,
-		name
+		name,
+		site
 	);
 	externalName = cities;
 	internalInfo = {};
@@ -89,6 +89,18 @@
 				}
 			);
 			name = events;
+		},
+		{
+			destination = Site;
+			isMandatory = Y;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = siteId;
+					sourceAttribute = siteId;
+				}
+			);
+			name = site;
 		}
 	);
 }

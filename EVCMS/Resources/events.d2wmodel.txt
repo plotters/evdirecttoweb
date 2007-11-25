@@ -1,4 +1,0 @@
-(
-    80 : (pageConfiguration = 'InspectCity' or pageConfiguration = 'EditCity' or pageConfiguration = 'CreateCity') => displayPropertyKeys = (name,domain
-) [com.webobjects.directtoweb.Assignment]
-)

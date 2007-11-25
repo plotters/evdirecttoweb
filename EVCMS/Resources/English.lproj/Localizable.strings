@@ -110,6 +110,8 @@
 	"Search Users" = "Search Users";
 	"SectionDescriptionSectionName" = "Section Description";
 	"SeriousnessSectionName" = "Seriousness";
+	"SessionTimeOutPage.GO_TO_LOGIN" = "Go to start page";
+	"SessionTimeOutPage.YOUR_SESSION_TIMED_OUT" = "<b>We are sorry, but your session timed out.</b><br /><br />You waited too long (longer than one hour) between two actions or your session id was not recognized from the request. Please log in again.<br /><br />";
 	"SeverityGradesSectionName" = "Severity Grades";
 	"Show Blog Entries" = "Show Blog Entries";
 	"Show Blogs" = "Show Blogs";
