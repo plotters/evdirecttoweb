@@ -57,6 +57,15 @@ public class EVCMSPage extends EVPage {
 	public AbstractPage page() {
 		return page;
 	}
+	
+	/**
+	 * Return a default page title
+	 * 
+	 * @return
+	 */
+	public String pageTitle() {
+		return this.page().site().name() + " - " + this.page().pageName();
+	}
 
 	/**
 	 * @param page the page to set

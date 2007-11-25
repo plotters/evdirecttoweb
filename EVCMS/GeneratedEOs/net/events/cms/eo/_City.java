@@ -19,8 +19,9 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
 	
 	// KeyValueCoding support
 	
+    public static final String SITEID = "siteId";
+    public static final String SITE = "site";
     public static final String NAME = "name";
-    public static final String DOMAIN = "domain";
     public static final String CREATIONTIME = "creationTime";
     public static final String CREATEDBY = "createdBy";
     public static final String CLIENT = "client";
@@ -64,14 +65,15 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
 	/**
 	 * Create a "City" object with all required values
 	 */
-	public static City createCity(EOEditingContext editingContext, NSTimestamp creationTime, String domain, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy) {
+	public static City createCity(EOEditingContext editingContext, NSTimestamp creationTime, String name, Number siteId, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy, net.events.cms.eo.Site site) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: City");
 		City eoObject = (City)EOUtilities.createAndInsertInstance(editingContext, _City.ENTITY_NAME);
 		eoObject.setCreationTime(creationTime);
-		eoObject.setDomain(domain);
 		eoObject.setName(name);
+		eoObject.setSiteId(siteId);
 		eoObject.setClient(client);
 		eoObject.setCreatedBy(createdBy);
+		eoObject.setSite(site);
 		return eoObject;
 	}
  
@@ -194,21 +196,6 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
     }
 
 	/**
-	 * The value for "domain"
-	 */
-    public String domain() {
-        return (String) storedValueForKey("domain");
-    }
-
-	/**
-	 * Set the value for "domain"
-	 */
-    public void setDomain(String aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating domain from "+domain()+" to "+aValue );
-        takeStoredValueForKey(aValue, "domain");
-    }
-
-	/**
 	 * The value for "name"
 	 */
     public String name() {
@@ -221,6 +208,21 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
     public void setName(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating name from "+name()+" to "+aValue );
         takeStoredValueForKey(aValue, "name");
+    }
+
+	/**
+	 * The value for "siteId"
+	 */
+    public Number siteId() {
+        return (Number) storedValueForKey("siteId");
+    }
+
+	/**
+	 * Set the value for "siteId"
+	 */
+    public void setSiteId(Number aValue) {
+        if( log.isDebugEnabled() ) log.debug( "updating siteId from "+siteId()+" to "+aValue );
+        takeStoredValueForKey(aValue, "siteId");
     }
 
     public net.events.cms.eo.Client client() {
@@ -237,5 +239,13 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
 
     public void setCreatedBy(net.events.cms.eo.EventsUser aValue) {
         takeStoredValueForKey(aValue, "createdBy");
+    }
+
+    public net.events.cms.eo.Site site() {
+        return (net.events.cms.eo.Site)storedValueForKey("site");
+    }
+
+    public void setSite(net.events.cms.eo.Site aValue) {
+        takeStoredValueForKey(aValue, "site");
     }
 }
