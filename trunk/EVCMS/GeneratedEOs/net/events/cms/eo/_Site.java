@@ -29,6 +29,7 @@ public abstract class _Site extends net.events.cms.eo.EVCMSGenericRecord {
     public static final String DOMAINS = "domains";
     public static final String DEFAULTTITLE = "defaultTitle";
     public static final String CLIENT = "client";
+    public static final String CITIES = "cities";
     
     /**
      * For KeyValueCoding support
@@ -240,6 +241,63 @@ public abstract class _Site extends net.events.cms.eo.EVCMSGenericRecord {
 
     public void setStartpage(net.events.cms.eo.AbstractPage aValue) {
         takeStoredValueForKey(aValue, "startpage");
+    }
+
+	/**
+	 * Returns the objects for the relationship "cities"
+	 */
+    public NSArray cities() {
+        return (NSArray)storedValueForKey("cities");
+    }
+
+    public void setCities(NSArray aValue) {
+    	if( log.isDebugEnabled() ) log.debug( "updating cities from "+cities()+" to "+aValue );
+        takeStoredValueForKey(aValue, "cities");
+    }
+
+    public void addToCities(net.events.cms.eo.City object) {
+        if( log.isDebugEnabled() ) log.debug( "adding "+object+" to cities" );
+	    includeObjectIntoPropertyWithKey(object, "cities");
+    }
+    
+
+    public void removeFromCities(net.events.cms.eo.City object) {
+        if( log.isDebugEnabled() ) log.debug( "removing "+object+" from cities" );
+	    excludeObjectFromPropertyWithKey(object, "cities");
+    }
+	
+    
+    /** 
+     * creates a new object "net.events.cms.eo.City" and add it
+     * to the relationship "cities"
+     */
+    public net.events.cms.eo.City createObjectAndAddToCities() {
+    	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: cities");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("City");
+	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+	    editingContext().insertObject(eoObject);
+	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "cities");
+	    return (net.events.cms.eo.City) eoObject;
+    }
+    
+    /**
+     * Removes object from the relationship "cities" and delete object
+     */
+    public void removeFromCitiesAndDelete(net.events.cms.eo.City object) {
+    	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: cities");
+        removeObjectFromBothSidesOfRelationshipWithKey(object, "cities");
+        editingContext().deleteObject(object);
+    }
+    
+    /**
+     * Delete all objects found in the relationship "cities", be careful, this method
+     * DELETES it does not only a remove!
+     */
+    public void deleteAllCities() {
+    	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: cities");
+	    Enumeration objects = cities().objectEnumerator();
+	    while ( objects.hasMoreElements() )
+	        removeFromCitiesAndDelete((net.events.cms.eo.City)objects.nextElement());
     }
 
 	/**

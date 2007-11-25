@@ -39,6 +39,14 @@ public class DataSetSection extends _DataSetSection {
     	if (log.isDebugEnabled()) log.debug ("Created an object of class DataSetSection and inserted it into an editingContext");
         ec.insertObject( this );
     }
+    
+	public String dataSetPlusSectionNameForSorting () {
+		StringBuffer sb = new StringBuffer();
+		sb.append(this.dataSetTemplate().name() + " - ");
+		sb.append(this.sectionName());
+		return sb.toString();
+	}
+
  
 
 }
