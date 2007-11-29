@@ -39,6 +39,14 @@ public class BlogComment extends _BlogComment {
     }
  
 
+    /**
+     * Validates the e-mail with regular expression
+     * 
+     * FIXME cug: move this to a "ValidationUtilities" class or so
+     * 
+     * @param value
+     * @return
+     */
     public Object validateEmail (Object value) {
     	if (value != null && value instanceof String) {
     		String v = (String) value;
@@ -48,4 +56,25 @@ public class BlogComment extends _BlogComment {
     	}
     	throw new NSValidation.ValidationException ("BlogComment.INVALID_EMAIL");
     }
+
+	/**
+	 * Checks whether this comment is a duplicate for the given entry. Right now, this is done with simple
+	 * string comparison, which is pretty inefficient but should be good enough for now as I'm not expecting 
+	 * hundreds of comments. If this gets too slow, the idea is to create checksum for each comment on save
+	 * and do a database query to find entries with the same checksum. But right now this is not necessary.
+	 * 
+	 * @param entry
+	 * @param comment
+	 * @return
+	 */
+	public static boolean isDuplicate(BlogEntry entry, String comment) {
+		
+		for (BlogComment existingComment : (NSArray<BlogComment>)entry.comments()) {
+			if (existingComment.comment().equals(comment)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
