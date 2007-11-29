@@ -71,11 +71,14 @@ public class EVBlogDetailPage extends EVCMSPage {
     	this.setComment(this.context().request().stringFormValueForKey("comment"));
     	
     	if (this.senderName() != null && this.email() != null && this.comment() != null) {
-    		this.blogComment = BlogComment.createBlogComment(this.blogEntry().editingContext(), this.comment(), new NSTimestamp(), this.email(), this.senderName(), this.blogEntry(), null);
-    		this.blogComment.addObjectToBothSidesOfRelationshipWithKey(this.blogEntry().client(), BlogComment.CLIENT);
     		try {
-    			this.blogComment.editingContext().saveChanges();
-    			EVMailManager.sendNotificationMailForBlogCommentInRequest(this.blogComment, this.context().request());
+    			if (!BlogComment.isDuplicate(this.blogEntry(), this.comment())) {
+    				this.blogComment = BlogComment.createBlogComment(this.blogEntry().editingContext(), this.comment(), new NSTimestamp(), this.email(), this.senderName(), this.blogEntry(), null);
+    				this.blogComment.addObjectToBothSidesOfRelationshipWithKey(this.blogEntry().client(), BlogComment.CLIENT);
+    				// save only if the comment is not a duplicate
+    				this.blogComment.editingContext().saveChanges();
+    				EVMailManager.sendNotificationMailForBlogCommentInRequest(this.blogComment, this.context().request());
+    			}
     			this.cleanInput();
     		}
     		catch (Exception e) {
@@ -92,6 +95,7 @@ public class EVBlogDetailPage extends EVCMSPage {
 		this.setEmail(null);
 		this.setComment(null);
 		this.blogComment = null;
+		this.editingContext.revert();
 	}
 
 	/**
