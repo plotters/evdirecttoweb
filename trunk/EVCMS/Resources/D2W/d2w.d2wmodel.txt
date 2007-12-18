@@ -195,11 +195,11 @@
     90 : ((pageConfiguration = 'QueryEventsUser' and (propertyKey = 'firstname' or propertyKey = 'lastname' or propertyKey = 'login')) or pageConfiguration = 'QueryContact') => length = 20 [com.webobjects.directtoweb.Assignment],
     90 : ((pageConfiguration = 'CreateStudyParticipant' or pageConfiguration = 'EditStudyParticipant' or pageConfiguration = 'InspectStudyParticipant') and propertyKey = 'dateOfBirth') => formatter = %Y-%m-%d [com.webobjects.directtoweb.Assignment],
     90 : ((pageConfiguration = 'CreateBlogEntry' or pageConfiguration = 'EditBlogEntry') and (propertyKey = 'subtitle' or propertyKey = 'title' or propertyKey = 'teaser' or propertyKey = 'content')) => length = 80 [com.webobjects.directtoweb.Assignment],
-    90 : (pageConfiguration = 'EditUsergroup' or pageConfiguration = 'CreateUsergroup') => displayPropertyKeys = (    (    Usergroup,            (        "Usergroup Information",        name,        privilege    ))
-) [com.webobjects.directtoweb.Assignment],
     90 : pageConfiguration = 'CreateSite' => displayPropertyKeys = (    (    SiteMainTabName,            (        SiteInformationSectionName,        client,        name,        resourcePath,        defaultTitle    ))
 ) [com.webobjects.directtoweb.Assignment],
     90 : ((pageConfiguration = 'InspectBlogEntry' and propertyKey = 'content') or (pageConfiguration = 'InspectDataSetTextItem' and propertyKey = 'predefinedValues')) => componentName = ERD2WDisplayStringWithLineBreaks [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'EditUsergroup' or pageConfiguration = 'CreateUsergroup') => displayPropertyKeys = (    (    Usergroup,            (        "Usergroup Information",        name,        area,        privilege    ))
+) [com.webobjects.directtoweb.Assignment],
     90 : (pageConfiguration = 'InspectClinicalTrial' and (propertyKey = 'causalityAssessments' or propertyKey = 'severityGrades' or propertyKey = 'adverseEventOutcomes' or propertyKey = 'seriousnesses')) => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
     90 : ((entity.name = 'BlogEntry' and (task = 'edit' or task = 'inspect') and sectionKey = 'AdministrativeInformationSectionName') or (entity.name = 'TrialSurvey' and (task = 'inspect' or task = 'edit'))) => useMatrixLayout = false [com.webobjects.directtoweb.Assignment],
     90 : (pageConfiguration = 'CreateBlog' or pageConfiguration = 'EditBlog') => displayPropertyKeys = (    (    Blog,            (        BlogInformationSectionName,        name,        password    ),            (        BlogPagesSectionName,        blogPages    ))
@@ -211,9 +211,9 @@
     90 : (task = 'edit' and (propertyKey = 'resourcePath' or propertyKey = 'subtitle' or propertyKey = 'defaultTitle' or propertyKey = 'url' or propertyKey = 'pageName' or propertyKey = 'adminStylesheet' or propertyKey = 'protocolNumber' or propertyKey = 'causality' or propertyKey = 'outcome')) => componentName = ERD2WEditString [com.webobjects.directtoweb.Assignment],
     90 : (pageConfiguration = 'CreatePerson' or pageConfiguration = 'EditPerson') => displayPropertyKeys = (    (    Person,            (        Name,        title,        academicTitle,        firstname,        lastname,        middlename    )),    (    WebsiteLoginTabName,            (        "Login Information",        login,        password    ))
 ) [com.webobjects.directtoweb.Assignment],
-    90 : pageConfiguration = 'InspectUsergroup' => displayPropertyKeys = (    (    Usergroup,            (        "Usergroup Information",        name,        privilege    )),    (    "Users in this Group",            (        Users,        users    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
-) [com.webobjects.directtoweb.Assignment],
     90 : pageConfiguration = 'InspectPageWrapperEO' => displayPropertyKeys = (    (    PageWrapper,            (        WrapperInformation,        name,        defaultTitle,        site    ),            (        Template,        componentTemplate    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'InspectUsergroup' => displayPropertyKeys = (    (    Usergroup,            (        "Usergroup Information",        name,        area,        privilege    )),    (    "Users in this Group",            (        Users,        users    )),    (    ModificationsTabName,            (        ModificationsSectionName,        modifications    ))
 ) [com.webobjects.directtoweb.Assignment],
     90 : pageConfiguration = 'EditSite' => displayPropertyKeys = (    (    SiteMainTabName,            (        SiteInformationSectionName,        client,        name,        resourcePath,        defaultTitle    ),            (        Domains,        domains    )),    (    PagesTabName,            (        PageWrappers,        pageWrappers    ),            (        Pages,        pages    ))
 ) [com.webobjects.directtoweb.Assignment],
