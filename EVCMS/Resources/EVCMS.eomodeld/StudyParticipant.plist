@@ -1,369 +1,255 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			columnName = academic_title;
-			name = academicTitle;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = clinical_trial_id;
-			name = clinicalTrialId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = Y;
-			columnName = company_id;
-			name = companyId;
-			prototypeName = key;
-		},
-		{
-			columnName = company_name;
-			name = companyName;
-			prototypeName = string256;
-		},
-		{
-			columnName = company_name2;
-			name = companyName2;
-			prototypeName = string256;
-		},
-		{
-			columnName = contact_id;
-			name = contactId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = Y;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			columnName = date_of_birth;
-			name = dateOfBirth;
-			prototypeName = date;
-		},
-		{
-			allowsNull = N;
-			columnName = deleted;
-			name = deleted;
-			prototypeName = flag;
-		},
-		{
-			columnName = email;
-			name = email;
-			prototypeName = string256;
-		},
-		{
-			columnName = ethnic_group;
-			name = ethnicGroup;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = firstname;
-			name = firstname;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = gender_id;
-			name = genderId;
-			prototypeName = key;
-		},
-		{
-			columnName = height;
-			name = height;
-			prototypeName = integer;
-		},
-		{
-			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = lastname;
-			name = lastname;
-			prototypeName = string256;
-		},
-		{
-			columnName = login;
-			name = login;
-			prototypeName = string256;
-		},
-		{
-			columnName = middlename;
-			name = middlename;
-			prototypeName = string256;
-		},
-		{
-			columnName = other_ethnic_group;
-			name = otherEthnicGroup;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = participant_id;
-			name = participantId;
-			prototypeName = string32;
-		},
-		{
-			columnName = password;
-			name = password;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = password_attempts;
-			name = passwordAttempts;
-			prototypeName = integer;
-		},
-		{
-			columnName = randomized;
-			name = randomized;
-			prototypeName = flag;
-		},
-		{
-			columnName = status;
-			name = status;
-			prototypeName = string32;
-		},
-		{
-			columnName = title;
-			name = title;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = Y;
-			columnName = usergroup_id;
-			name = usergroupId;
-			prototypeName = key;
-		},
-		{
-			columnName = weight;
-			name = weight;
-			prototypeName = decimal3;
-		}
-	);
-	className = net.events.cms.eo.StudyParticipant;
-	classProperties = (
-		academicTitle,
-		addresses,
-		adverseEvents,
-		client,
-		clinicalTrial,
-		company,
-		companyName,
-		companyName2,
-		createdBy,
-		creationTime,
-		dataSetItemActionTriggers,
-		dateOfBirth,
-		deleted,
-		email,
-		ethnicGroup,
-		firstname,
-		gender,
-		height,
-		inheritanceType,
-		lastname,
-		login,
-		medicalDataSetEntries,
-		middlename,
-		notes,
-		otherEthnicGroup,
-		participantId,
-		password,
-		passwordAttempts,
-		randomized,
-		status,
-		title,
-		usergroup,
-		weight
-	);
-	externalName = contacts;
-	internalInfo = {
-		_clientClassPropertyNames = (
-			academicTitle,
-			addresses,
-			client,
-			company,
-			creationTime,
-			dateOfBirth,
-			deleted,
-			firstname,
-			inheritanceType,
-			lastname,
-			middlename,
-			notes,
-			password,
-			passwordAttempts,
-			title,
-			usergroup
-		);
-	};
-	name = StudyParticipant;
-	parent = Person;
-	primaryKeyAttributes = (
-		contactId
-	);
-	relationships = (
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = Address;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = contactId;
-				}
-			);
-			name = addresses;
-		},
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = AdverseEvent;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = participantId;
-					sourceAttribute = contactId;
-				}
-			);
-			name = adverseEvents;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
-			destination = Client;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = ClinicalTrial;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clinicalTrialId;
-					sourceAttribute = clinicalTrialId;
-				}
-			);
-			name = clinicalTrial;
-		},
-		{
-			destination = Company;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = companyId;
-				}
-			);
-			name = company;
-		},
-		{
-			destination = Person;
-			isMandatory = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		},
-		{
-			destination = DataSetItemActionTrigger;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = personId;
-					sourceAttribute = contactId;
-				}
-			);
-			name = dataSetItemActionTriggers;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
-			destination = Gender;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = genderId;
-					sourceAttribute = genderId;
-				}
-			);
-			name = gender;
-		},
-		{
-			destination = DataSetEntry;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = personId;
-					sourceAttribute = contactId;
-				}
-			);
-			name = medicalDataSetEntries;
-			numberOfToManyFaultsToBatchFetch = 20;
-		},
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = ContactNote;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = contactId;
-				}
-			);
-			name = notes;
-		},
-		{
-			destination = Usergroup;
-			isMandatory = N;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = usergroupId;
-					sourceAttribute = usergroupId;
-				}
-			);
-			name = usergroup;
-		}
-	);
-	restrictingQualifier = "inheritanceType = 'StudyParticipant'";
+    attributes = (
+        {
+            columnName = "academic_title"; 
+            name = academicTitle; 
+            prototypeName = string256; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "clinical_trial_id"; 
+            name = clinicalTrialId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "company_id"; 
+            name = companyId; 
+            prototypeName = key; 
+        }, 
+        {columnName = "company_name"; name = companyName; prototypeName = string256; }, 
+        {
+            columnName = "company_name2"; 
+            name = companyName2; 
+            prototypeName = string256; 
+        }, 
+        {columnName = "contact_id"; name = contactId; prototypeName = key; }, 
+        {
+            allowsNull = Y; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = datetime; 
+        }, 
+        {columnName = "date_of_birth"; name = dateOfBirth; prototypeName = date; }, 
+        {allowsNull = N; columnName = deleted; name = deleted; prototypeName = flag; }, 
+        {columnName = email; name = email; prototypeName = string256; }, 
+        {columnName = "ethnic_group"; name = ethnicGroup; prototypeName = string256; }, 
+        {
+            allowsNull = N; 
+            columnName = firstname; 
+            name = firstname; 
+            prototypeName = string256; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "gender_id"; 
+            name = genderId; 
+            prototypeName = key; 
+        }, 
+        {columnName = height; name = height; prototypeName = integer; }, 
+        {
+            allowsNull = N; 
+            columnName = "inheritance_type"; 
+            name = inheritanceType; 
+            prototypeName = string256; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = lastname; 
+            name = lastname; 
+            prototypeName = string256; 
+        }, 
+        {columnName = login; name = login; prototypeName = string256; }, 
+        {columnName = middlename; name = middlename; prototypeName = string256; }, 
+        {
+            columnName = "other_ethnic_group"; 
+            name = otherEthnicGroup; 
+            prototypeName = string256; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "participant_id"; 
+            name = participantId; 
+            prototypeName = string32; 
+        }, 
+        {columnName = password; name = password; prototypeName = string256; }, 
+        {
+            allowsNull = N; 
+            columnName = "password_attempts"; 
+            name = passwordAttempts; 
+            prototypeName = integer; 
+        }, 
+        {columnName = randomized; name = randomized; prototypeName = flag; }, 
+        {columnName = status; name = status; prototypeName = string32; }, 
+        {columnName = title; name = title; prototypeName = string256; }, 
+        {
+            allowsNull = Y; 
+            columnName = "usergroup_id"; 
+            name = usergroupId; 
+            prototypeName = key; 
+        }, 
+        {columnName = weight; name = weight; prototypeName = decimal3; }
+    ); 
+    className = "net.events.cms.eo.StudyParticipant"; 
+    classProperties = (
+        academicTitle, 
+        addresses, 
+        adverseEvents, 
+        client, 
+        clinicalTrial, 
+        company, 
+        companyName, 
+        companyName2, 
+        createdBy, 
+        creationTime, 
+        dataSetItemActionTriggers, 
+        dateOfBirth, 
+        deleted, 
+        email, 
+        ethnicGroup, 
+        firstname, 
+        gender, 
+        height, 
+        inheritanceType, 
+        lastname, 
+        login, 
+        medicalDataSetEntries, 
+        middlename, 
+        notes, 
+        otherEthnicGroup, 
+        participantId, 
+        password, 
+        passwordAttempts, 
+        randomized, 
+        status, 
+        title, 
+        usergroup, 
+        weight
+    ); 
+    externalName = contacts; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            academicTitle, 
+            addresses, 
+            client, 
+            company, 
+            creationTime, 
+            dateOfBirth, 
+            deleted, 
+            firstname, 
+            inheritanceType, 
+            lastname, 
+            middlename, 
+            notes, 
+            password, 
+            passwordAttempts, 
+            title, 
+            usergroup
+        ); 
+    }; 
+    name = StudyParticipant; 
+    parent = Person; 
+    primaryKeyAttributes = (contactId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Address; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = contactId; }); 
+            name = addresses; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = AdverseEvent; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = participantId; sourceAttribute = contactId; }); 
+            name = adverseEvents; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = ClinicalTrial; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clinicalTrialId; sourceAttribute = clinicalTrialId; }); 
+            name = clinicalTrial; 
+        }, 
+        {
+            destination = Company; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = companyId; }); 
+            name = company; 
+        }, 
+        {
+            destination = Person; 
+            isMandatory = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }, 
+        {
+            destination = DataSetItemActionTrigger; 
+            isMandatory = N; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personId; sourceAttribute = contactId; }); 
+            name = dataSetItemActionTriggers; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = Gender; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = genderId; sourceAttribute = genderId; }); 
+            name = gender; 
+        }, 
+        {
+            destination = DataSetEntry; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personId; sourceAttribute = contactId; }); 
+            name = medicalDataSetEntries; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ContactNote; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = contactId; }); 
+            name = notes; 
+        }, 
+        {
+            destination = Usergroup; 
+            isMandatory = N; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = usergroupId; sourceAttribute = usergroupId; }); 
+            name = usergroup; 
+        }
+    ); 
+    restrictingQualifier = "inheritanceType = 'StudyParticipant'"; 
 }

@@ -1,40 +1,26 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			columnName = favicon_id;
-			name = faviconId;
-			prototypeName = key;
-		}
-	);
-	className = net.events.cms.eo.Favicon;
-	classProperties = (
-		client
-	);
-	externalName = favicons;
-	internalInfo = {};
-	name = Favicon;
-	primaryKeyAttributes = (
-		faviconId
-	);
-	relationships = (
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		}
-	);
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {columnName = "favicon_id"; name = faviconId; prototypeName = key; }
+    ); 
+    className = "net.events.cms.eo.Favicon"; 
+    classProperties = (client); 
+    externalName = favicons; 
+    fetchSpecificationDictionary = {}; 
+    name = Favicon; 
+    primaryKeyAttributes = (faviconId); 
+    relationships = (
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }
+    ); 
 }

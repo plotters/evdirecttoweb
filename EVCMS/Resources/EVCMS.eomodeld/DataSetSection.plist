@@ -1,158 +1,121 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			columnName = calculate_averages;
-			name = calculateAverages;
-			prototypeName = flag;
-		},
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			allowsNull = N;
-			columnName = data_set_section_id;
-			name = dataSetSectionId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = data_set_template_id;
-			name = dataSetTemplateId;
-			prototypeName = key;
-		},
-		{
-			columnName = enumerate_questions;
-			name = enumerateQuestions;
-			prototypeName = flag;
-		},
-		{
-			columnName = order_number;
-			name = orderNumber;
-			prototypeName = integer;
-		},
-		{
-			allowsNull = Y;
-			columnName = page_id;
-			name = pageId;
-			prototypeName = key;
-		},
-		{
-			columnName = section_bottom_text;
-			name = sectionBottomText;
-			prototypeName = string4k;
-		},
-		{
-			allowsNull = N;
-			columnName = section_name;
-			name = sectionName;
-			prototypeName = string256;
-		},
-		{
-			columnName = section_top_text;
-			name = sectionTopText;
-			prototypeName = string4k;
-		}
-	);
-	className = net.events.cms.eo.DataSetSection;
-	classProperties = (
-		calculateAverages,
-		client,
-		createdBy,
-		creationTime,
-		dataSetItems,
-		dataSetTemplate,
-		enumerateQuestions,
-		orderNumber,
-		page,
-		sectionBottomText,
-		sectionName,
-		sectionTopText
-	);
-	externalName = data_set_sections;
-	internalInfo = {};
-	maxNumberOfInstancesToBatchFetch = 10;
-	name = DataSetSection;
-	primaryKeyAttributes = (
-		dataSetSectionId
-	);
-	relationships = (
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = EventsUser;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		},
-		{
-			deleteRule = EODeleteRuleDeny;
-			destination = DataSetItem;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = sectionId;
-					sourceAttribute = dataSetSectionId;
-				}
-			);
-			name = dataSetItems;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
-			destination = DataSetTemplate;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = dataSetId;
-					sourceAttribute = dataSetTemplateId;
-				}
-			);
-			name = dataSetTemplate;
-		},
-		{
-			destination = DataSetPage;
-			isMandatory = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = pageId;
-					sourceAttribute = pageId;
-				}
-			);
-			name = page;
-		}
-	);
+    attributes = (
+        {
+            columnName = "calculate_averages"; 
+            name = calculateAverages; 
+            prototypeName = flag; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = datetime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "data_set_section_id"; 
+            name = dataSetSectionId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "data_set_template_id"; 
+            name = dataSetTemplateId; 
+            prototypeName = key; 
+        }, 
+        {
+            columnName = "enumerate_questions"; 
+            name = enumerateQuestions; 
+            prototypeName = flag; 
+        }, 
+        {columnName = "order_number"; name = orderNumber; prototypeName = integer; }, 
+        {allowsNull = Y; columnName = "page_id"; name = pageId; prototypeName = key; }, 
+        {
+            columnName = "section_bottom_text"; 
+            name = sectionBottomText; 
+            prototypeName = string4k; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "section_name"; 
+            name = sectionName; 
+            prototypeName = string256; 
+        }, 
+        {
+            columnName = "section_top_text"; 
+            name = sectionTopText; 
+            prototypeName = string4k; 
+        }
+    ); 
+    className = "net.events.cms.eo.DataSetSection"; 
+    classProperties = (
+        calculateAverages, 
+        client, 
+        createdBy, 
+        creationTime, 
+        dataSetItems, 
+        dataSetTemplate, 
+        enumerateQuestions, 
+        orderNumber, 
+        page, 
+        sectionBottomText, 
+        sectionName, 
+        sectionTopText
+    ); 
+    externalName = "data_set_sections"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 10; 
+    name = DataSetSection; 
+    primaryKeyAttributes = (dataSetSectionId); 
+    relationships = (
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = EventsUser; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = DataSetItem; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionId; sourceAttribute = dataSetSectionId; }); 
+            name = dataSetItems; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = DataSetTemplate; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dataSetId; sourceAttribute = dataSetTemplateId; }); 
+            name = dataSetTemplate; 
+        }, 
+        {
+            destination = DataSetPage; 
+            isMandatory = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pageId; sourceAttribute = pageId; }); 
+            name = page; 
+        }
+    ); 
 }

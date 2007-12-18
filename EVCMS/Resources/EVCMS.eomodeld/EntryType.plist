@@ -1,0 +1,17 @@
+{
+    attributes = (
+        {columnName = "entry_type_id"; name = entryTypeId; prototypeName = key; allowsNull = N;}, 
+        {columnName = name; name = name; prototypeName = string32; allowsNull = N;}, 
+        {
+            columnName = "short_description"; 
+            name = typeDescription; 
+            prototypeName = string4k; 
+        }
+    ); 
+    className = "net.events.cms.eo.EntryType"; 
+    classProperties = (name, typeDescription); 
+    externalName = "entry_types"; 
+    fetchSpecificationDictionary = {}; 
+    name = EntryType; 
+    primaryKeyAttributes = (entryTypeId); 
+}

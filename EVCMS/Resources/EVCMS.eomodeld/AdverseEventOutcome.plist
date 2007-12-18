@@ -1,99 +1,70 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = clinical_trial_id;
-			name = clinicalTrialId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			allowsNull = N;
-			name = id;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = order_number;
-			name = orderNumber;
-			prototypeName = integer;
-		},
-		{
-			allowsNull = N;
-			columnName = outcome;
-			name = outcome;
-			prototypeName = string256;
-		}
-	);
-	className = net.events.cms.eo.AdverseEventOutcome;
-	classProperties = (
-		client,
-		clinicalTrial,
-		createdBy,
-		creationTime,
-		orderNumber,
-		outcome
-	);
-	externalName = adverse_event_outcomes;
-	internalInfo = {};
-	name = AdverseEventOutcome;
-	primaryKeyAttributes = (
-		id
-	);
-	relationships = (
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = ClinicalTrial;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clinicalTrialId;
-					sourceAttribute = clinicalTrialId;
-				}
-			);
-			name = clinicalTrial;
-		},
-		{
-			destination = Person;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		}
-	);
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "clinical_trial_id"; 
+            name = clinicalTrialId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = datetime; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = key; }, 
+        {
+            allowsNull = N; 
+            columnName = "order_number"; 
+            name = orderNumber; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = outcome; 
+            name = outcome; 
+            prototypeName = string256; 
+        }
+    ); 
+    className = "net.events.cms.eo.AdverseEventOutcome"; 
+    classProperties = (client, clinicalTrial, createdBy, creationTime, orderNumber, outcome); 
+    externalName = "adverse_event_outcomes"; 
+    fetchSpecificationDictionary = {}; 
+    name = AdverseEventOutcome; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = ClinicalTrial; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clinicalTrialId; sourceAttribute = clinicalTrialId; }); 
+            name = clinicalTrial; 
+        }, 
+        {
+            destination = Person; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }
+    ); 
 }

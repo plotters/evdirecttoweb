@@ -1,158 +1,95 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			columnName = active;
-			name = active;
-			prototypeName = flag;
-		},
-		{
-			columnName = blog_id;
-			name = blogId;
-			prototypeName = key;
-		},
-		{
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = Y;
-			columnName = default_language_id;
-			name = defaultLanguageId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = name;
-			name = name;
-			prototypeName = string256;
-		},
-		{
-			columnName = password;
-			name = password;
-			prototypeName = string256;
-		},
-		{
-			columnName = site_id;
-			name = siteId;
-			prototypeName = key;
-		}
-	);
-	className = net.events.cms.eo.Blog;
-	classProperties = (
-		active,
-		blogPages,
-		categories,
-		client,
-		defaultLanguage,
-		editors,
-		entries,
-		name,
-		password,
-		site
-	);
-	externalName = blogs;
-	internalInfo = {};
-	name = Blog;
-	primaryKeyAttributes = (
-		blogId
-	);
-	relationships = (
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = BlogPage;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = blogId;
-					sourceAttribute = blogId;
-				}
-			);
-			name = blogPages;
-			numberOfToManyFaultsToBatchFetch = 5;
-		},
-		{
-			destination = BlogEntryCategory;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = blogId;
-					sourceAttribute = blogId;
-				}
-			);
-			name = categories;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = Language;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = languageId;
-					sourceAttribute = defaultLanguageId;
-				}
-			);
-			name = defaultLanguage;
-		},
-		{
-			definition = xEditorlogs.eventsUser;
-			name = editors;
-			numberOfToManyFaultsToBatchFetch = 5;
-		},
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = BlogEntry;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = blogId;
-					sourceAttribute = blogId;
-				}
-			);
-			name = entries;
-			numberOfToManyFaultsToBatchFetch = 50;
-		},
-		{
-			destination = Site;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = siteId;
-					sourceAttribute = siteId;
-				}
-			);
-			name = site;
-		},
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = XEditorBlog;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = blogId;
-					sourceAttribute = blogId;
-				}
-			);
-			name = xEditorlogs;
-			propagatesPrimaryKey = Y;
-		}
-	);
+    attributes = (
+        {columnName = active; name = active; prototypeName = flag; }, 
+        {columnName = "blog_id"; name = blogId; prototypeName = key; }, 
+        {columnName = "client_id"; name = clientId; prototypeName = key; }, 
+        {
+            allowsNull = Y; 
+            columnName = "default_language_id"; 
+            name = defaultLanguageId; 
+            prototypeName = key; 
+        }, 
+        {allowsNull = N; columnName = name; name = name; prototypeName = string256; }, 
+        {columnName = password; name = password; prototypeName = string256; }, 
+        {columnName = "site_id"; name = siteId; prototypeName = key; }
+    ); 
+    className = "net.events.cms.eo.Blog"; 
+    classProperties = (
+        active, 
+        blogPages, 
+        categories, 
+        client, 
+        defaultLanguage, 
+        editors, 
+        entries, 
+        name, 
+        password, 
+        site
+    ); 
+    externalName = blogs; 
+    fetchSpecificationDictionary = {}; 
+    name = Blog; 
+    primaryKeyAttributes = (blogId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = BlogPage; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = blogId; sourceAttribute = blogId; }); 
+            name = blogPages; 
+            numberOfToManyFaultsToBatchFetch = 5; 
+        }, 
+        {
+            destination = BlogEntryCategory; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = blogId; sourceAttribute = blogId; }); 
+            name = categories; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = Language; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = languageId; sourceAttribute = defaultLanguageId; }); 
+            name = defaultLanguage; 
+        }, 
+        {
+            definition = "xEditorlogs.eventsUser"; 
+            name = editors; 
+            numberOfToManyFaultsToBatchFetch = 5; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = BlogEntry; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = blogId; sourceAttribute = blogId; }); 
+            name = entries; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            destination = Site; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = siteId; sourceAttribute = siteId; }); 
+            name = site; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = XEditorBlog; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = blogId; sourceAttribute = blogId; }); 
+            name = xEditorlogs; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
 }

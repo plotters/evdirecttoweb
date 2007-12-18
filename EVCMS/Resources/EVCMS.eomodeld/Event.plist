@@ -1,190 +1,134 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = category_id;
-			name = categoryId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = city_id;
-			name = cityId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			columnName = event_description;
-			name = eventDescription;
-			prototypeName = string4m;
-		},
-		{
-			columnName = event_end;
-			name = eventEnd;
-			prototypeName = datetime;
-		},
-		{
-			allowsNull = N;
-			columnName = event_id;
-			name = eventId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = event_start;
-			name = eventStart;
-			prototypeName = datetime;
-		},
-		{
-			columnName = is_whole_day_event;
-			name = isWholeDayEvent;
-			prototypeName = flag;
-		},
-		{
-			allowsNull = N;
-			columnName = location;
-			name = location;
-			prototypeName = string4k;
-		},
-		{
-			allowsNull = N;
-			columnName = name;
-			name = name;
-			prototypeName = string4k;
-		},
-		{
-			allowsNull = Y;
-			columnName = parent_event_id;
-			name = parentEventId;
-			prototypeName = key;
-		}
-	);
-	className = net.events.cms.eo.Event;
-	classProperties = (
-		category,
-		city,
-		client,
-		createdBy,
-		creationTime,
-		eventDescription,
-		eventEnd,
-		eventStart,
-		events,
-		isWholeDayEvent,
-		location,
-		name,
-		parentEvent,
-		prices
-	);
-	externalName = events;
-	internalInfo = {};
-	name = Event;
-	primaryKeyAttributes = (
-		eventId
-	);
-	relationships = (
-		{
-			destination = EventCategory;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = categoryId;
-					sourceAttribute = categoryId;
-				}
-			);
-			name = category;
-		},
-		{
-			destination = City;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = cityId;
-					sourceAttribute = cityId;
-				}
-			);
-			name = city;
-		},
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = EventsUser;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		},
-		{
-			deleteRule = EODeleteRuleDeny;
-			destination = Event;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = parentEventId;
-					sourceAttribute = eventId;
-				}
-			);
-			name = events;
-		},
-		{
-			destination = Event;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = eventId;
-					sourceAttribute = parentEventId;
-				}
-			);
-			name = parentEvent;
-		},
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = EventPrice;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = eventId;
-					sourceAttribute = eventId;
-				}
-			);
-			name = prices;
-		}
-	);
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "category_id"; 
+            name = categoryId; 
+            prototypeName = key; 
+        }, 
+        {allowsNull = N; columnName = "city_id"; name = cityId; prototypeName = key; }, 
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {columnName = "creation_time"; name = creationTime; prototypeName = datetime; }, 
+        {
+            columnName = "event_description"; 
+            name = eventDescription; 
+            prototypeName = string4m; 
+        }, 
+        {columnName = "event_end"; name = eventEnd; prototypeName = datetime; }, 
+        {
+            allowsNull = N; 
+            columnName = "event_id"; 
+            name = eventId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "event_start"; 
+            name = eventStart; 
+            prototypeName = datetime; 
+        }, 
+        {
+            columnName = "is_whole_day_event"; 
+            name = isWholeDayEvent; 
+            prototypeName = flag; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = location; 
+            name = location; 
+            prototypeName = string4k; 
+        }, 
+        {allowsNull = N; columnName = name; name = name; prototypeName = string4k; }, 
+        {
+            allowsNull = Y; 
+            columnName = "parent_event_id"; 
+            name = parentEventId; 
+            prototypeName = key; 
+        }
+    ); 
+    className = "net.events.cms.eo.Event"; 
+    classProperties = (
+        category, 
+        city, 
+        client, 
+        createdBy, 
+        creationTime, 
+        eventDescription, 
+        eventEnd, 
+        eventStart, 
+        events, 
+        isWholeDayEvent, 
+        location, 
+        name, 
+        parentEvent, 
+        prices
+    ); 
+    externalName = events; 
+    fetchSpecificationDictionary = {}; 
+    name = Event; 
+    primaryKeyAttributes = (eventId); 
+    relationships = (
+        {
+            destination = EventCategory; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = categoryId; sourceAttribute = categoryId; }); 
+            name = category; 
+        }, 
+        {
+            destination = City; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cityId; sourceAttribute = cityId; }); 
+            name = city; 
+        }, 
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = EventsUser; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = Event; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = parentEventId; sourceAttribute = eventId; }); 
+            name = events; 
+        }, 
+        {
+            destination = Event; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eventId; sourceAttribute = parentEventId; }); 
+            name = parentEvent; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = EventPrice; 
+            isMandatory = N; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eventId; sourceAttribute = eventId; }); 
+            name = prices; 
+        }
+    ); 
 }
