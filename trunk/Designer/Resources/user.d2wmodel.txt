@@ -55,6 +55,7 @@
     100 : (pageConfiguration = 'EditUsergroup' or pageConfiguration = 'InspectUsergroup' or pageConfiguration = 'CreateUsergroup') => useMatrixLayout = true [com.webobjects.directtoweb.Assignment],
     100 : (pageConfiguration = 'ListBlog' or pageConfiguration = 'InspectBlog' or pageConfiguration = 'EditBlog') => navigationState = Site Admin.Blog.Show Blogs [com.webobjects.directtoweb.Assignment],
     100 : (pageConfiguration = 'ListMedicalDataSetEntry' or pageConfiguration = 'QueryMedicalDataSetEntry') => navigationState = Trial Management.Medical Data Set Entries [com.webobjects.directtoweb.Assignment],
+    100 : (pageConfiguration = 'ListMeetingMinutes' or pageConfiguration = 'InspectMeetingMinutes' or pageConfiguration = 'EditMeetingMinutes') => navigationState = Meeting Minutes.All Meeting Minutes [com.webobjects.directtoweb.Assignment],
     100 : (pageConfiguration = 'ListClinicalTrial' or pageConfiguration = 'InspectClinicalTrial' or pageConfiguration = 'EditClinicalTrial' or pageConfiguration = 'CreateClinicalTrial') => navigationState = Trial Management.Clinical Trials [com.webobjects.directtoweb.Assignment],
     100 : (pageConfiguration = 'ListMedicalDataSetTemplate' or pageConfiguration = 'InspectMedicalDataSetTemplate' or pageConfiguration = 'CreateMedicalDataSetTemplate' or pageConfiguration = 'EditMedicalDataSetTemplate') => navigationState = Trial Management.Medical Data Sets [com.webobjects.directtoweb.Assignment]
 )
