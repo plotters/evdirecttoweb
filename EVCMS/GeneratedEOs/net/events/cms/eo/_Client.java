@@ -26,6 +26,7 @@ public abstract class _Client extends net.events.cms.eo.EVCMSGenericRecord {
     public static final String POSTALCODE = "postalCode";
     public static final String PAGEWRAPPERS = "pageWrappers";
     public static final String NAME = "name";
+    public static final String MEETINGPROTOCOLS = "meetingProtocols";
     public static final String DELETED = "deleted";
     public static final String CUSTOMERNUMBER = "customerNumber";
     public static final String COUNTRY = "country";
@@ -701,6 +702,63 @@ public abstract class _Client extends net.events.cms.eo.EVCMSGenericRecord {
 	    Enumeration objects = contacts().objectEnumerator();
 	    while ( objects.hasMoreElements() )
 	        removeFromContactsAndDelete((net.events.cms.eo.Contact)objects.nextElement());
+    }
+
+	/**
+	 * Returns the objects for the relationship "meetingProtocols"
+	 */
+    public NSArray meetingProtocols() {
+        return (NSArray)storedValueForKey("meetingProtocols");
+    }
+
+    public void setMeetingProtocols(NSArray aValue) {
+    	if( log.isDebugEnabled() ) log.debug( "updating meetingProtocols from "+meetingProtocols()+" to "+aValue );
+        takeStoredValueForKey(aValue, "meetingProtocols");
+    }
+
+    public void addToMeetingProtocols(net.events.cms.eo.MeetingMinutes object) {
+        if( log.isDebugEnabled() ) log.debug( "adding "+object+" to meetingProtocols" );
+	    includeObjectIntoPropertyWithKey(object, "meetingProtocols");
+    }
+    
+
+    public void removeFromMeetingProtocols(net.events.cms.eo.MeetingMinutes object) {
+        if( log.isDebugEnabled() ) log.debug( "removing "+object+" from meetingProtocols" );
+	    excludeObjectFromPropertyWithKey(object, "meetingProtocols");
+    }
+	
+    
+    /** 
+     * creates a new object "net.events.cms.eo.MeetingMinutes" and add it
+     * to the relationship "meetingProtocols"
+     */
+    public net.events.cms.eo.MeetingMinutes createObjectAndAddToMeetingProtocols() {
+    	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: meetingProtocols");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("MeetingMinutes");
+	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+	    editingContext().insertObject(eoObject);
+	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "meetingProtocols");
+	    return (net.events.cms.eo.MeetingMinutes) eoObject;
+    }
+    
+    /**
+     * Removes object from the relationship "meetingProtocols" and delete object
+     */
+    public void removeFromMeetingProtocolsAndDelete(net.events.cms.eo.MeetingMinutes object) {
+    	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: meetingProtocols");
+        removeObjectFromBothSidesOfRelationshipWithKey(object, "meetingProtocols");
+        editingContext().deleteObject(object);
+    }
+    
+    /**
+     * Delete all objects found in the relationship "meetingProtocols", be careful, this method
+     * DELETES it does not only a remove!
+     */
+    public void deleteAllMeetingProtocols() {
+    	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: meetingProtocols");
+	    Enumeration objects = meetingProtocols().objectEnumerator();
+	    while ( objects.hasMoreElements() )
+	        removeFromMeetingProtocolsAndDelete((net.events.cms.eo.MeetingMinutes)objects.nextElement());
     }
 
 	/**

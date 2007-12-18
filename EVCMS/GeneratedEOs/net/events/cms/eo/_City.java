@@ -19,7 +19,6 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
 	
 	// KeyValueCoding support
 	
-    public static final String SITEID = "siteId";
     public static final String SITE = "site";
     public static final String NAME = "name";
     public static final String CREATIONTIME = "creationTime";
@@ -65,12 +64,11 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
 	/**
 	 * Create a "City" object with all required values
 	 */
-	public static City createCity(EOEditingContext editingContext, NSTimestamp creationTime, String name, Number siteId, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy, net.events.cms.eo.Site site) {
+	public static City createCity(EOEditingContext editingContext, NSTimestamp creationTime, String name, net.events.cms.eo.Client client, net.events.cms.eo.EventsUser createdBy, net.events.cms.eo.Site site) {
 		if (log.isDebugEnabled()) log.debug ("Creating object: City");
 		City eoObject = (City)EOUtilities.createAndInsertInstance(editingContext, _City.ENTITY_NAME);
 		eoObject.setCreationTime(creationTime);
 		eoObject.setName(name);
-		eoObject.setSiteId(siteId);
 		eoObject.setClient(client);
 		eoObject.setCreatedBy(createdBy);
 		eoObject.setSite(site);
@@ -208,21 +206,6 @@ public abstract class _City extends net.events.cms.eo.EVCMSGenericRecord {
     public void setName(String aValue) {
         if( log.isDebugEnabled() ) log.debug( "updating name from "+name()+" to "+aValue );
         takeStoredValueForKey(aValue, "name");
-    }
-
-	/**
-	 * The value for "siteId"
-	 */
-    public Number siteId() {
-        return (Number) storedValueForKey("siteId");
-    }
-
-	/**
-	 * Set the value for "siteId"
-	 */
-    public void setSiteId(Number aValue) {
-        if( log.isDebugEnabled() ) log.debug( "updating siteId from "+siteId()+" to "+aValue );
-        takeStoredValueForKey(aValue, "siteId");
     }
 
     public net.events.cms.eo.Client client() {
