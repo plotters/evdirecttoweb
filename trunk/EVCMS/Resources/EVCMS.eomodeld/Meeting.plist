@@ -20,41 +20,43 @@
         }, 
         {
             allowsNull = N; 
-            columnName = "data_set_template_id"; 
-            name = dataSetTemplateId; 
+            columnName = "date_and_time"; 
+            name = dateAndTime; 
+            prototypeName = datetime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = location; 
+            name = location; 
+            prototypeName = string4k; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "meeting_id"; 
+            name = meetingId; 
             prototypeName = key; 
         }, 
         {
-            columnName = "page_bottom_text"; 
-            name = pageBottomText; 
-            prototypeName = string4k; 
-        }, 
-        {columnName = "page_header"; name = pageHeader; prototypeName = string256; }, 
-        {allowsNull = N; columnName = "page_id"; name = pageId; prototypeName = key; }, 
-        {
             allowsNull = N; 
-            columnName = "page_number"; 
-            name = pageNumber; 
-            prototypeName = integer; 
-        }, 
-        {columnName = "page_top_text"; name = pageTopText; prototypeName = string4k; }
+            columnName = "meeting_minutes_id"; 
+            name = meetingMinutesId; 
+            prototypeName = key; 
+        }
     ); 
-    className = "net.events.cms.eo.DataSetPage"; 
+    className = "net.events.cms.eo.Meeting"; 
     classProperties = (
         client, 
         createdBy, 
         creationTime, 
-        dataSetTemplate, 
-        pageBottomText, 
-        pageHeader, 
-        pageNumber, 
-        pageTopText, 
-        sections
+        dateAndTime, 
+        entries, 
+        location, 
+        meetingMinutes
     ); 
-    externalName = "data_set_pages"; 
+    externalName = meetings; 
     fetchSpecificationDictionary = {}; 
-    name = DataSetPage; 
-    primaryKeyAttributes = (pageId); 
+    name = Meeting; 
+    primaryKeyAttributes = (meetingId); 
     relationships = (
         {
             destination = Client; 
@@ -71,20 +73,21 @@
             name = createdBy; 
         }, 
         {
-            destination = DataSetTemplate; 
-            isMandatory = Y; 
-            joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = dataSetId; sourceAttribute = dataSetTemplateId; }); 
-            name = dataSetTemplate; 
-        }, 
-        {
-            deleteRule = EODeleteRuleDeny; 
-            destination = DataSetSection; 
+            deleteRule = EODeleteRuleCascade; 
+            destination = MeetingMinutesEntry; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = pageId; sourceAttribute = pageId; }); 
-            name = sections; 
-            numberOfToManyFaultsToBatchFetch = 10; 
+            joins = ({destinationAttribute = meetingId; sourceAttribute = meetingId; }); 
+            name = entries; 
+        }, 
+        {
+            destination = MeetingMinutes; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = meetingMinutesId; sourceAttribute = meetingMinutesId; }
+            ); 
+            name = meetingMinutes; 
         }
     ); 
 }

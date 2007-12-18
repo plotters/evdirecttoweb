@@ -1,66 +1,36 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			columnName = company_id;
-			name = companyId;
-			prototypeName = key;
-		},
-		{
-			columnName = department_id;
-			name = departmentId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = name;
-			name = name;
-			prototypeName = string256;
-		}
-	);
-	className = net.events.cms.eo.Department;
-	classProperties = (
-		client,
-		company,
-		name
-	);
-	externalName = departments;
-	internalInfo = {};
-	name = Department;
-	primaryKeyAttributes = (
-		departmentId
-	);
-	relationships = (
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = Company;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = companyId;
-				}
-			);
-			name = company;
-		}
-	);
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {columnName = "company_id"; name = companyId; prototypeName = key; }, 
+        {columnName = "department_id"; name = departmentId; prototypeName = key; }, 
+        {allowsNull = N; columnName = name; name = name; prototypeName = string256; }
+    ); 
+    className = "net.events.cms.eo.Department"; 
+    classProperties = (client, company, name); 
+    externalName = departments; 
+    fetchSpecificationDictionary = {}; 
+    name = Department; 
+    primaryKeyAttributes = (departmentId); 
+    relationships = (
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = Company; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = companyId; }); 
+            name = company; 
+        }
+    ); 
 }

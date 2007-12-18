@@ -1,102 +1,69 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = data_set_entry_id;
-			name = dataSetEntryId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = data_set_item_id;
-			name = dataSetItemId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = data_set_item_value_id;
-			name = dataSetItemValueId;
-			prototypeName = key;
-		},
-		{
-			columnName = date_value;
-			name = dateValue;
-			prototypeName = datetime;
-		},
-		{
-			columnName = has_triggered;
-			name = hasTriggered;
-			prototypeName = flag;
-		},
-		{
-			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
-			prototypeName = string32;
-		}
-	);
-	className = net.events.cms.eo.DataSetDateItemValue;
-	classProperties = (
-		client,
-		dataSetEntry,
-		dataSetItem,
-		dateValue,
-		hasTriggered,
-		inheritanceType
-	);
-	externalName = data_set_item_value;
-	internalInfo = {};
-	isAbstractEntity = N;
-	maxNumberOfInstancesToBatchFetch = 20;
-	name = DataSetDateItemValue;
-	parent = DataSetItemValue;
-	primaryKeyAttributes = (
-		dataSetItemValueId
-	);
-	relationships = (
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = DataSetEntry;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = dataSetEntryId;
-					sourceAttribute = dataSetEntryId;
-				}
-			);
-			name = dataSetEntry;
-		},
-		{
-			destination = DataSetItem;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = dataSetItemId;
-					sourceAttribute = dataSetItemId;
-				}
-			);
-			name = dataSetItem;
-		}
-	);
-	restrictingQualifier = "inheritanceType = 'DataSetDateItemValue'";
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "data_set_entry_id"; 
+            name = dataSetEntryId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "data_set_item_id"; 
+            name = dataSetItemId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "data_set_item_value_id"; 
+            name = dataSetItemValueId; 
+            prototypeName = key; 
+        }, 
+        {columnName = "date_value"; name = dateValue; prototypeName = datetime; }, 
+        {columnName = "has_triggered"; name = hasTriggered; prototypeName = flag; }, 
+        {
+            allowsNull = N; 
+            columnName = "inheritance_type"; 
+            name = inheritanceType; 
+            prototypeName = string32; 
+        }
+    ); 
+    className = "net.events.cms.eo.DataSetDateItemValue"; 
+    classProperties = (client, dataSetEntry, dataSetItem, dateValue, hasTriggered, inheritanceType); 
+    externalName = "data_set_item_value"; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = N; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = DataSetDateItemValue; 
+    parent = DataSetItemValue; 
+    primaryKeyAttributes = (dataSetItemValueId); 
+    relationships = (
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = DataSetEntry; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dataSetEntryId; sourceAttribute = dataSetEntryId; }); 
+            name = dataSetEntry; 
+        }, 
+        {
+            destination = DataSetItem; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dataSetItemId; sourceAttribute = dataSetItemId; }); 
+            name = dataSetItem; 
+        }
+    ); 
+    restrictingQualifier = "inheritanceType = 'DataSetDateItemValue'"; 
 }

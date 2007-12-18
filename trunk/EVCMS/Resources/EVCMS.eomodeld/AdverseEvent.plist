@@ -1,200 +1,153 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = adverse_event_id;
-			name = adverseEventId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = causality_assessment_id;
-			name = causalityAssessmentId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = clinical_trial_id;
-			name = clinicalTrialId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			columnName = date_of_resolution;
-			name = dateOfResolution;
-			prototypeName = date;
-		},
-		{
-			allowsNull = N;
-			columnName = event_date;
-			name = eventDate;
-			prototypeName = date;
-		},
-		{
-			columnName = outcome_id;
-			name = outcomeId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = participant_id;
-			name = participantId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = seriousness_id;
-			name = seriousnessId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = severity_grade_id;
-			name = severityGradeId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = text_description;
-			name = textDescription;
-			prototypeName = string4m;
-		}
-	);
-	className = net.events.cms.eo.AdverseEvent;
-	classProperties = (
-		causalityAssessment,
-		client,
-		clinicalTrial,
-		createdBy,
-		creationTime,
-		dateOfResolution,
-		eventDate,
-		outcome,
-		seriousness,
-		severityGrade,
-		studyParticipant,
-		textDescription
-	);
-	externalName = adverse_events;
-	internalInfo = {};
-	name = AdverseEvent;
-	primaryKeyAttributes = (
-		adverseEventId
-	);
-	relationships = (
-		{
-			destination = CausalityAssessment;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = id;
-					sourceAttribute = causalityAssessmentId;
-				}
-			);
-			name = causalityAssessment;
-		},
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = ClinicalTrial;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clinicalTrialId;
-					sourceAttribute = clinicalTrialId;
-				}
-			);
-			name = clinicalTrial;
-		},
-		{
-			destination = Person;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		},
-		{
-			destination = AdverseEventOutcome;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = id;
-					sourceAttribute = outcomeId;
-				}
-			);
-			name = outcome;
-		},
-		{
-			destination = Seriousness;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = id;
-					sourceAttribute = seriousnessId;
-				}
-			);
-			name = seriousness;
-		},
-		{
-			destination = SeverityGrade;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = id;
-					sourceAttribute = severityGradeId;
-				}
-			);
-			name = severityGrade;
-		},
-		{
-			destination = StudyParticipant;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = participantId;
-				}
-			);
-			name = studyParticipant;
-		}
-	);
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "adverse_event_id"; 
+            name = adverseEventId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "causality_assessment_id"; 
+            name = causalityAssessmentId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "clinical_trial_id"; 
+            name = clinicalTrialId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = datetime; 
+        }, 
+        {
+            columnName = "date_of_resolution"; 
+            name = dateOfResolution; 
+            prototypeName = date; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "event_date"; 
+            name = eventDate; 
+            prototypeName = date; 
+        }, 
+        {columnName = "outcome_id"; name = outcomeId; prototypeName = key; }, 
+        {
+            allowsNull = N; 
+            columnName = "participant_id"; 
+            name = participantId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "seriousness_id"; 
+            name = seriousnessId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "severity_grade_id"; 
+            name = severityGradeId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "text_description"; 
+            name = textDescription; 
+            prototypeName = string4m; 
+        }
+    ); 
+    className = "net.events.cms.eo.AdverseEvent"; 
+    classProperties = (
+        causalityAssessment, 
+        client, 
+        clinicalTrial, 
+        createdBy, 
+        creationTime, 
+        dateOfResolution, 
+        eventDate, 
+        outcome, 
+        seriousness, 
+        severityGrade, 
+        studyParticipant, 
+        textDescription
+    ); 
+    externalName = "adverse_events"; 
+    fetchSpecificationDictionary = {}; 
+    name = AdverseEvent; 
+    primaryKeyAttributes = (adverseEventId); 
+    relationships = (
+        {
+            destination = CausalityAssessment; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = causalityAssessmentId; }); 
+            name = causalityAssessment; 
+        }, 
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = ClinicalTrial; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clinicalTrialId; sourceAttribute = clinicalTrialId; }); 
+            name = clinicalTrial; 
+        }, 
+        {
+            destination = Person; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }, 
+        {
+            destination = AdverseEventOutcome; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = outcomeId; }); 
+            name = outcome; 
+        }, 
+        {
+            destination = Seriousness; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = seriousnessId; }); 
+            name = seriousness; 
+        }, 
+        {
+            destination = SeverityGrade; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = severityGradeId; }); 
+            name = severityGrade; 
+        }, 
+        {
+            destination = StudyParticipant; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = participantId; }); 
+            name = studyParticipant; 
+        }
+    ); 
 }

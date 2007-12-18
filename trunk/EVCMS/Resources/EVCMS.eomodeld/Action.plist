@@ -1,109 +1,84 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			columnName = action_description;
-			name = actionDescription;
-			prototypeName = string4k;
-		},
-		{
-			allowsNull = N;
-			columnName = action_id;
-			name = actionId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
-			prototypeName = string256;
-			userInfo = {
-				defaultValue = Test;
-			};
-		},
-		{
-			allowsNull = N;
-			columnName = name;
-			name = name;
-			prototypeName = string256;
-		}
-	);
-	className = net.events.cms.eo.Action;
-	classProperties = (
-		actionDescription,
-		actionTriggers,
-		client,
-		createdBy,
-		creationTime,
-		inheritanceType,
-		name
-	);
-	externalName = actions;
-	internalInfo = {};
-	isAbstractEntity = Y;
-	name = Action;
-	primaryKeyAttributes = (
-		actionId
-	);
-	relationships = (
-		{
-			deleteRule = EODeleteRuleDeny;
-			destination = ActionTrigger;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = actionId;
-					sourceAttribute = actionId;
-				}
-			);
-			name = actionTriggers;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
-			destination = Client;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = EventsUser;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		}
-	);
+    attributes = (
+        {
+            columnName = "action_description"; 
+            name = actionDescription; 
+            prototypeName = string4k; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "action_id"; 
+            name = actionId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = datetime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "inheritance_type"; 
+            name = inheritanceType; 
+            prototypeName = string256; 
+            userInfo = {defaultValue = Test; }; 
+        }, 
+        {allowsNull = N; columnName = name; name = name; prototypeName = string256; }
+    ); 
+    className = "net.events.cms.eo.Action"; 
+    classProperties = (
+        actionDescription, 
+        actionTriggers, 
+        client, 
+        createdBy, 
+        creationTime, 
+        inheritanceType, 
+        name
+    ); 
+    externalName = actions; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = Action; 
+    primaryKeyAttributes = (actionId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ActionTrigger; 
+            isMandatory = N; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actionId; sourceAttribute = actionId; }); 
+            name = actionTriggers; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = EventsUser; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }
+    ); 
 }

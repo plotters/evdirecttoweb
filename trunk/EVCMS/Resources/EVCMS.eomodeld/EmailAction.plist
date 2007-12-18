@@ -1,136 +1,113 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			columnName = action_description;
-			name = actionDescription;
-			prototypeName = string4k;
-		},
-		{
-			allowsNull = N;
-			columnName = action_id;
-			name = actionId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			allowsNull = N;
-			columnName = from_address;
-			name = fromAddress;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = name;
-			name = name;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = subject;
-			name = subject;
-			prototypeName = string256;
-		},
-		{
-			allowsNull = N;
-			columnName = template;
-			name = template;
-			prototypeName = string4k;
-		},
-		{
-			allowsNull = N;
-			columnName = to_address;
-			name = toAddress;
-			prototypeName = string256;
-		}
-	);
-	className = net.events.cms.eo.EmailAction;
-	classProperties = (
-		actionDescription,
-		actionTriggers,
-		client,
-		createdBy,
-		creationTime,
-		fromAddress,
-		inheritanceType,
-		name,
-		subject,
-		template,
-		toAddress
-	);
-	externalName = actions;
-	internalInfo = {};
-	isAbstractEntity = N;
-	name = EmailAction;
-	parent = Action;
-	primaryKeyAttributes = (
-		actionId
-	);
-	relationships = (
-		{
-			deleteRule = EODeleteRuleDeny;
-			destination = ActionTrigger;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = actionId;
-					sourceAttribute = actionId;
-				}
-			);
-			name = actionTriggers;
-			numberOfToManyFaultsToBatchFetch = 10;
-		},
-		{
-			destination = Client;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = EventsUser;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		}
-	);
-	restrictingQualifier = "inheritanceType = 'EmailAction'";
+    attributes = (
+        {
+            columnName = "action_description"; 
+            name = actionDescription; 
+            prototypeName = string4k; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "action_id"; 
+            name = actionId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = datetime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "from_address"; 
+            name = fromAddress; 
+            prototypeName = string256; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "inheritance_type"; 
+            name = inheritanceType; 
+            prototypeName = string256; 
+        }, 
+        {allowsNull = N; columnName = name; name = name; prototypeName = string256; }, 
+        {
+            allowsNull = N; 
+            columnName = subject; 
+            name = subject; 
+            prototypeName = string256; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = template; 
+            name = template; 
+            prototypeName = string4k; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "to_address"; 
+            name = toAddress; 
+            prototypeName = string256; 
+        }
+    ); 
+    className = "net.events.cms.eo.EmailAction"; 
+    classProperties = (
+        actionDescription, 
+        actionTriggers, 
+        client, 
+        createdBy, 
+        creationTime, 
+        fromAddress, 
+        inheritanceType, 
+        name, 
+        subject, 
+        template, 
+        toAddress
+    ); 
+    externalName = actions; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = N; 
+    name = EmailAction; 
+    parent = Action; 
+    primaryKeyAttributes = (actionId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ActionTrigger; 
+            isMandatory = N; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actionId; sourceAttribute = actionId; }); 
+            name = actionTriggers; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = EventsUser; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }
+    ); 
+    restrictingQualifier = "inheritanceType = 'EmailAction'"; 
 }

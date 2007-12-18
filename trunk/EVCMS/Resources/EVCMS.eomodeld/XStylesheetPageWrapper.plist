@@ -1,51 +1,29 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			columnName = wrapper_id;
-			name = pageWrapperId;
-			prototypeName = key;
-		},
-		{
-			columnName = stylesheet_id;
-			name = stylesheetId;
-			prototypeName = key;
-		}
-	);
-	className = EOGenericRecord;
-	externalName = x_stylesheet_page_wrapper;
-	internalInfo = {};
-	name = XStylesheetPageWrapper;
-	primaryKeyAttributes = (
-		pageWrapperId,
-		stylesheetId
-	);
-	relationships = (
-		{
-			destination = PageWrapperEO;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = pagewrapperId;
-					sourceAttribute = pageWrapperId;
-				}
-			);
-			name = pageWrapper;
-		},
-		{
-			destination = Stylesheet;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = filesystemObjectId;
-					sourceAttribute = stylesheetId;
-				}
-			);
-			name = stylesheet;
-		}
-	);
+    attributes = (
+        {columnName = "wrapper_id"; name = pageWrapperId; prototypeName = key; }, 
+        {columnName = "stylesheet_id"; name = stylesheetId; prototypeName = key; }
+    ); 
+    className = EOGenericRecord; 
+    externalName = "x_stylesheet_page_wrapper"; 
+    fetchSpecificationDictionary = {}; 
+    name = XStylesheetPageWrapper; 
+    primaryKeyAttributes = (pageWrapperId, stylesheetId); 
+    relationships = (
+        {
+            destination = PageWrapperEO; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pagewrapperId; sourceAttribute = pageWrapperId; }); 
+            name = pageWrapper; 
+        }, 
+        {
+            destination = Stylesheet; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = filesystemObjectId; sourceAttribute = stylesheetId; }); 
+            name = stylesheet; 
+        }
+    ); 
 }

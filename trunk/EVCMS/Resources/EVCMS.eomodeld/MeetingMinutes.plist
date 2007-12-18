@@ -1,17 +1,6 @@
 {
     attributes = (
         {
-            columnName = "category_description"; 
-            name = categoryDescription; 
-            prototypeName = string4m; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = "category_id"; 
-            name = categoryId; 
-            prototypeName = key; 
-        }, 
-        {
             allowsNull = N; 
             columnName = "client_id"; 
             name = clientId; 
@@ -29,28 +18,26 @@
             name = creationTime; 
             prototypeName = datetime; 
         }, 
+        {
+            allowsNull = N; 
+            columnName = "meeting_minutes_id"; 
+            name = meetingMinutesId; 
+            prototypeName = key; 
+        }, 
         {allowsNull = N; columnName = name; name = name; prototypeName = string256; }, 
         {
-            allowsNull = Y; 
-            columnName = "parent_category_id"; 
-            name = parentCategoryId; 
-            prototypeName = key; 
+            allowsNull = N; 
+            columnName = "short_description"; 
+            name = shortDescription; 
+            prototypeName = string4m; 
         }
     ); 
-    className = "net.events.cms.eo.EventCategory"; 
-    classProperties = (
-        categoryDescription, 
-        client, 
-        createdBy, 
-        creationTime, 
-        name, 
-        parentCategory, 
-        subCategories
-    ); 
-    externalName = "event_categories"; 
+    className = "net.events.cms.eo.MeetingMinutes"; 
+    classProperties = (client, createdBy, creationTime, entries, meetings, name, shortDescription); 
+    externalName = "meeting_minutes"; 
     fetchSpecificationDictionary = {}; 
-    name = EventCategory; 
-    primaryKeyAttributes = (categoryId); 
+    name = MeetingMinutes; 
+    primaryKeyAttributes = (meetingMinutesId); 
     relationships = (
         {
             destination = Client; 
@@ -67,17 +54,24 @@
             name = createdBy; 
         }, 
         {
-            destination = EventCategory; 
-            joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = categoryId; sourceAttribute = parentCategoryId; }); 
-            name = parentCategory; 
-        }, 
-        {
-            destination = EventCategory; 
+            deleteRule = EODeleteRuleCascade; 
+            destination = MeetingMinutesEntry; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = parentCategoryId; sourceAttribute = categoryId; }); 
-            name = subCategories; 
+            joins = (
+                {destinationAttribute = meetingMinutesId; sourceAttribute = meetingMinutesId; }
+            ); 
+            name = entries; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Meeting; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = meetingMinutesId; sourceAttribute = meetingMinutesId; }
+            ); 
+            name = meetings; 
         }
     ); 
 }

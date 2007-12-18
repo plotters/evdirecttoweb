@@ -1,55 +1,30 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			columnName = blog_id;
-			name = blogId;
-			prototypeName = key;
-		},
-		{
-			columnName = events_user_id;
-			name = eventsUserId;
-			prototypeName = key;
-		}
-	);
-	className = EOGenericRecord;
-	classProperties = (
-		blog,
-		eventsUser
-	);
-	externalName = x_visitor_blog;
-	internalInfo = {};
-	name = XVisitorBlog;
-	primaryKeyAttributes = (
-		blogId,
-		eventsUserId
-	);
-	relationships = (
-		{
-			destination = Blog;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = blogId;
-					sourceAttribute = blogId;
-				}
-			);
-			name = blog;
-		},
-		{
-			destination = Person;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = eventsUserId;
-				}
-			);
-			name = eventsUser;
-		}
-	);
+    attributes = (
+        {columnName = "blog_id"; name = blogId; prototypeName = key; }, 
+        {columnName = "events_user_id"; name = eventsUserId; prototypeName = key; }
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (blog, eventsUser); 
+    externalName = "x_visitor_blog"; 
+    fetchSpecificationDictionary = {}; 
+    name = XVisitorBlog; 
+    primaryKeyAttributes = (blogId, eventsUserId); 
+    relationships = (
+        {
+            destination = Blog; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = blogId; sourceAttribute = blogId; }); 
+            name = blog; 
+        }, 
+        {
+            destination = Person; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = eventsUserId; }); 
+            name = eventsUser; 
+        }
+    ); 
 }

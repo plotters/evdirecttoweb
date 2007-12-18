@@ -1,150 +1,109 @@
-// Entity Modeler v1.0.1
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = client_id;
-			name = clientId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = Y;
-			columnName = created_by_id;
-			name = createdById;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = creation_time;
-			name = creationTime;
-			prototypeName = datetime;
-		},
-		{
-			allowsNull = N;
-			columnName = data_set_entry_id;
-			name = dataSetEntryId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = data_set_id;
-			name = dataSetId;
-			prototypeName = key;
-		},
-		{
-			columnName = date;
-			name = date;
-			prototypeName = datetime;
-		},
-		{
-			columnName = has_query;
-			name = hasQuery;
-			prototypeName = flag;
-		},
-		{
-			allowsNull = N;
-			columnName = inheritance_type;
-			name = inheritanceType;
-			prototypeName = string32;
-		},
-		{
-			allowsNull = N;
-			columnName = person_id;
-			name = personId;
-			prototypeName = key;
-		},
-		{
-			allowsNull = N;
-			columnName = valid;
-			name = valid;
-			prototypeName = flag;
-		}
-	);
-	className = net.events.cms.eo.DataSetEntry;
-	classProperties = (
-		client,
-		createdBy,
-		creationTime,
-		dataSetTemplate,
-		date,
-		hasQuery,
-		inheritanceType,
-		person,
-		valid,
-		values
-	);
-	externalName = data_set_entries;
-	internalInfo = {};
-	isAbstractEntity = Y;
-	maxNumberOfInstancesToBatchFetch = 20;
-	name = DataSetEntry;
-	primaryKeyAttributes = (
-		dataSetEntryId
-	);
-	relationships = (
-		{
-			destination = Client;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = clientId;
-					sourceAttribute = clientId;
-				}
-			);
-			name = client;
-		},
-		{
-			destination = Person;
-			isMandatory = N;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = createdById;
-				}
-			);
-			name = createdBy;
-		},
-		{
-			destination = DataSetTemplate;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = dataSetId;
-					sourceAttribute = dataSetId;
-				}
-			);
-			name = dataSetTemplate;
-		},
-		{
-			destination = Person;
-			isMandatory = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = contactId;
-					sourceAttribute = personId;
-				}
-			);
-			name = person;
-		},
-		{
-			deleteRule = EODeleteRuleCascade;
-			destination = DataSetItemValue;
-			isMandatory = N;
-			isToMany = Y;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = dataSetEntryId;
-					sourceAttribute = dataSetEntryId;
-				}
-			);
-			name = values;
-			numberOfToManyFaultsToBatchFetch = 50;
-		}
-	);
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "client_id"; 
+            name = clientId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "created_by_id"; 
+            name = createdById; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = datetime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "data_set_entry_id"; 
+            name = dataSetEntryId; 
+            prototypeName = key; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "data_set_id"; 
+            name = dataSetId; 
+            prototypeName = key; 
+        }, 
+        {columnName = date; name = date; prototypeName = datetime; }, 
+        {columnName = "has_query"; name = hasQuery; prototypeName = flag; }, 
+        {
+            allowsNull = N; 
+            columnName = "inheritance_type"; 
+            name = inheritanceType; 
+            prototypeName = string32; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "person_id"; 
+            name = personId; 
+            prototypeName = key; 
+        }, 
+        {allowsNull = N; columnName = valid; name = valid; prototypeName = flag; }
+    ); 
+    className = "net.events.cms.eo.DataSetEntry"; 
+    classProperties = (
+        client, 
+        createdBy, 
+        creationTime, 
+        dataSetTemplate, 
+        date, 
+        hasQuery, 
+        inheritanceType, 
+        person, 
+        valid, 
+        values
+    ); 
+    externalName = "data_set_entries"; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = DataSetEntry; 
+    primaryKeyAttributes = (dataSetEntryId); 
+    relationships = (
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientId; sourceAttribute = clientId; }); 
+            name = client; 
+        }, 
+        {
+            destination = Person; 
+            isMandatory = N; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = createdById; }); 
+            name = createdBy; 
+        }, 
+        {
+            destination = DataSetTemplate; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dataSetId; sourceAttribute = dataSetId; }); 
+            name = dataSetTemplate; 
+        }, 
+        {
+            destination = Person; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = contactId; sourceAttribute = personId; }); 
+            name = person; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = DataSetItemValue; 
+            isMandatory = N; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dataSetEntryId; sourceAttribute = dataSetEntryId; }); 
+            name = values; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }
+    ); 
 }
