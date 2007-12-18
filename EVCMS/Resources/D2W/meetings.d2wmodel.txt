@@ -1,0 +1,49 @@
+(
+    80 : propertyKey = 'meetingMinutes' => keyWhenRelationship = name [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListEmbeddedMeeting' => reverseRelationshipKey = meetingMinutes [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListMeetingMinutes' => displayPropertyKeys = (name,shortDescription
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'InspectMeeting' and propertyKey = 'entries') => componentName = ERDList [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListMeetingMinutes' and propertyKey = 'name') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateMeetingMinutes' and propertyKey = 'shortDescription') => length = 100 [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'InspectMeetingMinutes' and propertyKey = 'entries') => componentName = ERDList [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'InspectMeetingMinutes' and propertyKey = 'meetings') => componentName = ERDList [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListEmbeddedMeeting' => displayPropertyKeys = (dateAndTime,location,creationTime
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListEmbeddedMeeting' and propertyKey = 'dateAndTime') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'entry') => justification = left [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'entryId') => justification = center [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'entryId') => enableInspectLink = true [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateMeetingMinutes' and sectionKey = 'GeneralInformationSectionName') => maxColumns = 1 [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'entry') => componentName = EVD2WDisplayLargeString [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'InspectMeeting' and propertyKey = 'entries') or propertyKey = 'meetingMinutes') => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'InspectMeetingMinutes' and (propertyKey = 'meetings' or propertyKey = 'entries')) => hidePropertyName = true [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'CreateMeetingMinutesEntry' or pageConfiguration = 'EditMeetingMinutesEntry') and propertyKey = 'entry') => length = 100 [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' => displayPropertyKeys = (entryId,"meeting.dateAndTime",entry,shortType,dueDate,assignedTo
+) [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'CreateMeeting' or pageConfiguration = 'EditMeeting') and propertyKey = 'meetingMinutes') => componentName = ERD2WDisplayToOne [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'CreateMeetingMinutesEntry' or pageConfiguration = 'EditMeetingMinutesEntry') and sectionKey = 'EntrySectionName') => maxColumns = 1 [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'CreateMeetingMinutesEntry' or pageConfiguration = 'EditMeetingMinutesEntry') and propertyKey = 'assignedTo') => componentName = ERD2WEditString [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'CreateMeetingMinutesEntry' or pageConfiguration = 'EditMeetingMinutesEntry') and sectionKey = 'GeneralInformationSectionName') => maxColumns = 3 [com.webobjects.directtoweb.Assignment],
+    80 : ((pageConfiguration = 'CreateMeetingMinutesEntry' or pageConfiguration = 'EditMeetingMinutesEntry') and (propertyKey = 'meeting.dateAndTime' or propertyKey = 'meeting.location')) => componentName = ERD2WDisplayString [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'InspectMeeting' => displayPropertyKeys = (    (    MeetingTabName,            (        MeetingMinutesSectionName,        meetingMinutes    ),            (        GeneralInformationTabName,        dateAndTime,        location    ),            (        MinutesSectionName,        entries    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateMeetingMinutes' or pageConfiguration = 'EditMeetingMinutes') => displayPropertyKeys = (    (    MeetingMinutesTabName,            (        GeneralInformationSectionName,        name,        shortDescription    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateMeeting' or pageConfiguration = 'EditMeeting') => displayPropertyKeys = (    (    MeetingTabName,            (        MeetingMinutesSectionName,        meetingMinutes    ),            (        GeneralInformationSectionName,        dateAndTime,        location    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : pageConfiguration = 'InspectMeetingMinutes' => displayPropertyKeys = (    (    MeetingMinutesTabName,            (        GeneralInformationSectionName,        name,        shortDescription    ),            (        MeetingsSectionName,        meetings    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    )),    (    AllEntriesTabName,            (        GeneralInformationSectionName,        name,        shortDescription    ),            (        AllEntriesSectionName,        entries    ))
+) [com.webobjects.directtoweb.Assignment],
+    80 : (pageConfiguration = 'CreateMeetingMinutesEntry' or pageConfiguration = 'EditMeetingMinutesEntry' or pageConfiguration = 'InspectMeetingMinutesEntry') => displayPropertyKeys = (    (    MeetingMinuteEntryTabName,            (        MeetingSectionName,        "meeting.dateAndTime",        "meeting.location"    ),            (        GeneralInformationSectionName,        entryId,        type,        status    ),            (        EntrySectionName,        entry,        assignedTo    ),            (        AdministrativeInformationSectionName,        createdBy,        creationTime    ))
+) [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' => showCreateObjectLink = false [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' => reverseRelationshipKey = meeting [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' => actions = {"right" = ("editAction", "deleteAction"); 
+} [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'entryId') => displayNameForProperty = ID [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'shortType') => displayNameForProperty = Type [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'InspectMeetingMinutesEntry' and propertyKey = 'entry') => componentName = EVD2WDisplayLargeString [com.webobjects.directtoweb.Assignment],
+    90 : pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' => updateContainerId = ListEmbeddedMeetingMinutesEntryUpdateContainer [com.webobjects.directtoweb.Assignment],
+    90 : (parentPageConfiguration = 'InspectMeeting' and pageConfiguration = 'ListEmbeddedMeetingMinutesEntry') => showCreateObjectLink = true [com.webobjects.directtoweb.Assignment],
+    90 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'meeting.dateAndTime') => displayNameForProperty = Meeting Date [com.webobjects.directtoweb.Assignment]
+)
