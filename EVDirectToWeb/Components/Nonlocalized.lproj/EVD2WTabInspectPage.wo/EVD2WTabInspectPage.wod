@@ -49,7 +49,7 @@ ShowCancelConditional: WOConditional {
 
 EditForm: ERXOptionalForm {
 	enctype = d2wContext.formEncoding;
-	showForm = d2wContext.hasForm;
+	showForm = isEditing;
 	name = "EditForm";
 	multipleSubmit = true;
 }

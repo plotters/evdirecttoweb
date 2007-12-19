@@ -131,7 +131,10 @@ public class EVD2WListPage extends ERD2WListPageTemplate {
 
 	public String updateContainerId () {
 		if (this.updateContainerId == null) {
-			this.updateContainerId = "UDC_" + this.d2wContext().entity().name() + "_" + Math.abs(((EVD2WApplication) this.application()).randomInteger());
+			this.updateContainerId = (String) this.d2wContext().valueForKey("updateContainerId");
+			if (updateContainerId == null) {
+				this.updateContainerId = "UDC_" + this.d2wContext().entity().name() + "_" + Math.abs(((EVD2WApplication) this.application()).randomInteger());
+			}
 		}
 		return this.updateContainerId;
 	}

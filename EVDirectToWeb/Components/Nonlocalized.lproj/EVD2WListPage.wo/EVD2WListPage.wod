@@ -91,4 +91,5 @@ ERXLocalizedString : ERXLocalizedString {
 
 AjaxUpdateContainer : AjaxUpdateContainer {
   id = updateContainerId;
+  evalScripts = true;
 }

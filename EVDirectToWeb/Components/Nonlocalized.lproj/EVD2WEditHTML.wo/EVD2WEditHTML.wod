@@ -1,0 +1,7 @@
+EditString: WOText {
+	cols = d2wContext.length;
+	rows = d2wContext.rows;
+	value = objectKeyPathValue;
+	id = editorId;
+	class = "fck";
+}
