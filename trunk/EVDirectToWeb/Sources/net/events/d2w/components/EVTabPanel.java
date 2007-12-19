@@ -3,6 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
+import com.webobjects.foundation.*;
 
 import er.extensions.ERXTabPanel;
 import er.extensions.ERXValueUtilities;
@@ -42,5 +43,12 @@ public class EVTabPanel extends ERXTabPanel {
     
     public void setUpdateContainerId (String id) {
     	this.setValueForBinding(id, "updateContainerId");
+    }
+    
+    /**
+     * Overridden to get localization back without rewriting all strings
+     */
+    public Object currentTabNameWithoutSpaces() {
+    	return NSArray.componentsSeparatedByString((String)valueForKey("currentTabName"), " ").componentsJoinedByString("");    
     }
 }
