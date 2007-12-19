@@ -63,14 +63,15 @@ public class BlogComment extends _BlogComment {
 	 * hundreds of comments. If this gets too slow, the idea is to create checksum for each comment on save
 	 * and do a database query to find entries with the same checksum. But right now this is not necessary.
 	 * 
-	 * @param entry
+	 * @param email the email address
+	 * @param entry the 
 	 * @param comment
 	 * @return
 	 */
-	public static boolean isDuplicate(BlogEntry entry, String comment) {
+	public static boolean isDuplicate(String email, BlogEntry entry, String comment) {
 		
 		for (BlogComment existingComment : (NSArray<BlogComment>)entry.comments()) {
-			if (existingComment.comment().equals(comment)) {
+			if (existingComment.comment().equals(comment) && existingComment.email().equals(email)) {
 				return true;
 			}
 		}
