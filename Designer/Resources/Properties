@@ -185,16 +185,17 @@ net.events.logging.dbdriver = org.postgresql.Driver
 er.javamail.centralize = false
 er.javamail.debugEnabled = true
 er.javamail.adminEmail = guido@event-s.net
-er.javamail.smtpHost = mail.event-s.net
+# Have to provide a local address because the firewall would block the request
+er.javamail.smtpHost = 192.168.0.75
 er.javamail.milliSecondsWaitIfSenderOverflowed = 6000
 
 er.javamail.smtpAuth = true
-er.javamail.smtpUser = designer@event-s.net
+er.javamail.smtpUser = designer
 er.javamail.smtpPassword = egal88
+# special port for the app
 er.javamail.smtpPort = 587
 
-er.javamail.defaultEncoding = utf-8
-
+er.javamail.defaultEncoding = utf-8 
 #########################################################################
 ## Prototypes
 #########################################################################
