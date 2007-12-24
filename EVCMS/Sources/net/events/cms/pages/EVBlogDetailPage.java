@@ -5,7 +5,10 @@ import net.events.cms.eo.*;
 import net.events.cms.extensions.*;
 
 import com.webobjects.appserver.*;
+import com.webobjects.eoaccess.*;
 import com.webobjects.foundation.*;
+
+import er.extensions.*;
 
 /**
  * Page for a detail entry of a blog, keeps also tracks of submitted comments
@@ -40,7 +43,20 @@ public class EVBlogDetailPage extends EVCMSPage {
     public void appendToResponse (WOResponse response, WOContext context) {
 
     	// check whether we got a comment in the request
-    	this.checkForComment();
+    	if (!this.checkForComment()) {
+    		BlogEntryViewHistory historyEntry = (BlogEntryViewHistory) EOUtilities.createAndInsertInstance(this.blogEntry().editingContext(), BlogEntryViewHistory.ENTITY_NAME);
+    		historyEntry.addObjectToBothSidesOfRelationshipWithKey(this.blogEntry(), BlogEntryViewHistory.BLOGENTRY);
+    		historyEntry.setRemoteAddress(((ERXRequest) this.context().request()).remoteHostAddress());
+    		historyEntry.setRequestUri(this.context().request().uri());
+    		historyEntry.setType(BlogEntryViewHistory.DETAIL_TYPE);
+    		historyEntry.setUserAgent(this.context().request().headerForKey("user-agent"));
+    		try {
+    			this.blogEntry().editingContext().saveChanges();
+    		}
+    		catch (Exception e) {
+    			e.printStackTrace();
+    		}
+    	}
     	super.appendToResponse(response, context);
     }
     
@@ -59,11 +75,11 @@ public class EVBlogDetailPage extends EVCMSPage {
 	 * new comment if it can. Sends out a notification email when a comment was
 	 * created and successfully stored in the database
 	 */
-	private void checkForComment() {
+	private boolean checkForComment() {
 
     	if (this.context().request().stringFormValueForKey("email2") != null) {
     		// seems we got a spam bot on the page
-    		return;
+    		return true;
     	}
 
     	this.setSenderName(this.context().request().stringFormValueForKey("name"));
@@ -80,11 +96,13 @@ public class EVBlogDetailPage extends EVCMSPage {
     				EVMailManager.sendNotificationMailForBlogCommentInRequest(this.blogComment, this.context().request());
     			}
     			this.cleanInput();
+        		return true;
     		}
     		catch (Exception e) {
     			e.printStackTrace();
 			}
     	}
+    	return false;
 	}
 	
 	/**
