@@ -51,13 +51,6 @@ public class EVApplication extends ERXApplication {
 			EOSharedEditingContext.setDefaultSharedEditingContext(null);
 		}
 
-		// FIXME cug: Do we need to add comparison support
-//        // install international ordering support
-//		if (ERXProperties.booleanForKeyWithDefault("net.events.Application.installComparisonSupport", false)) {
-//			log.info ("Installing java comparison support for correct ordering with locales.");
-//			EOSortOrdering.ComparisonSupport.setSupportForClass(new ERXComparisonSupport(), String.class);
-//		}
-
 		// Set the default encoding for everything (we normally use UTF8):
 		if (ERXProperties.booleanForKeyWithDefault("net.events.Application.setDefaultMessageEncoding", true)) {
 			log.info ("Setting default message encoding to: " + WOMessage.defaultEncoding());
