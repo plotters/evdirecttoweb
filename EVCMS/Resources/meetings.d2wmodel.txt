@@ -45,5 +45,7 @@
     90 : (pageConfiguration = 'InspectMeetingMinutesEntry' and propertyKey = 'entry') => componentName = EVD2WDisplayLargeString [com.webobjects.directtoweb.Assignment],
     90 : pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' => updateContainerId = ListEmbeddedMeetingMinutesEntryUpdateContainer [com.webobjects.directtoweb.Assignment],
     90 : (parentPageConfiguration = 'InspectMeeting' and pageConfiguration = 'ListEmbeddedMeetingMinutesEntry') => showCreateObjectLink = true [com.webobjects.directtoweb.Assignment],
-    90 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'meeting.dateAndTime') => displayNameForProperty = Meeting Date [com.webobjects.directtoweb.Assignment]
+    90 : (pageConfiguration = 'ListEmbeddedMeetingMinutesEntry' and propertyKey = 'meeting.dateAndTime') => displayNameForProperty = Meeting Date [com.webobjects.directtoweb.Assignment],
+    100 : pageConfiguration = 'ListBlogEntry' => pageName = ERD2WListPageTemplate [com.webobjects.directtoweb.Assignment],
+    100 : (pageConfiguration = 'ListBlogEntry' and propertyKey = 'title') => componentName = EVD2WDisplayLargeString [com.webobjects.directtoweb.Assignment]
 )
