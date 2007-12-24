@@ -15,7 +15,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = creationTime; 
+            columnName = "creation_time"; 
             name = creationTime; 
             prototypeName = datetime; 
         }, 

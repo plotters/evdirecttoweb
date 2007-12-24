@@ -53,7 +53,8 @@
         language, 
         subtitle, 
         teaser, 
-        title
+        title, 
+        viewHistoryEntries
     ); 
     externalName = "blog_entries"; 
     fetchSpecificationDictionary = {}; 
@@ -103,6 +104,14 @@
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = languageId; sourceAttribute = languageId; }); 
             name = language; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = BlogEntryViewHistory; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = blogEntryId; sourceAttribute = entryId; }); 
+            name = viewHistoryEntries; 
         }
     ); 
 }
