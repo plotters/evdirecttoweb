@@ -10,7 +10,7 @@
       <webobject name = "ShowCreateNewObjectLinkConditional">
         <div class = "d2w_listfunc">
           <wo:if condition = "$d2wContext.newObjectString"><wo:link action="$createNewObject" class="$d2wContext.cssClassForCreateObjectLink"><wo:localized value="$d2wContext.newObjectString" /></wo:link></wo:if>
-          <wo:else><wo:link action="$createNewObject" class="$d2wContext.cssClassForCreateObjectLink"><wo:localized value="EVD2WListPage.CREATE_NEW" /></wo:link></wo:else>
+          <wo:if condition = "$d2wContext.newObjectString" negate = "$true"><wo:link action="$createNewObject" class="$d2wContext.cssClassForCreateObjectLink"><wo:localized value="EVD2WListPage.CREATE_NEW" /></wo:link></wo:if>
         </div>
       </webobject>
       <wo:if condition="$d2wContext.showActionBar">

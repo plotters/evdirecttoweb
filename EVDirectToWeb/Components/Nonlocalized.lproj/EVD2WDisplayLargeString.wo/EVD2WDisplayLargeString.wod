@@ -1,0 +1,16 @@
+AjaxUpdateContainer : AjaxUpdateContainer {
+  id = updateContainerId;
+}
+
+StringValue : WOString {
+  value = stringValue;
+}
+
+AjaxUpdateLink : AjaxUpdateLink {
+  action = toggleDisplay;
+  updateContainerID = updateContainerId;
+}
+
+LinkStringValue : ERXLocalizedString {
+  value = linkStringValue;
+}

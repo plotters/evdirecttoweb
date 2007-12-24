@@ -4,8 +4,7 @@ import net.events.d2w.extensions.*;
 import net.events.util.*;
 
 import com.webobjects.appserver.*;
-
-import er.directtoweb.*;
+import com.webobjects.directtoweb.*;
 
 /**
  * Shows a truncated string instead of the whole thing. 
@@ -15,7 +14,7 @@ import er.directtoweb.*;
  * 
  * TODO cug: add more javadoc
  */
-public class EVD2WDisplayLargeString extends ERDCustomEditComponent {
+public class EVD2WDisplayLargeString extends D2WDisplayString {
 	
 	private boolean collapsed = true;
 	private String updateContainerId;
@@ -27,6 +26,10 @@ public class EVD2WDisplayLargeString extends ERDCustomEditComponent {
 	 */
 	public EVD2WDisplayLargeString(WOContext context) {
 		super(context);
+	}
+	
+	public void awake() {
+		super.awake();
 	}
 	
 	/**
@@ -43,7 +46,7 @@ public class EVD2WDisplayLargeString extends ERDCustomEditComponent {
 	 */
 	public String stringValue () {
 		if (collapsed) {
-			return EVStringUtilities.shortenStringWithAppendingEllipse((String) this.objectPropertyValue(), 50);
+			return EVStringUtilities.shortenStringWithAppendingEllipse((String) this.objectPropertyValue(), 20);
 		}
 		return (String) this.objectPropertyValue();
 	}
@@ -62,6 +65,17 @@ public class EVD2WDisplayLargeString extends ERDCustomEditComponent {
 		}
 	}
 	
+	
+	
+	/* (non-Javadoc)
+	 * @see com.webobjects.appserver.WOComponent#invokeAction(com.webobjects.appserver.WORequest, com.webobjects.appserver.WOContext)
+	 */
+	@Override
+	public WOActionResults invokeAction(WORequest request, WOContext context) {
+		// TODO Auto-generated method stub
+		return super.invokeAction(request, context);
+	}
+
 	/**
 	 * Toggle the collapse display
 	 * 
