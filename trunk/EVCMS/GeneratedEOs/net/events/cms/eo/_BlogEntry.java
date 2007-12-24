@@ -19,6 +19,7 @@ public abstract class _BlogEntry extends net.events.cms.eo.EVCMSGenericRecord {
 	
 	// KeyValueCoding support
 	
+    public static final String VIEWHISTORYENTRIES = "viewHistoryEntries";
     public static final String TITLE = "title";
     public static final String TEASER = "teaser";
     public static final String SUBTITLE = "subtitle";
@@ -388,5 +389,62 @@ public abstract class _BlogEntry extends net.events.cms.eo.EVCMSGenericRecord {
 	    Enumeration objects = comments().objectEnumerator();
 	    while ( objects.hasMoreElements() )
 	        removeFromCommentsAndDelete((net.events.cms.eo.BlogComment)objects.nextElement());
+    }
+
+	/**
+	 * Returns the objects for the relationship "viewHistoryEntries"
+	 */
+    public NSArray viewHistoryEntries() {
+        return (NSArray)storedValueForKey("viewHistoryEntries");
+    }
+
+    public void setViewHistoryEntries(NSArray aValue) {
+    	if( log.isDebugEnabled() ) log.debug( "updating viewHistoryEntries from "+viewHistoryEntries()+" to "+aValue );
+        takeStoredValueForKey(aValue, "viewHistoryEntries");
+    }
+
+    public void addToViewHistoryEntries(net.events.cms.eo.BlogEntryViewHistory object) {
+        if( log.isDebugEnabled() ) log.debug( "adding "+object+" to viewHistoryEntries" );
+	    includeObjectIntoPropertyWithKey(object, "viewHistoryEntries");
+    }
+    
+
+    public void removeFromViewHistoryEntries(net.events.cms.eo.BlogEntryViewHistory object) {
+        if( log.isDebugEnabled() ) log.debug( "removing "+object+" from viewHistoryEntries" );
+	    excludeObjectFromPropertyWithKey(object, "viewHistoryEntries");
+    }
+	
+    
+    /** 
+     * creates a new object "net.events.cms.eo.BlogEntryViewHistory" and add it
+     * to the relationship "viewHistoryEntries"
+     */
+    public net.events.cms.eo.BlogEntryViewHistory createObjectAndAddToViewHistoryEntries() {
+    	if (log.isDebugEnabled()) log.debug ("Creating object and adding to relationship: viewHistoryEntries");
+	    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("BlogEntryViewHistory");
+	    EOEnterpriseObject eoObject = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+	    editingContext().insertObject(eoObject);
+	    addObjectToBothSidesOfRelationshipWithKey(eoObject, "viewHistoryEntries");
+	    return (net.events.cms.eo.BlogEntryViewHistory) eoObject;
+    }
+    
+    /**
+     * Removes object from the relationship "viewHistoryEntries" and delete object
+     */
+    public void removeFromViewHistoryEntriesAndDelete(net.events.cms.eo.BlogEntryViewHistory object) {
+    	if (log.isDebugEnabled()) log.debug ("Deleting object " + object + "from relationship: viewHistoryEntries");
+        removeObjectFromBothSidesOfRelationshipWithKey(object, "viewHistoryEntries");
+        editingContext().deleteObject(object);
+    }
+    
+    /**
+     * Delete all objects found in the relationship "viewHistoryEntries", be careful, this method
+     * DELETES it does not only a remove!
+     */
+    public void deleteAllViewHistoryEntries() {
+    	if (log.isDebugEnabled()) log.debug ("Deleting all objects from relationship: viewHistoryEntries");
+	    Enumeration objects = viewHistoryEntries().objectEnumerator();
+	    while ( objects.hasMoreElements() )
+	        removeFromViewHistoryEntriesAndDelete((net.events.cms.eo.BlogEntryViewHistory)objects.nextElement());
     }
 }
