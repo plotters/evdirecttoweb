@@ -22,8 +22,9 @@ public class EVDirectAction extends ERXDirectAction {
 	protected ERXEC editingContext;
 
 	/**
-	 * Standard constructor
-	 * 
+	 * We kick an editingContext into ERXThreadStorage, so we use only one editingContext
+	 * throughout the request-response loop.
+
 	 * @param r
 	 */
 	public EVDirectAction(WORequest r) {
@@ -37,8 +38,6 @@ public class EVDirectAction extends ERXDirectAction {
 	 * We call super in a try/catch block to catch all exceptions during the execution of
 	 * directActions to avoid deadlocks.
 	 * 
-	 * We also kick an editingContext into ERXThreadStorage, so we use only one editingContext
-	 * throughout the request-response loop.
 	 */
 	public WOActionResults performActionNamed (String name) {
 		this.existingSession();
