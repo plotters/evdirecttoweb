@@ -1,0 +1,15 @@
+CREATE TABLE blog_entry_view_history (
+	blog_entry_id int8  NOT NULL, 
+	blog_entry_view_history_id int8  NOT NULL, 
+	creation_time timestamp  NOT NULL, 
+	remote_address varchar(32), 
+	request_uri varchar(4000), 
+	user_agent varchar(4000),
+	type varchar (32)
+);
+
+ALTER TABLE blog_entry_view_history ADD CONSTRAINT blog_entry_view_history_pk PRIMARY KEY (blog_entry_view_history_id);
+
+ALTER TABLE blog_entry_view_history ADD CONSTRAINT blog_entry_view_history_blogEntry_FK FOREIGN KEY (blog_entry_id) REFERENCES blog_entries (entry_id) DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX blog_entry_view_history_blog_entry_id_idx ON blog_entry_view_history( blog_entry_id );
+

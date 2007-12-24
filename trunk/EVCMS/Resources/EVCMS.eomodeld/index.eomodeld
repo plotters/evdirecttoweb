@@ -24,6 +24,10 @@
         {className = "net.events.cms.eo.BlogEntry"; name = BlogEntry; }, 
         {className = "net.events.cms.eo.BlogEntryCategory"; name = BlogEntryCategory; }, 
         {
+            className = "net.events.cms.eo.BlogEntryViewHistory"; 
+            name = BlogEntryViewHistory; 
+        }, 
+        {
             className = "net.events.cms.eo.BlogPage"; 
             name = BlogPage; 
             parent = AbstractPage; 
