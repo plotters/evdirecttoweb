@@ -1,6 +1,7 @@
 Link : WOHyperlink {
-  directActionName = "blogCat";
+  directActionName = "page";
   actionClass = "Web";
-  disabled = true;
   ?catId = currentCategory.primaryKey;
+  ?pageId = page.primaryKey;
+  disabled = disabled;
 }

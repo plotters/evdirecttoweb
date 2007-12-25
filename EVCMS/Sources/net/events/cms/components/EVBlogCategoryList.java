@@ -17,7 +17,7 @@ public class EVBlogCategoryList extends EVComponent {
 	/**
 	 * For iterating over the list
 	 */
-	public BlogEntryCategory currentCategory;
+	private BlogEntryCategory currentCategory;
 
     /**
      * Standard constructor
@@ -49,6 +49,24 @@ public class EVBlogCategoryList extends EVComponent {
 	 */
 	public void setPage(BlogPage page) {
 		this.page = page;
+	}
+	
+	public boolean disabled () {
+		return currentCategory().primaryKey().equals(this.context().request().stringFormValueForKey("catId"));
+	}
+
+	/**
+	 * @return the currentCategory
+	 */
+	public BlogEntryCategory currentCategory() {
+		return currentCategory;
+	}
+
+	/**
+	 * @param currentCategory the currentCategory to set
+	 */
+	public void setCurrentCategory(BlogEntryCategory currentCategory) {
+		this.currentCategory = currentCategory;
 	}
 
 }

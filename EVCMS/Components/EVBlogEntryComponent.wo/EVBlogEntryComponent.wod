@@ -5,6 +5,7 @@ Link : WOHyperlink {
   ?entryId = blogEntry.primaryKey;
   ?pageId = context.page.page.primaryKey;
   ?batch = currentBatch;
+  ?catId = catId;
 }
 
 ShowReadMoreLink : WOConditional {
@@ -20,7 +21,9 @@ BlogEntryTeaser : WOString {
   escapeHTML = false;
 }
 
-ERXElse : ERXElse {
+DontShowTeaser : WOConditional {
+	condition = showTeaser;
+	negate = true;
 }
 
 BlogEntryContent : WOString {

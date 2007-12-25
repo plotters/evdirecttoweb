@@ -8,3 +8,5 @@ er.extensions.ERXEnterpriseObject.updateInverseRelationships=true
 ## DirectToWeb
 #########################################################################
 er.directtoweb.ERD2WModel.additionalModelNames = ("events.d2wmodel","datasets.d2wmodel","clinical.d2wmodel","blog.d2wmodel","meetings.d2wmodel")
+
+net.events.Designer.shouldRewriteUrls = true

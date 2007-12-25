@@ -16,5 +16,4 @@ public class EVHtmlPage extends EVCMSPage {
         super(context);
     }
     
-    
  }
