@@ -87,4 +87,12 @@ public class EVBlogEntryComponent extends EVComponent {
 	public boolean showReadMoreLink () {
 		return !this.disableLink();
 	}
+	
+	public String catId () {
+		return  this.stringValueForBinding("catId");
+	}
+	
+	public void setCatId (String s) {
+		this.setValueForBinding(s, "catId");
+	}
 }

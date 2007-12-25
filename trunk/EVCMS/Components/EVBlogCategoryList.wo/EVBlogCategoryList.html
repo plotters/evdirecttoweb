@@ -5,4 +5,5 @@
 		<div class="blog_right_box_entry"><webobject name="Link"><wo:string value="$currentCategory.categoryName" />&nbsp;(<wo:string value="$currentCategory.rawArticleCount" />)</webobject></div>
 	  </wo:if>
 	</wo:loop>
+	<div class="blog_right_box_entry"><wo:link directActionName = "page" actionClass = "Web" ?pageId="page.primaryKey"><wo:string value="$localizer.BlogCategoryList.ShowAll" /></wo:link></div>
 </div>

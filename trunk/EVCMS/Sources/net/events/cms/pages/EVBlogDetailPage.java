@@ -115,6 +115,14 @@ public class EVBlogDetailPage extends EVCMSPage {
 		this.blogComment = null;
 		this.editingContext.revert();
 	}
+	
+	/**
+	 * Returns the category id from the request - if there is one
+	 * @return
+	 */
+	public String catId () {
+		return this.context().request().stringFormValueForKey("catId");
+	}
 
 	/**
 	 * @return the blogEntry

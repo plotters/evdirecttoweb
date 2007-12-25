@@ -142,4 +142,6 @@
 	"UserInformationTab" = "Benutzerinformationen";
 	"Users" = "Benutzer";
 	"ValuesSectionName" = "Werte";
+	"BlogCategoryList.ShowAll" = "Alle Anzeigen";
+	"BlogPage.SelectedCategory" = "Einträge der Kategorie";
 }

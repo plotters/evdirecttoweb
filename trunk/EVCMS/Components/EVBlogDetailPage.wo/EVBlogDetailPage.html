@@ -7,7 +7,7 @@
 		<wo:if condition="$blogEntry.allowDigging"><div class="digg_right"><script src="http://digg.com/tools/diggthis.js" type="text/javascript"></script></div></wo:if>
 		<wo:EVBlogEntryComponent blogEntry = "$blogEntry" showTeaser = "$false" disableDetailLinks = "$true" />
 		<wo:EVBlogCommentComponent blogEntry = "$blogEntry" page = "$page" blogComment = "$blogComment" />
-		<div class="centered"><wo:link directActionName = "page" actionClass = "Web" ?pageId = "$page.primaryKey" ?batch="$currentBatch"><wo:localized value="EVCMS.BACK_TO_LIST" /></wo:link><br /><br /></div>
+		<div class="centered"><wo:link directActionName = "page" actionClass = "Web" ?pageId = "$page.primaryKey" ?batch="$currentBatch" ?catId = "$catId"><wo:localized value="EVCMS.BACK_TO_LIST" /></wo:link><br /><br /></div>
 		<div class="centered" style="margin: 2em 2em;">
 			<script type="text/javascript"><!--
 			google_ad_client = "pub-6528365384483272";
