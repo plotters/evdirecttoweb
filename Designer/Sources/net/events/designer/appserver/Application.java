@@ -83,7 +83,7 @@ public class Application extends EVD2WApplication {
 	 */
 	public String _rewriteURL(String url) {
 		if (ERXProperties.booleanForKeyWithDefault("net.events.Designer.shouldRewriteUrls", false)) {
-			url = url.replaceAll("/cgi-bin/WebObjects/Designer.woa/", "/Designer");
+			url = url.replaceAll("/cgi-bin/WebObjects/Designer.woa/", "/");
 		}
 		return url;
 	}   
