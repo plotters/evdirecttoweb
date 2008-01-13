@@ -491,6 +491,10 @@ td, th {
 	background: #fff;
 }
 
+.d2w_listrow_light {
+	color: #888888;
+}
+
 .d2w_sortimage {
 	vertical-align: middle;
 	margin-left: 8px;
