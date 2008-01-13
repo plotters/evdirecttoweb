@@ -43,16 +43,24 @@ public class EVD2WListPageRepetition extends ERDListPageRepetition {
 	 */
 	public String rowClass () {
 		rowFlip = !rowFlip;
+		String cssClass = null;
 		if (this.d2wContext().valueForKey("cssClassForRow") == null) { 
 			if (rowFlip) {
-				return "d2w_listrow_odd";
+				cssClass = "d2w_listrow_odd";
 			}
 			else {
-				return "d2w_listrow_even";
+				cssClass = "d2w_listrow_even";
 			}
 		}
 		else {
-			return (String) this.d2wContext().valueForKey("cssClassForRow");
+			cssClass = (String) this.d2wContext().valueForKey("cssClassForRow");
+		}
+		String additionalClass = (String) this.d2wContext().valueForKey("additionalCssClassForRow");
+		if (additionalClass != null) {
+			return cssClass + " " + additionalClass;
+		}
+		else {
+			return cssClass;
 		}
 	}
 	
