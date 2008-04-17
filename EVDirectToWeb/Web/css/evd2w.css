@@ -521,6 +521,13 @@ td, th {
 	border-bottom: 1px solid #ccc;
 }
 
+.lightergreen {
+	background-color: #e8fce6;
+	border-bottom: 1px solid #ccc;
+	color: #999999;
+	font-style: italic;
+}
+
 .d2w_grouping_list_table th {
 	padding: 4px;
 	background-color: #ddd;
