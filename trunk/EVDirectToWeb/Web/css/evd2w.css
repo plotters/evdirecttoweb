@@ -374,7 +374,7 @@ a:hover .d2w_navlev2_selected, a:hover .d2w_navlev3_selected {
 
 th { font-weight: bold; }
 td, th {
-	border: 1px solid white;
+/*	border: 1px solid white; */
 }
 
 .d2w_emptylist {
@@ -387,6 +387,7 @@ td, th {
 
 #d2w_listcontent {
 	margin: 0 16px 0 16px;
+	padding: 1px 1px;
 	border: 1px solid #aaa;
 }
 
@@ -471,20 +472,23 @@ td, th {
 
 .d2w_listtable {
 	background-color: #fff;
-	padding: 1px;
-	border: 1px solid #aaa;
+	border: none;
 }
 
 .d2w_listtable th {
-	background: #ccc;
+	background-color: #ccc;
 }
 
 .d2w_listtable td, .d2w_listtable th {
 	padding: 3px;
 }
 
+.RightActionsTableHead, .LeftActionsTableHead {
+	text-align: center;
+}
+
 .d2w_listrow_even {
-	background: #eee;
+	background: #f2f2f2;
 }
 
 .d2w_listrow_odd {
@@ -646,6 +650,15 @@ td, th {
 
 .d2w_property_cell_value, .d2w_property_cell_v_value, .d2w_property_cell_vl_value, .d2w_property_cell_h_value, .d2w_property_cell_hl_value {
 	padding: 4px 2px 2px 2px;
+}
+
+input, textarea {
+	border: 1px solid #ccc;
+	padding: 3px;
+}
+
+.d2w_validiation_error input, .d2w_validiation_error textarea, .d2w_validiation_error select {
+	border: 2px solid #B52C07;
 }
 
 .d2w_query_boolean input{
