@@ -98,9 +98,8 @@ PropertyNameSpan : WOGenericContainer {
 	class = d2wContext.classNameForPropertyLabel;
 }
 
-PropertyValueSpan : WOGenericContainer {
-	elementName = "span";
-	class = d2wContext.classNameForPropertyValue;
+PropertyValueSpan : EVD2WPropertySpan {
+	localContext = d2wContext;
 }
 
 HMatrixLabelCell : WOGenericContainer {
