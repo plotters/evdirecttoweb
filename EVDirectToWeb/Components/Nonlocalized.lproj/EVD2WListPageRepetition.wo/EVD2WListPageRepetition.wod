@@ -56,8 +56,8 @@ ListTable: WOGenericContainer {
 	_unroll = true;
 	bgcolor = d2wContext.backgroundColorForTable;
 	border = 0;
-	cellpadding = 1;
-	cellspacing = 1;
+	cellpadding = 0;
+	cellspacing = 0;
 	elementName = "table";
 	class = "d2w_listtable";
 	width = "100%";
