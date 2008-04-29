@@ -39,7 +39,7 @@ HasPrinterFriendlyVersionConditional: WOConditional {
 	condition = d2wContext.hasPrinterFriendlyVersion;
 }
 
-Conditional5: WOConditional {
+UseFocusConditional: WOConditional {
 	condition = d2wContext.useFocus;
 }
 
@@ -145,7 +145,7 @@ ReturnLink: WOHyperlink {
 	class = d2wContext.previousPageLinkClass;
 }
 
-Script: WOJavaScript {
+UseFocusScript: WOJavaScript {
 	scriptString = tabScriptString;
 	hideInComment = true;
 }
