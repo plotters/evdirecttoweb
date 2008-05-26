@@ -1,6 +1,6 @@
 package net.events.d2w.extensions;
 
-import java.util.*;
+import java.util.Random;
 
 import net.events.d2w.pages.EVGenericErrorPage;
 
@@ -15,17 +15,21 @@ import com.webobjects.appserver.WORequest;
 import com.webobjects.appserver.WORequestHandler;
 import com.webobjects.appserver.WOResponse;
 import com.webobjects.eocontrol.EOSharedEditingContext;
-import com.webobjects.foundation.*;
+import com.webobjects.foundation.NSDictionary;
+import com.webobjects.foundation.NSMutableDictionary;
+import com.webobjects.foundation.NSTimestamp;
 
-import er.extensions.*;
+import er.extensions.ERXApplication;
+import er.extensions.ERXMessageEncoding;
+import er.extensions.ERXProperties;
 
-public class EVD2WApplication extends ERXApplication {
+public abstract class EVD2WApplication extends ERXApplication {
 	
 	private static Logger log = Logger.getLogger(EVD2WApplication.class);
 	private static Logger requestLogger = Logger.getLogger("RequestHandling");
 	private Random random;
 
-	public static final NSDictionary noWOSID = new NSDictionary(Boolean.FALSE, "wosid");
+	public static final NSDictionary<String, Object> noWOSID = new NSDictionary<String, Object>(Boolean.FALSE, "wosid");
 
 	public EVD2WApplication () {
 		super();
@@ -103,16 +107,16 @@ public class EVD2WApplication extends ERXApplication {
 		
 		log.info("Request: " + request);
 		
-		NSMutableDictionary mutableDict = new NSMutableDictionary();
-		NSDictionary userInfo = request.userInfo();
+		NSMutableDictionary<String, Object> mutableDict = new NSMutableDictionary<String, Object>();
+		NSDictionary<String, Object> userInfo = request.userInfo();
 		if (userInfo == null) {
 			/* from scratch */
-			request.setUserInfo(new NSDictionary(mutableDict, "mutableDict"));
+			request.setUserInfo(new NSDictionary<String, Object>(mutableDict, "mutableDict"));
 		}
 		else {
 			/* incorperate existing userInfo */
 			
-			NSMutableDictionary appended = new NSMutableDictionary();
+			NSMutableDictionary<String, Object> appended = new NSMutableDictionary<String, Object>();
 			appended.addEntriesFromDictionary(userInfo);
 			appended.takeValueForKey(mutableDict, "mutableDict");
 			request.setUserInfo(appended);
@@ -158,6 +162,8 @@ public class EVD2WApplication extends ERXApplication {
 	public WOResponse handleException(Exception anException, WOContext aContext) {
 		super.handleException(anException, aContext);
 		
+		sendExceptionEmail(anException, aContext, null);
+		
 		anException.printStackTrace();
 		
 		if (aContext.hasSession()) {
@@ -182,8 +188,26 @@ public class EVD2WApplication extends ERXApplication {
 
 		WOContext aContext = new WOContext(aRequest);
 		WOComponent errorPage = this.pageWithName(EVGenericErrorPage.class.getName(), aContext);
+		
+		sendExceptionEmail(exception, null, null);
+		
 		return errorPage.generateResponse();
 	}
+	
+	public void sendExceptionEmail (Exception exception, WOContext context, NSDictionary<String, ?> userInfo) {
+		// send only in production
+		if (!isDevelopmentMode()) {
+			try {
+				generateAndSendExceptionEmail(exception, null, null);
+			}
+			catch (Exception e) {
+				// just dump it
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	protected abstract void generateAndSendExceptionEmail (Exception exception, WOContext context, NSDictionary<String, ?> userInfo);
 
 }
 
