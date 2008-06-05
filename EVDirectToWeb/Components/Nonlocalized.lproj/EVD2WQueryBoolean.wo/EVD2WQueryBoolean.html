@@ -1,1 +1,5 @@
-<div class="d2w_query_boolean"><webobject name = "RadioButtonList" /></div>
+<div class="d2w_query_boolean">
+	<wo:loop list="$queryNumbers" item = "$item" index = "$index">
+		<wo:radio selection = "$value" value = "$item" name = "name"/>&nbsp;<wo:string value = "$displayString" />
+	</wo:loop>
+</div>

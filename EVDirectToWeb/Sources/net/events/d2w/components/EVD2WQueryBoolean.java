@@ -19,4 +19,6 @@ public class EVD2WQueryBoolean extends ERD2WCustomQueryBoolean {
     public EVD2WQueryBoolean(WOContext context) {
         super(context);
     }
+    
+    
 }
