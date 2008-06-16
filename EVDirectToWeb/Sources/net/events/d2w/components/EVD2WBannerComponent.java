@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERDBannerComponent;
+import er.directtoweb.components.ERDBannerComponent;
 
 public class EVD2WBannerComponent extends ERDBannerComponent {
 

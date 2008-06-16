@@ -7,7 +7,7 @@ import com.webobjects.appserver.WODisplayGroup;
 import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSMutableArray;
 
-import er.extensions.ERXStatelessComponent;
+import er.extensions.components.ERXStatelessComponent;
 
 /**
  * This component displays a batch navigation inside a given container (wrap the compponent in whatever

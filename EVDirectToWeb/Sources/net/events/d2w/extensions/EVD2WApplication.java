@@ -19,9 +19,9 @@ import com.webobjects.foundation.NSDictionary;
 import com.webobjects.foundation.NSMutableDictionary;
 import com.webobjects.foundation.NSTimestamp;
 
-import er.extensions.ERXApplication;
-import er.extensions.ERXMessageEncoding;
-import er.extensions.ERXProperties;
+import er.extensions.appserver.ERXApplication;
+import er.extensions.appserver.ERXMessageEncoding;
+import er.extensions.foundation.ERXProperties;
 
 public abstract class EVD2WApplication extends ERXApplication {
 	

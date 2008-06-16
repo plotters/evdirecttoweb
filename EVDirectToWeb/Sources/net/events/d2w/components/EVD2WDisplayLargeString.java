@@ -1,10 +1,13 @@
 package net.events.d2w.components;
 
-import net.events.d2w.extensions.*;
-import net.events.util.*;
+import net.events.d2w.extensions.EVD2WApplication;
+import net.events.util.EVStringUtilities;
 
-import com.webobjects.appserver.*;
-import com.webobjects.directtoweb.*;
+import com.webobjects.appserver.WOActionResults;
+import com.webobjects.appserver.WOComponent;
+import com.webobjects.appserver.WOContext;
+import com.webobjects.appserver.WORequest;
+import com.webobjects.directtoweb.D2WDisplayString;
 
 /**
  * Shows a truncated string instead of the whole thing. 

@@ -2,8 +2,8 @@ package net.events.d2w.pages;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERD2WCompactInspectPageTemplate;
-import er.extensions.ERXValueUtilities;
+import er.directtoweb.pages.templates.ERD2WCompactInspectPageTemplate;
+import er.extensions.foundation.ERXValueUtilities;
 
 public class EVD2WCompactInspectPage extends ERD2WCompactInspectPageTemplate {
 	public EVD2WCompactInspectPage(WOContext wocontext) {

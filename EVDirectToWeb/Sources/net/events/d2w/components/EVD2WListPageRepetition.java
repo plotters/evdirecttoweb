@@ -8,8 +8,8 @@ import com.webobjects.directtoweb.InspectPageInterface;
 import com.webobjects.eocontrol.EOEnterpriseObject;
 import com.webobjects.eocontrol.EOGenericRecord;
 
-import er.directtoweb.ERDListPageRepetition;
-import er.extensions.ERXValueUtilities;
+import er.directtoweb.components.repetitions.ERDListPageRepetition;
+import er.extensions.foundation.ERXValueUtilities;
 
 public class EVD2WListPageRepetition extends ERDListPageRepetition {
 	

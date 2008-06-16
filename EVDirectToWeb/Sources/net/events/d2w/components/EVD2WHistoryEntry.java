@@ -10,8 +10,8 @@ import com.webobjects.eocontrol.EOGenericRecord;
 import com.webobjects.foundation.NSDictionary;
 import com.webobjects.foundation.NSKeyValueCoding;
 
-import er.directtoweb.ERDCustomComponent;
-import er.extensions.ERXStringUtilities;
+import er.directtoweb.components.ERDCustomComponent;
+import er.extensions.foundation.ERXStringUtilities;
 
 public class EVD2WHistoryEntry extends ERDCustomComponent {
 

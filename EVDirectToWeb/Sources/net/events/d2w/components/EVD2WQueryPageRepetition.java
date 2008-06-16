@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERDQueryPageRepetition;
+import er.directtoweb.components.repetitions.ERDQueryPageRepetition;
 
 public class EVD2WQueryPageRepetition extends ERDQueryPageRepetition {
 

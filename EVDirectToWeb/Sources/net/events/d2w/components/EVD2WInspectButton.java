@@ -3,8 +3,8 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERDInspectButton;
-import er.extensions.ERXValueUtilities;
+import er.directtoweb.components.buttons.ERDInspectButton;
+import er.extensions.foundation.ERXValueUtilities;
 
 public class EVD2WInspectButton extends ERDInspectButton {
 

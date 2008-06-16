@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERDActionBar;
+import er.directtoweb.components.ERDActionBar;
 
 public class EVD2WListActionBar extends ERDActionBar {
 

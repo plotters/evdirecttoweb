@@ -9,9 +9,9 @@ import com.webobjects.eocontrol.EOObjectStoreCoordinator;
 import com.webobjects.foundation.NSArray;
 
 import er.directtoweb.ERD2WFactory;
-import er.directtoweb.ERD2WTabInspectPage;
-import er.extensions.ERXEOControlUtilities;
-import er.extensions.ERXValueUtilities;
+import er.directtoweb.pages.ERD2WTabInspectPage;
+import er.extensions.eof.ERXEOControlUtilities;
+import er.extensions.foundation.ERXValueUtilities;
 
 public class EVD2WTabInspectPage extends ERD2WTabInspectPage {
 	/**

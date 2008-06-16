@@ -1,11 +1,11 @@
 package net.events.d2w.components;
 
-import net.events.d2w.extensions.*;
+import net.events.d2w.extensions.EVD2WApplication;
 
-import com.webobjects.appserver.*;
+import com.webobjects.appserver.WOContext;
+import com.webobjects.appserver.WOResponse;
 
-import er.ajax.*;
-import er.directtoweb.*;
+import er.directtoweb.components.strings.ERDEditHTML;
 
 public class EVD2WEditHTML extends ERDEditHTML {
 	
