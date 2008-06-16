@@ -18,10 +18,10 @@ import com.webobjects.foundation.NSNotificationCenter;
 
 import er.ajax.AjaxUtils;
 import er.directtoweb.ERD2WContextDictionary;
-import er.directtoweb.ERD2WPropertyName;
 import er.directtoweb.ERDirectToWeb;
-import er.extensions.ERXSortOrder;
-import er.extensions.ERXWOContext;
+import er.directtoweb.components.ERD2WPropertyName;
+import er.extensions.appserver.ERXWOContext;
+import er.extensions.components.ERXSortOrder;
 
 public class EVD2WTableHeader extends ERXSortOrder {
 

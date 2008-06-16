@@ -3,8 +3,8 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERDDeleteButton;
-import er.extensions.ERXValueUtilities;
+import er.directtoweb.components.buttons.ERDDeleteButton;
+import er.extensions.foundation.ERXValueUtilities;
 
 public class EVD2WDeleteButton extends ERDDeleteButton {
 

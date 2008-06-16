@@ -7,8 +7,8 @@ import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
 
-import er.directtoweb.ERDEditToManyRelationship;
-import er.extensions.ERXArrayUtilities;
+import er.directtoweb.components.relationships.ERDEditToManyRelationship;
+import er.extensions.foundation.ERXArrayUtilities;
 
 public class EVD2WEditToManyRelationship extends ERDEditToManyRelationship {
 

@@ -5,8 +5,8 @@ import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.directtoweb.EditPageInterface;
 
-import er.directtoweb.ERDEmptyListMessage;
-import er.extensions.ERXGenericRecord;
+import er.directtoweb.components.misc.ERDEmptyListMessage;
+import er.extensions.eof.ERXGenericRecord;
 
 public class EVD2WEmptyListMessage extends ERDEmptyListMessage {
 

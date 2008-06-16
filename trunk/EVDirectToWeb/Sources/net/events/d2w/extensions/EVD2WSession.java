@@ -1,6 +1,7 @@
 package net.events.d2w.extensions;
 
-import com.webobjects.appserver.*;
+import com.webobjects.appserver.WOComponent;
+import com.webobjects.appserver.WORedirect;
 import com.webobjects.directtoweb.D2W;
 import com.webobjects.directtoweb.EditPageInterface;
 import com.webobjects.directtoweb.ListPageInterface;
@@ -8,9 +9,9 @@ import com.webobjects.directtoweb.QueryPageInterface;
 import com.webobjects.eoaccess.EODatabaseDataSource;
 import com.webobjects.foundation.NSKeyValueCoding;
 
-import er.extensions.ERXApplication;
-import er.extensions.ERXProperties;
-import er.extensions.ERXSession;
+import er.extensions.appserver.ERXApplication;
+import er.extensions.appserver.ERXSession;
+import er.extensions.foundation.ERXProperties;
 
 public class EVD2WSession extends ERXSession {
 

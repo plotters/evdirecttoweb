@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERD2WPropertyName;
+import er.directtoweb.components.ERD2WPropertyName;
 
 public class EVD2WListPropertyName extends ERD2WPropertyName {
 

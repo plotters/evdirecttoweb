@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.extensions.ERXErrorDictionaryPanel;
+import er.extensions.components.ERXErrorDictionaryPanel;
 
 public class EVD2WErrorDictionaryPanel extends ERXErrorDictionaryPanel {
 

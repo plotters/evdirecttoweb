@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERDSectionText;
+import er.directtoweb.components.misc.ERDSectionText;
 
 public class EVD2WSectionText extends ERDSectionText {
 

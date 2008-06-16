@@ -18,8 +18,8 @@ import com.webobjects.eocontrol.EOFetchSpecification;
 import com.webobjects.eocontrol.EOQualifier;
 import com.webobjects.foundation.NSArray;
 
-import er.directtoweb.ERD2WListPageTemplate;
-import er.extensions.ERXGenericRecord;
+import er.directtoweb.pages.templates.ERD2WListPageTemplate;
+import er.extensions.eof.ERXGenericRecord;
 
 public class EVD2WListPage extends ERD2WListPageTemplate {
 	

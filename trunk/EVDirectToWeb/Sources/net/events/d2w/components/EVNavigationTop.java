@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.extensions.ERXNavigationMenu;
+import er.extensions.appserver.navigation.ERXNavigationMenu;
 
 public class EVNavigationTop extends ERXNavigationMenu {
 

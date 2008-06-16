@@ -3,7 +3,7 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERD2WQueryStringOperator;
+import er.directtoweb.components.strings.ERD2WQueryStringOperator;
 
 public class EVD2WQueryStringOperator extends ERD2WQueryStringOperator {
 

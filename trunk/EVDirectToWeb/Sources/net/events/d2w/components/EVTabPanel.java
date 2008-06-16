@@ -3,10 +3,10 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
-import com.webobjects.foundation.*;
+import com.webobjects.foundation.NSArray;
 
-import er.extensions.ERXTabPanel;
-import er.extensions.ERXValueUtilities;
+import er.extensions.components.ERXTabPanel;
+import er.extensions.foundation.ERXValueUtilities;
 
 /**
  * Overriden to support tabs with link in other browsers than just IE.

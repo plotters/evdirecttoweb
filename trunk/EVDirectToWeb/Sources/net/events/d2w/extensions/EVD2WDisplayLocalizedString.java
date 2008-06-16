@@ -3,7 +3,7 @@ package net.events.d2w.extensions;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERD2WDisplayString;
+import er.directtoweb.components.strings.ERD2WDisplayString;
 
 public class EVD2WDisplayLocalizedString extends ERD2WDisplayString {
 

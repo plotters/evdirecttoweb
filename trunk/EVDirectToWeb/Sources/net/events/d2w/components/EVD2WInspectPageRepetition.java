@@ -3,8 +3,8 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERDInspectPageRepetition;
-import er.extensions.ERXValueUtilities;
+import er.directtoweb.components.repetitions.ERDInspectPageRepetition;
+import er.extensions.foundation.ERXValueUtilities;
 
 /**
  * Cleaned up component, better HTML, more CSS

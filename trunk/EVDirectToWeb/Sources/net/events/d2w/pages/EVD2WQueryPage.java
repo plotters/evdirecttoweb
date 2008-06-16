@@ -2,7 +2,7 @@ package net.events.d2w.pages;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERD2WQueryPageTemplate;
+import er.directtoweb.pages.templates.ERD2WQueryPageTemplate;
 
 /**
  * Re-formatted query page with more css, cleaner structure

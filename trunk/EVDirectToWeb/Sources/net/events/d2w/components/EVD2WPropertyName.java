@@ -3,8 +3,8 @@ package net.events.d2w.components;
 
 import com.webobjects.appserver.WOContext;
 
-import er.directtoweb.ERD2WPropertyName;
-import er.extensions.ERXSession;
+import er.directtoweb.components.ERD2WPropertyName;
+import er.extensions.appserver.ERXSession;
 
 /**
  * Cleaned up component 
