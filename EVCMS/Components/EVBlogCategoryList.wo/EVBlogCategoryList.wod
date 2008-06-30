@@ -1,7 +1,0 @@
-Link : WOHyperlink {
-  directActionName = "page";
-  actionClass = "Web";
-  ?catId = currentCategory.primaryKey;
-  ?pageId = page.primaryKey;
-  disabled = disabled;
-}

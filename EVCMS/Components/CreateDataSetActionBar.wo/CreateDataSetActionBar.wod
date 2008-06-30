@@ -1,4 +1,0 @@
-ObjectClinicalTrialDataSetTemplates : WORepetition {
-  list = object.clinicalTrial.medicalDataSetTemplates; // valid
-  item = currentDataSetTemplate; // valid
-}

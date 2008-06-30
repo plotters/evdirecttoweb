@@ -1,6 +1,0 @@
-alter table usergroups add column area varchar(32) default 'site';
-update usergroups set area = 'super' where name = 'Super Admin';
-update usergroups set area = 'trial' where name like 'Study%';
-
-alter table contacts alter COLUMN usergroup_id drop not null;
-update contacts set usergroup_id = null where inheritance_type = 'StudyParticipant';

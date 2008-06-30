@@ -1,5 +1,0 @@
-alter table data_set_templates add column login_required bool;
-
-alter table data_set_templates add column data_set_page_template_id int8;
-ALTER TABLE data_set_templates ADD CONSTRAINT data_set_templates_data_set_page_template_FK FOREIGN KEY (data_set_page_template_id) REFERENCES pages (page_id) DEFERRABLE INITIALLY DEFERRED;
-CREATE INDEX data_set_templates_data_set_page_template_id_idx ON data_set_templates( data_set_page_template_id );

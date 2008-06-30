@@ -1,8 +1,0 @@
-Label : ERXLocalizedString {
-	value = ^value;
-}
-
-Span : WOGenericContainer {
-	elementName = "span";
-	class = ^class;
-}

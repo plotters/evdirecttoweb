@@ -1,7 +1,0 @@
-alter table data_set_selection_options drop COLUMN interface_element_type_id cascade;
-
-alter table data_set_item ADD column interface_element_type_id int8; 
-ALTER TABLE data_set_item ADD CONSTRAINT data_set_item_interfaceElementType_FK FOREIGN KEY (interface_element_type_id) REFERENCES interface_element_types (element_id) DEFERRABLE INITIALLY DEFERRED;
-CREATE INDEX data_set_item_interface_element_type_id_idx ON data_set_item( interface_element_type_id );
-
-insert into interface_element_types values ('EVDataSetTextfield', nextval( 'interface_element_types_seq' ), 'Textfield');

@@ -1,5 +1,0 @@
-WOTextField : WOTextField {
-  class = "ev_ds_textfield";
-  value = value.numberValue; // valid
-  numberformat = value.dataSetItem.format; // valid
-}

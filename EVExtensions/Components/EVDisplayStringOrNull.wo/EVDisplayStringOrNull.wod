@@ -1,4 +1,0 @@
-SwitchComponent : WOSwitchComponent {
-	WOComponentName = componentName;
-	value = value;
-}
