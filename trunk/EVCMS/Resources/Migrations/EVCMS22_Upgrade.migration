@@ -1,7 +1,0 @@
-alter table data_set_item add column predefined_values varchar(4000);
-alter table data_set_item add column sort_predefined_values bool;
-
-alter table data_set_item add column autoset_to_today bool;
-alter table data_set_item_value add column date_value timestamp;
-
-insert into interface_element_types values ('EVDataSetDatefield', 6, 'Datefield');

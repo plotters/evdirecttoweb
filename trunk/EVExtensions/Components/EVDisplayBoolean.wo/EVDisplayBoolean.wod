@@ -1,4 +1,0 @@
-Checkbox : WOCheckBox {
-	checked = ^value;
-	disabled = true;
-}

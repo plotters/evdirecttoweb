@@ -1,5 +1,0 @@
-WOTextField : WOTextField {
-  class = "ev_ds_textfield";
-  value = value.dateValue;  // valid
-  dateformat = "%b %d, %Y";
-}
