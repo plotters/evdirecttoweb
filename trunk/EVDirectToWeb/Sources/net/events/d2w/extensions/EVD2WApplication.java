@@ -42,13 +42,6 @@ public abstract class EVD2WApplication extends ERXApplication {
 			EOSharedEditingContext.setDefaultSharedEditingContext(null);
 		}
 
-		// FIXME cug: Do we need to add comparison support?
-//        // install international ordering support
-//		if (ERXProperties.booleanForKeyWithDefault("net.events.Application.installComparisonSupport", false)) {
-//			log.info ("Installing java comparison support for correct ordering with locales.");
-//			EOSortOrdering.ComparisonSupport.setSupportForClass(new ERXComparisonSupport(), String.class);
-//		}
-
 		// Set the default encoding for everything (we normally use UTF8):
 		if (ERXProperties.booleanForKeyWithDefault("net.events.Application.setDefaultMessageEncoding", true)) {
 			log.info ("Setting default message encoding to: " + WOMessage.defaultEncoding());
@@ -61,6 +54,7 @@ public abstract class EVD2WApplication extends ERXApplication {
 	/**
 	 * Overriden to make sure not to get any deadlocks by making sure, the session is checked in into the sessionStore 
 	 */
+	@Override
 	public WOResponse dispatchRequest(WORequest request) {
 		
 		requestLogger.info("\n====================== Start of Request - Response Loop ======================");
@@ -100,6 +94,7 @@ public abstract class EVD2WApplication extends ERXApplication {
 	/**
 	 * Overriden to make sure not to get any deadlocks (see dispatchRequest) 
 	 */
+	@Override
 	public WOContext createContextForRequest(WORequest request) {
 		// setup user mutable dictionary to be available for the
 		// rest of this request. request.userInfo() always
@@ -145,8 +140,9 @@ public abstract class EVD2WApplication extends ERXApplication {
     
 	/** (non-Javadoc)
 	 * @see com.webobjects.appserver.WOApplication#handleSessionRestorationErrorInContext(com.webobjects.appserver.WOContext)
-	 * fängt Session-Timeout-Fehlerseite ab
+	 * catches Session-Timeout
 	 */
+    @Override
 	public WOResponse handleSessionRestorationErrorInContext(WOContext aContext) {
 		WORedirect mainPage = (WORedirect) pageWithName ("WORedirect", aContext);
 		mainPage.setUrl(aContext.directActionURLForActionNamed("default",	noWOSID));
@@ -158,7 +154,7 @@ public abstract class EVD2WApplication extends ERXApplication {
 	/**
 	 * We handle all exceptions - nothing should go through the app to the user
 	 */
-
+	@Override
 	public WOResponse handleException(Exception anException, WOContext aContext) {
 		super.handleException(anException, aContext);
 		
@@ -177,6 +173,7 @@ public abstract class EVD2WApplication extends ERXApplication {
 	/**
 	 * Handle action request errors, returns generic error page for now
 	 */
+	@Override
 	public WOResponse handleActionRequestError(WORequest aRequest, Exception exception, String reason, WORequestHandler aHandler, String actionClassName, String actionName, Class actionClass, WOAction actionInstance) {
 
 		log.fatal("Reason: " + reason);
