@@ -1,2 +1,8 @@
+#Thu Aug 07 00:14:49 MDT 2008
 eclipse.preferences.version=1
-encoding//Components=UTF-8
+encoding//Components/EVMailTemplateComponent.wo=UTF-8
+encoding//Components/EVMailTemplateComponent.wo/EVMailTemplateComponent.html=UTF-8
+encoding//Components/EVMailTemplateComponent.wo/EVMailTemplateComponent.wod=UTF-8
+encoding//Components/EVMailTemplateComponent.wo/EVMailTemplateComponent.woo=UTF-8
+encoding//Sources/net/events/mail/components/EVMailTemplateComponent.java=UTF-8
+encoding/Components=UTF-8
