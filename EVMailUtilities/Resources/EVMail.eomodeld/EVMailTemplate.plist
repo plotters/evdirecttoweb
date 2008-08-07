@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "mail_template_id"; 
+            name = mailTemplateId; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = subject; 
+            name = subject; 
+            prototypeName = varchar1000; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = template; 
+            name = template; 
+            prototypeName = varcharLarge; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "template_description"; 
+            name = templateDescription; 
+            prototypeName = varchar1000; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "template_name"; 
+            name = templateName; 
+            prototypeName = varchar255; 
+        }
+    ); 
+    attributesUsedForLocking = (mailTemplateId); 
+    className = "net.events.mail.EVMailTemplate"; 
+    classProperties = (subject, template, templateDescription, templateName); 
+    externalName = "ev_mail_template"; 
+    fetchSpecificationDictionary = {}; 
+    name = EVMailTemplate; 
+    primaryKeyAttributes = (mailTemplateId); 
+}

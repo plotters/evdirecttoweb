@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "mail_queue_id"; 
+            name = mailQueueId; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "queue_name"; 
+            name = queueName; 
+            prototypeName = varchar255; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "scheduled_time"; 
+            name = scheduledTime; 
+            prototypeName = dateTime; 
+        }
+    ); 
+    attributesUsedForLocking = (mailQueueId); 
+    className = "net.events.mail.EVMailQueue"; 
+    classProperties = (creationTime, queueName, scheduledTime); 
+    externalName = "ev_mail_queue"; 
+    fetchSpecificationDictionary = {}; 
+    name = EVMailQueue; 
+    primaryKeyAttributes = (mailQueueId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = EVMailMessage; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mailQueueId; sourceAttribute = mailQueueId; }); 
+            name = messages; 
+        }
+    ); 
+}

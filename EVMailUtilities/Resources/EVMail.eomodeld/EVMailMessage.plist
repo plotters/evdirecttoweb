@@ -1,0 +1,113 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "archive_sent_mail"; 
+            name = archiveSentMail; 
+            prototypeName = flag; 
+        }, 
+        {allowsNull = Y; columnName = bcc; name = bcc; prototypeName = varcharLarge; }, 
+        {allowsNull = Y; columnName = cc; name = cc; prototypeName = varcharLarge; }, 
+        {
+            allowsNull = N; 
+            columnName = "creation_time"; 
+            name = creationTime; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "failure_reason"; 
+            name = failureReason; 
+            prototypeName = varcharLarge; 
+        }, 
+        {allowsNull = Y; columnName = from; name = from; prototypeName = varchar255; }, 
+        {
+            allowsNull = Y; 
+            columnName = "html_body"; 
+            name = htmlBody; 
+            prototypeName = varcharLarge; 
+        }, 
+        {allowsNull = N; columnName = "is_read"; name = isRead; prototypeName = flag; }, 
+        {
+            allowsNull = N; 
+            columnName = "mail_message_id"; 
+            name = mailMessageId; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "mail_queue_id"; 
+            name = mailQueueId; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "plain_text_body"; 
+            name = plainTextBody; 
+            prototypeName = varcharLarge; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "reply_to"; 
+            name = replyTo; 
+            prototypeName = varchar255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "sent_time"; 
+            name = sentTime; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = status; 
+            name = status; 
+            prototypeName = varchar50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = subject; 
+            name = subject; 
+            prototypeName = varchar1000; 
+        }, 
+        {allowsNull = N; columnName = to; name = to; prototypeName = varcharLarge; }, 
+        {
+            allowsNull = Y; 
+            columnName = "x_mailer"; 
+            name = xMailer; 
+            prototypeName = varchar255; 
+        }
+    ); 
+    attributesUsedForLocking = (mailMessageId); 
+    className = "net.events.mail.EVMailMessage"; 
+    classProperties = (
+        archiveSentMail, 
+        bcc, 
+        cc, 
+        creationTime, 
+        failureReason, 
+        from, 
+        htmlBody, 
+        isRead, 
+        mailQueue, 
+        plainTextBody, 
+        replyTo, 
+        sentTime, 
+        status, 
+        subject, 
+        to, 
+        xMailer
+    ); 
+    externalName = "ev_mail_message"; 
+    fetchSpecificationDictionary = {}; 
+    name = EVMailMessage; 
+    primaryKeyAttributes = (mailMessageId); 
+    relationships = (
+        {
+            destination = EVMailQueue; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mailQueueId; sourceAttribute = mailQueueId; }); 
+            name = mailQueue; 
+        }
+    ); 
+}
