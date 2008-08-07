@@ -1,0 +1,36 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:postgresql://localhost/minutes"; 
+        driver = "org.postgresql.Driver"; 
+        password = ""; 
+        plugin = PostgresqlPlugIn; 
+        username = postgres; 
+    }; 
+    entities = (
+        {className = "net.events.mail.EVMailMessage"; name = EVMailMessage; }, 
+        {className = "net.events.mail.EVMailQueue"; name = EVMailQueue; }, 
+        {className = "net.events.mail.EVMailTemplate"; name = EVMailTemplate; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            attributeNamingConvention = {case = Lower; separator = Underscore; }; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:postgresql://localhost/minutes"; 
+                        driver = "org.postgresql.Driver"; 
+                        password = ""; 
+                        plugin = PostgresqlPlugIn; 
+                        username = postgres; 
+                    }; 
+                    prototypeEntityName = EOJDBCPostgresqlPrototypes; 
+                }; 
+            }; 
+            entityNamingConvention = {case = Lower; separator = Underscore; }; 
+        }; 
+    }; 
+}
