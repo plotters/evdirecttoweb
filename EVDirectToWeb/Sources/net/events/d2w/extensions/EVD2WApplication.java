@@ -21,6 +21,7 @@ import com.webobjects.foundation.NSTimestamp;
 
 import er.extensions.appserver.ERXApplication;
 import er.extensions.appserver.ERXMessageEncoding;
+import er.extensions.appserver.navigation.ERXNavigationManager;
 import er.extensions.foundation.ERXProperties;
 
 public abstract class EVD2WApplication extends ERXApplication {
@@ -49,6 +50,16 @@ public abstract class EVD2WApplication extends ERXApplication {
 			ERXMessageEncoding.setDefaultEncoding(WOMessage.defaultEncoding());
 		}
 
+	}
+	
+    /**
+     * Set up navigation and clean the database from session tracking from previous runs.
+     * 
+     * @see er.extensions.ERXApplication#didFinishLaunching()
+     */
+    public void didFinishLaunching() {
+		super.didFinishLaunching();
+		ERXNavigationManager.manager().configureNavigation();
 	}
 
 	/**
