@@ -9,9 +9,9 @@
         username = postgres; 
     }; 
     entities = (
-        {className = "net.events.mail.EVMailMessage"; name = EVMailMessage; }, 
-        {className = "net.events.mail.EVMailQueue"; name = EVMailQueue; }, 
-        {className = "net.events.mail.EVMailTemplate"; name = EVMailTemplate; }
+        {className = "net.events.mail.eo.EVMailMessage"; name = EVMailMessage; }, 
+        {className = "net.events.mail.eo.EVMailQueue"; name = EVMailQueue; }, 
+        {className = "net.events.mail.eo.EVMailTemplate"; name = EVMailTemplate; }
     ); 
     userInfo = {
         "_EntityModeler" = {

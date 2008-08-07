@@ -26,7 +26,7 @@
         }
     ); 
     attributesUsedForLocking = (mailQueueId); 
-    className = "net.events.mail.EVMailQueue"; 
+    className = "net.events.mail.eo.EVMailQueue"; 
     classProperties = (creationTime, queueName, scheduledTime); 
     externalName = "ev_mail_queue"; 
     fetchSpecificationDictionary = {}; 

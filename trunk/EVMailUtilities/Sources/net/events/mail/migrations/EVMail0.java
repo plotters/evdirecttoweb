@@ -12,7 +12,7 @@ public class EVMail0 extends ERXMigrationDatabase.Migration {
 	public NSArray<ERXModelVersion> modelDependencies() {
 		return null;
 	}
-  
+
 	@Override
 	public void downgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
 		// DO NOTHING
@@ -26,7 +26,7 @@ public class EVMail0 extends ERXMigrationDatabase.Migration {
 		eVMailQueueTable.newStringColumn("queue_name", 255, false);
 		eVMailQueueTable.newTimestampColumn("scheduled_time", false);
 		eVMailQueueTable.create();
-	 	eVMailQueueTable.setPrimaryKey("mail_queue_id");
+		eVMailQueueTable.setPrimaryKey("mail_queue_id");
 
 		ERXMigrationTable eVMailMessageTable = database.newTableNamed("ev_mail_message");
 		eVMailMessageTable.newFlagBooleanColumn("archive_sent_mail", false);
@@ -47,7 +47,7 @@ public class EVMail0 extends ERXMigrationDatabase.Migration {
 		eVMailMessageTable.newStringColumn("to", 10000000, false);
 		eVMailMessageTable.newStringColumn("x_mailer", 255, true);
 		eVMailMessageTable.create();
-	 	eVMailMessageTable.setPrimaryKey("mail_message_id");
+		eVMailMessageTable.setPrimaryKey("mail_message_id");
 
 		ERXMigrationTable eVMailTemplateTable = database.newTableNamed("ev_mail_template");
 		eVMailTemplateTable.newIntegerColumn("mail_template_id", false);
@@ -56,7 +56,7 @@ public class EVMail0 extends ERXMigrationDatabase.Migration {
 		eVMailTemplateTable.newStringColumn("template_description", 1000, true);
 		eVMailTemplateTable.newStringColumn("template_name", 255, false);
 		eVMailTemplateTable.create();
-	 	eVMailTemplateTable.setPrimaryKey("mail_template_id");
+		eVMailTemplateTable.setPrimaryKey("mail_template_id");
 
 		eVMailMessageTable.addForeignKey("mail_queue_id", "ev_mail_queue", "mail_queue_id");
 	}

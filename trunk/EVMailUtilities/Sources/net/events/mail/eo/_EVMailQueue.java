@@ -1,5 +1,5 @@
 // $LastChangedRevision: 4733 $ DO NOT EDIT.  Make changes to EVMailQueue.java instead.
-package net.events.mail;
+package net.events.mail.eo;
 
 import com.webobjects.eoaccess.*;
 import com.webobjects.eocontrol.*;

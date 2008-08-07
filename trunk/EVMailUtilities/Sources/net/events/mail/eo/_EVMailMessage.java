@@ -1,5 +1,5 @@
 // $LastChangedRevision: 4733 $ DO NOT EDIT.  Make changes to EVMailMessage.java instead.
-package net.events.mail;
+package net.events.mail.eo;
 
 import com.webobjects.eoaccess.*;
 import com.webobjects.eocontrol.*;
@@ -49,7 +49,7 @@ public abstract class _EVMailMessage extends  ERXGenericRecord {
 
 	// Relationships
 	public static final String MAIL_QUEUE_KEY = "mailQueue";
-	public static final ERXKey<net.events.mail.EVMailQueue> MAIL_QUEUE = new ERXKey<net.events.mail.EVMailQueue>(MAIL_QUEUE_KEY);
+	public static final ERXKey<net.events.mail.eo.EVMailQueue> MAIL_QUEUE = new ERXKey<net.events.mail.eo.EVMailQueue>(MAIL_QUEUE_KEY);
 
   private static Logger LOG = Logger.getLogger(_EVMailMessage.class);
 
@@ -226,15 +226,15 @@ public abstract class _EVMailMessage extends  ERXGenericRecord {
     takeStoredValueForKey(value, "xMailer");
   }
 
-  public net.events.mail.EVMailQueue mailQueue() {
-    return (net.events.mail.EVMailQueue)storedValueForKey("mailQueue");
+  public net.events.mail.eo.EVMailQueue mailQueue() {
+    return (net.events.mail.eo.EVMailQueue)storedValueForKey("mailQueue");
   }
   
-  public void setMailQueue(net.events.mail.EVMailQueue value) {
+  public void setMailQueue(net.events.mail.eo.EVMailQueue value) {
     takeStoredValueForKey(value, "mailQueue");
   }
 
-  public void setMailQueueRelationship(net.events.mail.EVMailQueue value) {
+  public void setMailQueueRelationship(net.events.mail.eo.EVMailQueue value) {
     if (_EVMailMessage.LOG.isDebugEnabled()) {
       _EVMailMessage.LOG.debug("updating mailQueue from " + mailQueue() + " to " + value);
     }
@@ -242,7 +242,7 @@ public abstract class _EVMailMessage extends  ERXGenericRecord {
     	setMailQueue(value);
     }
     else if (value == null) {
-    	net.events.mail.EVMailQueue oldValue = mailQueue();
+    	net.events.mail.eo.EVMailQueue oldValue = mailQueue();
     	if (oldValue != null) {
     		removeObjectFromBothSidesOfRelationshipWithKey(oldValue, "mailQueue");
       }

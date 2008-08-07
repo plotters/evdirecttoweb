@@ -79,7 +79,7 @@
         }
     ); 
     attributesUsedForLocking = (mailMessageId); 
-    className = "net.events.mail.EVMailMessage"; 
+    className = "net.events.mail.eo.EVMailMessage"; 
     classProperties = (
         archiveSentMail, 
         bcc, 
