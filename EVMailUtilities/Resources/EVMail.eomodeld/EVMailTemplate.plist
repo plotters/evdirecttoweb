@@ -32,7 +32,7 @@
         }
     ); 
     attributesUsedForLocking = (mailTemplateId); 
-    className = "net.events.mail.EVMailTemplate"; 
+    className = "net.events.mail.eo.EVMailTemplate"; 
     classProperties = (subject, template, templateDescription, templateName); 
     externalName = "ev_mail_template"; 
     fetchSpecificationDictionary = {}; 
