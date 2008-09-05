@@ -3,10 +3,8 @@ package net.events.d2w.components;
 import net.events.appserver.EVApplication;
 import net.events.util.EVStringUtilities;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
-import com.webobjects.appserver.WORequest;
 import com.webobjects.directtoweb.D2WDisplayString;
 
 /**
@@ -66,17 +64,6 @@ public class EVD2WDisplayLargeString extends D2WDisplayString {
 		else {
 			return "[hide details]";
 		}
-	}
-	
-	
-	
-	/* (non-Javadoc)
-	 * @see com.webobjects.appserver.WOComponent#invokeAction(com.webobjects.appserver.WORequest, com.webobjects.appserver.WOContext)
-	 */
-	@Override
-	public WOActionResults invokeAction(WORequest request, WOContext context) {
-		// TODO Auto-generated method stub
-		return super.invokeAction(request, context);
 	}
 
 	/**
