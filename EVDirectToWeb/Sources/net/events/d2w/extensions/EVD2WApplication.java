@@ -2,6 +2,7 @@ package net.events.d2w.extensions;
 
 import java.util.Random;
 
+import net.events.appserver.EVApplication;
 import net.events.d2w.pages.EVGenericErrorPage;
 
 import org.apache.log4j.Logger;
@@ -19,12 +20,11 @@ import com.webobjects.foundation.NSDictionary;
 import com.webobjects.foundation.NSMutableDictionary;
 import com.webobjects.foundation.NSTimestamp;
 
-import er.extensions.appserver.ERXApplication;
 import er.extensions.appserver.ERXMessageEncoding;
 import er.extensions.appserver.navigation.ERXNavigationManager;
 import er.extensions.foundation.ERXProperties;
 
-public abstract class EVD2WApplication extends ERXApplication {
+public abstract class EVD2WApplication extends EVApplication {
 	
 	private static Logger log = Logger.getLogger(EVD2WApplication.class);
 	private static Logger requestLogger = Logger.getLogger("RequestHandling");
