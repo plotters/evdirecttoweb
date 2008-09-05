@@ -1,6 +1,6 @@
 package net.events.d2w.components;
 
-import net.events.d2w.extensions.EVD2WApplication;
+import net.events.appserver.EVApplication;
 
 import com.webobjects.appserver.WOContext;
 
@@ -50,7 +50,7 @@ public class EVD2WEditHTML extends ERDCustomEditComponent {
      */
     public String editorId () {
     	if (this.id == null) {
-    		this.id = "fck" + ((EVD2WApplication) this.application()).randomInteger();
+    		this.id = "fck" + ((EVApplication) this.application()).randomInteger();
     	}
     	return this.id;
     }

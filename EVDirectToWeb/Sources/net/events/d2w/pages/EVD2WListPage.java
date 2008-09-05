@@ -1,5 +1,6 @@
 package net.events.d2w.pages;
 
+import net.events.appserver.EVApplication;
 import net.events.d2w.extensions.EVD2WApplication;
 
 import org.apache.log4j.Logger;
@@ -133,7 +134,7 @@ public class EVD2WListPage extends ERD2WListPageTemplate {
 		if (this.updateContainerId == null) {
 			this.updateContainerId = (String) this.d2wContext().valueForKey("updateContainerId");
 			if (updateContainerId == null) {
-				this.updateContainerId = "UDC_" + this.d2wContext().entity().name() + "_" + Math.abs(((EVD2WApplication) this.application()).randomInteger());
+				this.updateContainerId = "UDC_" + this.d2wContext().entity().name() + "_" + Math.abs(((EVApplication) this.application()).randomInteger());
 			}
 		}
 		return this.updateContainerId;
