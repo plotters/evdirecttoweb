@@ -1,6 +1,6 @@
 package net.events.d2w.components;
 
-import net.events.d2w.extensions.EVD2WApplication;
+import net.events.appserver.EVApplication;
 import net.events.util.EVStringUtilities;
 
 import com.webobjects.appserver.WOActionResults;
@@ -97,7 +97,7 @@ public class EVD2WDisplayLargeString extends D2WDisplayString {
 	public String updateContainerId () {
 		// return (String) this.d2wContext().valueForKey("updateContainerId");
 		if (this.updateContainerId == null) {
-			this.updateContainerId = this.d2wContext().entity().name() + "_" + Math.abs(((EVD2WApplication) this.application()).randomInteger());
+			this.updateContainerId = this.d2wContext().entity().name() + "_" + Math.abs(((EVApplication) this.application()).randomInteger());
 		}
 		return this.updateContainerId;
 	}
