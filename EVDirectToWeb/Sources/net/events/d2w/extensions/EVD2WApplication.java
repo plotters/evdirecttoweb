@@ -3,7 +3,7 @@ package net.events.d2w.extensions;
 import java.util.Random;
 
 import net.events.appserver.EVApplication;
-import net.events.d2w.pages.EVGenericErrorPage;
+import net.events.page.EVGenericErrorPage;
 
 import org.apache.log4j.Logger;
 

@@ -1,5 +1,0 @@
-GenericErrorLocalizedString : ERXLocalizedString {
-  value = "EVGenericErrorPage.GenericError";
-  escapeHTML = false;
-}
-
