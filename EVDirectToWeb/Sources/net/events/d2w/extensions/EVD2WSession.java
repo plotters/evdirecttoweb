@@ -1,5 +1,7 @@
 package net.events.d2w.extensions;
 
+import net.events.appserver.EVSession;
+
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WORedirect;
 import com.webobjects.directtoweb.D2W;
@@ -10,10 +12,9 @@ import com.webobjects.eoaccess.EODatabaseDataSource;
 import com.webobjects.foundation.NSKeyValueCoding;
 
 import er.extensions.appserver.ERXApplication;
-import er.extensions.appserver.ERXSession;
 import er.extensions.foundation.ERXProperties;
 
-public class EVD2WSession extends ERXSession {
+public class EVD2WSession extends EVSession {
 
 	/**
 	 * Generic page for a keypath
