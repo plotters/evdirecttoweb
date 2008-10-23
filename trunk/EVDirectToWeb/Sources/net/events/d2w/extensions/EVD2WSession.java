@@ -93,17 +93,6 @@ public class EVD2WSession extends EVSession {
     	};
     }
 
-    
-    /**
-     * Returns a WOComponent by calling the applications pageWithName method
-     * 
-     * @param pagename
-     * @return page for the given name
-     */
-    public WOComponent pageWithName(String pagename) {
-		return ERXApplication.application().pageWithName(pagename, context());
-	}
-
     /**
      * Create a D2W page for a given pageConfiguration
      * @param pageConfigurationName
@@ -205,7 +194,7 @@ public class EVD2WSession extends EVSession {
     		return super.valueForKeyPath(keyPath);
     	}
 	}
-    
+
     /**
      * Logs the user out and terminates the session
      * 
@@ -217,4 +206,5 @@ public class EVD2WSession extends EVSession {
         session().terminate();
         return redirectPage;
     }
+
 }
