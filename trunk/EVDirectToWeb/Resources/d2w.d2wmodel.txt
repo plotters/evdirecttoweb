@@ -71,5 +71,7 @@
     80 : isEmbeddedInForm = 1 => batchNavigationBarComponentName = AjaxFlickrBatchNavigation [com.webobjects.directtoweb.Assignment],
     100 : task = 'list' => repetitionComponentName = EVD2WListPageRepetition [com.webobjects.directtoweb.Assignment],
     100 : (task = 'edit' or task = 'inspect') => repetitionComponentName = EVD2WInspectPageRepetition [com.webobjects.directtoweb.Assignment],
-    100 : (subTask = 'group' and task = 'list') => repetitionComponentName = EVD2WGroupingListPageRepetition [com.webobjects.directtoweb.Assignment]
+    100 : (subTask = 'group' and task = 'list') => repetitionComponentName = EVD2WGroupingListPageRepetition [com.webobjects.directtoweb.Assignment],
+    100 : ((task = 'inspect' or task = 'list') and smartRelationship.destinationEntity.name = 'ERAttachment') => componentName = EVD2WAttachmentViewer [com.webobjects.directtoweb.Assignment],
+    100 : ((task = 'edit' or task = 'create') and smartRelationship != null and smartRelationship.destinationEntity.name = 'ERAttachment') => componentName = EVD2WAttachmentUpload [com.webobjects.directtoweb.Assignment]
 )
