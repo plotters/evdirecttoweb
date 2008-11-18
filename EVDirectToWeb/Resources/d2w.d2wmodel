@@ -941,6 +941,88 @@
         "keyPath" = "repetitionComponentName"; 
         "value" = "EVD2WGroupingListPageRepetition"; 
       }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "inspect"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "list"; 
+              }
+            ); 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.destinationEntity.name"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "ERAttachment"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "EVD2WAttachmentViewer"; 
+      }; 
+    }, 
+    {
+      "author" = "100"; 
+      "class" = "com.webobjects.directtoweb.Rule"; 
+      "lhs" = {
+        "class" = "com.webobjects.eocontrol.EOAndQualifier"; 
+        "qualifiers" = (
+          {
+            "class" = "com.webobjects.eocontrol.EOOrQualifier"; 
+            "qualifiers" = (
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "edit"; 
+              }, 
+              {
+                "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+                "key" = "task"; 
+                "selectorName" = "isEqualTo"; 
+                "value" = "create"; 
+              }
+            ); 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship"; 
+            "selectorName" = "isNotEqualTo"; 
+            "value" = {
+              "class" = "com.webobjects.foundation.NSKeyValueCoding$Null"; 
+            }; 
+          }, 
+          {
+            "class" = "com.webobjects.eocontrol.EOKeyValueQualifier"; 
+            "key" = "smartRelationship.destinationEntity.name"; 
+            "selectorName" = "isEqualTo"; 
+            "value" = "ERAttachment"; 
+          }
+        ); 
+      }; 
+      "rhs" = {
+        "class" = "com.webobjects.directtoweb.Assignment"; 
+        "keyPath" = "componentName"; 
+        "value" = "EVD2WAttachmentUpload"; 
+      }; 
     }
   ); 
 }
