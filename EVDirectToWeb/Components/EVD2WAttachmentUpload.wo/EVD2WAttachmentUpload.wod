@@ -1,0 +1,28 @@
+ImageUpload : ERAttachmentUpload {
+	editingContext = object.editingContext;
+	attachment = attachment;
+}
+
+
+DeleteLink : AjaxUpdateLink {
+	action = deleteAttachment;
+	updateContainerID = updateContainerId;
+}
+
+HasAttachmentConditional : WOConditional {
+	condition = attachment;
+}
+
+HasNoAttachmentConditional : WOConditional {
+	condition = attachment;
+	negate = true;
+}
+
+UpdateContainer : AjaxUpdateContainer {
+	id = updateContainerId;
+}
+
+Attachment : ERAttachmentViewer {
+	attachment = attachment;
+	width = d2wContext.width; 
+}
