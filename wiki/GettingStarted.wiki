@@ -45,5 +45,3 @@ I will make my own toy application available as an open source project once, I t
 #webo on irc.freenode.net
 
 I'll try to help but please understand, that I don't have the time to give real support to use the framework.
-
-The other projects (Designer, EVCMS, EVExtensions, ...) are a use case for the EVDirectToWeb framework. It's an application that I build in my spare time for fun and for my wife to use. It contains some basic management for clinical trial information collected online, also surveys and some blogging / CMS capabilities. This application is only ready to use if you know what you're doing and have no more specific requirements. It is just a 0.1 release of a web app.
